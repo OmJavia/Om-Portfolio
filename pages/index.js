@@ -60,11 +60,8 @@ export default function Home() {
               Full Stack Developer and a Students
             </h3>
             <p className="text-md py-8 leading-7 text-gray-500 md:text-xl max-w-lg mx-auto">
-              I am a Full Stack Developer who has a keen knowledge of HTML, CSS
-              and Javascript. Also hands-on experience of SCSS/SASS and
-              TailwindCSS as I have projects based on that domain. Currently
-              learning ReactJs, Also this portfolio is the part on the same with
-              Nextjs which is a react based fullstack framework.
+            I am a Full Stack Developer who has a keen knowledge of HTML, CSS , Javascript and Python.
+            Currently I am Learning React.js , Node.js , Three.js and also using these to make few Projects.
             </p>
           </div>
           <div className="text-5xl flex justify-center gap-10 text-gray-500">
@@ -89,7 +86,7 @@ export default function Home() {
             <p className="text-md py-2 leading-7 text-gray-400">
               Since the beginning of my college I had started as a
               Full Stack Developer and I have been making clone of{" "}
-              <span className="text-red-400">certain websites.</span>
+              <span className="text-red-400">Several Websites.</span>
               <br />I offer a wide range of services, including design and
               programming.
             </p>
