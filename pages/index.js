@@ -16,6 +16,7 @@ import Html from "../public/Html.png";
 import anvil from "../public/anvil.png";
 import tesla from "../public/tesla.png";
 import Ai from "../public/Ai.png"
+import Car from "../public/Car.png"
 import SignUp from "../public/SignUp.png";
 import Zoo from "../public/Zoo.png";
 import { useState } from "react";
@@ -92,9 +93,9 @@ export default function Home() {
             </p>
           </div>
           <div className="lg:flex gap-10 text-center">
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-white">
+            <div className="shadow-lg p-10 rounded-xl my-10 dark:bg-white">
               <Image src={design} width={100} height={100} alt="" className="relative left-1/3"/>
-              <h3 className="text-lg font-medium pt-5 pb-2 ">
+              <h3 className="text-lg font-medium pt-7 pb-4 ">
                 Beautiful Designs
               </h3>
               <p className="py-2">
@@ -107,9 +108,9 @@ export default function Home() {
               <p className="text-gray-800 py-1">Adobe XD</p>
               <p className="text-gray-800 py-1">Webflow</p>
             </div>
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-white">
+            <div className="shadow-lg p-10 rounded-xl my-10 dark:bg-white">
               <Image src={code} width={100} height={100} alt="" className="relative left-1/3"/>
-              <h3 className="text-lg font-medium pt-5 pb-2 ">
+              <h3 className="text-lg font-medium pt-7 pb-4 ">
                 Programming
               </h3>
               <p className="py-2">
@@ -123,9 +124,9 @@ export default function Home() {
               <p className="text-gray-800 py-1">Java</p>
               {/* <p className="text-gray-800 py-1">C++</p> */}
             </div>
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-white">
+            <div className="shadow-lg p-10 rounded-xl my-10 dark:bg-white">
               <Image src={consulting} width={100} height={100} alt="" className="relative left-1/3"/>
-              <h3 className="text-lg font-medium pt-5 pb-2 ">
+              <h3 className="text-lg font-medium pt-7 pb-4 ">
                 Coding of Design
               </h3>
               <p className="py-2">
@@ -154,10 +155,10 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-12 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1">
-              <a href="https://omjavia.github.io/portfolio/">
+          <div className="basis-1/3 flex-1">
+              <a href="https://apna-mechanic.vercel.app/">
               <Image
-                src={Html}
+                src={Car}
                 className="rounded-lg object-cover border"
                 width={"100px"}
                 height={"100px"}
@@ -168,6 +169,16 @@ export default function Home() {
               <a href="https://tesla-552544.webflow.io/">
               <Image
                 src={tesla}
+                className="rounded-lg object-cover border"
+                width={"100px"}
+                height={"100px"}
+                layout="responsive" alt="" />
+              </a>
+            </div>
+            <div className="basis-1/3 flex-1">
+              <a href="https://omjavia.github.io/portfolio/">
+              <Image
+                src={Html}
                 className="rounded-lg object-cover border"
                 width={"100px"}
                 height={"100px"}
