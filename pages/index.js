@@ -53,7 +53,7 @@ export default function Home() {
             </ul>
           </nav>
           <div className="text-center mt-10 p-10">
-            <h2 className="text-6xl py-2 text-blue-600 dark:text-amber-500 font-medium md:text-6xl">
+            <h2 className="text-6xl py-2 text-blue-600 dark:text-amber-400 font-medium md:text-6xl">
               Om Javia
             </h2>
             <h3 className="text-3xl py-2 md:text-4xl dark:text-white">
@@ -86,7 +86,7 @@ export default function Home() {
             <p className="text-md py-2 leading-7 text-gray-400">
               Since the beginning of my college studies I had started as a
               Frontend Developer and I have been making clone of{" "}
-              <span className="text-blue-600 dark:text-amber-500">certain websites.</span>
+              <span className="text-blue-600 dark:text-amber-300">certain websites.</span>
               <br />I offer a wide range of services, including design and
               programming.
             </p>
@@ -94,7 +94,7 @@ export default function Home() {
           <div className="lg:grid grid-cols-3 gap-10 text-center">
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={design} width={100} height={100} alt="" className="relative left-1/3"/>
-              <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-200">
+              <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-300">
                 Beautiful Designs
               </h3>
               <p className="py-2 dark:text-teal-50">
@@ -110,7 +110,7 @@ export default function Home() {
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={code} width={100} height={100} alt="" className="relative left-1/3"/>
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-200">
+              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Programming
               </h3>
               <p className="py-2 dark:text-teal-50">
@@ -126,7 +126,7 @@ export default function Home() {
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={consulting} width={100} height={100} alt="" className="relative left-1/3"/>
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-200">
+              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Coding of Design
               </h3>
               <p className="py-2 dark:text-teal-50">
@@ -149,7 +149,7 @@ export default function Home() {
               <p className="text-md py-2 leading-7 text-gray-400">
                 Since the beginning of my college studies I had started as a
                 Frontend Developer and i have been making clone of{" "}
-                <span className="text-blue-600 dark:text-amber-500">certain websites.</span>
+                <span className="text-blue-600 dark:text-amber-300">certain websites.</span>
                 <br />I offer a wide range of services, including design and
                 programming.
               </p>
