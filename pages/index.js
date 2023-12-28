@@ -44,10 +44,14 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  className="font-bolder bg-gradient-to-r from-red-600 to-blue-600 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
-                  href="https://drive.google.com/uc?export=download&id=1j9715eoByUmPI4UwwUfZX943S4KpKuuQ"
-                >
+                  className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
+                  href="https://drive.google.com/uc?export=view&id=1k3wRucUOt8tJa6lBhsS8msZ7dd_1IqlR">
                   Resume
+                </a>
+                <a
+                  className="font-bolder bg-gradient-to-r from-rose-700 to-rose-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
+                  href="https://cal.com/Om-Javia">
+                  Schedule a Meeting
                 </a>
               </li>
             </ul>
