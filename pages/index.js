@@ -48,11 +48,6 @@ export default function Home() {
                   href="https://drive.google.com/uc?export=view&id=1k3wRucUOt8tJa6lBhsS8msZ7dd_1IqlR">
                   Resume
                 </a>
-                <a
-                  className="font-bolder bg-gradient-to-r from-rose-700 to-rose-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
-                  href="https://cal.com/Om-Javia">
-                  Schedule a Meeting
-                </a>
               </li>
             </ul>
           </nav>
@@ -67,7 +62,15 @@ export default function Home() {
               I am a Frontend Developer who has a keen knowledge of HTML, CSS
               and Javascript. Currently learning ReactJs, NextJS & ThreeJS and more to make few new Projects.
             </p>
+            <br></br>
+            <a
+                  className="font-bolder bg-gradient-to-r from-rose-700 to-rose-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
+                  href="https://cal.com/Om-Javia">
+                  Schedule a Meeting
+                </a>
+                
           </div>
+          
           <div className="text-5xl flex justify-center gap-10 text-gray-600">
             <a href="https://twitter.com/OmJavia1">
               <AiFillTwitterCircle className="hover:text-blue-500 dark:hover:text-amber-500" />
