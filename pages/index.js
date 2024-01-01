@@ -139,7 +139,7 @@ export default function Home() {
               <p className="py-2 dark:text-teal-50">
                 The Design being implemented as proper website.
               </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500">Lirbraries and Frameworks</h4>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500">Libraries and Frameworks</h4>
               <ul className="space-y-1 dark:text-white">
                 <li>React</li>
                 <li>Next</li>
