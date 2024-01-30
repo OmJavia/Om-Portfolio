@@ -44,7 +44,7 @@ export default function Home() {
                 <BsFillMoonStarsFill
                   onClick={() => setDarkMode(!darkMode)}
                   className="cursor-pointer text-2xl dark:text-white"
-               />
+              />
               </li>
               <li>
                 <a
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
           <div className="lg:grid grid-cols-3 gap-10 text-center">
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={design} width={100} height={100} alt="" className="relative left-1/3"/>
+              <Image src={design} width={100} height={100} alt="" className="mx-auto"/>
               <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-300">
                 Beautiful Designs
               </h3>
@@ -120,7 +120,7 @@ export default function Home() {
 	            </ul>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={code} width={100} height={100} alt="" className="relative left-1/3"/>
+              <Image src={code} width={100} height={100} alt="" className="mx-auto"/>
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Programming
               </h3>
@@ -136,7 +136,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={consulting} width={100} height={100} alt="" className="relative left-1/3"/>
+              <Image src={consulting} width={100} height={100} alt="" className="mx-auto"/>
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Coding of Design
               </h3>
@@ -263,7 +263,7 @@ export default function Home() {
                 layout="responsive" alt="" />
               </a>
             </div>
-	 <div className="basis-1/3 flex-1">
+	          <div className="basis-1/3 flex-1">
               <Image
                 src={Ai}
                 className="rounded-lg object-cover shadow-md hover:scale-105"
@@ -274,7 +274,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className="p-5 rounded-md text-center dark:text-white">
+              <div className="p-5 rounded-md text-center dark:text-white">
             <p className="font-bold">
               <span>
                 <a href="#footer">Om Javia </a>
