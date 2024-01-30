@@ -23,7 +23,7 @@ import Guess_The_Number from "../public/guess_number.png"
 import SignUp from "../public/SignUp.png";
 import Zoo from "../public/Zoo.png";
 import { useState } from "react";
-import NextLink from "next/link";
+import Link from "next/link";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -47,11 +47,7 @@ export default function Home() {
               />
               </li>
               <li>
-                <a
-                  className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
-                  href="https://drive.google.com/uc?export=view&id=1k3wRucUOt8tJa6lBhsS8msZ7dd_1IqlR" target="_blank">
-                  Resume
-                </a>
+                <Link href="https://drive.google.com/file/d/1k3wRucUOt8tJa6lBhsS8msZ7dd_1IqlR/view?usp=sharing" target="_blank" className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400">Resume</Link>
               </li>
             </ul>
           </nav>
