@@ -16,6 +16,10 @@ import anvil from "../public/anvil.png";
 import tesla from "../public/tesla.png";
 import Ai from "../public/Ai.png"
 import Car from "../public/Car.png"
+import Dice from "../public/dice.png"
+import Mapty from "../public/mapty.png"
+import Bank_Account from "../public/bank_account.png"
+import Guess_The_Number from "../public/guess_number.png"
 import SignUp from "../public/SignUp.png";
 import Zoo from "../public/Zoo.png";
 import { useState } from "react";
@@ -45,7 +49,7 @@ export default function Home() {
               <li>
                 <a
                   className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
-                  href="https://drive.google.com/uc?export=view&id=1k3wRucUOt8tJa6lBhsS8msZ7dd_1IqlR">
+                  href="https://drive.google.com/uc?export=view&id=1k3wRucUOt8tJa6lBhsS8msZ7dd_1IqlR" target="_blank">
                   Resume
                 </a>
               </li>
@@ -194,6 +198,46 @@ export default function Home() {
                 </a>
             </div>
             <div className="basis-1/3 flex-1">
+              <a href="https://omjavia.github.io/Bank_Account/">
+              <Image
+                src={Bank_Account}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"100px"}
+                height={"100px"}
+                layout="responsive" alt="" />
+              </a>
+            </div>
+            <div className="basis-1/3 flex-1">
+              <a href="https://omjavia.github.io/Tracker/">
+              <Image
+                src={Mapty}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"100px"}
+                height={"100px"}
+                layout="responsive" alt="" />
+              </a>
+            </div>
+            <div className="basis-1/3 flex-1">
+              <a href="https://omjavia.github.io/Dice_Game/">
+              <Image
+                src={Dice}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"100px"}
+                height={"100px"}
+                layout="responsive" alt="" />
+              </a>
+            </div>
+            <div className="basis-1/3 flex-1">
+              <a href="https://omjavia.github.io/Guess_The_Number/">
+              <Image
+                src={Guess_The_Number}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"100px"}
+                height={"100px"}
+                layout="responsive" alt="" />
+              </a>
+            </div>
+            <div className="basis-1/3 flex-1">
               <Image
                 src={Zoo}
                 className="rounded-lg object-cover shadow-md hover:scale-105"
@@ -201,7 +245,7 @@ export default function Home() {
                 height={"100%"}
                 layout="responsive" alt="" />
             </div>
-	 <div className="basis-1/3 flex-1">
+            <div className="basis-1/3 flex-1">
               <Image
                 src={SignUp}
                 className="rounded-lg object-cover shadow-md hover:scale-105"
@@ -209,7 +253,7 @@ export default function Home() {
                 height={"100%"}
                 layout="responsive" alt="" />
             </div>
-	 <div className="basis-1/3 flex-1">
+	          <div className="basis-1/3 flex-1">
               <a href="https://physicon-360.anvil.app/">
               <Image
                 src={anvil}
