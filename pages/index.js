@@ -45,7 +45,7 @@ export default function Home() {
               <li>
                 <a
                   className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
-                  href="https://drive.google.com/file/d/1k3wRucUOt8tJa6lBhsS8msZ7dd_1IqlR/view?usp=sharing">
+                  href="https://drive.google.com/file/d/1k3wRucUOt8tJa6lBhsS8msZ7dd_1IqlR/view?usp=sharing" target="_blank">
                   Resume
                 </a>
               </li>
