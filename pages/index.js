@@ -174,7 +174,7 @@ export default function Home() {
               </a>
             </div>
             <div className="basis-1/3 flex-1">
-	    <a href="https://tesla-552544.webflow.io/">
+	            <a href="https://tesla-552544.webflow.io/">
               <Image
                 src={tesla}
                 className="rounded-lg object-cover border shadow-md hover:scale-105"
@@ -234,9 +234,19 @@ export default function Home() {
               </a>
             </div>
             <div className="basis-1/3 flex-1">
+              <a href="https://physicon-360.anvil.app/">
               <Image
-                src={Zoo}
-                className="rounded-lg object-cover shadow-md hover:scale-105"
+                src={anvil}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive" alt="" />
+              </a>
+            </div>
+	        <div className = "basis-1/3 flex-1">
+              <Image
+                src={Ai}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
                 width={"100%"}
                 height={"100%"}
                 layout="responsive" alt="" />
@@ -244,27 +254,9 @@ export default function Home() {
             <div className="basis-1/3 flex-1">
               <Image
                 src={SignUp}
-                className="rounded-lg object-cover shadow-md hover:scale-105"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive" alt="" />
-            </div>
-	          <div className="basis-1/3 flex-1">
-              <a href="https://physicon-360.anvil.app/">
-              <Image
-                src={anvil}
-                className="rounded-lg object-cover shadow-md hover:scale-105"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive" alt="" />
-              </a>
-            </div>
-	          <div className="basis-1/3 flex-1">
-              <Image
-                src={Ai}
-                className="rounded-lg object-cover shadow-md hover:scale-105"
-                width={"100%"}
-                height={"100%"}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"50%"}
+                height={"50%"}
                 layout="responsive" alt="" />
             </div>
           </div>
