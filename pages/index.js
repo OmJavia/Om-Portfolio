@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import { useRouter } from 'next/router';
 import Head from "next/head";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
@@ -332,7 +333,7 @@ export default function Home() {
             </p>
             <p className="mt-2">Created with NextJS and Tailwind 🚀</p>
             <Analytics />
-            <SpeedInsights />
+              import { SpeedInsights } from @vercel/speed-insights/react;
           </div>
         </section>
       </main>
