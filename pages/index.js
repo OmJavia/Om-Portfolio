@@ -93,8 +93,8 @@ export default function Home() {
         <h3 className="text-3xl font-semibold py-1 dark:text-white">About Me </h3>
               <p className="text-md py-2 leading-7 text-gray-400">
                 Lost in the symphony of circuits and code, I am{" "}
-                <span className="text-blue-600 dark:text-amber-300">Om Javia</span>
-                <br />a digital voyager navigating the boundless realms of cyberspace with boundless fascination.
+                <span className="text-blue-600 dark:text-amber-300">Om Javia</span> {" "}
+                a digital voyager navigating the boundless realms of cyberspace with boundless fascination.
               </p>
             </div>
           <div className="lg:grid grid-cols-3 gap-10 text-center">
