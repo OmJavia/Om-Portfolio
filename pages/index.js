@@ -21,8 +21,8 @@ import Mapty from "../public/mapty.png"
 import Bank_Account from "../public/bank_account.png"
 import Guess_The_Number from "../public/guess_number.png"
 import SignUp from "../public/SignUp.png";
-import medi from "../public/medi.jpg";
-import ehis from "../public/ehis.jpeg";
+import Medi from "../public/medi.jpg";
+import Ehis from "../public/ehis.jpeg";
 import Zoo from "../public/Zoo.png";
 import { useState } from "react";
 import Link from "next/link";
@@ -61,7 +61,7 @@ export default function Home() {
             Full-Stack Developer
             </h3>
             <p className="text-md py-2 leading-7 text-gray-500 md:text-xl max-w-lg mx-auto">
-            I'm a Developer who adores crafting user-friendly, responsive websites with Python. With a solid foundation in software engineering, my enthusiasm extends to Machine Learning and AI.
+            I am a Developer who adores crafting user-friendly, responsive websites with Python. With a solid foundation in software engineering, my enthusiasm extends to Machine Learning and AI.
             </p>
             <br></br>
             <a
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
           <div className="lg:grid grid-cols-3 gap-10 text-center">
           <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={ehis} width={100} height={100} alt="" className="mx-auto"/>
+              <Image src={Ehis} width={100} height={100} alt="" className="mx-auto"/>
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Higher Education
               </h3>
@@ -115,7 +115,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={ehis} width={100} height={100} alt="" className="mx-auto"/>
+              <Image src={Ehis} width={100} height={100} alt="" className="mx-auto"/>
               <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-300">
                 Secondary Education
               </h3>
@@ -132,7 +132,7 @@ export default function Home() {
             </div>
             
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={medi} width={100} height={100} alt="" className="mx-auto"/>
+              <Image src={Medi} alt="" className="mx-auto"/>
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Senior Secondary Education
               </h3>
