@@ -327,10 +327,10 @@ export default function Home() {
               <span>
                 <a href="#footer">Om Javia </a>
               </span>
-              © 2023
+              © 2024
             </p>
             <p className="mt-2">Created with NextJS and Tailwind 🚀</p>
-            <Analytics/>
+            <Analytics />
           </div>
         </section>
       </main>
