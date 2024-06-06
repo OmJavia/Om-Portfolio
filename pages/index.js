@@ -21,6 +21,8 @@ import Mapty from "../public/mapty.png"
 import Bank_Account from "../public/bank_account.png"
 import Guess_The_Number from "../public/guess_number.png"
 import SignUp from "../public/SignUp.png";
+import medi from "../public/medi.jpg";
+import ehis from "../public/ehis.jpeg";
 import Zoo from "../public/Zoo.png";
 import { useState } from "react";
 import Link from "next/link";
@@ -56,11 +58,10 @@ export default function Home() {
               Om Javia
             </h2>
             <h3 className="text-3xl py-2 md:text-4xl dark:text-white">
-            Frontend Developer
+            Full-Stack Developer
             </h3>
             <p className="text-md py-2 leading-7 text-gray-500 md:text-xl max-w-lg mx-auto">
-              I am a Frontend Developer who has a keen knowledge of HTML, CSS
-              and Javascript. Currently learning ReactJs, NextJS & ThreeJS and more to make few new Projects.
+            I'm a Developer who adores crafting user-friendly, responsive websites with Python. With a solid foundation in software engineering, my enthusiasm extends to Machine Learning and AI.
             </p>
             <br></br>
             <a
@@ -85,6 +86,64 @@ export default function Home() {
           </div>
           <div className="relative mx-auto bg-gradient-to-b from-blue-600 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
             <Image src={peeps} layout="fill" alt=""/>
+          </div>
+        </section>
+        <section className="mt-10">
+        <div>
+        <h3 className="text-3xl font-semibold py-1 dark:text-white">About Me </h3>
+              <p className="text-md py-2 leading-7 text-gray-400">
+                Lost in the symphony of circuits and code, I am{" "}
+                <span className="text-blue-600 dark:text-amber-300">Om Javia</span>
+                <br />a digital voyager navigating the boundless realms of cyberspace with boundless fascination.
+              </p>
+            </div>
+          <div className="lg:grid grid-cols-3 gap-10 text-center">
+          <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
+              <Image src={ehis} width={100} height={100} alt="" className="mx-auto"/>
+              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
+                Higher Education
+              </h3>
+              <p className="py-2 dark:text-teal-50">
+                Class 10th  
+              </p>
+              <p className="py-2 dark:text-teal-50">
+                CBSE
+              </p>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500"> The Emerald Heights International School </h4>
+              <ul className="space-y-1 dark:text-white">
+                <li>CGPA - 8.6</li>
+              </ul>
+            </div>
+            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
+              <Image src={ehis} width={100} height={100} alt="" className="mx-auto"/>
+              <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-300">
+                Secondary Education
+              </h3>
+              <p className="py-2 dark:text-teal-50">
+                Class 12th  
+              </p>
+              <p className="py-2 dark:text-teal-50">
+                CBSE, Science (PCM)  
+              </p>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500">The Emerald Heights International School</h4>
+              <ul className="tools space-y-1 dark:text-white" >
+              <li>CGPA - 8.1</li>
+	            </ul>
+            </div>
+            
+            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
+              <Image src={medi} width={100} height={100} alt="" className="mx-auto"/>
+              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
+                Senior Secondary Education
+              </h3>
+              <p className="py-2 dark:text-teal-50">
+              Bachelor of Technology (B.Tech) in Computer Science and Engineering
+              </p>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500">Medi-Caps University</h4>
+              <ul className="space-y-1 dark:text-white">
+                <li>CGPA - 9</li>
+              </ul>
+            </div>
           </div>
         </section>
         <section className="mt-10">
