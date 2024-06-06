@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import Head from "next/head";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
@@ -329,6 +330,7 @@ export default function Home() {
               © 2023
             </p>
             <p className="mt-2">Created with NextJS and Tailwind 🚀</p>
+            <Analytics/>
           </div>
         </section>
       </main>
