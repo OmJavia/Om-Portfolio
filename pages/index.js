@@ -27,8 +27,10 @@ import SignUp from "../public/SignUp.png";
 import Medi from "../public/medi.jpg";
 import Ehis from "../public/ehis.jpeg";
 import Zoo from "../public/Zoo.png";
+import coming from "../public/coming.jpg";
+import Mars from "../public/Mars.png";
 import { useState } from "react";
-import QR from "../public/Download Resume.png"
+import QR from "../public/Download Resume.png";
 import Link from "next/link";
 
 export default function Home() {
@@ -226,6 +228,16 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+          <div className="basis-1/3 flex-1">
+	            <a href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing">
+              <Image
+                src={Mars}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive" alt=""/>
+                </a>
+            </div>
             <div className="basis-1/3 flex-1">
               <a href="https://apna-mechanic.vercel.app/">
               <Image
@@ -317,6 +329,14 @@ export default function Home() {
             <div className="basis-1/3 flex-1">
               <Image
                 src={SignUp}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"50%"}
+                height={"50%"}
+                layout="responsive" alt="" />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                src={coming}
                 className="rounded-lg object-cover border shadow-md hover:scale-105"
                 width={"50%"}
                 height={"50%"}
