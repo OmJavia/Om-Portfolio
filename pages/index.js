@@ -28,6 +28,7 @@ import Medi from "../public/medi.jpg";
 import Ehis from "../public/ehis.jpeg";
 import Zoo from "../public/Zoo.png";
 import { useState } from "react";
+import QR from "../public/Download Resume.png"
 import Link from "next/link";
 
 export default function Home() {
@@ -331,9 +332,15 @@ export default function Home() {
               </span>
               © 2024
             </p>
+            <div className=" text-center">
+          <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
+              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
+                For More Information Scan The Below QR-Code
+              </h3>
+              <Image src={QR} width={200} height={200} alt="" className="mx-auto"/>
+            </div>
+            </div>
             <p className="mt-2">Created with NextJS and Tailwind 🚀</p>
-            <Analytics />
-              import { SpeedInsights } from @vercel/speed-insights/react;
           </div>
         </section>
       </main>
