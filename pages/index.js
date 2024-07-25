@@ -26,7 +26,8 @@ import Guess_The_Number from "../public/guess_number.png"
 import SignUp from "../public/SignUp.png";
 import Medi from "../public/medi.jpg";
 import Ehis from "../public/ehis.jpeg";
-import Zoo from "../public/Zoo.png";
+import cod from "../public/cod.jpg";
+import Blog from "../public/Blog.png";
 import coming from "../public/coming.jpg";
 import Mars from "../public/Mars.png";
 import { useState } from "react";
@@ -138,12 +139,15 @@ export default function Home() {
             </div>
             
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Medi} alt="" className="mx-auto"/>
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
+              <Image src={Medi} width={100} height={50} alt="" className="mx-auto"/>
+              <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-300">
                 Senior Secondary Education
               </h3>
               <p className="py-2 dark:text-teal-50">
-              Bachelor of Technology (B.Tech) in Computer Science and Engineering
+              Bachelor of Technology (B.Tech) 
+              </p>
+              <p className="py-2 dark:text-teal-50">
+              Computer Science and Engineering (CSE)
               </p>
               <h4 className="py-4 text-blue-600 dark:text-amber-500">Medi-Caps University</h4>
               <ul className="space-y-1 dark:text-white">
@@ -166,14 +170,14 @@ export default function Home() {
           <div className="lg:grid grid-cols-3 gap-10 text-center">
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={design} width={100} height={100} alt="" className="mx-auto"/>
-              <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-300">
+              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Beautiful Designs
               </h3>
               <p className="py-2 dark:text-teal-50">
-                Elegant designs suited for your needs and design theory.
+              where creativity meets functionality, crafting intuitive solutions that empower innovation.
               </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500">Designing Tools</h4>
-              <ul className="tools space-y-1 dark:text-white" >
+              <h4 className="py-4 text-blue-600 dark:text-amber-500"> Design Tools </h4>
+              <ul className="space-y-1 dark:text-white" >
               <li>VS Code</li>
               <li>Shopify</li>
 	            <li>Figma</li>
@@ -186,7 +190,7 @@ export default function Home() {
                 Programming
               </h3>
               <p className="py-2 dark:text-teal-50">
-                Programming basics as an undergrad.
+                where ideas take shape in syntax, bridging human creativity with computational power.
               </p>
               <h4 className="py-4 text-blue-600 dark:text-amber-500"> Programming Languages </h4>
               <ul className="space-y-1 dark:text-white">
@@ -202,9 +206,9 @@ export default function Home() {
                 Coding of Design
               </h3>
               <p className="py-2 dark:text-teal-50">
-                The Design being implemented as proper website.
+              where development accelerates as powerful tools empower creativity and efficiency.
               </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500">Libraries and Frameworks</h4>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500"> Libraries and Frameworks </h4>
               <ul className="space-y-1 dark:text-white">
                 <li>React</li>
                 <li>Next</li>
@@ -259,7 +263,17 @@ export default function Home() {
                 </a>
             </div>
             <div className="basis-1/3 flex-1">
-	    <a href="https://omjavia.github.io/portfolio/">
+              <a href="https://github.com/OmJavia/Generate_Blogs">
+              <Image
+                src={Blog}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"50%"}
+                height={"50%"}
+                layout="responsive" alt="" />
+                </a>
+            </div>
+            <div className="basis-1/3 flex-1">
+	            <a href="https://omjavia.github.io/portfolio/">
               <Image
                 src={Html}
                 className="rounded-lg object-cover border shadow-md hover:scale-105"
@@ -319,24 +333,18 @@ export default function Home() {
               </a>
             </div>
 	        <div className = "basis-1/3 flex-1">
+              <a href="https://github.com/OmJavia/Open-AI/tree/main">
               <Image
                 src={Ai}
                 className="rounded-lg object-cover border shadow-md hover:scale-105"
                 width={"100%"}
                 height={"100%"}
                 layout="responsive" alt="" />
+              </a>
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 src={SignUp}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"50%"}
-                height={"50%"}
-                layout="responsive" alt="" />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={coming}
                 className="rounded-lg object-cover border shadow-md hover:scale-105"
                 width={"50%"}
                 height={"50%"}
