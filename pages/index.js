@@ -56,7 +56,7 @@ export default function Home() {
               />
               </li>
               <li>
-                <Link href="https://drive.google.com/file/d/1rvRDgSp8flH74LsiUg1m_LpyWuxwWcXA/view?usp=sharing" target="_blank" className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400">Resume</Link>
+                <Link href="https://drive.google.com/file/d/1F7vqJWnS3085dOpb65IAsoVt3H9U2gt0/view?usp=sharing" target="_blank" className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400">Resume</Link>
               </li>
             </ul>
           </nav>
