@@ -33,6 +33,8 @@ import Mars from "../public/Mars.png";
 import { useState } from "react";
 import QR from "../public/Download Resume.png";
 import Link from "next/link";
+import Dryer from "../public/Dryer.png"
+import CodingShark from "../public/Coding-Shark.png"
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -243,6 +245,16 @@ export default function Home() {
                 </a>
             </div>
             <div className="basis-1/3 flex-1">
+              <a href="https://www.thecodingsharks.in/">
+              <Image
+                src={CodingShark}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"100px"}
+                height={"100px"}
+                layout="responsive" alt="" />
+              </a>
+            </div>
+            <div className="basis-1/3 flex-1">
               <a href="https://apna-mechanic.vercel.app/">
               <Image
                 src={Car}
@@ -251,16 +263,6 @@ export default function Home() {
                 height={"100px"}
                 layout="responsive" alt="" />
               </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-	            <a href="https://tesla-552544.webflow.io/">
-              <Image
-                src={tesla}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive" alt=""/>
-                </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://github.com/OmJavia/Generate_Blogs">
@@ -273,6 +275,16 @@ export default function Home() {
                 </a>
             </div>
             <div className="basis-1/3 flex-1">
+	            <a href="https://tesla-552544.webflow.io/">
+              <Image
+                src={tesla}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive" alt=""/>
+                </a>
+            </div>
+            <div className="basis-1/3 flex-1">
 	            <a href="https://omjavia.github.io/portfolio/">
               <Image
                 src={Html}
@@ -281,6 +293,16 @@ export default function Home() {
                 height={"100%"}
                 layout="responsive" alt="" />
                 </a>
+            </div>
+            <div className="basis-1/3 flex-1">
+              <a href="https://evo-dry.vercel.app/">
+              <Image
+                src={Dryer}
+                className="rounded-lg object-cover border shadow-md hover:scale-105"
+                width={"100px"}
+                height={"100px"}
+                layout="responsive" alt="" />
+              </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://omjavia.github.io/Bank_Account/">
