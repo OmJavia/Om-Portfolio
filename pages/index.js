@@ -1,5 +1,4 @@
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from '@vercel/speed-insights/react';
+import { track } from '@vercel/analytics';
 import Head from "next/head";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
@@ -56,10 +55,11 @@ export default function Home() {
               <li>
                 <BsFillMoonStarsFill
                   onClick={() => setDarkMode(!darkMode)}
-                  className="cursor-pointer text-2xl dark:text-white"/>
+                  className="cursor-pointer text-2xl dark:text-white" />
               </li>
-              <li>
-                <Link href="https://drive.google.com/file/d/1F7vqJWnS3085dOpb65IAsoVt3H9U2gt0/view?usp=sharing" target="_blank" className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400">Resume</Link>
+              <li> 
+               <Link href="https://drive.google.com/file/d/1F7vqJWnS3085dOpb65IAsoVt3H9U2gt0/view?usp=sharing" target="_blank" 
+                className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dark:shadow-slate-400"onClick={() => track('Resume Click')}>Resume</Link>
               </li>
             </ul>
           </nav>
@@ -68,20 +68,20 @@ export default function Home() {
               Om Javia
             </h2>
             <h3 className="text-3xl py-2 md:text-4xl dark:text-white">
-            Full-Stack Developer
+              Full-Stack Developer
             </h3>
             <p className="text-md py-2 leading-7 text-gray-500 md:text-xl max-w-lg mx-auto">
-            I am a Developer who adores crafting user-friendly, responsive websites with Python. With a solid foundation in software engineering, my enthusiasm extends to Machine Learning and AI.
+              I am a Developer who adores crafting user-friendly, responsive websites with Python. With a solid foundation in software engineering, my enthusiasm extends to Machine Learning and AI.
             </p>
             <br></br>
             <a
-                  className="font-bolder bg-gradient-to-r from-rose-700 to-rose-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
-                  href="https://cal.com/Om-Javia">
-                  Schedule a Meeting
-                </a>
-                
+              className="font-bolder bg-gradient-to-r from-rose-700 to-rose-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
+              href="https://cal.com/Om-Javia">
+              Schedule a Meeting
+            </a>
+
           </div>
-          
+
           <div className="text-5xl flex justify-center gap-10 text-gray-600">
             <a href="https://twitter.com/OmJavia1">
               <AiFillTwitterCircle className="hover:text-blue-500 dark:hover:text-amber-500" />
@@ -95,26 +95,26 @@ export default function Home() {
             {/* <AiFillInstagram className= 'hover:text-pink-600'/> */}
           </div>
           <div className="relative mx-auto bg-gradient-to-b from-blue-600 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
-            <Image src={peeps} layout="fill" alt=""/>
+            <Image src={peeps} layout="fill" alt="" />
           </div>
         </section>
         <section className="mt-10">
-        <div>
-        <h3 className="text-3xl font-semibold py-1 dark:text-white">About Me </h3>
-              <p className="text-md py-2 leading-7 text-gray-400">
-                Lost in the symphony of circuits and code, I am{" "}
-                <span className="text-blue-600 dark:text-amber-300">Om Javia</span> {" "}
-                a digital voyager navigating the boundless realms of cyberspace with boundless fascination.
-              </p>
-            </div>
+          <div>
+            <h3 className="text-3xl font-semibold py-1 dark:text-white">About Me </h3>
+            <p className="text-md py-2 leading-7 text-gray-400">
+              Lost in the symphony of circuits and code, I am{" "}
+              <span className="text-blue-600 dark:text-amber-300">Om Javia</span> {" "}
+              a digital voyager navigating the boundless realms of cyberspace with boundless fascination.
+            </p>
+          </div>
           <div className="lg:grid grid-cols-3 gap-10 text-center">
-          <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Ehis} width={100} height={100} alt="" className="mx-auto"/>
+            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
+              <Image src={Ehis} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Higher Education
               </h3>
               <p className="py-2 dark:text-teal-50">
-                Class 10th  
+                Class 10th
               </p>
               <p className="py-2 dark:text-teal-50">
                 CBSE
@@ -125,32 +125,32 @@ export default function Home() {
               </ul>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Ehis} width={100} height={100} alt="" className="mx-auto"/>
+              <Image src={Ehis} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-300">
                 Secondary Education
               </h3>
               <p className="py-2 dark:text-teal-50">
-                Class 12th  
+                Class 12th
               </p>
               <p className="py-2 dark:text-teal-50">
-                CBSE, Science (PCM)  
+                CBSE, Science (PCM)
               </p>
               <h4 className="py-4 text-blue-600 dark:text-amber-500">The Emerald Heights International School</h4>
               <ul className="tools space-y-1 dark:text-white" >
-              <li>CGPA - 8.1</li>
-	            </ul>
+                <li>CGPA - 8.1</li>
+              </ul>
             </div>
-            
+
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Medi} width={100} height={50} alt="" className="mx-auto"/>
+              <Image src={Medi} width={100} height={50} alt="" className="mx-auto" />
               <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-300">
                 Senior Secondary Education
               </h3>
               <p className="py-2 dark:text-teal-50">
-              Bachelor of Technology (B.Tech) 
+                Bachelor of Technology (B.Tech)
               </p>
               <p className="py-2 dark:text-teal-50">
-              Computer Science and Engineering (CSE)
+                Computer Science and Engineering (CSE)
               </p>
               <h4 className="py-4 text-blue-600 dark:text-amber-500">Medi-Caps University</h4>
               <ul className="space-y-1 dark:text-white">
@@ -172,23 +172,23 @@ export default function Home() {
           </div>
           <div className="lg:grid grid-cols-3 gap-10 text-center">
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={design} width={100} height={100} alt="" className="mx-auto"/>
+              <Image src={design} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Beautiful Designs
               </h3>
               <p className="py-2 dark:text-teal-50">
-              where creativity meets functionality, crafting intuitive solutions that empower innovation.
+                where creativity meets functionality, crafting intuitive solutions that empower innovation.
               </p>
               <h4 className="py-4 text-blue-600 dark:text-amber-500"> Design Tools </h4>
               <ul className="space-y-1 dark:text-white" >
-              <li>VS Code</li>
-              <li>Shopify</li>
-	            <li>Figma</li>
-              <li>Word Press</li>
-	            </ul>
+                <li>VS Code</li>
+                <li>Shopify</li>
+                <li>Figma</li>
+                <li>Word Press</li>
+              </ul>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={code} width={100} height={100} alt="" className="mx-auto"/>
+              <Image src={code} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Programming
               </h3>
@@ -204,18 +204,18 @@ export default function Home() {
               </ul>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={consulting} width={100} height={100} alt="" className="mx-auto"/>
+              <Image src={consulting} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Coding of Design
               </h3>
               <p className="py-2 dark:text-teal-50">
-              where development accelerates as powerful tools empower creativity and efficiency.
+                where development accelerates as powerful tools empower creativity and efficiency.
               </p>
               <h4 className="py-4 text-blue-600 dark:text-amber-500"> Libraries and Frameworks </h4>
               <ul className="space-y-1 dark:text-white">
                 <li>React</li>
                 <li>Next</li>
-		            <li>TailwindCSS</li>
+                <li>TailwindCSS</li>
                 <li>Anvil</li>
               </ul>
             </div>
@@ -235,134 +235,134 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-          <div className="basis-1/3 flex-1">
-	            <a href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing">
-              <Image
-                src={Mars}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive" alt=""/>
-                </a>
+            <div className="basis-1/3 flex-1">
+              <a href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing">
+                <Image
+                  src={Mars}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive" alt="" />
+              </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://www.thecodingsharks.in/">
-              <Image
-                src={CodingShark}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100px"}
-                height={"100px"}
-                layout="responsive" alt="" />
+                <Image
+                  src={CodingShark}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
               </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://apna-mechanic.vercel.app/">
-              <Image
-                src={Car}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100px"}
-                height={"100px"}
-                layout="responsive" alt="" />
+                <Image
+                  src={Car}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
               </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://github.com/OmJavia/Generate_Blogs">
-              <Image
-                src={Blog}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"50%"}
-                height={"50%"}
-                layout="responsive" alt="" />
-                </a>
+                <Image
+                  src={Blog}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"50%"}
+                  height={"50%"}
+                  layout="responsive" alt="" />
+              </a>
             </div>
             <div className="basis-1/3 flex-1">
-	            <a href="https://tesla-552544.webflow.io/">
-              <Image
-                src={tesla}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive" alt=""/>
-                </a>
+              <a href="https://tesla-552544.webflow.io/">
+                <Image
+                  src={tesla}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive" alt="" />
+              </a>
             </div>
             <div className="basis-1/3 flex-1">
-	            <a href="https://omjavia.github.io/portfolio/">
-              <Image
-                src={Html}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive" alt="" />
-                </a>
+              <a href="https://omjavia.github.io/portfolio/">
+                <Image
+                  src={Html}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive" alt="" />
+              </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://evo-dry.vercel.app/">
-              <Image
-                src={Dryer}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100px"}
-                height={"100px"}
-                layout="responsive" alt="" />
+                <Image
+                  src={Dryer}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
               </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://omjavia.github.io/Bank_Account/">
-              <Image
-                src={Bank_Account}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100px"}
-                height={"100px"}
-                layout="responsive" alt="" />
+                <Image
+                  src={Bank_Account}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
               </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://omjavia.github.io/Tracker/">
-              <Image
-                src={Mapty}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100px"}
-                height={"100px"}
-                layout="responsive" alt="" />
+                <Image
+                  src={Mapty}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
               </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://omjavia.github.io/Dice_Game/">
-              <Image
-                src={Dice}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100px"}
-                height={"100px"}
-                layout="responsive" alt="" />
+                <Image
+                  src={Dice}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
               </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://omjavia.github.io/Guess_The_Number/">
-              <Image
-                src={Guess_The_Number}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100px"}
-                height={"100px"}
-                layout="responsive" alt="" />
+                <Image
+                  src={Guess_The_Number}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
               </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://physicon-360.anvil.app/">
-              <Image
-                src={anvil}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive" alt="" />
+                <Image
+                  src={anvil}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive" alt="" />
               </a>
             </div>
-	        <div className = "basis-1/3 flex-1">
+            <div className="basis-1/3 flex-1">
               <a href="https://github.com/OmJavia/Open-AI/tree/main">
-              <Image
-                src={Ai}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"100%"}
-                height={"100%"}
-                layout="responsive" alt="" />
+                <Image
+                  src={Ai}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive" alt="" />
               </a>
             </div>
             <div className="basis-1/3 flex-1">
@@ -376,7 +376,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-              <div className="p-5 rounded-md text-center dark:text-white">
+          <div className="p-5 rounded-md text-center dark:text-white">
             <p className="font-bold">
               <span>
                 <a href="#footer">Om Javia </a>
@@ -384,12 +384,12 @@ export default function Home() {
               © 2024
             </p>
             <div className=" text-center">
-          <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
-                For More Information Scan The Below QR-Code
-              </h3>
-              <Image src={QR} width={200} height={200} alt="" className="mx-auto"/>
-            </div>
+              <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
+                <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
+                  For More Information Scan The Below QR-Code
+                </h3>
+                <Image src={QR} width={200} height={200} alt="" className="mx-auto" />
+              </div>
             </div>
             <p className="mt-2">Created with NextJS and Tailwind 🚀</p>
           </div>
