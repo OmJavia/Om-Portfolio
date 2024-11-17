@@ -53,6 +53,7 @@ I’m always open to connecting with like-minded individuals and exploring poten
 - **Email:** [omjavia18@gmail.com](mailto:omjavia18@gmail.com)
 - **LinkedIn:** [linkedin.com/in/omjavia](https://linkedin.com/in/omjavia)
 - **GitHub:** [github.com/omjavia](https://github.com/omjavia)
+- **Resume:** [https:omjavia.vercel.app]
 
 Thank you for visiting my portfolio! Let’s build something great together.
 
