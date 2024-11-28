@@ -71,7 +71,7 @@ export default function Home() {
                   className="cursor-pointer text-2xl dark:text-white" />
               </li>
               <li> 
-               <Link href="https://drive.google.com/file/d/1F7vqJWnS3085dOpb65IAsoVt3H9U2gt0/view?usp=sharing" target="_blank" 
+               <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing " target="_blank" 
                 className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dark:shadow-slate-400">Resume</Link>
               </li>
             </ul>
