@@ -30,8 +30,11 @@ import Mars from "../public/Mars.png";
 import { useState } from "react";
 import QR from "../public/Download Resume.png";
 import Link from "next/link";
-import Dryer from "../public/Dryer.png"
-import CodingShark from "../public/Coding-Shark.png"
+import Dryer from "../public/Dryer.png";
+import CodingShark from "../public/Coding-Shark.png";
+import netflix from "../public/netflix.png";
+import aerpace from "../public/aerpace.png";
+import PDF_Seacrher from "../public/PDF_Searcher.png";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -248,6 +251,26 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+          <div className="basis-1/3 flex-1">
+              <a href="https://www.aerpace.com/">
+                <Image
+                  src={aerpace}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive" alt="" />
+              </a>
+            </div>
+            <div className="basis-1/3 flex-1">
+              <a href="https://movieflix-om.vercel.app/">
+                <Image
+                  src={netflix}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
+              </a>
+            </div>
             <div className="basis-1/3 flex-1">
               <a href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing">
                 <Image
@@ -262,6 +285,16 @@ export default function Home() {
               <a href="https://www.thecodingsharks.in/">
                 <Image
                   src={CodingShark}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
+              </a>
+            </div>
+            <div className="basis-1/3 flex-1">
+              <a href="https://github.com/OmJavia/PDF_Searcher">
+                <Image
+                  src={PDF_Seacrher}
                   className="rounded-lg object-cover border shadow-md hover:scale-105"
                   width={"100px"}
                   height={"100px"}
@@ -396,14 +429,14 @@ export default function Home() {
                 height={"50%"}
                 layout="responsive" alt="" />
             </div>
-            <div className="basis-1/3 flex-1">
+            {/* <div className="basis-1/3 flex-1">
               <Image
                 src={coming}
                 className="rounded-lg object-cover border shadow-md hover:scale-105"
                 width={"50%"}
                 height={"50%"}
                 layout="responsive" alt="" />
-            </div>
+            </div> */}
           </div>
         </section>
         <section>
