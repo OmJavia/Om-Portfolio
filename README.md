@@ -4,7 +4,8 @@
 
 # Om Javia's Portfolio
 
-![image](https://github.com/user-attachments/assets/b6b89e8a-1e2a-4faa-85a9-735e7b52d4ce)
+![image](https://github.com/user-attachments/assets/bb78db2a-dbae-4259-93aa-ce598e38050a)
+
 
 Welcome to my portfolio website! Here, you’ll find an overview of my professional journey, technical expertise, and personal projects. Feel free to explore and connect with me.
 
