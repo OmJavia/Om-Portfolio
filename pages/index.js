@@ -35,6 +35,7 @@ import CodingShark from "../public/Coding-Shark.png";
 import netflix from "../public/netflix.png";
 import aerpace from "../public/aerpace.png";
 import PDF_Seacrher from "../public/PDF_Searcher.png";
+import Tennis from "../public/Tennis.png";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -262,6 +263,16 @@ export default function Home() {
               </a>
             </div>
             <div className="basis-1/3 flex-1">
+              <a href="https://www.tennisshop.ae/">
+                <Image
+                  src={Tennis}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
+              </a>
+            </div>
+            <div className="basis-1/3 flex-1">
               <a href="https://movieflix-om.vercel.app/">
                 <Image
                   src={netflix}
@@ -429,14 +440,14 @@ export default function Home() {
                 height={"50%"}
                 layout="responsive" alt="" />
             </div>
-            {/* <div className="basis-1/3 flex-1">
+            <div className="basis-1/3 flex-1">
               <Image
                 src={coming}
                 className="rounded-lg object-cover border shadow-md hover:scale-105"
                 width={"50%"}
                 height={"50%"}
                 layout="responsive" alt="" />
-            </div> */}
+            </div>
           </div>
         </section>
         <section>
