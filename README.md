@@ -51,6 +51,7 @@ For more projects, check out the [Projects](https://omjavia.vercel.app/#projects
 ## Contact
 
 I’m always open to connecting with like-minded individuals and exploring potential collaborations. You can reach me at:
+- **Phone No.** [+91-7987734353](tel:7987734353)
 - **Email:** [omjavia18@gmail.com](mailto:omjavia18@gmail.com)
 - **LinkedIn:** [linkedin.com/in/omjavia](https://linkedin.com/in/omjavia)
 - **GitHub:** [github.com/omjavia](https://github.com/omjavia)
