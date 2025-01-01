@@ -19,25 +19,6 @@ Welcome to my portfolio website! Here, you’ll find an overview of my professio
 
 I'm Om Javia, a Computer Science and Engineering graduate from Medi-Caps University with a specialization in Cloud Technology and Information Security. My work spans across AI, software development, and data analysis, with hands-on experience gained through internships at organizations like ISRO’s Space Application Centre and software firms. Through my projects, I aim to address real-world challenges and provide user-focused solutions.
 
-## Projects
-
-1. **DocQuery Genie**  
-   *Technologies:* RAG, LLama3, LangChain, Ollama, ChromaDB, Flask API  
-   Created a question-answering platform that uses OpenAI’s APIs to enhance interaction with uploaded documents, achieving high accuracy in query response retrieval.
-
-2. **Mars Terrain Classification**  
-   *Technologies:* OpenCV, Detectron2, LabelMe  
-   Analyzed and classified Martian terrains using a neural network model trained on satellite imagery, contributing to enhanced accuracy in surface classification.
-
-3. **Portfolio Website**  
-   *Technologies:* NextJS, Tailwind CSS  
-   This site serves as my professional showcase, with detailed descriptions of my skills, experience, and key projects.
-
-4. **Apna Mechanic**  
-   *Technologies:* HTML, CSS, JavaScript, Anvil, Python  
-   Developed a user-friendly platform for car service management, incorporating features like service history tracking and customized user experiences.
-
-For more projects, check out the [Projects](https://omjavia.vercel.app/#projects) section on my website!
 
 ## Skills
 
