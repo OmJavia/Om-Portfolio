@@ -36,6 +36,9 @@ import netflix from "../public/netflix.png";
 import aerpace from "../public/aerpace.png";
 import PDF_Seacrher from "../public/PDF_Searcher.png";
 import Tennis from "../public/Tennis.png";
+import Sac from "../public/sac.png"
+import Ace from "../public/ace-infoway.svg"
+import Apoliums from "../public/Apoliums.png"
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -238,6 +241,73 @@ export default function Home() {
             </div>
           </div>
         </section>
+      
+        <br/>
+        <br/>
+        <section className="mt-10">
+          <div>
+            <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
+            <p className="text-md py-2 leading-7 text-gray-400">
+              Since the beginning of my college studies I had started as a
+              Full-Stack Developer and I have been making clone of{" "}
+              <span className="text-blue-600 dark:text-amber-300">certain websites.</span>
+              <br />I offer a wide range of services, including design and
+              programming.
+            </p>
+          </div>
+          <div className="lg:grid grid-cols-3 gap-10 text-center">
+            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
+              <Image src={Apoliums} width={100} height={100} alt="" className="mx-auto" />
+              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
+                Apoliumns Infotech
+              </h3>
+              <p className="py-2 dark:text-teal-50">
+                where creativity meets functionality, crafting intuitive solutions that empower innovation.
+              </p>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500"> Software Development Engineer</h4>
+              <ul className="space-y-1 dark:text-white" >
+                <li>VS Code</li>
+                <li>Shopify</li>
+                <li>Figma</li>
+                <li>Word Press</li>
+              </ul>
+            </div>
+            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
+              <Image src={Sac} width={100} height={100} alt="" className="mx-auto" />
+              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
+                Space Application Center, ISRO
+              </h3>
+              <p className="py-2 dark:text-teal-50">
+                where ideas take shape in syntax, bridging human creativity with computational power.
+              </p>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500"> Research and Development Intern  </h4>
+              <ul className="space-y-1 dark:text-white">
+                <li>Python</li>
+                <li>Java</li>
+                <li>Html</li>
+                <li>C & C++</li>
+              </ul>
+            </div>
+            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
+              <Image src={Ace} width={100} height={100} alt="" className="mx-auto" />
+              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
+                Ace Infoway
+              </h3>
+              <p className="py-2 dark:text-teal-50">
+                where development accelerates as powerful tools empower creativity and efficiency.
+              </p>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500">Software Engineer Intern </h4>
+              <ul className="space-y-1 dark:text-white">
+                <li>React</li>
+                <li>Next</li>
+                <li>TailwindCSS</li>
+                <li>Anvil</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <br/>
+              
         <section>
           <div>
             <h3 className="text-3xl py-1 font-semibold dark:text-white">Projects</h3>
@@ -251,6 +321,10 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          <br/>
+          <br/>
+          
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
           <div className="basis-1/3 flex-1">
               <a href="https://www.aerpace.com/">
@@ -456,7 +530,7 @@ export default function Home() {
               <span>
                 <a href="#footer">Om Javia </a>
               </span>
-              © 2024
+              © 2025
             </p>
             <div className=" text-center">
               <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
