@@ -72,9 +72,6 @@ export default function Home() {
         `}
       </Script>
 
-      <h1>Welcome to Om Javia's Portfolio</h1>
-
-
 
       <main className="p-5 md:px-20 lg:px-40 dark:bg-black">
         <section id="footer" className="min-h-screen">
