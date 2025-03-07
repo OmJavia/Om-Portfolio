@@ -92,12 +92,12 @@ export default function Home() {
           <div className="text-center mt-10 p-10">
             <h2 className="text-6xl py-2 text-blue-600 dark:text-amber-400 font-medium md:text-6xl">
               Om Javia
-            </h2>
+            </h2><br/>
             <h3 className="text-3xl py-2 md:text-4xl dark:text-white">
-              Full-Stack Developer
-            </h3>
+              Data Scientist & Full-Stack Developer
+            </h3><br/>
             <p className="text-md py-2 leading-7 text-gray-500 md:text-xl max-w-lg mx-auto">
-              I am a Developer who adores crafting user-friendly, responsive websites with Python. With a solid foundation in software engineering, my enthusiasm extends to Machine Learning and AI.
+            I am a Developer and Data Scientist passionate about building user-friendly, responsive websites using the MERN stack and Python. With a strong foundation in software engineering and machine learning, I thrive at the intersection of web development and AI, crafting intelligent solutions that drive innovation.
             </p>
             <br></br>
             <a
@@ -247,9 +247,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-      
-        <br/>
-        <br/>
         <section className="mt-10">
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
@@ -315,9 +312,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <br/>
-          <br/>
           
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
           <div className="basis-1/3 flex-1">
@@ -520,12 +514,6 @@ export default function Home() {
         </section>
         <section>
           <div className="p-5 rounded-md text-center dark:text-white">
-            <p className="font-bold">
-              <span>
-                <a href="#footer">Om Javia </a>
-              </span>
-              © 2025
-            </p>
             <div className=" text-center">
               <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
                 <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
@@ -534,7 +522,12 @@ export default function Home() {
                 <Image src={QR} width={200} height={200} alt="" className="mx-auto" />
               </div>
             </div>
-            <p className="mt-2">Created with NextJS and Tailwind 🚀</p>
+            <p className="font-bold">
+              <span>
+                <a href="#footer">Om Javia </a>
+              </span>
+              © 2025
+            </p>
           </div>
         </section>
       </main>
