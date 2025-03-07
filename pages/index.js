@@ -7,7 +7,7 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 import Image from "next/image";
-import peeps from "../public/peep-avatar.png";
+import peeps from "../public/Om_pic.jpg";
 import design from "../public/design.png";
 import code from "../public/code.png";
 import consulting from "../public/consulting.png";
@@ -115,7 +115,7 @@ export default function Home() {
             </a>
             {/* <AiFillInstagram className= 'hover:text-pink-600'/> */}
           </div>
-          <div className="relative mx-auto bg-gradient-to-b from-blue-600 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
+          <div className="relative mx-auto rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
             <Image src={peeps} layout="fill" alt="" />
           </div>
         </section>
@@ -249,8 +249,8 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-            During my college years, I began my journey as a Full-Stack Developer, working on various projects, including cloning popular websites to enhance my skills.
-            <br/> Over time, I expanded my expertise, offering services in both design and programming.
+            I've always been eager to explore <span className="text-blue-600 dark:text-amber-300">development and analytics</span>, gaining hands-on experience by building projects,
+             cloning websites, <br/> and working with data to uncover insights, refine skills, and solve real-world problems.
             </p>
           </div>
           <div className="lg:grid grid-cols-4 gap-10 text-center">
