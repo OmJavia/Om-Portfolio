@@ -179,7 +179,7 @@ export default function Home() {
               </p>
               <h4 className="py-4 text-blue-600 dark:text-amber-500">Medi-Caps University</h4>
               <ul className="space-y-1 dark:text-white">
-                <li>CGPA - 9</li>
+                <li>CGPA - 9 </li>
               </ul>
             </div>
           </div>
