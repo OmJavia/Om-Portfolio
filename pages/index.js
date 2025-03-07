@@ -47,15 +47,18 @@ export default function Home() {
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
-  {/* Page Title */}
-  <title>Om Javia Portfolio</title>
-  <meta name="description" content="Portfolio of Om Javia showcasing skills and projects in full-stack development." />
-  
-  {/* Favicon */}
-  <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
-  
-  {/* Google Analytics */}
- 
+        {/* Page Title */}
+        <title>Om Javia Portfolio</title>
+        <meta
+          name="description"
+          content="Portfolio of Om Javia showcasing skills and projects in full-stack development."
+        />
+        
+        {/* Favicon */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
+      </Head>
+
+      {/* Google Analytics - Move Outside Head */}
       <Script
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID"
@@ -69,7 +72,8 @@ export default function Home() {
         `}
       </Script>
 
-</Head>
+      <h1>Welcome to Om Javia's Portfolio</h1>
+
 
 
       <main className="p-5 md:px-20 lg:px-40 dark:bg-black">
