@@ -37,8 +37,9 @@ import aerpace from "../public/aerpace.png";
 import PDF_Seacrher from "../public/PDF_Searcher.png";
 import Tennis from "../public/Tennis.png";
 import Sac from "../public/sac.png"
-import Ace from "../public/ace-infoway.svg"
+import Ace from "../public/ace-infoway.png"
 import Apoliums from "../public/Apoliums.png"
+import Relcon from "../public/relcon.png"
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -248,61 +249,49 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-              Since the beginning of my college studies I had started as a
-              Full-Stack Developer and I have been making clone of{" "}
-              <span className="text-blue-600 dark:text-amber-300">certain websites.</span>
-              <br />I offer a wide range of services, including design and
-              programming.
+            During my college years, I began my journey as a Full-Stack Developer, working on various projects, including cloning popular websites to enhance my skills.
+            <br/> Over time, I expanded my expertise, offering services in both design and programming.
             </p>
           </div>
-          <div className="lg:grid grid-cols-3 gap-10 text-center">
+          <div className="lg:grid grid-cols-4 gap-10 text-center">
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={Apoliums} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Apoliumns Infotech
               </h3>
-              <p className="py-2 dark:text-teal-50">
-                where creativity meets functionality, crafting intuitive solutions that empower innovation.
-              </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500"> Software Development Engineer</h4>
-              <ul className="space-y-1 dark:text-white" >
-                <li>VS Code</li>
-                <li>Shopify</li>
-                <li>Figma</li>
-                <li>Word Press</li>
-              </ul>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}> Software Development Engineer</h4>
+                <p style={{textAlign: "justify"}}> • Revamped The Coding Sharks website and built projects like Inventory Management, Food Delivery, and a Netflix app.<br/>
+                <br/>• Built a highly robust Hotel Management App managing 100+ room bookings and 200+ restaurant orders monthly.</p>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={Sac} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
-                Space Application Center, ISRO
+                Space Application Center
               </h3>
-              <p className="py-2 dark:text-teal-50">
-                where ideas take shape in syntax, bridging human creativity with computational power.
-              </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500"> Research and Development Intern  </h4>
-              <ul className="space-y-1 dark:text-white">
-                <li>Python</li>
-                <li>Java</li>
-                <li>Html</li>
-                <li>C & C++</li>
-              </ul>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}>Research & Development Intern  </h4>
+              
+                <p style={{textAlign: "justify"}}> • Refined and fine-tuned neural network modeling on 800 Hi-Rise satellite images for accurate Mars surface analysis.<br/>
+                 <br/>• Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.</p>
+              
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={Ace} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Ace Infoway
               </h3>
-              <p className="py-2 dark:text-teal-50">
-                where development accelerates as powerful tools empower creativity and efficiency.
-              </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500">Software Engineer Intern </h4>
-              <ul className="space-y-1 dark:text-white">
-                <li>React</li>
-                <li>Next</li>
-                <li>TailwindCSS</li>
-                <li>Anvil</li>
-              </ul>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}>Software Engineer Intern </h4>
+                <p style={{textAlign: "justify"}}>• Contributed to the successful integration of an abandoned cart push notification feature on the E-commerce website.<br/>
+                <br/>• Restructured Budgie Cart, integrating mobile E-commerce development features for significantly enhanced experience.</p>
+             
+            </div>
+            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
+              <Image src={Relcon} width={100} height={100} alt="" className="mx-auto" />
+              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
+                Relcon System
+              </h3>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}> Software Engineer Intern  </h4>
+                <p style={{textAlign: "justify"}}>• Redefined the smart fuel mobile dispensing unit, ensuring compatibility with all 5 OS platforms for versatility.<br/>
+                <br/> • Constructed a dynamic dashboard to monitor fuel consumption and manage station assignments for efficient operations.</p>
             </div>
           </div>
         </section>
