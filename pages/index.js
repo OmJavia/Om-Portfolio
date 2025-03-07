@@ -524,7 +524,7 @@ export default function Home() {
             </div>
             <p className="font-bold">
               <span>
-                <a href="#footer">Om Javia </a>
+                <a href="#footer">Om Javia</a>
               </span>
               © 2025
             </p>
