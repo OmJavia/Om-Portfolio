@@ -40,6 +40,7 @@ import Sac from "../public/sac.png"
 import Ace from "../public/ace-infoway.png"
 import Apoliums from "../public/Apoliums.png"
 import Relcon from "../public/relcon.png"
+import Script from "next/script";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -54,17 +55,20 @@ export default function Home() {
   <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
   
   {/* Google Analytics */}
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MH7V23HY7"></script>
-  <script>
-    {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-5MH7V23HY7');
-    `}
-  </script>
+ 
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'YOUR_GA_TRACKING_ID');
+        `}
+      </Script>
+
 </Head>
 
 
@@ -249,7 +253,7 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-            I've always been eager to explore <span className="text-blue-600 dark:text-amber-300">development and analytics</span>, gaining hands-on experience by building projects,
+            I have always been eager to explore <span className="text-blue-600 dark:text-amber-300">development and analytics</span>, gaining hands-on experience by building projects,
              cloning websites, <br/> and working with data to uncover insights, refine skills, and solve real-world problems.
             </p>
           </div>
@@ -303,7 +307,7 @@ export default function Home() {
             <div>
               <p className="text-md py-2 leading-7 text-gray-400">
                 Since the beginning of my college studies I had started as a
-                Frontend Developer and i have been making clone of{" "}
+                Frontend Developer and I have been making clone of{" "}
                 <span className="text-blue-600 dark:text-amber-300">certain websites.</span>
                 <br />I offer a wide range of services, including design and
                 programming.
