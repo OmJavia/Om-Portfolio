@@ -1,5 +1,3 @@
-
-
 ---
 
 # Om Javia's Portfolio
