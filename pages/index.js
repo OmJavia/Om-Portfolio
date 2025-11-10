@@ -208,9 +208,9 @@ export default function Home() {
               <h4 className="py-4 text-blue-600 dark:text-amber-500"> Design Tools </h4>
               <ul className="space-y-1 dark:text-white" >
                 <li>VS Code</li>
-                <li>Shopify</li>
+                <li>Cursor</li>
                 <li>Figma</li>
-                <li>Word Press</li>
+                <li>Shopify</li>
               </ul>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
@@ -224,9 +224,9 @@ export default function Home() {
               <h4 className="py-4 text-blue-600 dark:text-amber-500"> Programming Languages </h4>
               <ul className="space-y-1 dark:text-white">
                 <li>Python</li>
-                <li>Java</li>
+                <li>Java Script</li>
                 <li>Html</li>
-                <li>C & C++</li>
+                <li>Java</li>
               </ul>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
@@ -240,9 +240,9 @@ export default function Home() {
               <h4 className="py-4 text-blue-600 dark:text-amber-500"> Libraries and Frameworks </h4>
               <ul className="space-y-1 dark:text-white">
                 <li>React</li>
-                <li>Next</li>
+                <li>Open CV</li>
                 <li>TailwindCSS</li>
-                <li>Anvil</li>
+                <li>RAG</li>
               </ul>
             </div>
           </div>
@@ -314,6 +314,26 @@ export default function Home() {
           </div>
           
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+            <div className="basis-1/3 flex-1">
+              <a href="https://www.nirmanbook.com/">
+                <Image
+                  src={NirmanHome}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100px"}
+                  height={"100px"}
+                  layout="responsive" alt="" />
+              </a>
+            </div>
+            <div className="basis-1/3 flex-1">
+              <a href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing">
+                <Image
+                  src={Mars}
+                  className="rounded-lg object-cover border shadow-md hover:scale-105"
+                  width={"100%"}
+                  height={"100%"}
+                  layout="responsive" alt="" />
+              </a>
+            </div>
           <div className="basis-1/3 flex-1">
               <a href="https://www.aerpace.com/">
                 <Image
@@ -344,16 +364,7 @@ export default function Home() {
                   layout="responsive" alt="" />
               </a>
             </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing">
-                <Image
-                  src={Mars}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
+            
             <div className="basis-1/3 flex-1">
               <a href="https://www.thecodingsharks.in/">
                 <Image
@@ -374,16 +385,7 @@ export default function Home() {
                   layout="responsive" alt="" />
               </a>
             </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://www.nirmanbook.com/">
-                <Image
-                  src={NirmanHome}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
+            
             <div className="basis-1/3 flex-1">
               <a href="https://apna-mechanic.vercel.app/">
                 <Image
