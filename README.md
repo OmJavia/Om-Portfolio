@@ -21,13 +21,13 @@ I'm Om Javia, a Computer Science and Engineering graduate from Medi-Caps Univers
 
 
 ## Skills
-**Programming Languages:** Python, JavaScript, HTML, CSS
-**Frameworks:** Django, React, Node.js, Tailwind, Retrieval-Augmented Generation(RAG), Llama3
-**Libraries & Tools:** OpenCV, Detectron2, YOLO, D3.js, Postman, Docker, Power BI
-**Databases:** MySQL, MongoDB
-**DevOps & Cloud:** Docker, Vercel, GitHub Actions, AWS
-**Other Tools:** Figma, Jira, Shopify
-**Version Control:** GitHub
+- **Programming Languages:** Python, JavaScript, HTML, CSS
+- **Frameworks:** Django, React, Node.js, Tailwind, Retrieval-Augmented Generation(RAG), Llama3
+- **Libraries & Tools:** OpenCV, Detectron2, YOLO, D3.js, Postman, Docker, Power BI
+- **Databases:** MySQL, MongoDB
+- **DevOps & Cloud:** Docker, Vercel, GitHub Actions, AWS
+- **Other Tools:** Figma, Jira, Shopify
+- **Version Control:** GitHub
 
 
 ## Past Experience  
@@ -44,18 +44,18 @@ I'm Om Javia, a Computer Science and Engineering graduate from Medi-Caps Univers
 
 ### **Space Applications Centre (SAC), ISRO** – *Ahmedabad, Gujarat*  
 **Research and Development Intern** (February 2024 – May 2024)  
-• Preprocessed and Annotated 800 Hi-Rise satellite image datasets and developed neural network models using PyTorch
-• Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.
+- **Preprocessed and Annotated 800 Hi-Rise satellite image datasets and developed neural network models using PyTorch.**
+- **Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.**
 
 ### **Ace Infoway** – *Rajkot, Gujarat*  
 **Software Engineer Intern** (July 2023 – August 2023)  
-• Introduced an abandoned cart push notification feature, boosting conversions by 25% on the eCommerce website.
-• Restructured Budgie Cart, integrating mobile first eCommerce capabilities to enhance the experience for 3M+ users. 
+- **Introduced an abandoned cart push notification feature, boosting conversions by 25% on the eCommerce website.**
+- **Restructured Budgie Cart, integrating mobile first eCommerce capabilities to enhance the experience for 3M+ users.** 
 
 ### **Relcon System** – *Vadodara, Gujarat*  
 **Software Engineer Intern** (June 2022 – August 2022)  
-- Redesigned a **smart fuel mobile dispensing unit**, ensuring **compatibility with 5 OS platforms** for **versatility**.  
-- Developed a **dynamic dashboard** to **monitor fuel consumption** and **manage station assignments** for efficient **operations**.  
+- **Redesigned a smart fuel mobile dispensing unit, ensuring compatibility with 5 OS platforms for versatility**.  
+- **Developed a dynamic dashboard to monitor fuel consumption and manage station assignments for efficient operations**.  
 
 
 ## Contact
