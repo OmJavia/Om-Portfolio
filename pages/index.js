@@ -251,8 +251,9 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-            I have always been eager to explore <span className="text-blue-600 dark:text-amber-300">development and analytics</span>, gaining hands-on experience by building projects,
-             cloning websites, <br/> and working with data to uncover insights, refine skills, and solve real-world problems.
+            Every experience has taught me something new <span className="text-blue-600 dark:text-amber-300"> - not just about code, but about building things that actually worked</span> for people.<br/>
+            From developing full-stack applications at startups to experimenting with AI models during research, I have learned to bridge creativity with technical problem-solving.<br/>
+            Each project, each collaboration, and even each bug has shaped how I approach software: with curiosity, precision, and a drive to make things better.<br/>
             </p>
           </div>
           <div className="lg:grid grid-cols-4 gap-10 text-center">
@@ -262,8 +263,8 @@ export default function Home() {
                 Apoliumns Infotech
               </h3>
               <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}> Software Development Engineer</h4>
-                <p style={{textAlign: "justify"}}> • Revamped The Coding Sharks website and built projects like Inventory Management, Food Delivery, and a Netflix app.<br/>
-                <br/>• Built a highly robust Hotel Management App managing 100+ room bookings and 200+ restaurant orders monthly.</p>
+                <p style={{textAlign: "justify"}}> • Implemented CI/CD pipelines on Hotel Management App to automate deployments, improving performance by 30%.<br/>
+                <br/>• Pioneered a MERN Stack Solution for Coding Sharks, integrating UI and APIs and attracting over 7K new visitors.</p>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={Sac} width={100} height={100} alt="" className="mx-auto" />
@@ -272,7 +273,7 @@ export default function Home() {
               </h3>
               <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}>Research & Development Intern  </h4>
               
-                <p style={{textAlign: "justify"}}> • Refined and fine-tuned neural network modeling on 800 Hi-Rise satellite images for accurate Mars surface analysis.<br/>
+                <p style={{textAlign: "justify"}}> • Preprocessed and Annotated 800 Hi-Rise satellite image datasets and developed neural network models using PyTorch. <br/>
                  <br/>• Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.</p>
               
             </div>
@@ -282,8 +283,8 @@ export default function Home() {
                 Ace Infoway
               </h3>
               <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}>Software Engineer Intern </h4>
-                <p style={{textAlign: "justify"}}>• Contributed to the successful integration of an abandoned cart push notification feature on the E-commerce website.<br/>
-                <br/>• Restructured Budgie Cart, integrating mobile E-commerce development features for significantly enhanced experience.</p>
+                <p style={{textAlign: "justify"}}>• Introduced an abandoned cart push notification feature, boosting conversions by 25% on the eCommerce website.<br/>
+                <br/>• Restructured Budgie Cart, integrating mobile first eCommerce capabilities to enhance the experience for 3M+ users.</p>
              
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
@@ -292,8 +293,8 @@ export default function Home() {
                 Relcon System
               </h3>
               <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}> Software Engineer Intern  </h4>
-                <p style={{textAlign: "justify"}}>• Redefined the smart fuel mobile dispensing unit, ensuring compatibility with all 5 OS platforms for versatility.<br/>
-                <br/> • Constructed a dynamic dashboard to monitor fuel consumption and manage station assignments for efficient operations.</p>
+                <p style={{textAlign: "justify"}}>• Redefined the smart fuel mobile dispensing unit, ensuring compatibility across 5 OS platforms for improved versatility.<br/>
+                <br/> • Constructed a dashboard to monitor fuel consumption and manage assignments, enhancing efficiency for 450+ stations.</p>
             </div>
           </div>
         </section>
@@ -304,11 +305,10 @@ export default function Home() {
             <h3 className="text-3xl py-1 font-semibold dark:text-white">Projects</h3>
             <div>
               <p className="text-md py-2 leading-7 text-gray-400">
-                Since the beginning of my college studies I had started as a
-                Frontend Developer and I have been making clone of{" "}
-                <span className="text-blue-600 dark:text-amber-300">certain websites.</span>
-                <br />I offer a wide range of services, including design and
-                programming.
+                Most of my projects start with a simple idea — a problem that catches my attention or something I wish existed.<br/>
+                Whether it's crafting a clean UI, building scalable systems, or experimenting with machine learning,<br/>
+                I treat every project as a way to learn, break things, and make something meaningful.<br/>
+                Below are a few of the projects that taught me the most.<br/>
               </p>
             </div>
           </div>
