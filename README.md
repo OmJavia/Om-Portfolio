@@ -1,5 +1,3 @@
----
-
 # Om Javia's Portfolio
 
 
@@ -68,8 +66,3 @@ I’m always open to connecting with like-minded individuals and exploring poten
 - **Resume:** [https:omjavia.vercel.app]
 
 Thank you for visiting my portfolio! Let’s build something great together.
-
---- 
-
-
-
