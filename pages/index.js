@@ -317,7 +317,7 @@ export default function Home() {
                   width={"100px"}
                   height={"100px"}
                   layout="responsive" alt="" />
-              </a>
+              </a> 
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing">
