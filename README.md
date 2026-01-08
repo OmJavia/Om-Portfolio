@@ -34,13 +34,13 @@ I'm Om Javia, a Computer Science and Engineering graduate from Medi-Caps Univers
 
 ### **Metashot** – *Bangalore, Karnataka*  
 **Junior Software Engineer** (July 2025 - Present)  
-• Integrated RESTful APIs across 3 microservices to cut post-release defects by 30% and improve QA velocity by 20%.
-• Optimized validation pipelines with an AI agent, automating workflows and reducing manual checks across 5+ regions.
+- **Integrated RESTful APIs across 3 microservices to cut post-release defects by 30% and improve QA velocity by 20%.**
+- **Optimized validation pipelines with an AI agent, automating workflows and reducing manual checks across 5+ regions.**
 
 ### **Apoliums Infotech** – *Indore, Madhya Pradesh*  
 **Software Development Engineer** (May 2024 – July 2025)  
-• Implemented CI/CD pipelines on Hotel Management App to automate deployments, improving performance by 30%.
-• Pioneered a MERN Stack Solution for Coding Sharks, integrating UI and APIs and attracting over 7K new visitors.  
+- **Implemented CI/CD pipelines on Hotel Management App to automate deployments, improving performance by 30%.**
+- **Pioneered a MERN Stack Solution for Coding Sharks, integrating UI and APIs and attracting over 7K new visitors.**  
 
 ### **Space Applications Centre (SAC), ISRO** – *Ahmedabad, Gujarat*  
 **Research and Development Intern** (February 2024 – May 2024)  
@@ -54,8 +54,8 @@ I'm Om Javia, a Computer Science and Engineering graduate from Medi-Caps Univers
 
 ### **Relcon System** – *Vadodara, Gujarat*  
 **Software Engineer Intern** (June 2022 – August 2022)  
-• Redefined the smart fuel mobile dispensing unit, ensuring compatibility across 5 OS platforms for improved versatility.
-• Constructed a dashboard to monitor fuel consumption and manage assignments, enhancing efficiency for 450+ stations.
+- Redesigned a **smart fuel mobile dispensing unit**, ensuring **compatibility with 5 OS platforms** for **versatility**.  
+- Developed a **dynamic dashboard** to **monitor fuel consumption** and **manage station assignments** for efficient **operations**.  
 
 
 ## Contact
