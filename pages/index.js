@@ -97,8 +97,8 @@ export default function Home() {
               Data Scientist & Full-Stack Developer
             </h3><br/>
             <p className="text-md py-2 leading-7 text-gray-500 md:text-xl max-w-lg mx-auto">
-            I am a Developer and Data Scientist passionate about building user-friendly, responsive websites using the MERN stack and Python. With a strong foundation in software engineering and machine learning, I thrive at the intersection of web development and AI, crafting intelligent solutions that drive innovation.
-            </p>
+            I am a Full-Stack Developer and Data Scientist who loves building smart, scalable, and user-friendly products.<br/>
+            I work at the intersection of AI and web development, turning ideas into intelligent, high-performance solutions.</p>
             <br></br>
             <a
               className="font-bolder bg-gradient-to-r from-rose-700 to-rose-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
@@ -128,9 +128,10 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">About Me </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-              Lost in the symphony of circuits and code, I am{" "}
-              <span className="text-blue-600 dark:text-amber-300">Om Javia</span> {" "}
-              a digital voyager navigating the boundless realms of cyberspace with boundless fascination.
+              Hey, I am 
+              <span className="text-blue-600 dark:text-amber-300"> Om Javia</span> {" "}
+              - a developer who loves building smart, scalable, and user-focused products.<br/>
+              I enjoy blending AI, design, and backend systems to solve real problems and make tech feel effortless.
             </p>
           </div>
           <div className="lg:grid grid-cols-3 gap-10 text-center">
@@ -189,11 +190,9 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Skills I offer </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-              Since the beginning of my college studies I had started as a
-              Full-Stack Developer and I have been making clone of{" "}
-              <span className="text-blue-600 dark:text-amber-300">certain websites.</span>
-              <br />I offer a wide range of services, including design and
-              programming.
+              I love building things that  
+              <span className="text-blue-600 dark:text-amber-300">look good, run fast, and make sense</span>
+              — from creative interfaces to powerful AI-driven systems
             </p>
           </div>
           <div className="lg:grid grid-cols-3 gap-10 text-center">
@@ -225,8 +224,8 @@ export default function Home() {
               <ul className="space-y-1 dark:text-white">
                 <li>Python</li>
                 <li>Java Script</li>
-                <li>Html</li>
                 <li>Java</li>
+                <li>Html</li>
               </ul>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
@@ -251,9 +250,8 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-            Every experience has taught me something new <span className="text-blue-600 dark:text-amber-300"> - not just about code, but about building things that actually worked</span> for people.<br/>
-            From developing full-stack applications at startups to experimenting with AI models during research, I have learned to bridge creativity with technical problem-solving.<br/>
-            Each project, each collaboration, and even each bug has shaped how I approach software: with curiosity, precision, and a drive to make things better.<br/>
+            Every experience has taught me something new <span className="text-blue-600 dark:text-amber-300"> - not just about code, but about building things that actually solved</span> real world problems through it.<br/>      
+            From full-stack development to AI research, I’ve learned to build with creativity, curiosity, and precision.
             </p>
           </div>
           <div className="lg:grid grid-cols-4 gap-10 text-center">
@@ -305,10 +303,8 @@ export default function Home() {
             <h3 className="text-3xl py-1 font-semibold dark:text-white">Projects</h3>
             <div>
               <p className="text-md py-2 leading-7 text-gray-400">
-                Most of my projects start with a simple idea — a problem that catches my attention or something I wish existed.<br/>
-                Whether it's crafting a clean UI, building scalable systems, or experimenting with machine learning,<br/>
-                I treat every project as a way to learn, break things, and make something meaningful.<br/>
-                Below are a few of the projects that taught me the most.<br/>
+                Every project starts with an idea — something I wish existed or could work better.<br/>
+                I love <span className="text-blue-600 dark:text-amber-300"> building, breaking, and improving things</span> that turn ideas into meaningful, working solutions.<br/>
               </p>
             </div>
           </div>
