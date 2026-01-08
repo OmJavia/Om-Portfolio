@@ -251,7 +251,7 @@ export default function Home() {
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
             Every experience has taught me something new <span className="text-blue-600 dark:text-amber-300"> - not just about code, but about building things that actually solved</span> real world problems through it.<br/>      
-            From full-stack development to AI research, I've learned to build with creativity, curiosity, and precision.
+            From full-stack development to AI research, I have learned to build with creativity, curiosity, and precision.
             </p>
           </div>
           <div className="lg:grid grid-cols-4 gap-10 text-center">
