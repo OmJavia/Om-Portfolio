@@ -54,37 +54,35 @@ export default function Home() {
           content="Portfolio of Om Javia showcasing skills and projects in full-stack development."
         />
 
-        {/* Google Analytics - Move Outside Head */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-B6B3WNX3CG"
-          strategy="afterInteractive"
-        />
+        {/* Favicon */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
+      </Head>
 
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      {/* Google Analytics - Move Outside Head */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-B6B3WNX3CG"
+        strategy="afterInteractive"
+      />
+
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-B6B3WNX3CG');
         `}
-        </Script>
+      </Script>
 
-        {/* Microsoft Clarity */}
-        <Script id="clarity" strategy="afterInteractive">
-          {`
+      {/* Microsoft Clarity */}
+      <Script id="clarity" strategy="afterInteractive">
+        {`
           (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           })(window, document, "clarity", "script", "vql2f8pqur");
         `}
-        </Script>
-
-        {/* Favicon */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
-      </Head>
-
-
+      </Script>
 
 
       <main className="p-5 md:px-20 lg:px-40 dark:bg-black">
