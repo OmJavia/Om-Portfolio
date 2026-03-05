@@ -54,24 +54,37 @@ export default function Home() {
           content="Portfolio of Om Javia showcasing skills and projects in full-stack development."
         />
 
-        {/* Favicon */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
-      </Head>
+        {/* Google Analytics - Move Outside Head */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-B6B3WNX3CG"
+          strategy="afterInteractive"
+        />
 
-      {/* Google Analytics - Move Outside Head */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-B6B3WNX3CG"
-        strategy="afterInteractive"
-      />
-
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-B6B3WNX3CG');
         `}
-      </Script>
+        </Script>
+
+        {/* Microsoft Clarity */}
+        <Script id="clarity" strategy="afterInteractive">
+          {`
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "vql2f8pqur");
+        `}
+        </Script>
+
+        {/* Favicon */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
+      </Head>
+
+
 
 
       <main className="p-5 md:px-20 lg:px-40 dark:bg-black">
@@ -129,9 +142,9 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">About Me </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-              Hey, I am 
+              Hey, I am
               <span className="text-blue-600 dark:text-amber-300"> Om Javia</span> {" "}
-              - a developer who loves building smart, scalable, and user-focused products.<br/>
+              - a developer who loves building smart, scalable, and user-focused products.<br />
               I enjoy blending AI, design, and backend systems to solve real problems and make tech feel effortless.
             </p>
           </div>
@@ -191,7 +204,7 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Skills I offer </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-              I love building things that  
+              I love building things that
               <span className="text-blue-600 dark:text-amber-300">look good, run fast, and make sense</span>
               — from creative interfaces to powerful AI-driven systems
             </p>
@@ -304,8 +317,8 @@ export default function Home() {
             <h3 className="text-3xl py-1 font-semibold dark:text-white">Projects</h3>
             <div>
               <p className="text-md py-2 leading-7 text-gray-400">
-                Every project starts with an idea — something I wish existed or could work better.<br/>
-                I love <span className="text-blue-600 dark:text-amber-300"> building, breaking, and improving things</span> that turn ideas into meaningful, working solutions.<br/>
+                Every project starts with an idea — something I wish existed or could work better.<br />
+                I love <span className="text-blue-600 dark:text-amber-300"> building, breaking, and improving things</span> that turn ideas into meaningful, working solutions.<br />
               </p>
             </div>
           </div>
@@ -319,7 +332,7 @@ export default function Home() {
                   width={"100px"}
                   height={"100px"}
                   layout="responsive" alt="" />
-              </a> 
+              </a>
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing">
