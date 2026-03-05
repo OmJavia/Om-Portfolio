@@ -1,4 +1,5 @@
 ---
+---
 
 # Om Javia's Portfolio
 
@@ -21,35 +22,41 @@ I'm Om Javia, a Computer Science and Engineering graduate from Medi-Caps Univers
 
 
 ## Skills
+- **Programming Languages:** Python, JavaScript, HTML, CSS
+- **Frameworks:** Django, React, Node.js, Tailwind, Retrieval-Augmented Generation(RAG), Llama3
+- **Libraries & Tools:** OpenCV, Detectron2, YOLO, D3.js, Postman, Docker, Power BI
+- **Databases:** MySQL, MongoDB
+- **DevOps & Cloud:** Docker, Vercel, GitHub Actions, AWS
+- **Other Tools:** Figma, Jira, Shopify
+- **Version Control:** GitHub
 
-**Languages:** Python, Java, JavaScript, HTML, CSS, C, C++, C#  
-**Frameworks:** RAG, LLama3, Django, LangChain, Ollama, NextJS, Tailwind CSS, Flask API, Fast API  
-**Libraries:** OpenCV, Detectron2, React, Node.js, Redis, YOLO  
-**Databases:** MySQL, MongoDB, ChromaDB, Postgre SQL  
-**Tools:** Docker, WordPress, Figma, Webflow, Shopify, Vercel, Postman, LabelMe, Anvil, LabelImg, Net Beans  
-**Version Control:** Git, GitHub  
 
 ## Past Experience  
 
+### **Metashot** – *Bangalore, Karnataka*  
+**Junior Software Engineer** (July 2025 - Present)  
+- **Integrated RESTful APIs across 3 microservices to cut post-release defects by 30% and improve QA velocity by 20%.**
+- **Optimized validation pipelines with an AI agent, automating workflows and reducing manual checks across 5+ regions.**
+
 ### **Apoliums Infotech** – *Indore, Madhya Pradesh*  
-**Software Development Engineer** (May 2024 – Present)  
-- Revamped **The Coding Sharks** website and developed projects like **Inventory Management**, **Food Delivery**, and a **Netflix app**.  
-- Built a **Hotel Management App** handling **100+ room bookings** and **200+ restaurant orders** per month.  
+**Software Development Engineer** (May 2024 – July 2025)  
+- **Implemented CI/CD pipelines on Hotel Management App to automate deployments, improving performance by 30%.**
+- **Pioneered a MERN Stack Solution for Coding Sharks, integrating UI and APIs and attracting over 7K new visitors.**  
 
 ### **Space Applications Centre (SAC), ISRO** – *Ahmedabad, Gujarat*  
 **Research and Development Intern** (February 2024 – May 2024)  
-- Refined and fine-tuned **neural network models** on **800 Hi-Rise satellite images** for **accurate Mars surface analysis**.  
-- Engineered **obstacle-aware path planning** for the rover, improving **navigation efficiency by 87.4%** and ensuring **safe traversal**.  
+- **Preprocessed and Annotated 800 Hi-Rise satellite image datasets and developed neural network models using PyTorch.**
+- **Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.**
 
 ### **Ace Infoway** – *Rajkot, Gujarat*  
 **Software Engineer Intern** (July 2023 – August 2023)  
-- Implemented **abandoned cart push notifications** on an **E-commerce platform**, enhancing **customer retention**.  
-- Restructured **Budgie Cart**, integrating **mobile E-commerce features** for an improved **user experience**.  
+- **Introduced an abandoned cart push notification feature, boosting conversions by 25% on the eCommerce website.**
+- **Restructured Budgie Cart, integrating mobile first eCommerce capabilities to enhance the experience for 3M+ users.** 
 
 ### **Relcon System** – *Vadodara, Gujarat*  
 **Software Engineer Intern** (June 2022 – August 2022)  
-- Redesigned a **smart fuel mobile dispensing unit**, ensuring **compatibility with 5 OS platforms** for **versatility**.  
-- Developed a **dynamic dashboard** to **monitor fuel consumption** and **manage station assignments** for efficient **operations**.  
+- **Redesigned a smart fuel mobile dispensing unit, ensuring compatibility with 5 OS platforms for versatility**.  
+- **Developed a dynamic dashboard to monitor fuel consumption and manage station assignments for efficient operations**.  
 
 
 ## Contact
@@ -62,8 +69,3 @@ I’m always open to connecting with like-minded individuals and exploring poten
 - **Resume:** [https:omjavia.vercel.app]
 
 Thank you for visiting my portfolio! Let’s build something great together.
-
---- 
-
-
-

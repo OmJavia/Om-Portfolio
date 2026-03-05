@@ -129,9 +129,10 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">About Me </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-              Lost in the symphony of circuits and code, I am{" "}
-              <span className="text-blue-600 dark:text-amber-300">Om Javia</span> {" "}
-              a digital voyager navigating the boundless realms of cyberspace with boundless fascination.
+              Hey, I am 
+              <span className="text-blue-600 dark:text-amber-300"> Om Javia</span> {" "}
+              - a developer who loves building smart, scalable, and user-focused products.<br/>
+              I enjoy blending AI, design, and backend systems to solve real problems and make tech feel effortless.
             </p>
           </div>
           <div className="lg:grid grid-cols-3 gap-10 text-center">
@@ -190,11 +191,9 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Skills I offer </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-              Since the beginning of my college studies I had started as a
-              Full-Stack Developer and I have been making clone of{" "}
-              <span className="text-blue-600 dark:text-amber-300">certain websites.</span>
-              <br />I offer a wide range of services, including design and
-              programming.
+              I love building things that  
+              <span className="text-blue-600 dark:text-amber-300">look good, run fast, and make sense</span>
+              — from creative interfaces to powerful AI-driven systems
             </p>
           </div>
           <div className="lg:grid grid-cols-3 gap-10 text-center">
@@ -226,8 +225,8 @@ export default function Home() {
               <ul className="space-y-1 dark:text-white">
                 <li>Python</li>
                 <li>Java Script</li>
-                <li>Html</li>
                 <li>Java</li>
+                <li>Html</li>
               </ul>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
@@ -305,11 +304,8 @@ export default function Home() {
             <h3 className="text-3xl py-1 font-semibold dark:text-white">Projects</h3>
             <div>
               <p className="text-md py-2 leading-7 text-gray-400">
-                Since the beginning of my college studies I had started as a
-                Frontend Developer and I have been making clone of{" "}
-                <span className="text-blue-600 dark:text-amber-300">certain websites.</span>
-                <br />I offer a wide range of services, including design and
-                programming.
+                Every project starts with an idea — something I wish existed or could work better.<br/>
+                I love <span className="text-blue-600 dark:text-amber-300"> building, breaking, and improving things</span> that turn ideas into meaningful, working solutions.<br/>
               </p>
             </div>
           </div>
@@ -323,7 +319,7 @@ export default function Home() {
                   width={"100px"}
                   height={"100px"}
                   layout="responsive" alt="" />
-              </a>
+              </a> 
             </div>
             <div className="basis-1/3 flex-1">
               <a href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing">
