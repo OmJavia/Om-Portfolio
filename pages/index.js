@@ -53,22 +53,23 @@ export default function Home() {
           name="description"
           content="Portfolio of Om Javia showcasing skills and projects in full-stack development."
         />
-        
+
         {/* Favicon */}
         <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
       </Head>
 
       {/* Google Analytics - Move Outside Head */}
       <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-B6B3WNX3CG"
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID"
       />
+
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'YOUR_GA_TRACKING_ID');
+          gtag('config', 'G-B6B3WNX3CG');
         `}
       </Script>
 
@@ -83,21 +84,21 @@ export default function Home() {
                   onClick={() => setDarkMode(!darkMode)}
                   className="cursor-pointer text-2xl dark:text-white" />
               </li>
-              <li> 
-               <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing " target="_blank" 
-                className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dark:shadow-slate-400">Resume</Link>
+              <li>
+                <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing " target="_blank"
+                  className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dark:shadow-slate-400">Resume</Link>
               </li>
             </ul>
           </nav>
           <div className="text-center mt-10 p-10">
             <h2 className="text-6xl py-2 text-blue-600 dark:text-amber-400 font-medium md:text-6xl">
               Om Javia
-            </h2><br/>
+            </h2><br />
             <h3 className="text-3xl py-2 md:text-4xl dark:text-white">
               Data Scientist & Full-Stack Developer
-            </h3><br/>
+            </h3><br />
             <p className="text-md py-2 leading-7 text-gray-500 md:text-xl max-w-lg mx-auto">
-            I am a Developer and Data Scientist passionate about building user-friendly, responsive websites using the MERN stack and Python. With a strong foundation in software engineering and machine learning, I thrive at the intersection of web development and AI, crafting intelligent solutions that drive innovation.
+              I am a Developer and Data Scientist passionate about building user-friendly, responsive websites using the MERN stack and Python. With a strong foundation in software engineering and machine learning, I thrive at the intersection of web development and AI, crafting intelligent solutions that drive innovation.
             </p>
             <br></br>
             <a
@@ -251,8 +252,8 @@ export default function Home() {
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
-            I have always been eager to explore <span className="text-blue-600 dark:text-amber-300">development and analytics</span>, gaining hands-on experience by building projects,
-             cloning websites, <br/> and working with data to uncover insights, refine skills, and solve real-world problems.
+              I have always been eager to explore <span className="text-blue-600 dark:text-amber-300">development and analytics</span>, gaining hands-on experience by building projects,
+              cloning websites, <br /> and working with data to uncover insights, refine skills, and solve real-world problems.
             </p>
           </div>
           <div className="lg:grid grid-cols-4 gap-10 text-center">
@@ -261,44 +262,44 @@ export default function Home() {
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Apoliumns Infotech
               </h3>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}> Software Development Engineer</h4>
-                <p style={{textAlign: "justify"}}> • Revamped The Coding Sharks website and built projects like Inventory Management, Food Delivery, and a Netflix app.<br/>
-                <br/>• Built a highly robust Hotel Management App managing 100+ room bookings and 200+ restaurant orders monthly.</p>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{ paddingTop: "10px" }}> Software Development Engineer</h4>
+              <p style={{ textAlign: "justify" }}> • Revamped The Coding Sharks website and built projects like Inventory Management, Food Delivery, and a Netflix app.<br />
+                <br />• Built a highly robust Hotel Management App managing 100+ room bookings and 200+ restaurant orders monthly.</p>
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={Sac} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Space Application Center
               </h3>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}>Research & Development Intern  </h4>
-              
-                <p style={{textAlign: "justify"}}> • Refined and fine-tuned neural network modeling on 800 Hi-Rise satellite images for accurate Mars surface analysis.<br/>
-                 <br/>• Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.</p>
-              
+              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{ paddingTop: "10px" }}>Research & Development Intern  </h4>
+
+              <p style={{ textAlign: "justify" }}> • Refined and fine-tuned neural network modeling on 800 Hi-Rise satellite images for accurate Mars surface analysis.<br />
+                <br />• Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.</p>
+
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={Ace} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Ace Infoway
               </h3>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}>Software Engineer Intern </h4>
-                <p style={{textAlign: "justify"}}>• Contributed to the successful integration of an abandoned cart push notification feature on the E-commerce website.<br/>
-                <br/>• Restructured Budgie Cart, integrating mobile E-commerce development features for significantly enhanced experience.</p>
-             
+              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{ paddingTop: "10px" }}>Software Engineer Intern </h4>
+              <p style={{ textAlign: "justify" }}>• Contributed to the successful integration of an abandoned cart push notification feature on the E-commerce website.<br />
+                <br />• Restructured Budgie Cart, integrating mobile E-commerce development features for significantly enhanced experience.</p>
+
             </div>
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={Relcon} width={100} height={100} alt="" className="mx-auto" />
               <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
                 Relcon System
               </h3>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{paddingTop: "10px"}}> Software Engineer Intern  </h4>
-                <p style={{textAlign: "justify"}}>• Redefined the smart fuel mobile dispensing unit, ensuring compatibility with all 5 OS platforms for versatility.<br/>
-                <br/> • Constructed a dynamic dashboard to monitor fuel consumption and manage station assignments for efficient operations.</p>
+              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{ paddingTop: "10px" }}> Software Engineer Intern  </h4>
+              <p style={{ textAlign: "justify" }}>• Redefined the smart fuel mobile dispensing unit, ensuring compatibility with all 5 OS platforms for versatility.<br />
+                <br /> • Constructed a dynamic dashboard to monitor fuel consumption and manage station assignments for efficient operations.</p>
             </div>
           </div>
         </section>
-        <br/>
-              
+        <br />
+
         <section>
           <div>
             <h3 className="text-3xl py-1 font-semibold dark:text-white">Projects</h3>
@@ -312,7 +313,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          
+
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             <div className="basis-1/3 flex-1">
               <a href="https://www.nirmanbook.com/">
@@ -334,7 +335,7 @@ export default function Home() {
                   layout="responsive" alt="" />
               </a>
             </div>
-          <div className="basis-1/3 flex-1">
+            <div className="basis-1/3 flex-1">
               <a href="https://www.aerpace.com/">
                 <Image
                   src={aerpace}
@@ -364,7 +365,7 @@ export default function Home() {
                   layout="responsive" alt="" />
               </a>
             </div>
-            
+
             <div className="basis-1/3 flex-1">
               <a href="https://www.thecodingsharks.in/">
                 <Image
@@ -385,7 +386,7 @@ export default function Home() {
                   layout="responsive" alt="" />
               </a>
             </div>
-            
+
             <div className="basis-1/3 flex-1">
               <a href="https://apna-mechanic.vercel.app/">
                 <Image
