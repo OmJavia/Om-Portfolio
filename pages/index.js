@@ -6,6 +6,18 @@ import {
   AiFillLinkedin,
   AiFillGithub,
 } from "react-icons/ai";
+
+import { 
+  SiPython, SiJavascript, SiNumpy, SiPandas, SiPytorch, 
+  SiOpencv, SiMysql, SiMongodb, SiRedis, SiDocker, SiAmazonaws, 
+  SiGithubactions, SiVercel, SiGit, SiPostman
+} from "react-icons/si";
+
+import { 
+  FaBrain, FaEye, FaLanguage, FaDatabase, FaKeyboard, 
+  FaLink, FaRobot, FaSearchLocation, FaCubes, FaExternalLinkSquareAlt
+} from "react-icons/fa";
+
 import Image from "next/image";
 import peeps from "../public/Om_pic.jpg";
 import design from "../public/design.png";
@@ -58,31 +70,6 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
       </Head>
 
-      {/* Google Analytics - Move Outside Head */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-B6B3WNX3CG"
-        strategy="afterInteractive"
-      />
-
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-B6B3WNX3CG');
-        `}
-      </Script>
-
-      {/* Microsoft Clarity */}
-      <Script id="clarity" strategy="afterInteractive">
-        {`
-          (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "vql2f8pqur");
-        `}
-      </Script>
 
 
       <main className="p-5 md:px-20 lg:px-40 dark:bg-black">
@@ -258,7 +245,61 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="mt-10">
+        
+        <section className="mt-10 mb-20">
+          <div className="text-center mb-10">
+            <h3 className="text-4xl font-bold py-1 dark:text-white inline-flex items-center gap-2">
+              <span className="text-slate-800 dark:text-white">Technical</span>
+              <span className="text-blue-600 dark:text-amber-400">Skills</span>
+              <span className="text-3xl">👨‍💻</span>
+            </h3>
+            <p className="text-md py-2 leading-7 text-gray-400">
+              The tools, languages, and frameworks I use to bring ideas to life.
+            </p>
+          </div>
+          
+          <div className="flex justify-center flex-wrap px-4">
+            <div className="bg-white dark:bg-slate-900 shadow-2xl rounded-3xl p-10 max-w-5xl w-full border border-gray-100 dark:border-gray-800 hover:shadow-blue-500/10 transition-shadow duration-500">
+              <div className="flex flex-wrap justify-center gap-6 md:gap-10 sm:gap-8 items-center">
+                
+                {/* Languages */}
+                <SiPython className="text-6xl sm:text-7xl text-[#3776AB] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Python" />
+                <SiJavascript className="text-6xl sm:text-7xl text-[#F7DF1E] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="JavaScript" />
+
+                {/* AI & ML */}
+                <FaEye className="text-6xl sm:text-7xl text-blue-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Computer Vision" />
+                <FaLanguage className="text-6xl sm:text-7xl text-purple-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="NLP" />
+                <FaCubes className="text-6xl sm:text-7xl text-indigo-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="RAG" />
+                <FaKeyboard className="text-6xl sm:text-7xl text-gray-600 dark:text-gray-300 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Prompt Engineering" />
+                <FaLink className="text-6xl sm:text-7xl text-slate-700 dark:text-slate-400 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="LangChain" />
+                <FaRobot className="text-6xl sm:text-7xl text-yellow-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Hugging Face" />
+                <FaBrain className="text-6xl sm:text-7xl text-pink-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Deep Learning" />
+                <SiNumpy className="text-6xl sm:text-7xl text-[#013243] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="NumPy" />
+                <SiPandas className="text-6xl sm:text-7xl text-[#150458] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Pandas" />
+                <SiPytorch className="text-6xl sm:text-7xl text-[#EE4C2C] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="PyTorch" />
+                <SiOpencv className="text-6xl sm:text-7xl text-[#5C3EE8] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="OpenCV" />
+                <FaExternalLinkSquareAlt className="text-6xl sm:text-7xl text-teal-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Detectron2" />
+                <FaSearchLocation className="text-6xl sm:text-7xl text-orange-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="YOLO" />
+
+                {/* Databases */}
+                <SiMysql className="text-6xl sm:text-7xl text-[#4479A1] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="MySQL" />
+                <SiMongodb className="text-6xl sm:text-7xl text-[#47A248] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="MongoDB" />
+                <FaDatabase className="text-6xl sm:text-7xl text-emerald-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="ChromaDB" />
+                <SiRedis className="text-6xl sm:text-7xl text-[#DC382D] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Redis" />
+
+                {/* DevOps & Tools */}
+                <SiDocker className="text-6xl sm:text-7xl text-[#2496ED] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Docker" />
+                <SiAmazonaws className="text-6xl sm:text-7xl text-[#232F3E] dark:text-white hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="AWS" />
+                <SiGithubactions className="text-6xl sm:text-7xl text-[#2088FF] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="GitHub Actions" />
+                <SiVercel className="text-6xl sm:text-7xl text-black dark:text-white hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Vercel" />
+                <SiGit className="text-6xl sm:text-7xl text-[#F05032] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Git" />
+                <SiPostman className="text-6xl sm:text-7xl text-[#FF6C37] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Postman" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+<section className="mt-10">
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
@@ -266,46 +307,200 @@ export default function Home() {
               cloning websites, <br /> and working with data to uncover insights, refine skills, and solve real-world problems.
             </p>
           </div>
-          <div className="lg:grid grid-cols-4 gap-10 text-center">
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Apoliums} width={100} height={100} alt="" className="mx-auto" />
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
-                Apoliumns Infotech
-              </h3>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{ paddingTop: "10px" }}> Software Development Engineer</h4>
-              <p style={{ textAlign: "justify" }}> • Revamped The Coding Sharks website and built projects like Inventory Management, Food Delivery, and a Netflix app.<br />
-                <br />• Built a highly robust Hotel Management App managing 100+ room bookings and 200+ restaurant orders monthly.</p>
-            </div>
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Sac} width={100} height={100} alt="" className="mx-auto" />
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
-                Space Application Center
-              </h3>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{ paddingTop: "10px" }}>Research & Development Intern  </h4>
+          <div className="relative max-w-5xl mx-auto py-10 mt-10">
+            {/* The central line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 border-l-2 border-dashed border-teal-500 dark:border-teal-700 hidden md:block"></div>
 
-              <p style={{ textAlign: "justify" }}> • Refined and fine-tuned neural network modeling on 800 Hi-Rise satellite images for accurate Mars surface analysis.<br />
-                <br />• Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.</p>
+            {/* Experience Item 1: Metashot (Left side) */}
+            <div className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group">
+              {/* Left (Card) */}
+              <div className="order-1 w-full md:w-5/12">
+                <div className="shadow-lg border border-gray-100 dark:border-gray-800 p-6 rounded-2xl dark:bg-slate-900 bg-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <Image src={Ai} width={60} height={60} alt="Metashot" className="rounded-lg shadow-sm" />
+                    <div>
+                      <h3 className="text-xl font-bold dark:text-amber-300 text-slate-800">Metashot</h3>
+                      <h4 className="text-sm font-semibold text-blue-600 dark:text-amber-500">AI Engineer</h4>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                     <span className="text-xs bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 px-3 py-1 rounded-full font-medium">OpenCV</span>
+                     <span className="text-xs bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 px-3 py-1 rounded-full font-medium">Deep Learning</span>
+                     <span className="text-xs bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 px-3 py-1 rounded-full font-medium">PyTorch</span>
+                  </div>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
+                    <li>Strengthened real-time cricket shot detection by 33% using OpenCV and deep learning, integrated into Unity engine.</li>
+                    <li>Refined churn prediction and user segmentation models, increasing retention by 17% & repeat play frequency by 21%.</li>
+                    <li>Optimized computer vision pipelines using PyTorch and OpenCV, reducing real-time prediction latency by 28%.</li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Center Dot */}
+              <div className="z-20 flex items-center justify-center order-1 w-12 h-12 rounded-full bg-emerald-500 shadow-xl border-4 border-white dark:border-black absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:-translate-y-0 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span className="text-white text-xl">🏏</span>
+              </div>
 
+              {/* Right (Date/Location) */}
+              <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
+                <p className="text-lg font-bold text-gray-700 dark:text-gray-300">July 2025 - Present</p>
+                <p className="text-sm text-gray-500 font-medium">Om Javia</p>
+                <p className="text-sm text-gray-500">Bangalore, Karnataka</p>
+              </div>
             </div>
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Ace} width={100} height={100} alt="" className="mx-auto" />
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
-                Ace Infoway
-              </h3>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{ paddingTop: "10px" }}>Software Engineer Intern </h4>
-              <p style={{ textAlign: "justify" }}>• Contributed to the successful integration of an abandoned cart push notification feature on the E-commerce website.<br />
-                <br />• Restructured Budgie Cart, integrating mobile E-commerce development features for significantly enhanced experience.</p>
 
+            {/* Experience Item 2: Apoliums Infotech (Right side) */}
+            <div className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group">
+              {/* Left (Date/Location) */}
+              <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
+                <p className="text-lg font-bold text-gray-700 dark:text-gray-300">May 2024 - July 2025</p>
+                <p className="text-sm text-gray-500 font-medium">Om Javia</p>
+                <p className="text-sm text-gray-500">Indore, Madhya Pradesh</p>
+              </div>
+
+              {/* Center Dot */}
+              <div className="z-20 flex items-center justify-center order-1 w-12 h-12 rounded-full bg-orange-500 shadow-xl border-4 border-white dark:border-black absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:-translate-y-0 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span className="text-white text-xl">💼</span>
+              </div>
+
+              {/* Right (Card) */}
+              <div className="order-1 md:order-2 w-full md:w-5/12">
+                <div className="shadow-lg border border-gray-100 dark:border-gray-800 p-6 rounded-2xl dark:bg-slate-900 bg-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <Image src={Apoliums} width={60} height={60} alt="Apoliums" className="rounded-lg shadow-sm" />
+                    <div>
+                      <h3 className="text-xl font-bold dark:text-amber-300 text-slate-800">Apoliums Infotech</h3>
+                      <h4 className="text-sm font-semibold text-blue-600 dark:text-amber-500">Associate AI Engineer</h4>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                     <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">Python</span>
+                     <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">Pandas</span>
+                     <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">FastAPI</span>
+                     <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">CI/CD</span>
+                  </div>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
+                    <li>Architected feature engineering and preprocessing pipelines in Python and Pandas, cutting model training time by 25%.</li>
+                    <li>Deployed FastAPI endpoints for real-time ML model predictions, contributing to 7K+ user growth on the platform.</li>
+                    <li>Automated model deployment workflows with CI/CD, shortening release cycles and boosting performance by 30%.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Relcon} width={100} height={100} alt="" className="mx-auto" />
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
-                Relcon System
-              </h3>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500" style={{ paddingTop: "10px" }}> Software Engineer Intern  </h4>
-              <p style={{ textAlign: "justify" }}>• Redefined the smart fuel mobile dispensing unit, ensuring compatibility with all 5 OS platforms for versatility.<br />
-                <br /> • Constructed a dynamic dashboard to monitor fuel consumption and manage station assignments for efficient operations.</p>
+
+            {/* Experience Item 3: ISRO (Left side) */}
+            <div className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group">
+              {/* Left (Card) */}
+              <div className="order-1 w-full md:w-5/12">
+                <div className="shadow-lg border border-gray-100 dark:border-gray-800 p-6 rounded-2xl dark:bg-slate-900 bg-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <Image src={Sac} width={60} height={60} alt="ISRO" className="rounded-lg shadow-sm bg-white" />
+                    <div>
+                      <h3 className="text-xl font-bold dark:text-amber-300 text-slate-800 leading-tight">Indian Space Research Organisation (ISRO)</h3>
+                      <h4 className="text-sm font-semibold text-blue-600 dark:text-amber-500 mt-1">Research & Development Intern</h4>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                     <span className="text-xs bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-300 px-3 py-1 rounded-full font-medium">PyTorch</span>
+                     <span className="text-xs bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-300 px-3 py-1 rounded-full font-medium">Neural Networks</span>
+                     <span className="text-xs bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-300 px-3 py-1 rounded-full font-medium">Path Planning</span>
+                  </div>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
+                    <li>Preprocessed and annotated 800 HiRISE satellite image datasets and developed neural network models using PyTorch.</li>
+                    <li>Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.</li>
+                    <li>Labeled 5 terrain types (including craters and boulders) to build high-quality datasets for rover navigation models.</li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Center Dot */}
+              <div className="z-20 flex items-center justify-center order-1 w-12 h-12 rounded-full bg-red-500 shadow-xl border-4 border-white dark:border-black absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:-translate-y-0 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span className="text-white text-xl">🚀</span>
+              </div>
+
+              {/* Right (Date/Location) */}
+              <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
+                <p className="text-lg font-bold text-gray-700 dark:text-gray-300">February 2024 - May 2024</p>
+                <p className="text-sm text-gray-500 font-medium">Om Javia</p>
+                <p className="text-sm text-gray-500">Ahmedabad, Gujarat</p>
+              </div>
             </div>
+
+            {/* Experience Item 4: Ace Infoway (Right side) */}
+            <div className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group">
+              {/* Left (Date/Location) */}
+              <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
+                <p className="text-lg font-bold text-gray-700 dark:text-gray-300">July 2023 - August 2023</p>
+                <p className="text-sm text-gray-500 font-medium">Om Javia</p>
+                <p className="text-sm text-gray-500">Rajkot, Gujarat</p>
+              </div>
+
+              {/* Center Dot */}
+              <div className="z-20 flex items-center justify-center order-1 w-12 h-12 rounded-full bg-purple-500 shadow-xl border-4 border-white dark:border-black absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:-translate-y-0 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span className="text-white text-xl">💻</span>
+              </div>
+
+              {/* Right (Card) */}
+              <div className="order-1 md:order-2 w-full md:w-5/12">
+                <div className="shadow-lg border border-gray-100 dark:border-gray-800 p-6 rounded-2xl dark:bg-slate-900 bg-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <Image src={Ace} width={60} height={60} alt="Ace Infoway" className="rounded-lg shadow-sm" />
+                    <div>
+                      <h3 className="text-xl font-bold dark:text-amber-300 text-slate-800">Ace Infoway</h3>
+                      <h4 className="text-sm font-semibold text-blue-600 dark:text-amber-500">Software Engineer Intern</h4>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                     <span className="text-xs bg-purple-100 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300 px-3 py-1 rounded-full font-medium">E-Commerce</span>
+                     <span className="text-xs bg-purple-100 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300 px-3 py-1 rounded-full font-medium">Frontend</span>
+                     <span className="text-xs bg-purple-100 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300 px-3 py-1 rounded-full font-medium">APIs</span>
+                  </div>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
+                    <li>Introduced an abandoned cart push notification feature, boosting conversions by 25% on the eCommerce website.</li>
+                    <li>Restructured Budgie Cart, integrating mobile-first eCommerce capabilities & enhancing the experience for 3M+ users.</li>
+                    <li>Accelerated page load performance by optimizing frontend assets and APIs, reducing average load time by 30%.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Experience Item 5: Relcon System (Left side) */}
+            <div className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group">
+              {/* Left (Card) */}
+              <div className="order-1 w-full md:w-5/12">
+                <div className="shadow-lg border border-gray-100 dark:border-gray-800 p-6 rounded-2xl dark:bg-slate-900 bg-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <Image src={Relcon} width={60} height={60} alt="Relcon System" className="rounded-lg shadow-sm" />
+                    <div>
+                      <h3 className="text-xl font-bold dark:text-amber-300 text-slate-800">Relcon System</h3>
+                      <h4 className="text-sm font-semibold text-blue-600 dark:text-amber-500">Software Engineer Intern</h4>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                     <span className="text-xs bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300 px-3 py-1 rounded-full font-medium">Dashboard</span>
+                     <span className="text-xs bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300 px-3 py-1 rounded-full font-medium">Operations</span>
+                  </div>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
+                    <li>Redefined the smart fuel mobile dispensing unit, ensuring compatibility across 5 OS platforms for improved versatility.</li>
+                    <li>Constructed a dashboard to monitor fuel consumption and manage assignments, enhancing efficiency for 450+ stations.</li>
+                    <li>Facilitated real-time monitoring of fuel dispensing operations, improving overall operational efficiency by 25%.</li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Center Dot */}
+              <div className="z-20 flex items-center justify-center order-1 w-12 h-12 rounded-full bg-blue-500 shadow-xl border-4 border-white dark:border-black absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:-translate-y-0 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span className="text-white text-xl">⚙️</span>
+              </div>
+
+              {/* Right (Date/Location) */}
+              <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
+                <p className="text-lg font-bold text-gray-700 dark:text-gray-300">June 2022 - August 2022</p>
+                <p className="text-sm text-gray-500 font-medium">Om Javia</p>
+                <p className="text-sm text-gray-500">Vadodara, Gujarat</p>
+              </div>
+            </div>
+
           </div>
         </section>
         <br />
