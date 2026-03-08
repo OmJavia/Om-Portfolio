@@ -7,14 +7,14 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 
-import { 
-  SiPython, SiJavascript, SiNumpy, SiPandas, SiPytorch, 
-  SiOpencv, SiMysql, SiMongodb, SiRedis, SiDocker, SiAmazonaws, 
+import {
+  SiPython, SiJavascript, SiNumpy, SiPandas, SiPytorch,
+  SiOpencv, SiMysql, SiMongodb, SiRedis, SiDocker, SiAmazonaws,
   SiGithubactions, SiVercel, SiGit, SiPostman
 } from "react-icons/si";
 
-import { 
-  FaBrain, FaEye, FaLanguage, FaDatabase, FaKeyboard, 
+import {
+  FaBrain, FaEye, FaLanguage, FaDatabase, FaKeyboard,
   FaLink, FaRobot, FaSearchLocation, FaCubes, FaExternalLinkSquareAlt
 } from "react-icons/fa";
 
@@ -43,6 +43,7 @@ import { useState } from "react";
 import QR from "../public/Download Resume.png";
 import Link from "next/link";
 import Dryer from "../public/Dryer.png";
+import Metashot from "../public/Metashot.png";
 import CodingShark from "../public/Coding-Shark.png";
 import netflix from "../public/netflix.png";
 import aerpace from "../public/aerpace.png";
@@ -245,7 +246,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+
         <section className="mt-10 mb-20">
           <div className="text-center mb-10">
             <h3 className="text-4xl font-bold py-1 dark:text-white inline-flex items-center gap-2">
@@ -257,11 +258,11 @@ export default function Home() {
               The tools, languages, and frameworks I use to bring ideas to life.
             </p>
           </div>
-          
+
           <div className="flex justify-center flex-wrap px-4">
             <div className="bg-white dark:bg-slate-900 shadow-2xl rounded-3xl p-10 max-w-5xl w-full border border-gray-100 dark:border-gray-800 hover:shadow-blue-500/10 transition-shadow duration-500">
               <div className="flex flex-wrap justify-center gap-6 md:gap-10 sm:gap-8 items-center">
-                
+
                 {/* Languages */}
                 <SiPython className="text-6xl sm:text-7xl text-[#3776AB] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Python" />
                 <SiJavascript className="text-6xl sm:text-7xl text-[#F7DF1E] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="JavaScript" />
@@ -299,7 +300,7 @@ export default function Home() {
           </div>
         </section>
 
-<section className="mt-10">
+        <section className="mt-10">
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
@@ -317,16 +318,16 @@ export default function Home() {
               <div className="order-1 w-full md:w-5/12">
                 <div className="shadow-lg border border-gray-100 dark:border-gray-800 p-6 rounded-2xl dark:bg-slate-900 bg-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/10">
                   <div className="flex items-center gap-4 mb-4">
-                    <Image src={Ai} width={60} height={60} alt="Metashot" className="rounded-lg shadow-sm" />
+                    <Image src={Metashot} width={60} height={60} alt="Metashot" className="rounded-lg shadow-sm" />
                     <div>
                       <h3 className="text-xl font-bold dark:text-amber-300 text-slate-800">Metashot</h3>
                       <h4 className="text-sm font-semibold text-blue-600 dark:text-amber-500">AI Engineer</h4>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2 mb-4">
-                     <span className="text-xs bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 px-3 py-1 rounded-full font-medium">OpenCV</span>
-                     <span className="text-xs bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 px-3 py-1 rounded-full font-medium">Deep Learning</span>
-                     <span className="text-xs bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 px-3 py-1 rounded-full font-medium">PyTorch</span>
+                    <span className="text-xs bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 px-3 py-1 rounded-full font-medium">OpenCV</span>
+                    <span className="text-xs bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 px-3 py-1 rounded-full font-medium">Deep Learning</span>
+                    <span className="text-xs bg-emerald-100 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300 px-3 py-1 rounded-full font-medium">PyTorch</span>
                   </div>
                   <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
                     <li>Strengthened real-time cricket shot detection by 33% using OpenCV and deep learning, integrated into Unity engine.</li>
@@ -335,7 +336,7 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
-              
+
               {/* Center Dot */}
               <div className="z-20 flex items-center justify-center order-1 w-12 h-12 rounded-full bg-emerald-500 shadow-xl border-4 border-white dark:border-black absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:-translate-y-0 hidden md:flex transition-transform duration-300 group-hover:scale-110">
                 <span className="text-white text-xl">🏏</span>
@@ -374,10 +375,10 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2 mb-4">
-                     <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">Python</span>
-                     <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">Pandas</span>
-                     <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">FastAPI</span>
-                     <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">CI/CD</span>
+                    <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">Python</span>
+                    <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">Pandas</span>
+                    <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">FastAPI</span>
+                    <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">CI/CD</span>
                   </div>
                   <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
                     <li>Architected feature engineering and preprocessing pipelines in Python and Pandas, cutting model training time by 25%.</li>
@@ -401,9 +402,9 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2 mb-4">
-                     <span className="text-xs bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-300 px-3 py-1 rounded-full font-medium">PyTorch</span>
-                     <span className="text-xs bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-300 px-3 py-1 rounded-full font-medium">Neural Networks</span>
-                     <span className="text-xs bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-300 px-3 py-1 rounded-full font-medium">Path Planning</span>
+                    <span className="text-xs bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-300 px-3 py-1 rounded-full font-medium">PyTorch</span>
+                    <span className="text-xs bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-300 px-3 py-1 rounded-full font-medium">Neural Networks</span>
+                    <span className="text-xs bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-300 px-3 py-1 rounded-full font-medium">Path Planning</span>
                   </div>
                   <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
                     <li>Preprocessed and annotated 800 HiRISE satellite image datasets and developed neural network models using PyTorch.</li>
@@ -412,7 +413,7 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
-              
+
               {/* Center Dot */}
               <div className="z-20 flex items-center justify-center order-1 w-12 h-12 rounded-full bg-red-500 shadow-xl border-4 border-white dark:border-black absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:-translate-y-0 hidden md:flex transition-transform duration-300 group-hover:scale-110">
                 <span className="text-white text-xl">🚀</span>
@@ -451,9 +452,9 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2 mb-4">
-                     <span className="text-xs bg-purple-100 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300 px-3 py-1 rounded-full font-medium">E-Commerce</span>
-                     <span className="text-xs bg-purple-100 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300 px-3 py-1 rounded-full font-medium">Frontend</span>
-                     <span className="text-xs bg-purple-100 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300 px-3 py-1 rounded-full font-medium">APIs</span>
+                    <span className="text-xs bg-purple-100 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300 px-3 py-1 rounded-full font-medium">E-Commerce</span>
+                    <span className="text-xs bg-purple-100 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300 px-3 py-1 rounded-full font-medium">Frontend</span>
+                    <span className="text-xs bg-purple-100 text-purple-600 dark:bg-purple-500/20 dark:text-purple-300 px-3 py-1 rounded-full font-medium">APIs</span>
                   </div>
                   <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
                     <li>Introduced an abandoned cart push notification feature, boosting conversions by 25% on the eCommerce website.</li>
@@ -477,8 +478,8 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2 mb-4">
-                     <span className="text-xs bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300 px-3 py-1 rounded-full font-medium">Dashboard</span>
-                     <span className="text-xs bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300 px-3 py-1 rounded-full font-medium">Operations</span>
+                    <span className="text-xs bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300 px-3 py-1 rounded-full font-medium">Dashboard</span>
+                    <span className="text-xs bg-blue-100 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300 px-3 py-1 rounded-full font-medium">Operations</span>
                   </div>
                   <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
                     <li>Redefined the smart fuel mobile dispensing unit, ensuring compatibility across 5 OS platforms for improved versatility.</li>
@@ -487,7 +488,7 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
-              
+
               {/* Center Dot */}
               <div className="z-20 flex items-center justify-center order-1 w-12 h-12 rounded-full bg-blue-500 shadow-xl border-4 border-white dark:border-black absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:-translate-y-0 hidden md:flex transition-transform duration-300 group-hover:scale-110">
                 <span className="text-white text-xl">⚙️</span>
