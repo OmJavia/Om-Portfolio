@@ -20,9 +20,7 @@ import {
 
 import Image from "next/image";
 import peeps from "../public/Om_pic.jpg";
-import design from "../public/design.png";
-import code from "../public/code.png";
-import consulting from "../public/consulting.png";
+
 import Html from "../public/Html.png";
 import anvil from "../public/anvil.png";
 import tesla from "../public/tesla.png";
@@ -94,10 +92,10 @@ export default function Home() {
               Om Javia
             </h2><br />
             <h3 className="text-3xl py-2 md:text-4xl dark:text-white">
-              Data Scientist & Full-Stack Developer
+              AI Engineer
             </h3><br />
             <p className="text-md py-2 leading-7 text-gray-500 md:text-xl max-w-lg mx-auto">
-              I am a Developer and Data Scientist passionate about building user-friendly, responsive websites using the MERN stack and Python. With a strong foundation in software engineering and machine learning, I thrive at the intersection of web development and AI, crafting intelligent solutions that drive innovation.
+              I am an AI Engineer passionate about building intelligent systems and solving complex problems. Specializing in Computer Vision, NLP, and Machine Learning, I thrive on developing scalable, data-driven solutions that drive innovation and efficiency using modern tools like PyTorch, LangChain, and Hugging Face.
             </p>
             <br></br>
             <a
@@ -130,8 +128,8 @@ export default function Home() {
             <p className="text-md py-2 leading-7 text-gray-400">
               Hey, I am
               <span className="text-blue-600 dark:text-amber-300"> Om Javia</span> {" "}
-              - a developer who loves building smart, scalable, and user-focused products.<br />
-              I enjoy blending AI, design, and backend systems to solve real problems and make tech feel effortless.
+              - an AI Engineer who loves building smart, scalable, and impactful AI models.<br />
+              I enjoy blending deep learning, computer vision, and backend systems to solve real-world problems and build intelligent products.
             </p>
           </div>
           <div className="lg:grid grid-cols-3 gap-10 text-center">
@@ -186,66 +184,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="mt-10">
-          <div>
-            <h3 className="text-3xl font-semibold py-1 dark:text-white">Skills I offer </h3>
-            <p className="text-md py-2 leading-7 text-gray-400">
-              I love building things that
-              <span className="text-blue-600 dark:text-amber-300">look good, run fast, and make sense</span>
-              — from creative interfaces to powerful AI-driven systems
-            </p>
-          </div>
-          <div className="lg:grid grid-cols-3 gap-10 text-center">
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={design} width={100} height={100} alt="" className="mx-auto" />
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
-                Beautiful Designs
-              </h3>
-              <p className="py-2 dark:text-teal-50">
-                where creativity meets functionality, crafting intuitive solutions that empower innovation.
-              </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500"> Design Tools </h4>
-              <ul className="space-y-1 dark:text-white" >
-                <li>VS Code</li>
-                <li>Cursor</li>
-                <li>Figma</li>
-                <li>Shopify</li>
-              </ul>
-            </div>
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={code} width={100} height={100} alt="" className="mx-auto" />
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
-                Programming
-              </h3>
-              <p className="py-2 dark:text-teal-50">
-                where ideas take shape in syntax, bridging human creativity with computational power.
-              </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500"> Programming Languages </h4>
-              <ul className="space-y-1 dark:text-white">
-                <li>Python</li>
-                <li>Java Script</li>
-                <li>Java</li>
-                <li>Html</li>
-              </ul>
-            </div>
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={consulting} width={100} height={100} alt="" className="mx-auto" />
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
-                Coding of Design
-              </h3>
-              <p className="py-2 dark:text-teal-50">
-                where development accelerates as powerful tools empower creativity and efficiency.
-              </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500"> Libraries and Frameworks </h4>
-              <ul className="space-y-1 dark:text-white">
-                <li>React</li>
-                <li>Open CV</li>
-                <li>TailwindCSS</li>
-                <li>RAG</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+
 
         <section className="mt-10 mb-20">
           <div className="text-center mb-10">
