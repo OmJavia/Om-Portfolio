@@ -75,7 +75,7 @@ export default function Contact() {
                   <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Name</label>
                   <input
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="Om Javia"
                     className="w-full bg-blue-50/50 dark:bg-slate-800 border-none rounded-xl px-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-teal-500 transition-all"
                   />
                 </div>
@@ -83,7 +83,7 @@ export default function Contact() {
                   <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email</label>
                   <input
                     type="email"
-                    placeholder="johndoe@gmail.com"
+                    placeholder="omjavia18@gmail.com"
                     className="w-full bg-blue-50/50 dark:bg-slate-800 border-none rounded-xl px-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-teal-500 transition-all"
                   />
                 </div>
