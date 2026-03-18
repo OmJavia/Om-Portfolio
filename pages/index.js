@@ -55,6 +55,18 @@ import Script from "next/script";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const [colorIndex, setColorIndex] = useState(0);
+  const accentColors = [
+    "#3b82f6", // blue
+    "#10b981", // emerald
+    "#f59e0b", // amber
+    "#8b5cf6", // violet
+    "#ec4899", // pink
+    "#ef4444", // red
+    "#06b6d4", // cyan
+    "#f97316", // orange
+  ];
+  const cycleColor = () => setColorIndex((prev) => (prev + 1) % accentColors.length);
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -72,57 +84,103 @@ export default function Home() {
 
 
       <main className="p-5 md:px-20 lg:px-40 dark:bg-black">
-        <section id="footer" className="min-h-screen">
-          <nav className="p-10 flex justify-between rounded-md">
-            <h1 className="text-2xl font-semibold dark:text-white">Om Javia</h1>
-            <ul className="flex items-center">
+        <section id="home">
+          <nav className="px-6 py-4 flex items-center justify-between">
+            <h1 className="text-xl font-bold dark:text-white">Om Javia</h1>
+            <ul className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+              <li><a href="#skills" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Technical Skills</a></li>
+              <li><a href="#experience" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Past Experiences</a></li>
+              <li><a href="#projects" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Projects</a></li>
+              <li><Link href="/contact" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Contact</Link></li>
+            </ul>
+            <ul className="flex items-center gap-4">
               <li>
                 <BsFillMoonStarsFill
                   onClick={() => setDarkMode(!darkMode)}
-                  className="cursor-pointer text-2xl dark:text-white" />
+                  className="cursor-pointer text-xl dark:text-white" />
               </li>
               <li>
-                <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing " target="_blank"
-                  className="font-bolder bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dark:shadow-slate-400">Resume</Link>
+                <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing" target="_blank"
+                  style={{ backgroundColor: accentColors[colorIndex] }}
+                  className="text-white px-4 py-2 rounded-md font-semibold text-sm shadow-md dark:shadow-slate-400">Resume</Link>
               </li>
             </ul>
           </nav>
-          <div className="text-center mt-10 p-10">
-            <h2 className="text-6xl py-2 text-blue-600 dark:text-amber-400 font-medium md:text-6xl">
-              Om Javia
-            </h2><br />
-            <h3 className="text-3xl py-2 md:text-4xl dark:text-white">
-              AI Engineer
-            </h3><br />
-            <p className="text-md py-2 leading-7 text-gray-500 md:text-xl max-w-lg mx-auto">
-              I am an AI Engineer passionate about building intelligent systems and solving complex problems. Specializing in Computer Vision, NLP, and Machine Learning, I thrive on developing scalable, data-driven solutions that drive innovation and efficiency using modern tools like PyTorch, LangChain, and Hugging Face.
-            </p>
-            <br></br>
-            <a
-              className="font-bolder bg-gradient-to-r from-rose-700 to-rose-500 text-white font-bolder px-4 py-2 rounded-md ml-8 font-semibold shadow-md dar:shadow-slate-400"
-              href="https://cal.com/Om-Javia">
-              Schedule a Meeting
-            </a>
+          {/* Hero Content - Two Column */}
+          <div
+            className="flex flex-col-reverse md:flex-row items-center justify-between px-4 pt-6 pb-12 gap-10 cursor-pointer select-none"
+            onClick={cycleColor}
+          >
 
-          </div>
+            {/* Left: Text */}
+            <div className="flex-1 flex flex-col gap-6">
+              {/* Badge */}
+              {/* <div className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 rounded-full px-4 py-1 w-fit text-sm text-gray-600 dark:text-gray-300">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                Hello, I&apos;m an AI Engineer based in India
+              </div> */}
 
-          <div className="text-5xl flex justify-center gap-10 text-gray-600">
-            <a href="https://twitter.com/OmJavia1">
-              <AiFillTwitterCircle className="hover:text-blue-500 dark:hover:text-amber-500" />
-            </a>
-            <a href="https://www.linkedin.com/in/omjavia/">
-              <AiFillLinkedin className="hover:text-blue-500 dark:hover:text-amber-500" />
-            </a>
-            <a href="https://github.com/omjavia">
-              <AiFillGithub className="hover:text-blue-500 dark:hover:text-amber-500" />
-            </a>
-            {/* <AiFillInstagram className= 'hover:text-pink-600'/> */}
-          </div>
-          <div className="relative mx-auto rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
-            <Image src={peeps} layout="fill" alt="" />
+              {/* Big Heading */}
+              <h2 className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                I&apos;m{" "}
+                <span style={{ color: accentColors[colorIndex] }}>Om Javia,</span>
+                <br />
+                <span style={{ color: accentColors[colorIndex] }}>AI</span>{" "}
+                Engineer
+              </h2>
+
+              <p className="text-gray-500 dark:text-gray-300 text-md md:text-lg leading-7 max-w-lg">
+                I build{" "}
+                <span style={{ color: accentColors[colorIndex] }}>intelligent systems</span>{" "}
+                and scalable AI solutions with a focus on Computer Vision, NLP, and Machine Learning.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4 mt-10" onClick={(e) => e.stopPropagation()}>
+                <a
+                  href="https://cal.com/Om-Javia"
+                  style={{ backgroundColor: accentColors[colorIndex] }}
+                  className="text-white font-semibold px-6 py-3 rounded-md shadow-md transition-all duration-300 hover:scale-105">
+                  Hire Me
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/omjavia/"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ borderColor: accentColors[colorIndex], color: accentColors[colorIndex] }}
+                  className="border-2 font-semibold px-6 py-3 rounded-md transition-all duration-300 hover:scale-105 bg-transparent hover:opacity-80">
+                  Let&apos;s Talk
+                </a>
+              </div>
+
+              {/* Social Icons */}
+              <div 
+                className="flex gap-6 text-4xl mt-8 text-gray-600 dark:text-gray-400" 
+                onClick={(e) => e.stopPropagation()}
+                style={{ '--hover-accent': accentColors[colorIndex] }}
+              >
+                <a href="https://twitter.com/OmJavia1" className="hover:text-[var(--hover-accent)] transition-colors duration-300">
+                  <AiFillTwitterCircle />
+                </a>
+                <a href="https://www.linkedin.com/in/omjavia/" className="hover:text-[var(--hover-accent)] transition-colors duration-300">
+                  <AiFillLinkedin />
+                </a>
+                <a href="https://github.com/omjavia" className="hover:text-[var(--hover-accent)] transition-colors duration-300">
+                  <AiFillGithub />
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Photo */}
+            <div className="flex-shrink-0" onClick={(e) => e.stopPropagation()}>
+              <Image src={peeps} width={380} height={480} objectFit="cover" alt="Om Javia"
+                style={{ borderColor: accentColors[colorIndex] }}
+                className="rounded-2xl shadow-2xl border-4 transition-all duration-500" />
+            </div>
+
           </div>
         </section>
-        <section className="mt-10">
+        <section id="about" className="mt-10">
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">About Me </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
@@ -186,7 +244,7 @@ export default function Home() {
         </section>
 
 
-        <section className="mt-10 mb-20">
+        <section id="skills" className="mt-10 mb-20">
           <div className="text-center mb-10">
             <h3 className="text-4xl font-bold py-1 dark:text-white inline-flex items-center gap-2">
               <span className="text-slate-800 dark:text-white">Technical</span>
@@ -239,7 +297,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-10">
+        <section id="experience" className="mt-10">
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
@@ -445,7 +503,7 @@ export default function Home() {
         </section>
         <br />
 
-        <section>
+        <section id="projects">
           <div>
             <h3 className="text-3xl py-1 font-semibold dark:text-white">Projects</h3>
             <div>
@@ -657,7 +715,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section>
+        <section id="contact">
           <div className="p-5 rounded-md text-center dark:text-white">
             <div className=" text-center">
               <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
