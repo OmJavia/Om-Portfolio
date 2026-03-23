@@ -49,7 +49,6 @@ import Sac from "../public/sac.png"
 import Ace from "../public/ace-infoway.png"
 import Apoliums from "../public/Apoliums.png"
 import Relcon from "../public/relcon.png"
-import Logo from "../public/OJ_logo_new.png"
 import heroAI from "../public/hero_ai.png";
 import { FaProjectDiagram, FaCloudUploadAlt } from 'react-icons/fa';
 
@@ -279,7 +278,7 @@ export default function Home() {
 
 
 
-        <section id="skills" className="mt-10 mb-20 scroll-mt-24">
+        <section id="skills" className="mt-20 mb-40 scroll-mt-32">
           <div className="text-center mb-10">
             <h3 className="text-4xl font-bold py-1 dark:text-white inline-flex items-center gap-2">
               <span className="text-slate-800 dark:text-white">Technical</span>
@@ -333,8 +332,12 @@ export default function Home() {
         </section>
 
         <section id="experience" className="mt-10 scroll-mt-24">
-          <div>
-            <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
+          <div className="mb-10">
+            <h3 className="text-4xl font-bold py-1 dark:text-white inline-flex items-center gap-2">
+              <span className="text-slate-800 dark:text-white">Past</span>
+              <span style={{ color: accentColors[colorIndex] }}>Experiences</span>
+              <span className="text-3xl">💼</span>
+            </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
               I have always been eager to explore <span className="text-blue-600 dark:text-amber-300">development and analytics</span>, gaining hands-on experience by building projects,
               cloning websites, <br /> and working with data to uncover insights, refine skills, and solve real-world problems.
@@ -538,9 +541,13 @@ export default function Home() {
         </section>
         <br />
 
-        <section id="projects" className="scroll-mt-24">
-          <div>
-            <h3 className="text-3xl py-1 font-semibold dark:text-white">Projects</h3>
+        <section id="projects" className="py-20 scroll-mt-22">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold py-1 dark:text-white inline-flex items-center gap-2">
+              <span className="text-slate-800 dark:text-white">Recent</span>
+              <span style={{ color: accentColors[colorIndex] }}>Projects</span>
+              <span className="text-3xl">🚀</span>
+            </h3>
             <div>
               <p className="text-md py-2 leading-7 text-gray-400">
                 Every project starts with an idea — something I wish existed or could work better.<br />
