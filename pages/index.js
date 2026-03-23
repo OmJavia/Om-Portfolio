@@ -5,8 +5,9 @@ import {
   AiFillTwitterCircle,
   AiFillLinkedin,
   AiFillGithub,
+  AiFillInstagram,
 } from "react-icons/ai";
-
+import { MdEmail } from "react-icons/md";
 import {
   SiPython, SiJavascript, SiNumpy, SiPandas, SiPytorch,
   SiOpencv, SiMysql, SiMongodb, SiRedis, SiDocker, SiAmazonaws,
@@ -19,8 +20,6 @@ import {
 } from "react-icons/fa";
 
 import Image from "next/image";
-import peeps from "../public/Om_pic.jpg";
-
 import Html from "../public/Html.png";
 import anvil from "../public/anvil.png";
 import tesla from "../public/tesla.png";
@@ -31,8 +30,6 @@ import Mapty from "../public/mapty.png"
 import Bank_Account from "../public/bank_account.png"
 import Guess_The_Number from "../public/guess_number.png"
 import SignUp from "../public/SignUp.png";
-import Medi from "../public/medi.jpg";
-import Ehis from "../public/ehis.jpeg";
 import Blog from "../public/Blog.png";
 import coming from "../public/coming.jpg";
 import NirmanHome from "../public/nirmanbook.png";
@@ -51,10 +48,10 @@ import Sac from "../public/sac.png"
 import Ace from "../public/ace-infoway.png"
 import Apoliums from "../public/Apoliums.png"
 import Relcon from "../public/relcon.png"
-import avatar1 from "../public/contact_avatar.png";
-import Script from "next/script";
 import Logo from "../public/OJ_logo_new.png"
-import { MdPalette } from 'react-icons/md';
+import heroAI from "../public/hero_ai.png";
+import { FaProjectDiagram, FaCloudUploadAlt } from 'react-icons/fa';
+
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -130,38 +127,36 @@ export default function Home() {
         <section id="home" className="scroll-mt-24">
           {/* Hero Content - Two Column */}
           <div
-            className="flex flex-col-reverse md:flex-row items-center justify-between px-4 pt-6 pb-12 gap-10 select-none"
+            className="flex flex-col-reverse lg:flex-row items-center justify-between px-4 pt-10 pb-20 gap-12 select-none"
           >
 
             {/* Left: Text */}
-            <div className="flex-1 flex flex-col gap-6">
+            <div className="flex-1 flex flex-col gap-6 text-center lg:text-left items-center lg:items-start">
               {/* Badge */}
-              {/* <div className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 rounded-full px-4 py-1 w-fit text-sm text-gray-600 dark:text-gray-300">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                Hello, I&apos;m an AI Engineer based in India
-              </div> */}
+              <div className="inline-flex items-center gap-2 border border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-slate-900/50 rounded-full px-5 py-2 w-fit text-sm font-medium text-gray-600 dark:text-gray-300 backdrop-blur-sm">
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+                Available for new AI opportunities
+              </div>
 
               {/* Big Heading */}
               <h2 className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight">
                 I&apos;m{" "}
                 <span style={{ color: accentColors[colorIndex] }}>Om Javia,</span>
                 <br />
-                <span style={{ color: accentColors[colorIndex] }}>AI</span>{" "}
-                Engineer
+                <span className="text-slate-800 dark:text-slate-200">AI</span>{" "}
+                <span style={{ color: accentColors[colorIndex] }}>Engineer</span>
               </h2>
 
-              <p className="text-gray-500 dark:text-gray-300 text-md md:text-lg leading-7 max-w-lg">
-                I build{" "}
-                <span style={{ color: accentColors[colorIndex] }}>intelligent systems</span>{" "}
-                and scalable AI solutions with a focus on Computer Vision, NLP, and Machine Learning.
+              <p className="text-gray-500 dark:text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl">
+                I design and build <span className="font-semibold text-slate-800 dark:text-slate-200">functional and beautiful</span> AI applications with a focus on user experience and high quality.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-6 mt-10" onClick={(e) => e.stopPropagation()}>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-6" onClick={(e) => e.stopPropagation()}>
                 <Link
                   href="/contact"
-                  className="border-2 font-bold px-8 py-3 rounded-full transition-all"
-                  style={{ borderColor: accentColors[colorIndex], color: accentColors[colorIndex], "--hover-bg": accentColors[colorIndex] }}
+                  className="font-bold px-10 py-3.5 rounded-full transition-all border-2"
+                  style={{ borderColor: accentColors[colorIndex], color: accentColors[colorIndex] }}
                   onMouseEnter={(e) => { e.target.style.backgroundColor = accentColors[colorIndex]; e.target.style.color = "white"; }}
                   onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = accentColors[colorIndex]; }}>
                   Hire me
@@ -170,101 +165,117 @@ export default function Home() {
                   href="https://cal.com/Om-Javia"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-white font-bold px-8 py-3.5 rounded-full shadow-xl hover:opacity-90 transition-all"
-                  style={{ backgroundColor: accentColors[colorIndex], boxShadow: `0 10px 15px -3px ${accentColors[colorIndex]}66` }}>
+                  className="text-white font-bold px-10 py-4 rounded-full shadow-2xl hover:scale-105 transition-all"
+                  style={{ backgroundColor: accentColors[colorIndex], boxShadow: `0 15px 30px -5px ${accentColors[colorIndex]}66` }}>
                   Schedule a Meeting
                 </a>
               </div>
 
-              {/* Social Icons */}
-              <div
-                className="flex gap-6 text-4xl mt-8 text-gray-600 dark:text-gray-400"
-                onClick={(e) => e.stopPropagation()}
-                style={{ '--hover-accent': accentColors[colorIndex] }}
-              >
-                <a href="https://twitter.com/OmJavia1" className="hover:text-[var(--hover-accent)] transition-colors duration-300">
-                  <AiFillTwitterCircle />
-                </a>
-                <a href="https://www.linkedin.com/in/omjavia/" className="hover:text-[var(--hover-accent)] transition-colors duration-300">
-                  <AiFillLinkedin />
-                </a>
-                <a href="https://github.com/omjavia" className="hover:text-[var(--hover-accent)] transition-colors duration-300">
-                  <AiFillGithub />
-                </a>
+              {/* Social Icons Badge Row */}
+              <div className="flex flex-wrap gap-4 pt-4">
+                {[
+                  { icon: <AiFillLinkedin />, link: "https://www.linkedin.com/in/omjavia/" },
+                  { icon: <AiFillTwitterCircle />, link: "https://twitter.com/OmJavia1" },
+                  { icon: <AiFillGithub />, link: "https://github.com/omjavia" },
+                  { icon: <AiFillInstagram />, link: "https://instagram.com/om_javia_" },
+                  { icon: <MdEmail />, link: "mailto:omjavia18@gmail.com" }
+                ].map((social, i) => (
+                  <a key={i} href={social.link} target="_blank" rel="noreferrer"
+                    className="p-3 rounded-xl bg-gray-100 dark:bg-slate-900 text-3xl shadow-sm text-gray-900 dark:text-gray-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300"
+                    onMouseEnter={(e) => { e.currentTarget.style.color = accentColors[colorIndex]; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = ''; }}>
+                    {social.icon}
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* Right: Photo */}
-            <div className="flex-shrink-0" onClick={(e) => e.stopPropagation()}>
-              <Image src={peeps} width={380} height={480} alt="Om Javia"
-                style={{ borderColor: accentColors[colorIndex], objectFit: 'cover' }}
-                className="rounded-2xl shadow-2xl border-4 transition-all duration-500" />
+            {/* Right: Illustration */}
+            <div className="flex-1 w-full max-w-2xl" onClick={(e) => e.stopPropagation()}>
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                <Image src={heroAI} width={700} height={700} alt="AI Engineer Workspace"
+                  className="relative rounded-2xl shadow-2xl transition-all duration-700 hover:scale-[1.02]"
+                  priority />
+              </div>
             </div>
 
           </div>
         </section>
-        <section id="about" className="mt-10">
-          <div>
-            <h3 className="text-3xl font-semibold py-1 dark:text-white">About Me </h3>
-            <p className="text-md py-2 leading-7 text-gray-400">
-              Hey, I am
-              <span style={{ color: accentColors[colorIndex] }}> Om Javia</span> {" "}
-              - an AI Engineer who loves building smart, scalable, and impactful AI models.<br />
-              I enjoy blending deep learning, computer vision, and backend systems to solve real-world problems and build intelligent products.
+
+        <section id="stack" className="py-20 scroll-mt-24">
+          <div className="text-center mb-16 px-4">
+            <h3 className="text-4xl md:text-5xl font-bold dark:text-white mb-6">
+              The full <span style={{ color: accentColors[colorIndex] }}>AI development</span> stack.
+            </h3>
+            <p className="text-gray-500 dark:text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+              From architecting neural networks to deploying scalable production environments — I provide the full depth of AI design and implementation, powered by state-of-the-art technologies.
             </p>
           </div>
-          <div className="lg:grid grid-cols-3 gap-10 text-center">
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Ehis} width={100} height={100} alt="" className="mx-auto" />
-              <h3 className="text-lg font-medium pt-5 pb-2" style={{ color: accentColors[colorIndex] }}>
-                Higher Education
-              </h3>
-              <p className="py-2 dark:text-teal-50">
-                Class 10th
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+            {/* CV */}
+            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-blue-500/30 transition-all duration-500 text-center flex flex-col items-center">
+              <div className="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                <FaBrain className="text-3xl text-blue-600 dark:text-blue-400" />
+              </div>
+              <h4 className="text-xl font-bold dark:text-white mb-3">Computer Vision</h4>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                I build functional, beautiful and responsive vision systems that understand and track the real world.
               </p>
-              <p className="py-2 dark:text-teal-50">
-                CBSE
-              </p>
-              <h4 className="py-4 font-bold" style={{ color: accentColors[colorIndex] }}> The Emerald Heights International School </h4>
-              <ul className="space-y-1 dark:text-white">
-                <li>CGPA - 8.6</li>
-              </ul>
-            </div>
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Ehis} width={100} height={100} alt="" className="mx-auto" />
-              <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-300">
-                Secondary Education
-              </h3>
-              <p className="py-2 dark:text-teal-50">
-                Class 12th
-              </p>
-              <p className="py-2 dark:text-teal-50">
-                CBSE, Science (PCM)
-              </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500">The Emerald Heights International School</h4>
-              <ul className="tools space-y-1 dark:text-white" >
-                <li>CGPA - 8.1</li>
-              </ul>
+              <div className="flex flex-wrap justify-center gap-2 mt-auto">
+                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">OpenCV</span>
+                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">YOLO</span>
+              </div>
             </div>
 
-            <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
-              <Image src={Medi} width={100} height={50} alt="" className="mx-auto" />
-              <h3 className="text-xl font-medium pt-5 pb-2 dark:text-amber-300">
-                Senior Secondary Education
-              </h3>
-              <p className="py-2 dark:text-teal-50">
-                Bachelor of Technology (B.Tech)
+            {/* NLP */}
+            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-cyan-500/30 transition-all duration-500 text-center flex flex-col items-center">
+              <div className="w-16 h-16 rounded-2xl bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                <FaProjectDiagram className="text-3xl text-cyan-600 dark:text-cyan-400" />
+              </div>
+              <h4 className="text-xl font-bold dark:text-white mb-3">NLP & LLMs</h4>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                I build high-quality RAG pipelines and language models tailored to search and conversational needs.
               </p>
-              <p className="py-2 dark:text-teal-50">
-                Computer Science and Engineering (CSE)
+              <div className="flex flex-wrap justify-center gap-2 mt-auto">
+                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">LangChain</span>
+                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">RAG</span>
+              </div>
+            </div>
+
+            {/* Data */}
+            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-indigo-500/30 transition-all duration-500 text-center flex flex-col items-center">
+              <div className="w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                <FaDatabase className="text-3xl text-indigo-600 dark:text-indigo-400" />
+              </div>
+              <h4 className="text-xl font-bold dark:text-white mb-3">Data Science</h4>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                I create meaningful insights from raw data to match user needs and expectations, and solve their problems.
               </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500">Medi-Caps University</h4>
-              <ul className="space-y-1 dark:text-white">
-                <li>CGPA - 9 </li>
-              </ul>
+              <div className="flex flex-wrap justify-center gap-2 mt-auto">
+                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">Pandas</span>
+                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">Scikit</span>
+              </div>
+            </div>
+
+            {/* AI Ops */}
+            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-purple-500/30 transition-all duration-500 text-center flex flex-col items-center">
+              <div className="w-16 h-16 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                <FaCloudUploadAlt className="text-3xl text-purple-600 dark:text-purple-400" />
+              </div>
+              <h4 className="text-xl font-bold dark:text-white mb-3">AI Deployment</h4>
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                I design beautiful, cloud-ready services for applications to work on all sizes, optimized for low latency.
+              </p>
+              <div className="flex flex-wrap justify-center gap-2 mt-auto">
+                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">AWS</span>
+                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">Docker</span>
+              </div>
             </div>
           </div>
         </section>
+
 
 
         <section id="skills" className="mt-10 mb-20 scroll-mt-24">
