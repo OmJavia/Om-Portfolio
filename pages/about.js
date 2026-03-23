@@ -6,8 +6,9 @@ import { MdEmail } from "react-icons/md";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import Icon from "../public/icon.png";
 import peeps from "../public/Om_pic.jpg";
-import Logo from "../public/OJ_logo_new.png"
+
 
 export default function About() {
   const [darkMode, setDarkMode] = useState(false);
@@ -30,7 +31,7 @@ export default function About() {
         <div className="flex-1 flex justify-start">
           <Link href="/">
             <div className="flex items-center cursor-pointer transition-transform hover:scale-110" onMouseEnter={cycleColor}>
-              <Image src={Logo} alt="Om Javia" width={60} height={60} className="object-contain" />
+              <Image src={Icon} alt="Om Javia" width={60} height={60} className="object-contain" />
             </div>
           </Link>
         </div>

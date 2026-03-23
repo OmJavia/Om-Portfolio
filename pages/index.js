@@ -34,6 +34,7 @@ import Blog from "../public/Blog.png";
 import coming from "../public/coming.jpg";
 import NirmanHome from "../public/nirmanbook.png";
 import Mars from "../public/Mars.png";
+import Icon from "../public/icon.png";
 import { useState } from "react";
 import QR from "../public/Download Resume.png";
 import Link from "next/link";
@@ -85,7 +86,7 @@ export default function Home() {
         <div className="flex-1 flex justify-start">
           <Link href="/">
             <div className="flex items-center cursor-pointer transition-transform hover:scale-110" onMouseEnter={cycleColor}>
-              <Image src={Logo} alt="Om Javia" width={60} height={60} className="object-contain" />
+              <Image src={Icon} alt="Om Javia" width={60} height={60} className="object-contain" />
             </div>
           </Link>
         </div>
