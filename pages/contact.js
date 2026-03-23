@@ -5,7 +5,10 @@ import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import illustration from "../public/contact_illustration.png";
-import avatar from "../public/contact_avatar.png";
+import avatar1 from "../public/contact_avatar.png";
+import Logo from "../public/OJ_logo_new.png"
+import contact from "../public/contact.svg"
+import { MdPalette } from 'react-icons/md';
 
 // --- CONFIGURATION ---
 const FORMSPREE_ID = "xjgajbyk";
@@ -21,11 +24,16 @@ export default function Contact() {
   });
   const [status, setStatus] = useState("idle"); // idle, submitting, success, error
 
-  const colorIndex = 0; // Default blue
+  const [colorIndex, setColorIndex] = useState(0);
   const accentColors = [
-    "#3b82f6", "#10b981", "#f59e0b", "#8b5cf6", "#ec4899", "#ef4444", "#06b6d4", "#f97316",
+    "#3b82f6"
   ];
-  const tealAccent = "#2d9a9a"; // Matching the reference image
+
+  const cycleColor = () => {
+    setColorIndex((prev) => (prev + 1) % accentColors.length);
+  };
+
+  const tealAccent = accentColors[colorIndex];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +47,6 @@ export default function Contact() {
     try {
       if (FORMSPREE_ID === "xjgajbyk") {
         console.warn("Using placeholder Formspree ID. Form submission will fail.");
-        // We'll proceed so the user sees the error UI and can use the fallback
       }
 
       const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
@@ -74,29 +81,49 @@ export default function Contact() {
         <meta name="description" content="Contact Om Javia for collaborations and inquiries." />
       </Head>
 
-      <main className="min-h-screen p-5 md:px-20 lg:px-40 dark:bg-black transition-colors duration-300">
-        <nav className="px-6 py-4 flex items-center justify-between">
-          <Link href="/">
-            <h1 className="text-xl font-bold dark:text-white cursor-pointer">Om Javia</h1>
-          </Link>
-          <ul className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-            <li><Link href="/#skills" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Technical Skills</Link></li>
-            <li><Link href="/#experience" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Past Experiences</Link></li>
-            <li><Link href="/#projects" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Projects</Link></li>
-            <li><Link href="/contact" className="text-blue-600 dark:text-amber-400 font-bold border-b-2 border-current">Contact</Link></li>
-          </ul>
-          <ul className="flex items-center gap-4">
-            <li>
+      <main className="min-h-screen pt-32 p-5 md:px-20 lg:px-40 dark:bg-black transition-colors duration-300">
+        <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-3 flex items-center border-b bg-white/70 dark:bg-black/80 backdrop-blur-md dark:border-gray-800 transition-all duration-300">
+          {/* Left Side: Logo */}
+          <div className="flex-1 flex justify-start">
+            <Link href="/">
+              <div className="flex items-center cursor-pointer transition-transform hover:scale-110" onMouseEnter={cycleColor}>
+                <Image src={Logo} alt="Om Javia" width={60} height={60} className="object-contain" />
+              </div>
+            </Link>
+          </div>
+
+          {/* Center: Headings */}
+          <div className="flex-none">
+            <ul className="hidden lg:flex items-center gap-6 text-xl font-bold">
+              <li><Link href="/" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Home</Link></li>
+              <li><Link href="/#skills" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Skills</Link></li>
+              <li><Link href="/#experience" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Experience</Link></li>
+              <li><Link href="/#projects" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Projects</Link></li>
+              <li><Link href="/contact" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Right Side Group: Resume, Meeting, Palette, Moon */}
+          <div className="flex-1 flex justify-end items-center gap-4 lg:gap-6">
+            <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing" target="_blank"
+              className="hidden sm:block border-2 px-5 py-2 rounded-full font-bold text-sm transition-all"
+              style={{ borderColor: accentColors[colorIndex], color: accentColors[colorIndex] }}
+              onMouseEnter={(e) => { e.target.style.backgroundColor = accentColors[colorIndex]; e.target.style.color = "white"; }}
+              onMouseLeave={(e) => { e.target.style.backgroundColor = "transparent"; e.target.style.color = accentColors[colorIndex]; }}>
+              Resume
+            </Link>
+            <a href="https://cal.com/Om-Javia" target="_blank" rel="noreferrer"
+              className="hidden md:block text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-lg transition-all"
+              style={{ backgroundColor: accentColors[colorIndex] }}>
+              Schedule a Meeting
+            </a>
+
+            <div className="flex items-center gap-4 ml-2">
               <BsFillMoonStarsFill
                 onClick={() => setDarkMode(!darkMode)}
-                className="cursor-pointer text-xl dark:text-white" />
-            </li>
-            <li>
-              <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing" target="_blank"
-                style={{ backgroundColor: accentColors[colorIndex] }}
-                className="text-white px-4 py-2 rounded-md font-semibold text-sm shadow-md dark:shadow-slate-400">Resume</Link>
-            </li>
-          </ul>
+                className="cursor-pointer text-2xl dark:text-white hover:opacity-70 transition-opacity" />
+            </div>
+          </div>
         </nav>
 
         <section className="flex flex-col lg:flex-row items-center justify-between gap-12 mt-10">
@@ -108,14 +135,14 @@ export default function Contact() {
               </h1>
               <div className="flex items-center gap-2 mt-[-10px] ml-1">
                 <span className="text-4xl md:text-5xl font-bold" style={{ color: tealAccent }}>Me</span>
-                <div className="w-16 h-16 md:w-20 md:h-20">
-                  <Image src={avatar} alt="Avatar" width={80} height={80} layout="responsive" />
+                <div className="w-20 h-20 md:w-20 md:h-20">
+                  <Image src={avatar1} alt="Avatar" width={80} height={80} style={{ width: '100%', height: 'auto' }} />
                 </div>
               </div>
             </div>
 
             <div className="max-w-md">
-              <Image src={illustration} alt="Contact Illustration" layout="responsive" />
+              <Image src={contact} alt="Contact Illustration" style={{ width: '100%', height: 'auto' }} />
             </div>
           </div>
 
@@ -132,7 +159,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="Om Javia"
-                    className="w-full bg-blue-50/50 dark:bg-slate-800 border-none rounded-xl px-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-teal-500 transition-all"
+                    className="w-full bg-blue-50/50 dark:bg-slate-800 border-none rounded-xl px-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 transition-all"
                   />
                 </div>
                 <div>
@@ -144,7 +171,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="omjavia18@gmail.com"
-                    className="w-full bg-blue-50/50 dark:bg-slate-800 border-none rounded-xl px-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-teal-500 transition-all"
+                    className="w-full bg-blue-50/50 dark:bg-slate-800 border-none rounded-xl px-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 transition-all"
                   />
                 </div>
                 <div>
@@ -156,7 +183,7 @@ export default function Contact() {
                     required
                     rows="4"
                     placeholder="Hey there! Let's connect"
-                    className="w-full bg-blue-50/50 dark:bg-slate-800 border-none rounded-xl px-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-teal-500 transition-all resize-none"
+                    className="w-full bg-blue-50/50 dark:bg-slate-800 border-none rounded-xl px-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 transition-all resize-none"
                   ></textarea>
                 </div>
                 <button
@@ -195,7 +222,7 @@ export default function Contact() {
         </section>
 
         <footer className="mt-20 py-10 text-center text-gray-500 text-sm">
-          <p>© 2025 <Link href="/" className="hover:underline">Om Javia</Link>. All rights reserved.</p>
+          <p>© 2026 <Link href="/" className="hover:underline">Om Javia</Link>. All rights reserved.</p>
         </footer>
       </main>
     </div>

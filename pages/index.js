@@ -51,22 +51,22 @@ import Sac from "../public/sac.png"
 import Ace from "../public/ace-infoway.png"
 import Apoliums from "../public/Apoliums.png"
 import Relcon from "../public/relcon.png"
+import avatar1 from "../public/contact_avatar.png";
 import Script from "next/script";
+import Logo from "../public/OJ_logo_new.png"
+import { MdPalette } from 'react-icons/md';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [colorIndex, setColorIndex] = useState(0);
   const accentColors = [
     "#3b82f6", // blue
-    "#10b981", // emerald
-    "#f59e0b", // amber
-    "#8b5cf6", // violet
-    "#ec4899", // pink
-    "#ef4444", // red
-    "#06b6d4", // cyan
-    "#f97316", // orange
   ];
-  const cycleColor = () => setColorIndex((prev) => (prev + 1) % accentColors.length);
+
+  const cycleColor = () => {
+    setColorIndex((prev) => (prev + 1) % accentColors.length);
+  };
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -83,33 +83,53 @@ export default function Home() {
 
 
 
-      <main className="p-5 md:px-20 lg:px-40 dark:bg-black">
-        <section id="home">
-          <nav className="px-6 py-4 flex items-center justify-between">
-            <h1 className="text-xl font-bold dark:text-white">Om Javia</h1>
-            <ul className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-              <li><a href="#skills" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Technical Skills</a></li>
-              <li><a href="#experience" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Past Experiences</a></li>
-              <li><a href="#projects" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Projects</a></li>
-              <li><Link href="/contact" className="hover:text-blue-600 dark:hover:text-amber-400 transition-colors">Contact</Link></li>
-            </ul>
-            <ul className="flex items-center gap-4">
-              <li>
-                <BsFillMoonStarsFill
-                  onClick={() => setDarkMode(!darkMode)}
-                  className="cursor-pointer text-xl dark:text-white" />
-              </li>
-              <li>
-                <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing" target="_blank"
-                  style={{ backgroundColor: accentColors[colorIndex] }}
-                  className="text-white px-4 py-2 rounded-md font-semibold text-sm shadow-md dark:shadow-slate-400">Resume</Link>
-              </li>
-            </ul>
-          </nav>
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-3 flex items-center border-b bg-white/70 dark:bg-black/80 backdrop-blur-md dark:border-gray-800 transition-all duration-300">
+        {/* Left Side: Logo */}
+        <div className="flex-1 flex justify-start">
+          <Link href="/">
+            <div className="flex items-center cursor-pointer transition-transform hover:scale-110" onMouseEnter={cycleColor}>
+              <Image src={Logo} alt="Om Javia" width={60} height={60} className="object-contain" />
+            </div>
+          </Link>
+        </div>
+
+        {/* Center: Headings */}
+        <ul className="hidden lg:flex items-center gap-6 text-xl font-bold">
+          <li><a href="#home" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Home</a></li>
+          <li><a href="#skills" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Skills</a></li>
+          <li><a href="#experience" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Experience</a></li>
+          <li><a href="#projects" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Projects</a></li>
+          <li><Link href="/contact" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Contact</Link></li>
+        </ul>
+
+        {/* Right Side Group: Resume, Meeting, Palette, Moon */}
+        <div className="flex-1 flex justify-end items-center gap-4 lg:gap-6">
+          <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing" target="_blank"
+            className="hidden sm:block border-2 px-5 py-2 rounded-full font-bold text-sm transition-all"
+            style={{ borderColor: accentColors[colorIndex], color: accentColors[colorIndex] }}
+            onMouseEnter={(e) => { e.target.style.backgroundColor = accentColors[colorIndex]; e.target.style.color = "white"; }}
+            onMouseLeave={(e) => { e.target.style.backgroundColor = "transparent"; e.target.style.color = accentColors[colorIndex]; }}>
+            Resume
+          </Link>
+          <a href="https://cal.com/Om-Javia" target="_blank" rel="noreferrer"
+            className="hidden md:block text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-lg transition-all"
+            style={{ backgroundColor: accentColors[colorIndex] }}>
+            Schedule a Meeting
+          </a>
+
+          <div className="flex items-center gap-4 ml-2">
+            <BsFillMoonStarsFill
+              onClick={() => setDarkMode(!darkMode)}
+              className="cursor-pointer text-2xl dark:text-white hover:opacity-70 transition-opacity" />
+          </div>
+        </div>
+      </nav >
+
+      <main className="pt-24 p-5 md:px-20 lg:px-40 dark:bg-black">
+        <section id="home" className="scroll-mt-24">
           {/* Hero Content - Two Column */}
           <div
-            className="flex flex-col-reverse md:flex-row items-center justify-between px-4 pt-6 pb-12 gap-10 cursor-pointer select-none"
-            onClick={cycleColor}
+            className="flex flex-col-reverse md:flex-row items-center justify-between px-4 pt-6 pb-12 gap-10 select-none"
           >
 
             {/* Left: Text */}
@@ -136,26 +156,28 @@ export default function Home() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 mt-10" onClick={(e) => e.stopPropagation()}>
+              <div className="flex flex-wrap gap-6 mt-10" onClick={(e) => e.stopPropagation()}>
+                <Link
+                  href="/contact"
+                  className="border-2 font-bold px-8 py-3 rounded-full transition-all"
+                  style={{ borderColor: accentColors[colorIndex], color: accentColors[colorIndex], "--hover-bg": accentColors[colorIndex] }}
+                  onMouseEnter={(e) => { e.target.style.backgroundColor = accentColors[colorIndex]; e.target.style.color = "white"; }}
+                  onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = accentColors[colorIndex]; }}>
+                  Hire me
+                </Link>
                 <a
                   href="https://cal.com/Om-Javia"
-                  style={{ backgroundColor: accentColors[colorIndex] }}
-                  className="text-white font-semibold px-6 py-3 rounded-md shadow-md transition-all duration-300 hover:scale-105">
-                  Hire Me
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/omjavia/"
                   target="_blank"
                   rel="noreferrer"
-                  style={{ borderColor: accentColors[colorIndex], color: accentColors[colorIndex] }}
-                  className="border-2 font-semibold px-6 py-3 rounded-md transition-all duration-300 hover:scale-105 bg-transparent hover:opacity-80">
-                  Let&apos;s Talk
+                  className="text-white font-bold px-8 py-3.5 rounded-full shadow-xl hover:opacity-90 transition-all"
+                  style={{ backgroundColor: accentColors[colorIndex], boxShadow: `0 10px 15px -3px ${accentColors[colorIndex]}66` }}>
+                  Schedule a Meeting
                 </a>
               </div>
 
               {/* Social Icons */}
-              <div 
-                className="flex gap-6 text-4xl mt-8 text-gray-600 dark:text-gray-400" 
+              <div
+                className="flex gap-6 text-4xl mt-8 text-gray-600 dark:text-gray-400"
                 onClick={(e) => e.stopPropagation()}
                 style={{ '--hover-accent': accentColors[colorIndex] }}
               >
@@ -173,8 +195,8 @@ export default function Home() {
 
             {/* Right: Photo */}
             <div className="flex-shrink-0" onClick={(e) => e.stopPropagation()}>
-              <Image src={peeps} width={380} height={480} objectFit="cover" alt="Om Javia"
-                style={{ borderColor: accentColors[colorIndex] }}
+              <Image src={peeps} width={380} height={480} alt="Om Javia"
+                style={{ borderColor: accentColors[colorIndex], objectFit: 'cover' }}
                 className="rounded-2xl shadow-2xl border-4 transition-all duration-500" />
             </div>
 
@@ -185,7 +207,7 @@ export default function Home() {
             <h3 className="text-3xl font-semibold py-1 dark:text-white">About Me </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
               Hey, I am
-              <span className="text-blue-600 dark:text-amber-300"> Om Javia</span> {" "}
+              <span style={{ color: accentColors[colorIndex] }}> Om Javia</span> {" "}
               - an AI Engineer who loves building smart, scalable, and impactful AI models.<br />
               I enjoy blending deep learning, computer vision, and backend systems to solve real-world problems and build intelligent products.
             </p>
@@ -193,7 +215,7 @@ export default function Home() {
           <div className="lg:grid grid-cols-3 gap-10 text-center">
             <div className="shadow-lg p-5 rounded-xl my-10 dark:bg-slate-900 hover:scale-105">
               <Image src={Ehis} width={100} height={100} alt="" className="mx-auto" />
-              <h3 className="text-lg font-medium pt-5 pb-2 dark:text-amber-300">
+              <h3 className="text-lg font-medium pt-5 pb-2" style={{ color: accentColors[colorIndex] }}>
                 Higher Education
               </h3>
               <p className="py-2 dark:text-teal-50">
@@ -202,7 +224,7 @@ export default function Home() {
               <p className="py-2 dark:text-teal-50">
                 CBSE
               </p>
-              <h4 className="py-4 text-blue-600 dark:text-amber-500"> The Emerald Heights International School </h4>
+              <h4 className="py-4 font-bold" style={{ color: accentColors[colorIndex] }}> The Emerald Heights International School </h4>
               <ul className="space-y-1 dark:text-white">
                 <li>CGPA - 8.6</li>
               </ul>
@@ -244,11 +266,11 @@ export default function Home() {
         </section>
 
 
-        <section id="skills" className="mt-10 mb-20">
+        <section id="skills" className="mt-10 mb-20 scroll-mt-24">
           <div className="text-center mb-10">
             <h3 className="text-4xl font-bold py-1 dark:text-white inline-flex items-center gap-2">
               <span className="text-slate-800 dark:text-white">Technical</span>
-              <span className="text-blue-600 dark:text-amber-400">Skills</span>
+              <span style={{ color: accentColors[colorIndex] }}>Skills</span>
               <span className="text-3xl">👨‍💻</span>
             </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
@@ -297,7 +319,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="mt-10">
+        <section id="experience" className="mt-10 scroll-mt-24">
           <div>
             <h3 className="text-3xl font-semibold py-1 dark:text-white">Past Experiences </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
@@ -503,7 +525,7 @@ export default function Home() {
         </section>
         <br />
 
-        <section id="projects">
+        <section id="projects" className="scroll-mt-24">
           <div>
             <h3 className="text-3xl py-1 font-semibold dark:text-white">Projects</h3>
             <div>
@@ -729,11 +751,11 @@ export default function Home() {
               <span>
                 <a href="#footer">Om Javia</a>
               </span>
-              © 2025
+              © 2026
             </p>
           </div>
         </section>
       </main>
-    </div>
+    </div >
   );
 }
