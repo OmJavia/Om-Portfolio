@@ -124,7 +124,7 @@ export default function About() {
         </section>
 
         <footer className="mt-24 py-10 text-center text-gray-500 text-sm border-t dark:border-gray-800">
-          <p>© 2025 <Link href="/" className="hover:underline">Om Javia</Link>. All rights reserved.</p>
+          <p>© 2026 <Link href="/" className="hover:underline">Om Javia</Link>. All rights reserved.</p>
         </footer>
       </main>
     </div>
