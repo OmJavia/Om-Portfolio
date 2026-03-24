@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }) {
             c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "vql2f8pqur");
+          })(window, document, "clarity", "script", "w0n6f4omu9");
         `}
       </Script>
     </>
