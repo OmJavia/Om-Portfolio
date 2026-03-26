@@ -18,6 +18,7 @@ import {
   FaBrain, FaEye, FaLanguage, FaDatabase, FaKeyboard,
   FaLink, FaRobot, FaSearchLocation, FaCubes, FaExternalLinkSquareAlt
 } from "react-icons/fa";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
 
 import Image from "next/image";
 import Html from "../public/Html.png";
@@ -55,6 +56,7 @@ import { FaProjectDiagram, FaCloudUploadAlt } from 'react-icons/fa';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [colorIndex, setColorIndex] = useState(0);
   const accentColors = [
     "#3b82f6", // blue
@@ -115,6 +117,17 @@ export default function Home() {
             Schedule a Meeting
           </a>
 
+          {/* Hamburger Menu Toggle (Mobile) */}
+          <div className="lg:hidden flex items-center">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-3xl dark:text-white focus:outline-none transition-transform duration-300 hover:scale-110"
+              aria-label="Toggle Menu"
+            >
+              {isMenuOpen ? <HiX /> : <HiMenuAlt3 />}
+            </button>
+          </div>
+
           <div className="flex items-center gap-4 ml-2">
             <BsFillMoonStarsFill
               onClick={() => setDarkMode(!darkMode)}
@@ -122,6 +135,33 @@ export default function Home() {
           </div>
         </div>
       </nav >
+
+      {/* Mobile Menu Overlay */}
+      <div className={`fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl lg:hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+        <div className="flex flex-col items-center justify-center h-full gap-8 text-2xl font-bold p-6">
+          <a href="#home" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Home</a>
+          <Link href="/about"><span onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>About</span></Link>
+          <a href="#skills" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Skills</a>
+          <a href="#experience" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Experience</a>
+          <a href="#projects" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Projects</a>
+          <Link href="/contact"><span onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Contact</span></Link>
+
+          <div className="flex flex-col gap-4 mt-4 w-full max-w-xs">
+            <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing" target="_blank"
+              onClick={() => setIsMenuOpen(false)}
+              className="border-2 text-center py-3 rounded-full font-bold text-lg transition-all"
+              style={{ borderColor: accentColors[colorIndex], color: accentColors[colorIndex] }}>
+              Resume
+            </Link>
+            <a href="https://cal.com/Om-Javia" target="_blank" rel="noreferrer"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-white text-center py-3.5 rounded-full font-bold text-lg shadow-lg"
+              style={{ backgroundColor: accentColors[colorIndex] }}>
+              Schedule a Meeting
+            </a>
+          </div>
+        </div>
+      </div>
 
       <main className="pt-24 p-5 md:px-20 lg:px-40 dark:bg-black">
         <section id="home" className="scroll-mt-24">
