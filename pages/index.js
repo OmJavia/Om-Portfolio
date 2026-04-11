@@ -50,7 +50,6 @@ import Sac from "../public/sac.png"
 import Ace from "../public/ace-infoway.png"
 import Apoliums from "../public/Apoliums.png"
 import Relcon from "../public/relcon.png"
-import heroAI from "../public/hero_ai.png";
 import hero from "../public/hero.gif"
 import { FaProjectDiagram, FaCloudUploadAlt } from 'react-icons/fa';
 
