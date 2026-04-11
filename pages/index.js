@@ -51,6 +51,7 @@ import Ace from "../public/ace-infoway.png"
 import Apoliums from "../public/Apoliums.png"
 import Relcon from "../public/relcon.png"
 import heroAI from "../public/hero_ai.png";
+import hero from "../public/hero.gif"
 import { FaProjectDiagram, FaCloudUploadAlt } from 'react-icons/fa';
 
 
@@ -58,6 +59,35 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [colorIndex, setColorIndex] = useState(0);
+  const [hoveredSkill, setHoveredSkill] = useState("");
+
+  const skillsData = [
+    { name: "Python", icon: SiPython, color: "#3776AB" },
+    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+    { name: "Computer Vision", icon: FaEye, color: "#3b82f6" },
+    { name: "Natural Language Processing", icon: FaLanguage, color: "#a855f7" },
+    { name: "Retrieval-Augmented Generation (RAG)", icon: FaCubes, color: "#6366f1" },
+    { name: "Prompt Engineering", icon: FaKeyboard, color: "#64748b" },
+    { name: "LangChain", icon: FaLink, color: "#475569" },
+    { name: "Hugging Face", icon: FaRobot, color: "#eab308" },
+    { name: "Deep Learning", icon: FaBrain, color: "#ec4899" },
+    { name: "NumPy", icon: SiNumpy, color: "#013243" },
+    { name: "Pandas", icon: SiPandas, color: "#150458" },
+    { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
+    { name: "OpenCV", icon: SiOpencv, color: "#5C3EE8" },
+    { name: "Detectron2", icon: FaExternalLinkSquareAlt, color: "#14b8a6" },
+    { name: "YOLO (Object Detection)", icon: FaSearchLocation, color: "#f97316" },
+    { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+    { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+    { name: "ChromaDB", icon: FaDatabase, color: "#10b981" },
+    { name: "Redis", icon: SiRedis, color: "#DC382D" },
+    { name: "Docker", icon: SiDocker, color: "#2496ED" },
+    { name: "AWS", icon: SiAmazonaws, color: "#232F3E" },
+    { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF" },
+    { name: "Vercel", icon: SiVercel, color: "#000000" },
+    { name: "Git", icon: SiGit, color: "#F05032" },
+    { name: "Postman", icon: SiPostman, color: "#FF6C37" }
+  ];
   const accentColors = [
     "#3b82f6", // blue
   ];
@@ -94,12 +124,12 @@ export default function Home() {
 
         {/* Center: Headings */}
         <ul className="hidden lg:flex items-center gap-6 text-xl font-bold">
-          <li><a href="#home" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Home</a></li>
-          <li><Link href="/about" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>About</Link></li>
-          <li><a href="#skills" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Skills</a></li>
-          <li><a href="#experience" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Experience</a></li>
-          <li><a href="#projects" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Projects</a></li>
-          <li><Link href="/contact" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Contact</Link></li>
+          <li><a href="#home" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Home</a></li>
+          <li><Link href="/about" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>About</Link></li>
+          <li><a href="#skills" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Skills</a></li>
+          <li><a href="#experience" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Experience</a></li>
+          <li><a href="#projects" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Projects</a></li>
+          <li><Link href="/contact" className="px-5 py-2 rounded-xl transition-all duration-300 text-gray-700 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Contact</Link></li>
         </ul>
 
         {/* Right Side Group: Resume, Meeting, Palette, Moon */}
@@ -139,12 +169,12 @@ export default function Home() {
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl lg:hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
         <div className="flex flex-col items-center justify-center h-full gap-8 text-2xl font-bold p-6">
-          <a href="#home" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Home</a>
-          <Link href="/about"><span onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>About</span></Link>
-          <a href="#skills" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Skills</a>
-          <a href="#experience" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Experience</a>
-          <a href="#projects" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Projects</a>
-          <Link href="/contact"><span onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '15'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Contact</span></Link>
+          <a href="#home" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Home</a>
+          <Link href="/about"><span onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>About</span></Link>
+          <a href="#skills" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Skills</a>
+          <a href="#experience" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Experience</a>
+          <a href="#projects" onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Projects</a>
+          <Link href="/contact"><span onClick={() => setIsMenuOpen(false)} className="px-8 py-3 rounded-xl transition-all duration-300 text-gray-800 dark:text-gray-200" onMouseEnter={(e) => { cycleColor(); e.target.style.color = accentColors[colorIndex]; e.target.style.backgroundColor = accentColors[colorIndex] + '30'; }} onMouseLeave={(e) => { e.target.style.color = ''; e.target.style.backgroundColor = 'transparent'; }}>Contact</span></Link>
 
           <div className="flex flex-col gap-4 mt-4 w-full max-w-xs">
             <Link href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing" target="_blank"
@@ -234,7 +264,7 @@ export default function Home() {
             <div className="flex-1 w-full max-w-2xl" onClick={(e) => e.stopPropagation()}>
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                <Image src={heroAI} width={700} height={700} alt="AI Engineer Workspace"
+                <Image src={hero} width={700} height={700} alt="AI Engineer Workspace"
                   className="relative rounded-2xl shadow-2xl transition-all duration-700 hover:scale-[1.02]"
                   priority />
               </div>
@@ -255,7 +285,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
             {/* CV */}
-            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-blue-500/30 transition-all duration-500 text-center flex flex-col items-center">
+            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 hover:-translate-y-2 transition-all duration-500 text-center flex flex-col items-center">
               <div className="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                 <FaBrain className="text-3xl text-blue-600 dark:text-blue-400" />
               </div>
@@ -270,7 +300,7 @@ export default function Home() {
             </div>
 
             {/* NLP */}
-            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-cyan-500/30 transition-all duration-500 text-center flex flex-col items-center">
+            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-cyan-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/10 hover:-translate-y-2 transition-all duration-500 text-center flex flex-col items-center">
               <div className="w-16 h-16 rounded-2xl bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                 <FaProjectDiagram className="text-3xl text-cyan-600 dark:text-cyan-400" />
               </div>
@@ -285,7 +315,7 @@ export default function Home() {
             </div>
 
             {/* Data */}
-            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-indigo-500/30 transition-all duration-500 text-center flex flex-col items-center">
+            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-indigo-500 hover:shadow-2xl hover:shadow-indigo-500/20 hover:bg-indigo-50/50 dark:hover:bg-indigo-900/10 hover:-translate-y-2 transition-all duration-500 text-center flex flex-col items-center">
               <div className="w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                 <FaDatabase className="text-3xl text-indigo-600 dark:text-indigo-400" />
               </div>
@@ -300,7 +330,7 @@ export default function Home() {
             </div>
 
             {/* AI Ops */}
-            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-purple-500/30 transition-all duration-500 text-center flex flex-col items-center">
+            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:bg-purple-50/50 dark:hover:bg-purple-900/10 hover:-translate-y-2 transition-all duration-500 text-center flex flex-col items-center">
               <div className="w-16 h-16 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                 <FaCloudUploadAlt className="text-3xl text-purple-600 dark:text-purple-400" />
               </div>
@@ -332,40 +362,36 @@ export default function Home() {
 
           <div className="flex justify-center flex-wrap px-4">
             <div className="bg-white dark:bg-slate-900 shadow-2xl rounded-3xl p-10 max-w-5xl w-full border border-gray-100 dark:border-gray-800 hover:shadow-blue-500/10 transition-shadow duration-500">
+              
+              {/* Dynamic Skill Name Display */}
+              <div className="h-12 mb-8 flex flex-col items-center justify-center text-center">
+                <p 
+                  className={`text-2xl font-bold transition-all duration-300 ${hoveredSkill ? 'opacity-100 scale-110' : 'opacity-40 scale-100'}`}
+                  style={{ color: hoveredSkill ? accentColors[colorIndex] : '' }}
+                >
+                  {hoveredSkill || "Hover over any skill to see more"}
+                </p>
+                <div 
+                  className="h-1 mt-1 rounded-full transition-all duration-500"
+                  style={{ 
+                    width: hoveredSkill ? '100px' : '0px', 
+                    backgroundColor: accentColors[colorIndex],
+                    opacity: hoveredSkill ? 1 : 0 
+                  }}
+                ></div>
+              </div>
+
               <div className="flex flex-wrap justify-center gap-6 md:gap-10 sm:gap-8 items-center">
-
-                {/* Languages */}
-                <SiPython className="text-6xl sm:text-7xl text-[#3776AB] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Python" />
-                <SiJavascript className="text-6xl sm:text-7xl text-[#F7DF1E] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="JavaScript" />
-
-                {/* AI & ML */}
-                <FaEye className="text-6xl sm:text-7xl text-blue-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Computer Vision" />
-                <FaLanguage className="text-6xl sm:text-7xl text-purple-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="NLP" />
-                <FaCubes className="text-6xl sm:text-7xl text-indigo-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="RAG" />
-                <FaKeyboard className="text-6xl sm:text-7xl text-gray-600 dark:text-gray-300 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Prompt Engineering" />
-                <FaLink className="text-6xl sm:text-7xl text-slate-700 dark:text-slate-400 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="LangChain" />
-                <FaRobot className="text-6xl sm:text-7xl text-yellow-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Hugging Face" />
-                <FaBrain className="text-6xl sm:text-7xl text-pink-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Deep Learning" />
-                <SiNumpy className="text-6xl sm:text-7xl text-[#013243] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="NumPy" />
-                <SiPandas className="text-6xl sm:text-7xl text-[#150458] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Pandas" />
-                <SiPytorch className="text-6xl sm:text-7xl text-[#EE4C2C] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="PyTorch" />
-                <SiOpencv className="text-6xl sm:text-7xl text-[#5C3EE8] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="OpenCV" />
-                <FaExternalLinkSquareAlt className="text-6xl sm:text-7xl text-teal-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Detectron2" />
-                <FaSearchLocation className="text-6xl sm:text-7xl text-orange-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="YOLO" />
-
-                {/* Databases */}
-                <SiMysql className="text-6xl sm:text-7xl text-[#4479A1] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="MySQL" />
-                <SiMongodb className="text-6xl sm:text-7xl text-[#47A248] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="MongoDB" />
-                <FaDatabase className="text-6xl sm:text-7xl text-emerald-500 hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="ChromaDB" />
-                <SiRedis className="text-6xl sm:text-7xl text-[#DC382D] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Redis" />
-
-                {/* DevOps & Tools */}
-                <SiDocker className="text-6xl sm:text-7xl text-[#2496ED] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Docker" />
-                <SiAmazonaws className="text-6xl sm:text-7xl text-[#232F3E] dark:text-white hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="AWS" />
-                <SiGithubactions className="text-6xl sm:text-7xl text-[#2088FF] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="GitHub Actions" />
-                <SiVercel className="text-6xl sm:text-7xl text-black dark:text-white hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Vercel" />
-                <SiGit className="text-6xl sm:text-7xl text-[#F05032] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Git" />
-                <SiPostman className="text-6xl sm:text-7xl text-[#FF6C37] hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md" title="Postman" />
+                {skillsData.map((skill, index) => (
+                  <skill.icon 
+                    key={index}
+                    className={`text-6xl sm:text-7xl hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md ${skill.name === 'Vercel' ? 'text-black dark:text-white' : skill.name === 'AWS' ? 'text-[#232F3E] dark:text-white' : ''}`}
+                    style={{ color: (skill.name !== 'Vercel' && skill.name !== 'AWS') ? skill.color : undefined }}
+                    title={skill.name}
+                    onMouseEnter={() => setHoveredSkill(skill.name)}
+                    onMouseLeave={() => setHoveredSkill("")}
+                  />
+                ))}
               </div>
             </div>
           </div>
