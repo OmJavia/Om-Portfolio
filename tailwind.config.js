@@ -7,7 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {burtons:'burtons',}
+      fontFamily: {
+        burtons: 'burtons',
+        sans: ['"neue-kabel"', 'sans-serif'],
+      }
     },
   },
   plugins: [],
