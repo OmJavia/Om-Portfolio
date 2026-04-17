@@ -278,7 +278,7 @@ export default function Home() {
               The full <span style={{ color: accentColors[colorIndex] }}>AI development</span> stack.
             </h3>
             <p className="text-gray-500 dark:text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-              From architecting neural networks to deploying scalable production environments — I provide the full depth of AI design and implementation, powered by state-of-the-art technologies.
+              From architecting neural networks to deploying scalable production environments. I provide the full depth of AI design and implementation, powered by state of the art technologies.
             </p>
           </div>
 
@@ -305,7 +305,7 @@ export default function Home() {
               </div>
               <h4 className="text-xl font-bold dark:text-white mb-3">NLP & LLMs</h4>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
-                I build high-quality RAG pipelines and language models tailored to search and conversational needs.
+                I build high quality RAG pipelines and language models tailored to search and conversational needs.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-auto">
                 <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">LangChain</span>
@@ -335,7 +335,7 @@ export default function Home() {
               </div>
               <h4 className="text-xl font-bold dark:text-white mb-3">AI Deployment</h4>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
-                I design beautiful, cloud-ready services for applications to work on all sizes, optimized for low latency.
+                I design beautiful, cloud ready services for applications to work on all sizes, optimized for low latency.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-auto">
                 <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">AWS</span>
@@ -361,35 +361,28 @@ export default function Home() {
 
           <div className="flex justify-center flex-wrap px-4">
             <div className="bg-white dark:bg-slate-900 shadow-2xl rounded-3xl p-10 max-w-5xl w-full border border-gray-100 dark:border-gray-800 hover:shadow-blue-500/10 transition-shadow duration-500">
-              
-              {/* Dynamic Skill Name Display */}
-              <div className="h-12 mb-8 flex flex-col items-center justify-center text-center">
-                <p 
-                  className={`text-2xl font-bold transition-all duration-300 ${hoveredSkill ? 'opacity-100 scale-110' : 'opacity-40 scale-100'}`}
-                  style={{ color: hoveredSkill ? accentColors[colorIndex] : '' }}
-                >
-                  {hoveredSkill || "Hover over any skill to see more"}
-                </p>
-                <div 
-                  className="h-1 mt-1 rounded-full transition-all duration-500"
-                  style={{ 
-                    width: hoveredSkill ? '100px' : '0px', 
-                    backgroundColor: accentColors[colorIndex],
-                    opacity: hoveredSkill ? 1 : 0 
-                  }}
-                ></div>
-              </div>
 
-              <div className="flex flex-wrap justify-center gap-6 md:gap-10 sm:gap-8 items-center">
+              <div className="flex flex-wrap justify-center gap-4 sm:gap-6 items-center">
                 {skillsData.map((skill, index) => (
-                  <skill.icon 
+                  <div
                     key={index}
-                    className={`text-6xl sm:text-7xl hover:scale-125 transition-transform duration-300 cursor-pointer drop-shadow-md ${skill.name === 'Vercel' ? 'text-black dark:text-white' : skill.name === 'AWS' ? 'text-[#232F3E] dark:text-white' : ''}`}
-                    style={{ color: (skill.name !== 'Vercel' && skill.name !== 'AWS') ? skill.color : undefined }}
-                    title={skill.name}
+                    className="group relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-gray-700 hover:scale-110 shadow-sm hover:shadow-xl hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 cursor-pointer overflow-hidden"
                     onMouseEnter={() => setHoveredSkill(skill.name)}
                     onMouseLeave={() => setHoveredSkill("")}
-                  />
+                  >
+                    <skill.icon
+                      className={`text-5xl sm:text-6xl drop-shadow-md transition-transform duration-300 group-hover:-translate-y-3 ${skill.name === 'Vercel' ? 'text-black dark:text-white' : skill.name === 'AWS' ? 'text-[#232F3E] dark:text-white' : ''}`}
+                      style={{ color: (skill.name !== 'Vercel' && skill.name !== 'AWS') ? skill.color : undefined }}
+                    />
+                    <div className="absolute bottom-2 w-full px-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span
+                        className={`text-[10px] sm:text-xs font-bold leading-tight drop-shadow-sm ${skill.name === 'Vercel' ? 'text-black dark:text-white' : skill.name === 'AWS' ? 'text-[#232F3E] dark:text-white' : ''}`}
+                        style={{ color: (skill.name !== 'Vercel' && skill.name !== 'AWS') ? skill.color : undefined }}
+                      >
+                        {skill.name}
+                      </span>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
