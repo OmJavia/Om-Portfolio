@@ -371,12 +371,12 @@ export default function Home() {
                     onMouseLeave={() => setHoveredSkill("")}
                   >
                     <skill.icon
-                      className={`text-5xl sm:text-6xl drop-shadow-md transition-transform duration-300 group-hover:-translate-y-3 ${skill.name === 'Vercel' ? 'text-black dark:text-white' : skill.name === 'AWS' ? 'text-[#232F3E] dark:text-white' : ''}`}
+                      className={`text-5xl sm:text-6xl drop-shadow-md transition-transform duration-300 group-hover:-translate-y-4 ${skill.name === 'Vercel' ? 'text-black dark:text-white' : skill.name === 'AWS' ? 'text-[#232F3E] dark:text-white' : ''}`}
                       style={{ color: (skill.name !== 'Vercel' && skill.name !== 'AWS') ? skill.color : undefined }}
                     />
-                    <div className="absolute bottom-2 w-full px-2 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-1 sm:bottom-2 w-full px-1 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span
-                        className={`text-[10px] sm:text-xs font-bold leading-tight drop-shadow-sm ${skill.name === 'Vercel' ? 'text-black dark:text-white' : skill.name === 'AWS' ? 'text-[#232F3E] dark:text-white' : ''}`}
+                        className={`text-[9px] sm:text-[10px] font-bold leading-none drop-shadow-sm ${skill.name === 'Vercel' ? 'text-black dark:text-white' : skill.name === 'AWS' ? 'text-[#232F3E] dark:text-white' : ''}`}
                         style={{ color: (skill.name !== 'Vercel' && skill.name !== 'AWS') ? skill.color : undefined }}
                       >
                         {skill.name}
