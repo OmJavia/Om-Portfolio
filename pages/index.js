@@ -320,6 +320,46 @@ export default function Home() {
             {/* The central line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 border-l-2 border-dashed border-teal-500 dark:border-teal-700 hidden md:block"></div>
 
+            {/* Experience Item 2: Metashot  (Right side) */}
+            <div className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group">
+              {/* Left (Date/Location) */}
+              <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
+                <p className="text-lg font-bold text-gray-700 dark:text-gray-300">November 2025 - Present</p>
+                <p className="text-sm text-gray-500 font-medium">Om Javia</p>
+                <p className="text-sm text-gray-500">Bangalore, Karnataka</p>
+              </div>
+
+              {/* Center Dot */}
+              <div className="z-20 flex items-center justify-center order-1 w-12 h-12 rounded-full bg-orange-500 shadow-xl border-4 border-white dark:border-black absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:-translate-y-0 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span className="text-white text-xl">💼</span>
+              </div>
+
+              {/* Right (Card) */}
+              <div className="order-1 md:order-2 w-full md:w-5/12">
+                <div className="shadow-lg border border-gray-100 dark:border-gray-800 p-6 rounded-2xl dark:bg-slate-900 bg-white hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <Image src={Metashot} width={60} height={60} alt="Metashot" className="rounded-lg shadow-sm" />
+                    <div>
+                      <h3 className="text-xl font-bold dark:text-amber-300 text-slate-800">Metashot</h3>
+                      <h4 className="text-sm font-semibold text-blue-600 dark:text-amber-500">AI Product Engineer</h4>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">Product Strategy</span>
+                    <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium"> Roadmapping</span>
+                    <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">FastAPI</span>
+                    <span className="text-xs bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300 px-3 py-1 rounded-full font-medium">GTM</span>
+                  </div>
+                  <ul className="text-sm text-gray-600 dark:text-gray-400 text-left list-disc pl-4 space-y-2">
+                    <li>Led cross-functional execution of a sports gaming product across 3 workstreams: Engineering, UX and Go-to-Market.</li>
+                    <li>Translated user feedback into PRDs, prioritizing features for a Sport Tech product in the $9.1B global pickleball market.</li>
+                    <li>Validated product-market fit through user feedback from 185+ players, driving 12+ iterative product improvements.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
             {/* Experience Item 1: Metashot (Left side) */}
             <div className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group">
               {/* Left (Card) */}
@@ -352,7 +392,7 @@ export default function Home() {
 
               {/* Right (Date/Location) */}
               <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
-                <p className="text-lg font-bold text-gray-700 dark:text-gray-300">July 2025 - Present</p>
+                <p className="text-lg font-bold text-gray-700 dark:text-gray-300">July 2025 - October 2025</p>
                 <p className="text-sm text-gray-500 font-medium">Om Javia</p>
                 <p className="text-sm text-gray-500">Bangalore, Karnataka</p>
               </div>
