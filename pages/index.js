@@ -54,7 +54,6 @@ import Layout from "../components/Layout";
 
 
 export default function Home() {
-  const [colorIndex, setColorIndex] = useState(0);
   const [hoveredSkill, setHoveredSkill] = useState("");
 
   const skillsData = [
@@ -107,66 +106,61 @@ export default function Home() {
       </Head>
 
       <div>
-        <section id="home" className="scroll-mt-24">
+        <section id="home" className="scroll-mt-24 pt-4 pb-12">
           {/* Hero Content - Two Column */}
-          <div
-            className="flex flex-col-reverse lg:flex-row items-center justify-between px-4 pt-10 pb-20 gap-12 select-none"
-          >
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 select-none">
 
             {/* Left: Text */}
             <div className="flex-1 flex flex-col gap-6 text-center lg:text-left items-center lg:items-start">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 border border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-slate-900/50 rounded-full px-5 py-2 w-fit text-sm font-medium text-gray-600 dark:text-gray-300 backdrop-blur-sm">
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
-                Available for new AI opportunities
-              </div>
 
               {/* Big Heading */}
-              <h2 className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.1]">
                 I&apos;m{" "}
-                <span style={{ color: accentColors[colorIndex] }}>Om Javia,</span>
+                <span className="text-[#ff6b00]">Om Javia,</span>
                 <br />
-                <span className="text-slate-800 dark:text-slate-200">AI</span>{" "}
-                <span style={{ color: accentColors[colorIndex] }}>Engineer</span>
-              </h2>
+                <span className="text-neutral-800 dark:text-neutral-200">AI Product</span>{" "}
+                <span className="text-[#ff6b00]">Engineer</span>
+              </h1>
 
-              <p className="text-gray-500 dark:text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl">
-                I design and build <span className="font-semibold text-slate-800 dark:text-slate-200">functional and beautiful</span> AI applications with a focus on user experience and high quality.
+              <p className="text-neutral-600 dark:text-neutral-300 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+                I design and build <span className="font-semibold text-neutral-900 dark:text-white">functional and beautiful</span> AI applications with a focus on user experience, reliability, and high performance.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-6" onClick={(e) => e.stopPropagation()}>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-2">
                 <Link
                   href="/contact"
-                  className="font-bold px-10 py-3.5 rounded-full transition-all border-2"
-                  style={{ borderColor: accentColors[colorIndex], color: accentColors[colorIndex] }}
-                  onMouseEnter={(e) => { e.target.style.backgroundColor = accentColors[colorIndex]; e.target.style.color = "white"; }}
-                  onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = accentColors[colorIndex]; }}>
+                  className="px-7 py-3 rounded-full text-sm font-semibold border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-800/80 text-neutral-900 dark:text-neutral-100 hover:border-[#ff6b00] dark:hover:border-[#ff6b00] hover:text-[#ff6b00] dark:hover:text-[#ff6b00] transition-all shadow-sm"
+                >
                   Hire me
                 </Link>
                 <a
                   href="https://cal.com/Om-Javia"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-white font-bold px-10 py-4 rounded-full shadow-2xl hover:scale-105 transition-all"
-                  style={{ backgroundColor: accentColors[colorIndex], boxShadow: `0 15px 30px -5px ${accentColors[colorIndex]}66` }}>
+                  className="px-7 py-3 rounded-full text-sm font-semibold bg-[#0a0a0a] dark:bg-white text-white dark:text-[#0a0a0a] hover:bg-[#ff6b00] dark:hover:bg-[#ff6b00] dark:hover:text-white transition-all shadow-md"
+                >
                   Schedule a Meeting
                 </a>
               </div>
 
               {/* Social Icons Badge Row */}
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-wrap gap-3 pt-2">
                 {[
-                  { icon: <AiFillLinkedin />, link: "https://www.linkedin.com/in/omjavia/" },
-                  { icon: <AiFillTwitterCircle />, link: "https://twitter.com/OmJavia1" },
-                  { icon: <AiFillGithub />, link: "https://github.com/omjavia" },
-                  { icon: <AiFillInstagram />, link: "https://instagram.com/om_javia_" },
-                  { icon: <MdEmail />, link: "mailto:omjavia18@gmail.com" }
+                  { icon: <AiFillLinkedin />, link: "https://www.linkedin.com/in/omjavia/", label: "LinkedIn" },
+                  { icon: <AiFillTwitterCircle />, link: "https://twitter.com/OmJavia1", label: "Twitter" },
+                  { icon: <AiFillGithub />, link: "https://github.com/omjavia", label: "GitHub" },
+                  { icon: <AiFillInstagram />, link: "https://instagram.com/om_javia_", label: "Instagram" },
+                  { icon: <MdEmail />, link: "mailto:omjavia18@gmail.com", label: "Email" }
                 ].map((social, i) => (
-                  <a key={i} href={social.link} target="_blank" rel="noreferrer"
-                    className="p-3 rounded-xl bg-gray-100 dark:bg-slate-900 text-3xl shadow-sm text-gray-900 dark:text-gray-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300"
-                    onMouseEnter={(e) => { e.currentTarget.style.color = accentColors[colorIndex]; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = ''; }}>
+                  <a
+                    key={i}
+                    href={social.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={social.label}
+                    className="p-3 rounded-2xl bg-white dark:bg-neutral-900 border border-neutral-200/80 dark:border-neutral-800/80 text-xl text-neutral-700 dark:text-neutral-300 hover:text-[#ff6b00] dark:hover:text-[#ff6b00] hover:border-neutral-300 dark:hover:border-neutral-700 transition-all shadow-sm"
+                  >
                     {social.icon}
                   </a>
                 ))}
@@ -174,86 +168,93 @@ export default function Home() {
             </div>
 
             {/* Right: Illustration */}
-            <div className="flex-1 w-full max-w-2xl" onClick={(e) => e.stopPropagation()}>
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                <Image src={front} width={700} height={700} alt="AI Engineer Workspace"
-                  className="relative rounded-2xl shadow-2xl transition-all duration-700 hover:scale-[1.02]"
-                  priority />
+            <div className="flex-1 w-full max-w-lg lg:max-w-xl">
+              <div className="p-2.5 rounded-3xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/70 dark:bg-neutral-900/70 shadow-xl backdrop-blur-sm">
+                <Image
+                  src={front}
+                  width={700}
+                  height={700}
+                  alt="AI Engineer Workspace"
+                  className="rounded-2xl object-cover w-full h-auto"
+                  priority
+                />
               </div>
             </div>
 
           </div>
         </section>
 
-        <section id="stack" className="py-20 scroll-mt-24">
-          <div className="text-center mb-16 px-4">
-            <h3 className="text-4xl md:text-5xl font-bold dark:text-white mb-6">
-              The full <span style={{ color: accentColors[colorIndex] }}>AI development</span> stack.
-            </h3>
-            <p className="text-gray-500 dark:text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-              From architecting neural networks to deploying scalable production environments. I provide the full depth of AI design and implementation, powered by state of the art technologies.
+        <section id="stack" className="py-16 scroll-mt-24">
+          <div className="text-center mb-12">
+            <span className="font-mono text-xs uppercase tracking-widest text-[#ff6b00] font-semibold">
+              Capabilities
+            </span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-1 mb-4">
+              The Full <span className="font-serif italic font-normal text-[#ff6b00]">AI Stack</span>.
+            </h2>
+            <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
+              From architecting neural networks to deploying scalable production environments. I provide end-to-end AI design and engineering.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* CV */}
-            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 hover:-translate-y-2 transition-all duration-500 text-center flex flex-col items-center">
-              <div className="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                <FaBrain className="text-3xl text-blue-600 dark:text-blue-400" />
+            <div className="p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
+              <div className="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-5 text-2xl">
+                <FaBrain />
               </div>
-              <h4 className="text-xl font-bold dark:text-white mb-3">Computer Vision</h4>
-              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
-                I build functional, beautiful and responsive vision systems that understand and track the real world.
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">Computer Vision</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
+                Real-time vision systems that track, segment, and understand the physical world with precision.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-auto">
-                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">OpenCV</span>
-                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">YOLO</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">OpenCV</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">YOLO</span>
               </div>
             </div>
 
             {/* NLP */}
-            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-cyan-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:bg-cyan-50/50 dark:hover:bg-cyan-900/10 hover:-translate-y-2 transition-all duration-500 text-center flex flex-col items-center">
-              <div className="w-16 h-16 rounded-2xl bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                <FaProjectDiagram className="text-3xl text-cyan-600 dark:text-cyan-400" />
+            <div className="p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
+              <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-5 text-2xl">
+                <FaProjectDiagram />
               </div>
-              <h4 className="text-xl font-bold dark:text-white mb-3">NLP & LLMs</h4>
-              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
-                I build high quality RAG pipelines and language models tailored to search and conversational needs.
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">NLP & LLMs</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
+                RAG pipelines, autonomous agents, and fine-tuned language models optimized for complex reasoning.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-auto">
-                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">LangChain</span>
-                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">RAG</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">LangChain</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">RAG</span>
               </div>
             </div>
 
             {/* Data */}
-            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-indigo-500 hover:shadow-2xl hover:shadow-indigo-500/20 hover:bg-indigo-50/50 dark:hover:bg-indigo-900/10 hover:-translate-y-2 transition-all duration-500 text-center flex flex-col items-center">
-              <div className="w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                <FaDatabase className="text-3xl text-indigo-600 dark:text-indigo-400" />
+            <div className="p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
+              <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-5 text-2xl">
+                <FaDatabase />
               </div>
-              <h4 className="text-xl font-bold dark:text-white mb-3">Data Science</h4>
-              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
-                I create meaningful insights from raw data to match user needs and expectations, and solve their problems.
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">Data Science</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
+                Extracting actionable intelligence and predictive patterns from complex data streams.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-auto">
-                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">Pandas</span>
-                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">Scikit</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Pandas</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Scikit</span>
               </div>
             </div>
 
             {/* AI Ops */}
-            <div className="group p-8 rounded-3xl bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-800 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:bg-purple-50/50 dark:hover:bg-purple-900/10 hover:-translate-y-2 transition-all duration-500 text-center flex flex-col items-center">
-              <div className="w-16 h-16 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                <FaCloudUploadAlt className="text-3xl text-purple-600 dark:text-purple-400" />
+            <div className="p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-5 text-2xl">
+                <FaCloudUploadAlt />
               </div>
-              <h4 className="text-xl font-bold dark:text-white mb-3">AI Deployment</h4>
-              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
-                I design beautiful, cloud ready services for applications to work on all sizes, optimized for low latency.
+              <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-2">AI Deployment</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
+                Production-ready cloud microservices engineered for low latency and high availability.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-auto">
-                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">AWS</span>
-                <span className="text-[10px] uppercase tracking-wider font-bold px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">Docker</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">AWS</span>
+                <span className="text-[10px] font-mono uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">Docker</span>
               </div>
             </div>
           </div>
@@ -265,7 +266,7 @@ export default function Home() {
           <div className="text-center mb-10">
             <h3 className="text-4xl font-bold py-1 dark:text-white inline-flex items-center gap-2">
               <span className="text-slate-800 dark:text-white">Technical</span>
-              <span style={{ color: accentColors[colorIndex] }}>Skills</span>
+              <span className="text-[#ff6b00]">Skills</span>
               <span className="text-3xl">👨‍💻</span>
             </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
@@ -307,7 +308,7 @@ export default function Home() {
           <div className="mb-10">
             <h3 className="text-4xl font-bold py-1 dark:text-white inline-flex items-center gap-2">
               <span className="text-slate-800 dark:text-white">Past</span>
-              <span style={{ color: accentColors[colorIndex] }}>Experiences</span>
+              <span className="text-[#ff6b00]">Experiences</span>
               <span className="text-3xl">💼</span>
             </h3>
             <p className="text-md py-2 leading-7 text-gray-400">
@@ -517,7 +518,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold py-1 dark:text-white inline-flex items-center gap-2">
               <span className="text-slate-800 dark:text-white">Recent</span>
-              <span style={{ color: accentColors[colorIndex] }}>Projects</span>
+              <span className="text-[#ff6b00]">Projects</span>
               <span className="text-3xl">🚀</span>
             </h3>
             <div>
