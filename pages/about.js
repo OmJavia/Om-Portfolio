@@ -2,15 +2,12 @@ import Head from "next/head";
 import { AiFillTwitterCircle, AiFillLinkedin, AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import Image from "next/image";
-import { useState } from "react";
-import Link from "next/link";
 import Layout from "../components/Layout";
 import peeps from "../public/Om_pic.jpg";
 
 
 export default function About() {
-  const [colorIndex, setColorIndex] = useState(0);
-  const accentColors = ["#3b82f6"];
+  const accentColor = "#3b82f6";
 
   return (
     <Layout>
@@ -36,17 +33,17 @@ export default function About() {
               About
             </h1>
             <div className="flex items-center gap-4 mt-2">
-              <span className="text-5xl md:text-7xl font-bold italic" style={{ color: accentColors[colorIndex] }}>ME</span>
+              <span className="text-5xl md:text-7xl font-bold italic" style={{ color: accentColor }}>ME</span>
               <span className="text-6xl animate-bounce">😜</span>
             </div>
           </div>
 
           <div className="space-y-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
             <p>
-              🤵 I am <span className="font-bold underline decoration-2 decoration-blue-500" style={{ color: accentColors[colorIndex] }}>Om Javia</span>, an AI Engineer based in Bangalore, India. Currently, I am at <span className="font-bold italic">Metashot</span>, where I specialize in building real-time computer vision systems and scalable AI solutions.
+              🤵 I am <span className="font-bold underline decoration-2 decoration-blue-500" style={{ color: accentColor }}>Om Javia</span>, an AI Engineer based in Bangalore, India. Currently, I am at <span className="font-bold italic">Metashot</span>, where I specialize in building real-time computer vision systems and scalable AI solutions.
             </p>
             <p>
-              🚀 My expertise lies in <span className="font-bold" style={{ color: accentColors[colorIndex] }}>Computer Vision, Python, and Machine Learning</span>. From engineering obstacle-aware path planning for rovers at <span className="font-bold">ISRO</span> to deploying high-performance ML models at scale, I enjoy solving complex problems that bridge the gap between artificial intelligence and user experience.
+              🚀 My expertise lies in <span className="font-bold" style={{ color: accentColor }}>Computer Vision, Python, and Machine Learning</span>. From engineering obstacle-aware path planning for rovers at <span className="font-bold">ISRO</span> to deploying high-performance ML models at scale, I enjoy solving complex problems that bridge the gap between artificial intelligence and user experience.
             </p>
             <p>
               🎓 I hold a Bachelor of Technology in Computer Science from <span className="font-bold italic">Medi-Caps University</span> (CGPA 9.0/10), with a specialization in Cloud Technology and Information Security.
@@ -64,7 +61,7 @@ export default function About() {
             ].map((social, i) => (
               <a key={i} href={social.link} target="_blank" rel="noreferrer"
                 className="p-3 rounded-xl bg-gray-100 dark:bg-slate-900 text-3xl shadow-sm text-gray-900 dark:text-gray-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-300"
-                onMouseEnter={(e) => { e.currentTarget.style.color = accentColors[colorIndex]; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = accentColor; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = ''; }}>
                 {social.icon}
               </a>

@@ -12,82 +12,78 @@ export default function ProjectCard({
   githubUrl,
 }) {
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white/70 dark:bg-neutral-900/70 shadow-sm backdrop-blur-sm transition-all duration-500 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-2xl hover:shadow-black/5 dark:hover:shadow-black/50">
-      {/* Aspect Ratio Image Container */}
-      <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-100 dark:bg-neutral-800/50">
+    <div className="group relative overflow-hidden rounded-2xl border border-neutral-200/90 dark:border-neutral-800/90 bg-neutral-100 dark:bg-neutral-900 shadow-sm transition-all duration-500 hover:border-neutral-300 dark:hover:border-neutral-700 hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-black/60 focus-within:border-neutral-300 dark:focus-within:border-neutral-700 focus-within:shadow-2xl">
+      <div className="relative w-full aspect-video overflow-hidden bg-neutral-950">
         {image && (
           <Image
             src={image}
             alt={title}
             fill
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            className="object-contain transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-[0.38] group-hover:saturate-[0.85] group-focus-within:scale-[1.03] group-focus-within:brightness-[0.38] group-focus-within:saturate-[0.85]"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         )}
-        <div className="absolute top-3 left-3 z-10">
-          <span className="font-mono text-[10px] uppercase tracking-[0.14em] font-semibold px-2.5 py-1 rounded-md bg-white/90 dark:bg-neutral-900/90 text-neutral-800 dark:text-neutral-200 border border-neutral-200/80 dark:border-neutral-700/80 shadow-sm backdrop-blur-md">
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-within:opacity-100" />
+
+        <div className="absolute left-4 right-4 top-4 z-10 flex translate-y-3 items-center justify-between gap-3 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
+          <span className="font-mono text-[10px] uppercase tracking-[0.14em] font-semibold px-2.5 py-1 rounded-md bg-white/90 text-neutral-800 border border-white/50 shadow-sm backdrop-blur-md">
             {category}
           </span>
+          <div className="flex items-center gap-2 shrink-0">
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-md hover:bg-white hover:text-black transition-colors"
+                aria-label={`View ${title} source code`}
+              >
+                <FaGithub className="text-xs" />
+              </a>
+            )}
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-md hover:bg-white hover:text-black transition-colors"
+                aria-label={`Open ${title}`}
+              >
+                <FaExternalLinkAlt className="text-xs" />
+              </a>
+            )}
+          </div>
         </div>
-      </div>
 
-      {/* Details Container */}
-      <div className="flex flex-col flex-1 p-5 sm:p-6 justify-between gap-4">
-        <div>
-          <div className="flex items-start justify-between gap-2 mb-2">
-            <h3 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-white group-hover:text-[#ff6b00] dark:group-hover:text-[#ff6b00] transition-colors">
-              {title}
-            </h3>
-            
-            <div className="flex items-center gap-2 shrink-0">
-              {githubUrl && (
-                <a
-                  href={githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-2 rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 hover:text-black dark:hover:text-white transition-colors"
-                  aria-label="View Source Code"
+        <div className="absolute inset-x-0 bottom-0 z-10 translate-y-full p-5 text-white opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 sm:p-6">
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight drop-shadow-sm">
+            {title}
+          </h3>
+          <div className="mt-4">
+            <p className="text-sm leading-relaxed text-white/85">
+              {description}
+            </p>
+
+            {bullets.length > 0 && (
+              <ul className="mt-3 text-xs sm:text-sm text-white/80 space-y-1.5 list-disc pl-4">
+                {bullets.map((bullet, idx) => (
+                  <li key={idx}>{bullet}</li>
+                ))}
+              </ul>
+            )}
+
+            <div className="flex flex-wrap gap-1.5 pt-4">
+              {tags.map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-white/15 text-white/85 font-medium backdrop-blur-md"
                 >
-                  <FaGithub className="text-xs" />
-                </a>
-              )}
-              {liveUrl && (
-                <a
-                  href={liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-2 rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 group-hover:bg-[#0a0a0a] group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-[#0a0a0a] transition-all"
-                  aria-label="Live Demo"
-                >
-                  <FaExternalLinkAlt className="text-xs" />
-                </a>
-              )}
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
-
-          <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 mb-4">
-            {description}
-          </p>
-
-          {bullets.length > 0 && (
-            <ul className="text-xs text-neutral-600 dark:text-neutral-400 space-y-1.5 list-disc pl-4 mb-4">
-              {bullets.map((bullet, idx) => (
-                <li key={idx}>{bullet}</li>
-              ))}
-            </ul>
-          )}
-        </div>
-
-        {/* Tech Stack Tags */}
-        <div className="flex flex-wrap gap-1.5 pt-2 border-t border-neutral-100 dark:border-neutral-800">
-          {tags.map((tag, idx) => (
-            <span
-              key={idx}
-              className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 font-medium"
-            >
-              {tag}
-            </span>
-          ))}
         </div>
       </div>
     </div>

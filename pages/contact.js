@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import Link from "next/link";
 import Layout from "../components/Layout";
 import avatar1 from "../public/contact_avatar.png";
 import contact from "../public/contact.svg";
@@ -18,17 +17,17 @@ export default function Contact() {
     message: "",
   });
   const [status, setStatus] = useState("idle"); // idle, submitting, success, error
-
-  const [colorIndex, setColorIndex] = useState(0);
-  const accentColors = [
-    "#3b82f6"
-  ];
-
-  const tealAccent = accentColors[colorIndex];
+  const accentColor = "#3b82f6";
+  const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+    `Portfolio Inquiry from ${formData.name || "a visitor"}`
+  )}&body=${encodeURIComponent(formData.message)}`;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (status !== "idle") {
+      setStatus("idle");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -36,10 +35,6 @@ export default function Contact() {
     setStatus("submitting");
 
     try {
-      if (FORMSPREE_ID === "xjgajbyk") {
-        console.warn("Using placeholder Formspree ID. Form submission will fail.");
-      }
-
       const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
         headers: {
@@ -50,6 +45,7 @@ export default function Contact() {
           email: formData.email,
           message: formData.message,
           _subject: `New portfolio message from ${formData.name}`,
+          _gotcha: "",
         }),
       });
 
@@ -80,7 +76,7 @@ export default function Contact() {
               Contact
             </h1>
             <div className="flex items-center gap-2 mt-[-10px] ml-1">
-              <span className="text-4xl md:text-5xl font-bold" style={{ color: tealAccent }}>Me</span>
+              <span className="text-4xl md:text-5xl font-bold" style={{ color: accentColor }}>Me</span>
               <div className="w-20 h-20 md:w-20 md:h-20">
                 <Image src={avatar1} alt="Avatar" width={80} height={80} style={{ width: '100%', height: 'auto' }} />
               </div>
@@ -104,6 +100,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  minLength={2}
                   placeholder="Om Javia"
                   className="w-full bg-blue-50/50 dark:bg-slate-800 border-none rounded-xl px-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 transition-all"
                 />
@@ -127,6 +124,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  minLength={20}
                   rows="4"
                   placeholder="Hey there! Let's connect"
                   className="w-full bg-blue-50/50 dark:bg-slate-800 border-none rounded-xl px-4 py-4 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 transition-all resize-none"
@@ -135,7 +133,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                style={{ backgroundColor: tealAccent }}
+                style={{ backgroundColor: accentColor }}
                 className="w-full text-white font-bold py-4 rounded-xl shadow-lg hover:opacity-90 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === "submitting" ? "Sending..." : "Send email"}
@@ -149,13 +147,13 @@ export default function Contact() {
               {status === "error" && (
                 <div className="text-center mt-4 space-y-2">
                   <p className="text-red-500 font-semibold">
-                    Something went wrong. Have you set your Formspree ID?
+                    Something went wrong. Please try again or send the message directly.
                   </p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     Alternatively, click below to send via your email client:
                   </p>
                   <a
-                    href={`mailto:${CONTACT_EMAIL}?subject=Portfolio Inquiry from ${formData.name}&body=${formData.message}`}
+                    href={mailtoHref}
                     className="inline-block text-teal-600 dark:text-teal-400 font-bold hover:underline"
                   >
                     Send via Direct Email ✉️

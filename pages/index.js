@@ -15,47 +15,32 @@ import {
 
 import {
   FaBrain, FaEye, FaLanguage, FaDatabase, FaKeyboard,
-  FaLink, FaRobot, FaSearchLocation, FaCubes, FaExternalLinkSquareAlt
+  FaLink, FaRobot, FaSearchLocation, FaCubes, FaExternalLinkSquareAlt,
+  FaProjectDiagram, FaCloudUploadAlt
 } from "react-icons/fa";
 
 import Image from "next/image";
-import Html from "../public/Html.png";
-import anvil from "../public/anvil.png";
-import tesla from "../public/tesla.png";
-import Ai from "../public/Ai.png"
-import Car from "../public/Car.png"
-import Dice from "../public/dice.png"
-import Mapty from "../public/mapty.png"
-import Bank_Account from "../public/bank_account.png"
-import Guess_The_Number from "../public/guess_number.png"
-import SignUp from "../public/SignUp.png";
+import Car from "../public/Car.png";
 import Blog from "../public/Blog.png";
-import coming from "../public/coming.jpg";
 import NirmanHome from "../public/nirmanbook.png";
 import Mars from "../public/Mars.png";
-import { useState } from "react";
 import QR from "../public/Download Resume.png";
 import Link from "next/link";
-import Dryer from "../public/Dryer.png";
 import Metashot from "../public/Metashot.png";
 import CodingShark from "../public/Coding-Shark.png";
 import netflix from "../public/netflix.png";
 import aerpace from "../public/aerpace.png";
 import PDF_Seacrher from "../public/PDF_Searcher.png";
-import Tennis from "../public/Tennis.png";
-import Sac from "../public/sac.png"
-import Ace from "../public/ace-infoway.png"
-import Apoliums from "../public/Apoliums.png"
-import Relcon from "../public/relcon.png"
-import hero from "../public/hero.gif"
-import front from "../public/front.png"
-import { FaProjectDiagram, FaCloudUploadAlt } from 'react-icons/fa';
+import Sac from "../public/sac.png";
+import Ace from "../public/ace-infoway.png";
+import Apoliums from "../public/Apoliums.png";
+import Relcon from "../public/relcon.png";
+import front from "../public/front.png";
 import Layout from "../components/Layout";
+import ProjectCard from "../components/ProjectCard";
 
 
 export default function Home() {
-  const [hoveredSkill, setHoveredSkill] = useState("");
-
   const skillsData = [
     { name: "Python", icon: SiPython, color: "#3776AB" },
     { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
@@ -83,13 +68,80 @@ export default function Home() {
     { name: "Git", icon: SiGit, color: "#F05032" },
     { name: "Postman", icon: SiPostman, color: "#FF6C37" }
   ];
-  const accentColors = [
-    "#3b82f6", // blue
+  const featuredProjects = [
+    {
+      title: "NirmanBook",
+      category: "PropTech",
+      description: "A construction and real-estate focused platform built to make project discovery and service workflows feel cleaner and more reliable.",
+      bullets: ["Production website with polished customer-facing flows", "Clear service discovery path for construction users"],
+      image: NirmanHome,
+      tags: ["Next.js", "Product", "UX"],
+      liveUrl: "https://www.nirmanbook.com/",
+    },
+    {
+      title: "Mars Rover Path Planning",
+      category: "AI Research",
+      description: "Computer vision and path-planning research for terrain understanding using satellite imagery and neural network workflows.",
+      bullets: ["Obstacle-aware rover navigation experiments", "Terrain labeling and model evaluation workflow"],
+      image: Mars,
+      tags: ["PyTorch", "CV", "Research"],
+      liveUrl: "https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing",
+    },
+    {
+      title: "Aerpace",
+      category: "Mobility",
+      description: "A future-mobility product website with a clean, performance-conscious presentation for a high-consideration category.",
+      bullets: ["Responsive public website", "Brand-forward product storytelling"],
+      image: aerpace,
+      tags: ["Frontend", "Product", "Web"],
+      liveUrl: "https://www.aerpace.com/",
+    },
+    {
+      title: "PDF Searcher",
+      category: "AI Utility",
+      description: "A document search utility focused on helping users find answers inside PDFs faster through a practical retrieval workflow.",
+      bullets: ["PDF ingestion and search experience", "Useful foundation for RAG-style document tools"],
+      image: PDF_Seacrher,
+      tags: ["Python", "RAG", "PDF"],
+      githubUrl: "https://github.com/OmJavia/PDF_Searcher",
+    },
+    {
+      title: "Movieflix",
+      category: "Frontend",
+      description: "A streaming-inspired web interface that demonstrates API-driven UI patterns, browsing flows, and responsive layout work.",
+      bullets: ["Movie discovery interface", "Responsive cards and media-first browsing"],
+      image: netflix,
+      tags: ["React", "API", "UI"],
+      liveUrl: "https://movieflix-om.vercel.app/",
+    },
+    {
+      title: "Coding Sharks",
+      category: "Community",
+      description: "A public web experience for a coding education/community brand with a direct, approachable visual system.",
+      bullets: ["Public website implementation", "Clear navigation for learners and visitors"],
+      image: CodingShark,
+      tags: ["Frontend", "Community", "Web"],
+      liveUrl: "https://www.thecodingsharks.in/",
+    },
+    {
+      title: "Apna Mechanic",
+      category: "Service App",
+      description: "A service-booking style web app concept for mechanic discovery and automotive support.",
+      bullets: ["Service-focused landing flow", "Mobile-friendly user journey"],
+      image: Car,
+      tags: ["React", "UX", "Services"],
+      liveUrl: "https://apna-mechanic.vercel.app/",
+    },
+    {
+      title: "AI Blog Generator",
+      category: "Generative AI",
+      description: "An AI writing project that explores automated blog generation and prompt-driven content workflows.",
+      bullets: ["Prompt-based content generation", "Repository-ready AI workflow"],
+      image: Blog,
+      tags: ["OpenAI", "Python", "GenAI"],
+      githubUrl: "https://github.com/OmJavia/Generate_Blogs",
+    },
   ];
-
-  const cycleColor = () => {
-    setColorIndex((prev) => (prev + 1) % accentColors.length);
-  };
 
   return (
     <Layout>
@@ -98,8 +150,15 @@ export default function Home() {
         <title>Om Javia Portfolio</title>
         <meta
           name="description"
-          content="Portfolio of Om Javia showcasing skills and projects in full-stack development."
+          content="Om Javia is an AI Product Engineer building computer vision, RAG, NLP, and production-ready AI applications."
         />
+        <meta property="og:title" content="Om Javia | AI Product Engineer" />
+        <meta
+          property="og:description"
+          content="Explore Om Javia's AI engineering work across computer vision, LLMs, data systems, and product-focused web applications."
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
 
         {/* Favicon */}
         <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
@@ -282,8 +341,6 @@ export default function Home() {
                   <div
                     key={index}
                     className="group relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-gray-700 hover:scale-110 shadow-sm hover:shadow-xl hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 cursor-pointer overflow-hidden"
-                    onMouseEnter={() => setHoveredSkill(skill.name)}
-                    onMouseLeave={() => setHoveredSkill("")}
                   >
                     <skill.icon
                       className={`text-5xl sm:text-6xl drop-shadow-md transition-transform duration-300 group-hover:-translate-y-4 ${skill.name === 'Vercel' ? 'text-black dark:text-white' : skill.name === 'AWS' ? 'text-[#232F3E] dark:text-white' : ''}`}
@@ -569,205 +626,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1">
-              <a href="https://www.nirmanbook.com/">
-                <Image
-                  src={NirmanHome}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing">
-                <Image
-                  src={Mars}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://www.aerpace.com/">
-                <Image
-                  src={aerpace}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://www.tennisshop.ae/">
-                <Image
-                  src={Tennis}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://movieflix-om.vercel.app/">
-                <Image
-                  src={netflix}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-
-            <div className="basis-1/3 flex-1">
-              <a href="https://www.thecodingsharks.in/">
-                <Image
-                  src={CodingShark}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://github.com/OmJavia/PDF_Searcher">
-                <Image
-                  src={PDF_Seacrher}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-
-            <div className="basis-1/3 flex-1">
-              <a href="https://apna-mechanic.vercel.app/">
-                <Image
-                  src={Car}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://github.com/OmJavia/Generate_Blogs">
-                <Image
-                  src={Blog}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"50%"}
-                  height={"50%"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://tesla-552544.webflow.io/">
-                <Image
-                  src={tesla}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://omjavia.github.io/portfolio/">
-                <Image
-                  src={Html}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://evo-dry.vercel.app/">
-                <Image
-                  src={Dryer}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://omjavia.github.io/Bank_Account/">
-                <Image
-                  src={Bank_Account}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://omjavia.github.io/Tracker/">
-                <Image
-                  src={Mapty}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://omjavia.github.io/Dice_Game/">
-                <Image
-                  src={Dice}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://omjavia.github.io/Guess_The_Number/">
-                <Image
-                  src={Guess_The_Number}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100px"}
-                  height={"100px"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://physicon-360.anvil.app/">
-                <Image
-                  src={anvil}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <a href="https://github.com/OmJavia/Open-AI/tree/main">
-                <Image
-                  src={Ai}
-                  className="rounded-lg object-cover border shadow-md hover:scale-105"
-                  width={"100%"}
-                  height={"100%"}
-                  layout="responsive" alt="" />
-              </a>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={SignUp}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"50%"}
-                height={"50%"}
-                layout="responsive" alt="" />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                src={coming}
-                className="rounded-lg object-cover border shadow-md hover:scale-105"
-                width={"50%"}
-                height={"50%"}
-                layout="responsive" alt="" />
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
           </div>
         </section>
         <section id="contact">
