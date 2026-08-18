@@ -80,9 +80,6 @@ export default function Contact() {
         <div className="grid items-start gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="space-y-8">
             <div className="space-y-5">
-              <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#ff6b00] shadow-sm dark:border-neutral-800 dark:bg-neutral-900/80">
-                Open to AI product work
-              </span>
               <div className="space-y-4">
                 <h1 className="max-w-2xl text-5xl font-black leading-[0.95] tracking-tight text-neutral-950 dark:text-white sm:text-6xl lg:text-7xl">
                   Let&apos;s build the next useful thing.
@@ -206,11 +203,12 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                style={{ backgroundColor: accentColor }}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-4 font-bold text-white shadow-lg transition-all hover:opacity-90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-[510] tracking-[-0.011em] whitespace-nowrap transition-all duration-200 outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 chroma-text-animate-parent border border-black/[0.08] bg-white text-[#1c1d1f] shadow-[0_1px_2px_rgba(0,0,0,0.05),0_4px_12px_-2px_rgba(0,0,0,0.05)] [--foreground:#1c1d1f] hover:shadow-[0_2px_6px_rgba(0,0,0,0.08),0_8px_20px_-4px_rgba(0,0,0,0.08)] h-10 px-6 py-2.5 has-[>svg]:px-4"
               >
-                <FaPaperPlane className="text-sm" />
-                {status === "submitting" ? "Sending..." : "Send project query"}
+                <span className="chroma-text-out chroma-text-out-animate">
+                  {status === "submitting" ? "Sending..." : "Send project query"}
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="tabler-icon tabler-icon-arrow-right"><path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"></path></svg>
               </button>
 
               {status === "success" && (

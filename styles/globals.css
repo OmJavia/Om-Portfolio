@@ -42,4 +42,26 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(160, 160, 160, 0.5);
-}
+}
+/* Chroma Text Animation */
+.chroma-text-animate-parent:hover .chroma-text-out-animate {
+  background: linear-gradient(
+    110deg,
+    var(--foreground, #1c1d1f) 20%,
+    #ef4444 35%,
+    #3b82f6 65%,
+    var(--foreground, #1c1d1f) 80%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 1.5s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: -200% center;
+  }
+}
