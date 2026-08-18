@@ -87,8 +87,8 @@ export default function About() {
               <h1 className="max-w-4xl text-5xl font-black leading-[0.95] tracking-tight text-neutral-950 dark:text-white sm:text-6xl lg:text-7xl">
                 I build AI systems that move from model to product.
               </h1>
-              <p className="max-w-2xl text-base leading-7 text-neutral-600 dark:text-neutral-300 sm:text-lg">
-                I&apos;m Om Javia, an AI Product Engineer focused on computer vision, LLM applications, and product execution. My work sits where models meet messy user behavior, real latency constraints, and business decisions.
+              <p className="max-w-2xl text-lg leading-relaxed text-neutral-600 dark:text-neutral-300 sm:text-xl tracking-tight">
+                I engineer intelligent, production-grade systems that synthesize artificial intelligence with robust software architecture to solve complex business challenges. My work connects modern engineering with product execution.
               </p>
             </div>
 

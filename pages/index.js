@@ -74,6 +74,8 @@ export default function Home() {
       category: "PropTech",
       description: "A construction and real-estate focused platform built to make project discovery and service workflows feel cleaner and more reliable.",
       bullets: ["Production website with polished customer-facing flows", "Clear service discovery path for construction users"],
+      architecture: "Next.js frontend communicating with a scalable Node.js backend. State management via Redux, and optimized image delivery through Vercel's edge network.",
+      hurdles: "Handling complex, multi-step service booking workflows while maintaining a highly responsive and polished UI on mobile devices.",
       image: NirmanHome,
       tags: ["Next.js", "Product", "UX"],
       liveUrl: "https://www.nirmanbook.com/",
@@ -83,6 +85,8 @@ export default function Home() {
       category: "AI Research",
       description: "Computer vision and path-planning research for terrain understanding using satellite imagery and neural network workflows.",
       bullets: ["Obstacle-aware rover navigation experiments", "Terrain labeling and model evaluation workflow"],
+      architecture: "PyTorch-based computer vision models for terrain segmentation, integrated with classic pathfinding algorithms (A*, Dijkstra) for optimal route calculation.",
+      hurdles: "Training models on sparse satellite imagery datasets and optimizing inference times to simulate real-time rover decision making.",
       image: Mars,
       tags: ["PyTorch", "CV", "Research"],
       liveUrl: "https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing",
@@ -92,6 +96,8 @@ export default function Home() {
       category: "Mobility",
       description: "A future-mobility product website with a clean, performance-conscious presentation for a high-consideration category.",
       bullets: ["Responsive public website", "Brand-forward product storytelling"],
+      architecture: "React-based architecture with highly optimized asset loading and custom CSS transitions to create a fluid, cinematic browsing experience.",
+      hurdles: "Balancing high-resolution media and smooth micro-animations with strict performance budgets for Core Web Vitals.",
       image: aerpace,
       tags: ["Frontend", "Product", "Web"],
       liveUrl: "https://www.aerpace.com/",
@@ -101,6 +107,8 @@ export default function Home() {
       category: "AI Utility",
       description: "A document search utility focused on helping users find answers inside PDFs faster through a practical retrieval workflow.",
       bullets: ["PDF ingestion and search experience", "Useful foundation for RAG-style document tools"],
+      architecture: "Python backend utilizing LangChain for document chunking, OpenAI embeddings for semantic search, and a lightweight vector store for fast retrieval.",
+      hurdles: "Extracting clean text from highly formatted, multi-column PDFs and tuning chunk sizes to preserve semantic context for accurate answers.",
       image: PDF_Seacrher,
       tags: ["Python", "RAG", "PDF"],
       githubUrl: "https://github.com/OmJavia/PDF_Searcher",
@@ -110,6 +118,8 @@ export default function Home() {
       category: "Frontend",
       description: "A streaming-inspired web interface that demonstrates API-driven UI patterns, browsing flows, and responsive layout work.",
       bullets: ["Movie discovery interface", "Responsive cards and media-first browsing"],
+      architecture: "React single-page application integrated with TMDB API. Uses custom hooks for data fetching and caching, styled with Tailwind CSS.",
+      hurdles: "Managing complex asynchronous state across multiple carousels and handling infinite scroll pagination without degrading performance.",
       image: netflix,
       tags: ["React", "API", "UI"],
       liveUrl: "https://movieflix-om.vercel.app/",
@@ -119,6 +129,8 @@ export default function Home() {
       category: "Community",
       description: "A public web experience for a coding education/community brand with a direct, approachable visual system.",
       bullets: ["Public website implementation", "Clear navigation for learners and visitors"],
+      architecture: "Static site generation (SSG) for high performance and SEO, using standard web technologies with a focus on accessibility.",
+      hurdles: "Designing an intuitive content architecture that caters to both absolute beginners and advanced developers seeking community resources.",
       image: CodingShark,
       tags: ["Frontend", "Community", "Web"],
       liveUrl: "https://www.thecodingsharks.in/",
@@ -128,6 +140,8 @@ export default function Home() {
       category: "Service App",
       description: "A service-booking style web app concept for mechanic discovery and automotive support.",
       bullets: ["Service-focused landing flow", "Mobile-friendly user journey"],
+      architecture: "Component-driven React UI focusing on mobile-first interaction patterns, mocking backend API responses for the service booking flow.",
+      hurdles: "Creating a seamless mobile booking wizard that minimizes user friction during high-stress situations (like vehicle breakdowns).",
       image: Car,
       tags: ["React", "UX", "Services"],
       liveUrl: "https://apna-mechanic.vercel.app/",
@@ -137,6 +151,8 @@ export default function Home() {
       category: "Generative AI",
       description: "An AI writing project that explores automated blog generation and prompt-driven content workflows.",
       bullets: ["Prompt-based content generation", "Repository-ready AI workflow"],
+      architecture: "Python automation script that interfaces with OpenAI's GPT models, utilizing structured prompt templates to ensure consistent output formatting.",
+      hurdles: "Engineering robust prompts that prevent the model from generating hallucinated content or straying from the requested tone and topic.",
       image: Blog,
       tags: ["OpenAI", "Python", "GenAI"],
       githubUrl: "https://github.com/OmJavia/Generate_Blogs",
@@ -181,8 +197,8 @@ export default function Home() {
                 <span className="text-[#ff6b00]">Engineer</span>
               </h1>
 
-              <p className="text-neutral-600 dark:text-neutral-300 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
-                I design and build <span className="font-semibold text-neutral-900 dark:text-white">functional and beautiful</span> AI applications with a focus on user experience, reliability, and high performance.
+              <p className="text-neutral-600 dark:text-neutral-300 text-lg sm:text-xl leading-relaxed max-w-xl font-normal tracking-tight">
+                I engineer intelligent, production-grade systems that synthesize artificial intelligence with robust software architecture to solve complex business challenges.
               </p>
 
               {/* CTA Buttons */}
@@ -260,7 +276,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* CV */}
-            <div className="p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
+            <div className="ai-glow-card p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
               <div className="w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-5 text-2xl">
                 <FaBrain />
               </div>
@@ -275,7 +291,7 @@ export default function Home() {
             </div>
 
             {/* NLP */}
-            <div className="p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
+            <div className="ai-glow-card p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
               <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-5 text-2xl">
                 <FaProjectDiagram />
               </div>
@@ -290,7 +306,7 @@ export default function Home() {
             </div>
 
             {/* Data */}
-            <div className="p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
+            <div className="ai-glow-card p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
               <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-5 text-2xl">
                 <FaDatabase />
               </div>
@@ -305,7 +321,7 @@ export default function Home() {
             </div>
 
             {/* AI Ops */}
-            <div className="p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
+            <div className="ai-glow-card p-7 rounded-3xl bg-white/80 dark:bg-neutral-900/80 border border-neutral-200/80 dark:border-neutral-800/80 shadow-md hover:shadow-xl hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 flex flex-col items-center text-center">
               <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-5 text-2xl">
                 <FaCloudUploadAlt />
               </div>
