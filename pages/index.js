@@ -79,6 +79,7 @@ export default function Home() {
       image: NirmanHome,
       tags: ["Next.js", "Product", "UX"],
       liveUrl: "https://www.nirmanbook.com/",
+      caseStudyUrl: "/case-studies/nirmanbook",
     },
     {
       title: "Mars Rover Path Planning",
@@ -90,6 +91,7 @@ export default function Home() {
       image: Mars,
       tags: ["PyTorch", "CV", "Research"],
       liveUrl: "https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing",
+      caseStudyUrl: "/case-studies/mars-rover",
     },
     {
       title: "Aerpace",
@@ -156,6 +158,17 @@ export default function Home() {
       image: Blog,
       tags: ["OpenAI", "Python", "GenAI"],
       githubUrl: "https://github.com/OmJavia/Generate_Blogs",
+    },
+    {
+      title: "Metashot",
+      category: "Sports AI",
+      description: "Real-time cricket shot detection and player-facing AI feedback system. Used by 185+ players across practice sessions at Metashot.",
+      bullets: ["Real-time shot classification from video", "Player feedback dashboard with weak-shot analysis"],
+      architecture: "YOLO-based shot detection pipeline feeding into a FastAPI + Redis backend, with a player-facing dashboard for session insights.",
+      hurdles: "Achieving sub-80ms end-to-end inference latency while maintaining accuracy across varied lighting and camera angles in real-world practice environments.",
+      image: Metashot,
+      tags: ["PyTorch", "YOLO", "FastAPI", "Sports AI"],
+      caseStudyUrl: "/case-studies/metashot",
     },
   ];
 

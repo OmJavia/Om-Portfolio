@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
-import { FaExternalLinkAlt, FaGithub, FaTimes, FaLayerGroup, FaTools } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaTimes, FaLayerGroup, FaTools, FaBookOpen } from "react-icons/fa";
 
 export default function ProjectCard({
   title,
@@ -13,6 +14,7 @@ export default function ProjectCard({
   tags = [],
   liveUrl,
   githubUrl,
+  caseStudyUrl,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -104,6 +106,14 @@ export default function ProjectCard({
                 )}
               </div>
               <div className="p-6 bg-white dark:bg-neutral-950 flex flex-wrap gap-3 border-t border-neutral-200 dark:border-neutral-800">
+                {caseStudyUrl && (
+                  <Link
+                    href={caseStudyUrl}
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#ff6b00] text-white font-semibold text-sm hover:opacity-90 transition-opacity shadow-sm"
+                  >
+                    <FaBookOpen /> Read Case Study
+                  </Link>
+                )}
                 {liveUrl && (
                   <a
                     href={liveUrl}

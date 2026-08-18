@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import AskOmWidget from "./AskOmWidget";
 
 export default function Layout({ children }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -31,6 +32,7 @@ export default function Layout({ children }) {
           {children}
         </main>
         <Footer />
+        <AskOmWidget />
       </div>
     </div>
   );
