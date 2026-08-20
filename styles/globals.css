@@ -70,7 +70,6 @@ body::before {
   }
 
   /* Light mode — refined warm cream palette */
-  .light body,
   html:not(.dark) body {
     @apply bg-[#f5f4f2] text-[#0a0a0a];
     @apply selection:bg-[#f97316]/20 selection:text-[#0a0a0a];
@@ -154,22 +153,22 @@ body::before {
 
   /* --- Neural Heading --- */
   .neural-heading {
-    @apply font-sans font-extrabold tracking-tight text-white leading-[1.05];
+    @apply font-sans font-extrabold tracking-tight text-neutral-900 dark:text-white leading-[1.05];
   }
 
   /* --- Metric Badge --- */
   .metric-badge {
-    @apply font-mono text-[#38bdf8] font-bold tabular-nums;
+    @apply font-mono text-[#0ea5e9] dark:text-[#38bdf8] font-bold tabular-nums;
   }
 
   /* --- Terminal Text (AI Widget) --- */
   .terminal-text {
-    @apply font-mono text-[#38bdf8] text-sm;
+    @apply font-mono text-[#0ea5e9] dark:text-[#38bdf8] text-sm;
   }
 
   /* --- Obsidian Card Surface --- */
   .obsidian-card {
-    @apply bg-[#18181b]/80 border border-[#27272a] rounded-3xl backdrop-blur-sm;
+    @apply bg-white dark:bg-[#18181b]/80 border border-neutral-200 dark:border-[#27272a] rounded-3xl backdrop-blur-sm;
   }
 
   /* --- Amber Accent Button --- */
@@ -182,8 +181,8 @@ body::before {
   /* --- Ghost Button --- */
   .btn-ghost {
     @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl font-semibold text-sm;
-    @apply bg-[#18181b] border border-[#27272a] text-neutral-200;
-    @apply hover:border-[#f97316]/50 hover:text-white transition-all duration-200;
+    @apply bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-700 dark:text-neutral-200;
+    @apply hover:border-[#f97316]/50 hover:text-[#f97316] dark:hover:text-white transition-all duration-200;
   }
 }
 

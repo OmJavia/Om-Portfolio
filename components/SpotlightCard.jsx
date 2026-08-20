@@ -42,6 +42,7 @@ export default function SpotlightCard({
   glowSize = 500,
   animationVariants = null,
   delay = 0,
+  onClick,
 }) {
   const cardRef = useRef(null);
 
@@ -88,6 +89,7 @@ export default function SpotlightCard({
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onClick={onClick}
       variants={animationVariants || defaultVariants}
       initial="hidden"
       whileInView="visible"
