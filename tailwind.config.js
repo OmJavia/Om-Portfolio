@@ -2,33 +2,12 @@
 module.exports = {
   darkMode: 'class',
   content: [
-<<<<<<< HEAD
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-=======
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
->>>>>>> b33423f (Updated Theme of the website)
   ],
   theme: {
     extend: {
       fontFamily: {
-<<<<<<< HEAD
-        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
-        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
-      },
-      colors: {
-        obsidian: '#09090b',
-        surface: '#18181b',
-        border: '#27272a',
-        neural: '#f97316',
-        electric: '#38bdf8',
-      },
-      boxShadow: {
-        neural: '0 0 40px rgba(249,115,22,.12)',
-        electric: '0 0 40px rgba(56,189,248,.10)',
-=======
         burtons: ['burtons', 'sans-serif'],
         // Headings: Plus Jakarta Sans (premium, modern)
         sans: ['"Plus Jakarta Sans"', '"Outfit"', '"Inter"', 'sans-serif'],
@@ -128,13 +107,8 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
->>>>>>> b33423f (Updated Theme of the website)
       },
     },
   },
   plugins: [],
-<<<<<<< HEAD
-};
-=======
 }
->>>>>>> b33423f (Updated Theme of the website)

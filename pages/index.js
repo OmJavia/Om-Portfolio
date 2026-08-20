@@ -1,45 +1,3 @@
-<<<<<<< HEAD
-import Head from 'next/head';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin, AiFillTwitterCircle } from 'react-icons/ai';
-import { MdEmail } from 'react-icons/md';
-import { FaBrain, FaCloudUploadAlt, FaDatabase, FaEye, FaLanguage, FaProjectDiagram } from 'react-icons/fa';
-import { SiPython, SiJavascript, SiPytorch, SiOpencv, SiMysql, SiMongodb, SiDocker, SiAmazonaws, SiGit, SiPostman } from 'react-icons/si';
-import Car from '../public/Car.png';
-import Blog from '../public/Blog.png';
-import NirmanHome from '../public/nirmanbook.png';
-import Mars from '../public/Mars.png';
-import Metashot from '../public/Metashot.png';
-import CodingShark from '../public/Coding-Shark.png';
-import netflix from '../public/netflix.png';
-import aerpace from '../public/aerpace.png';
-import PDF_Seacrher from '../public/PDF_Searcher.png';
-import front from '../public/front.png';
-import Layout from '../components/Layout';
-import ProjectCard from '../components/ProjectCard';
-import SpotlightCard from '../components/SpotlightCard';
-import MagneticButton from '../components/MagneticButton';
-import AiAssistantModal from '../components/AiAssistantModal';
-import AnimatedCounter from '../components/AnimatedCounter';
-
-const reveal = { hidden: { opacity: 0, y: 22 }, show: { opacity: 1, y: 0, transition: { duration: .65, ease: [0.22, 1, 0.36, 1] } } };
-const stagger = { hidden: {}, show: { transition: { staggerChildren: .1 } } };
-
-export default function Home() {
-  const [filter, setFilter] = useState('All');
-  const featuredProjects = [
-    { title: 'NirmanBook', category: 'PropTech', filter: 'Fullstack', description: 'A construction and real-estate focused platform built to make project discovery and service workflows feel cleaner and more reliable.', bullets: ['Production website with polished customer-facing flows', 'Clear service discovery path for construction users'], architecture: 'Next.js frontend communicating with a scalable Node.js backend. State management via Redux, and optimized image delivery through Vercel\'s edge network.', hurdles: 'Handling complex, multi-step service booking workflows while maintaining a highly responsive and polished UI on mobile devices.', image: NirmanHome, tags: ['Next.js', 'Product', 'UX'], liveUrl: 'https://www.nirmanbook.com/', caseStudyUrl: '/case-studies/nirmanbook' },
-    { title: 'Mars Rover Path Planning', category: 'AI Research', filter: 'Research', description: 'Computer vision and path-planning research for terrain understanding using satellite imagery and neural network workflows.', bullets: ['Obstacle-aware rover navigation experiments', 'Terrain labeling and model evaluation workflow'], architecture: 'PyTorch-based computer vision models for terrain segmentation, integrated with classic pathfinding algorithms (A*, Dijkstra) for optimal route calculation.', hurdles: 'Training models on sparse satellite imagery datasets and optimizing inference times to simulate real-time rover decision making.', image: Mars, tags: ['PyTorch', 'CV', 'Research'], liveUrl: 'https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing', caseStudyUrl: '/case-studies/mars-rover' },
-    { title: 'Aerpace', category: 'Mobility', filter: 'Fullstack', description: 'A future-mobility product website with a clean, performance-conscious presentation for a high-consideration category.', bullets: ['Responsive public website', 'Brand-forward product storytelling'], architecture: 'React-based architecture with highly optimized asset loading and custom CSS transitions to create a fluid, cinematic browsing experience.', hurdles: 'Balancing high-resolution media and smooth micro-animations with strict performance budgets for Core Web Vitals.', image: aerpace, tags: ['Frontend', 'Product', 'Web'], liveUrl: 'https://www.aerpace.com/' },
-    { title: 'PDF Searcher', category: 'AI Utility', filter: 'AI/ML', description: 'A document search utility focused on helping users find answers inside PDFs faster through a practical retrieval workflow.', bullets: ['PDF ingestion and search experience', 'Useful foundation for RAG-style document tools'], architecture: 'Python backend utilizing LangChain for document chunking, OpenAI embeddings for semantic search, and a lightweight vector store for fast retrieval.', hurdles: 'Extracting clean text from highly formatted, multi-column PDFs and tuning chunk sizes to preserve semantic context for accurate answers.', image: PDF_Seacrher, tags: ['Python', 'RAG', 'PDF'], githubUrl: 'https://github.com/OmJavia/PDF_Searcher' },
-    { title: 'Movieflix', category: 'Frontend', filter: 'Fullstack', description: 'A streaming-inspired web interface that demonstrates API-driven UI patterns, browsing flows, and responsive layout work.', bullets: ['Movie discovery interface', 'Responsive cards and media-first browsing'], architecture: 'React single-page application integrated with TMDB API. Uses custom hooks for data fetching and caching, styled with Tailwind CSS.', hurdles: 'Managing complex asynchronous state across multiple carousels and handling infinite scroll pagination without degrading performance.', image: netflix, tags: ['React', 'API', 'UI'], liveUrl: 'https://movieflix-om.vercel.app/' },
-    { title: 'Coding Sharks', category: 'Community', filter: 'Fullstack', description: 'A public web experience for a coding education/community brand with a direct, approachable visual system.', bullets: ['Public website implementation', 'Clear navigation for learners and visitors'], architecture: 'Static site generation (SSG) for high performance and SEO, using standard web technologies with a focus on accessibility.', hurdles: 'Designing an intuitive content architecture that caters to both absolute beginners and advanced developers seeking community resources.', image: CodingShark, tags: ['Frontend', 'Community', 'Web'], liveUrl: 'https://www.thecodingsharks.in/' },
-    { title: 'Apna Mechanic', category: 'Service App', filter: 'Fullstack', description: 'A service-booking style web app concept for mechanic discovery and automotive support.', bullets: ['Service-focused landing flow', 'Mobile-friendly user journey'], architecture: 'Component-driven React UI focusing on mobile-first interaction patterns, mocking backend API responses for the service booking flow.', hurdles: 'Creating a seamless mobile booking wizard that minimizes user friction during high-stress situations.', image: Car, tags: ['React', 'UX', 'Services'], liveUrl: 'https://apna-mechanic.vercel.app/' },
-    { title: 'AI Blog Generator', category: 'Generative AI', filter: 'AI/ML', description: 'An AI writing project that explores automated blog generation and prompt-driven content workflows.', bullets: ['Prompt-based content generation', 'Repository-ready AI workflow'], architecture: 'Python automation script that interfaces with OpenAI GPT models, utilizing structured prompt templates to ensure consistent output formatting.', hurdles: 'Engineering robust prompts that prevent hallucinated content or drift from the requested tone and topic.', image: Blog, tags: ['OpenAI', 'Python', 'GenAI'], githubUrl: 'https://github.com/OmJavia/Generate_Blogs' },
-    { title: 'Metashot', category: 'Sports AI', filter: 'AI/ML', description: 'Real-time cricket shot detection and player-facing AI feedback system. Used by 185+ players across practice sessions at Metashot.', bullets: ['Real-time shot classification from video', 'Player feedback dashboard with weak-shot analysis'], architecture: 'YOLO-based shot detection pipeline feeding into a FastAPI + Redis backend, with a player-facing dashboard for session insights.', hurdles: 'Achieving sub-80ms end-to-end inference latency while maintaining accuracy across varied lighting and camera angles in real-world practice environments.', image: Metashot, tags: ['PyTorch', 'YOLO', 'FastAPI', 'Sports AI'], caseStudyUrl: '/case-studies/metashot' }
-=======
 import Head from "next/head";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -244,10 +202,7 @@ export default function Home() {
       tags: ["PyTorch", "YOLO", "FastAPI", "Sports AI"],
       caseStudyUrl: "/case-studies/metashot",
     },
->>>>>>> b33423f (Updated Theme of the website)
   ];
-  const visibleProjects = useMemo(() => filter === 'All' ? featuredProjects : featuredProjects.filter((p) => p.filter === filter), [filter]);
-  const skills = [['Python', SiPython], ['JavaScript', SiJavascript], ['Computer Vision', FaEye], ['NLP & LLMs', FaLanguage], ['RAG', FaProjectDiagram], ['Deep Learning', FaBrain], ['PyTorch', SiPytorch], ['OpenCV', SiOpencv], ['MySQL', SiMysql], ['MongoDB', SiMongodb], ['Docker', SiDocker], ['AWS', SiAmazonaws], ['Git', SiGit], ['Postman', SiPostman]];
 
   const filteredProjects = featuredProjects.filter((p) =>
     p.filterCategory.includes(activeFilter)
@@ -256,11 +211,6 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-<<<<<<< HEAD
-        <title>Om Javia | AI Product Engineer</title>
-        <meta name="description" content="Om Javia is an AI Product Engineer building computer vision, RAG, NLP, and production-ready AI applications." />
-        <link rel="canonical" href="https://omjavia.vercel.app/" />
-=======
         {/* Primary SEO */}
         <title>Om Javia | AI Product Engineer — Computer Vision, RAG & LLMs</title>
         <meta
@@ -273,29 +223,12 @@ export default function Home() {
         <link rel="canonical" href="https://omjavia.vercel.app" />
 
         {/* Open Graph */}
->>>>>>> b33423f (Updated Theme of the website)
         <meta property="og:title" content="Om Javia | AI Product Engineer" />
-        <meta property="og:description" content="AI engineering, product systems, computer vision, RAG and production-grade software." />
+        <meta
+          property="og:description"
+          content="Explore Om Javia's AI engineering work across computer vision, LLMs, data systems, and product-focused web applications."
+        />
         <meta property="og:type" content="website" />
-<<<<<<< HEAD
-        <meta property="og:url" content="https://omjavia.vercel.app/" />
-        <meta property="og:image" content="https://omjavia.vercel.app/front.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Om Javia | AI Product Engineer" />
-        <meta name="twitter:description" content="Building intelligent products at the intersection of AI and software engineering." />
-        <meta name="twitter:image" content="https://omjavia.vercel.app/front.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
-      </Head>
-      <main className="mx-auto max-w-7xl px-5 sm:px-8">
-        <motion.section id="home" variants={stagger} initial="hidden" animate="show" className="grid min-h-[82vh] items-center gap-12 py-16 lg:grid-cols-[1.05fr_.95fr]">
-          <div>
-            <motion.div variants={reveal} className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[.18em] text-zinc-400"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-neural" /> Available for AI product work</motion.div>
-            <motion.h1 variants={reveal} className="font-heading text-5xl font-extrabold leading-[.98] tracking-[-.055em] text-white sm:text-7xl lg:text-[5.7rem]">I&apos;m <span className="text-neural">Om Javia,</span><br />AI Product <span className="text-zinc-500">Engineer.</span></motion.h1>
-            <motion.p variants={reveal} className="mt-7 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">I engineer intelligent, production-grade systems that synthesize artificial intelligence with robust software architecture to solve complex business challenges.</motion.p>
-            <motion.div variants={reveal} className="mt-8 flex flex-wrap gap-3"><MagneticButton href="/contact" className="rounded-2xl bg-neural px-6 py-3 text-sm font-semibold text-white shadow-neural">Hire me <span aria-hidden>↗</span></MagneticButton><MagneticButton href="https://cal.com/Om-Javia" target="_blank" rel="noreferrer" className="rounded-2xl border border-border bg-surface px-6 py-3 text-sm font-semibold text-white">Schedule a Meeting <span aria-hidden>↗</span></MagneticButton></motion.div>
-            <motion.div variants={reveal}><AiAssistantModal /></motion.div>
-            <motion.div variants={reveal} className="mt-7 flex gap-2">{[['LinkedIn','https://www.linkedin.com/in/omjavia/',<AiFillLinkedin />],['X','https://twitter.com/OmJavia1',<AiFillTwitterCircle />],['GitHub','https://github.com/omjavia',<AiFillGithub />],['Instagram','https://instagram.com/om_javia_',<AiFillInstagram />],['Email','mailto:omjavia18@gmail.com',<MdEmail />]].map(([label, link, icon]) => <a key={label} href={link} target={link.startsWith('mailto') ? undefined : '_blank'} rel="noreferrer" aria-label={label} className="rounded-xl border border-border bg-surface/60 p-3 text-lg text-zinc-500 transition hover:border-neural/40 hover:text-neural">{icon}</a>)}</motion.div>
-=======
         <meta property="og:url" content="https://omjavia.vercel.app" />
         <meta property="og:image" content="https://omjavia.vercel.app/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
@@ -449,24 +382,9 @@ export default function Home() {
                 />
               </div>
             </motion.div>
->>>>>>> b33423f (Updated Theme of the website)
           </div>
-          <motion.div variants={reveal} className="relative"><div className="absolute -inset-10 rounded-full bg-neural/10 blur-3xl" /><div className="relative overflow-hidden rounded-[2rem] border border-border bg-surface/80 p-2 shadow-2xl backdrop-blur-xl"><Image src={front} width={900} height={900} alt="Om Javia AI engineer workspace illustration" className="h-auto w-full rounded-[1.5rem] object-cover" priority sizes="(max-width: 1024px) 100vw, 50vw" /><div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-black/60 p-4 font-mono text-[10px] text-zinc-400 backdrop-blur-xl"><span className="text-electric">system</span> / intelligent products / shipped</div></div></motion.div>
-        </motion.section>
+        </section>
 
-<<<<<<< HEAD
-        <section id="experience" className="scroll-mt-24 py-20"><motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: .3 }}><span className="font-mono text-[10px] uppercase tracking-[.2em] text-neural">Experience</span><h2 className="mt-2 font-heading text-3xl font-bold text-white sm:text-5xl">Building systems that move metrics.</h2></motion.div><div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[['33','%','Product / traffic impact'],['87.4','%','Mars terrain accuracy'],['185','+','Players reached with AI'],['5','+','International markets']].map(([value,suffix,label]) => <SpotlightCard key={label} className="p-6"><div className="font-mono text-4xl font-bold text-white"><AnimatedCounter value={value} suffix={suffix} /></div><p className="mt-2 text-sm text-zinc-500">{label}</p></SpotlightCard>)}</div><div className="mt-8 grid gap-4 lg:grid-cols-3">{[['Metashot','Business Associate / AI Product','International product launches, technical operations and AI-enabled sports products.'],['ISRO SAC','Research Intern','Mars terrain classification, annotated satellite imagery and obstacle-aware rover navigation.'],['Apoliums Infotech','Software Development Engineer','Scalable web applications across inventory, food delivery, hotel management and e-commerce.']].map(([company, role, text]) => <SpotlightCard key={company} className="p-6"><span className="font-mono text-[10px] uppercase tracking-widest text-electric">{role}</span><h3 className="mt-2 font-heading text-xl font-bold text-white">{company}</h3><p className="mt-3 text-sm leading-6 text-zinc-400">{text}</p></SpotlightCard>)}</div></section>
-
-        <section id="stack" className="scroll-mt-24 py-20"><div className="text-center"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-neural">Capabilities</span><h2 className="mt-2 font-heading text-3xl font-bold text-white sm:text-5xl">The full <span className="text-neural">AI stack.</span></h2><p className="mx-auto mt-4 max-w-2xl text-zinc-400">From architecting neural networks to deploying scalable production environments. End-to-end AI design and engineering.</p></div><div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">{[[FaBrain,'Computer Vision','Real-time vision systems that track, segment, and understand the physical world.',['OpenCV','YOLO']],[FaProjectDiagram,'NLP & LLMs','RAG pipelines, autonomous agents, and language-model workflows.',['LangChain','RAG']],[FaDatabase,'Data Science','Extracting actionable intelligence and predictive patterns from complex data streams.',['Pandas','Scikit']],[FaCloudUploadAlt,'AI Deployment','Production-ready cloud microservices engineered for low latency and availability.',['AWS','Docker']]].map(([Icon,title,text,tags]) => <SpotlightCard key={title} className="flex min-h-64 flex-col p-7 text-center"><div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-electric/10 text-xl text-electric"><Icon /></div><h3 className="mt-5 font-heading text-lg font-bold text-white">{title}</h3><p className="mt-2 flex-1 text-sm leading-6 text-zinc-500">{text}</p><div className="mt-5 flex justify-center gap-2">{tags.map(t => <span key={t} className="rounded-full border border-border px-2.5 py-1 font-mono text-[9px] text-zinc-400">{t}</span>)}</div></SpotlightCard>)}</div></section>
-
-        <section id="projects" className="scroll-mt-24 py-20"><div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end"><div><span className="font-mono text-[10px] uppercase tracking-[.2em] text-neural">Selected work</span><h2 className="mt-2 font-heading text-3xl font-bold text-white sm:text-5xl">Recent Projects</h2></div><div className="flex flex-wrap gap-2">{['All','AI/ML','Fullstack','Research'].map(tab => <button key={tab} onClick={() => setFilter(tab)} className={`rounded-full border px-4 py-2 font-mono text-[10px] uppercase tracking-wider transition ${filter === tab ? 'border-neural bg-neural text-white' : 'border-border bg-surface text-zinc-500 hover:text-white'}`}>{tab}</button>)}</div></div><motion.div layout className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{visibleProjects.map(project => <motion.div layout key={project.title} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .4 }}><ProjectCard {...project} /></motion.div>)}</motion.div></section>
-
-        <section id="skills" className="scroll-mt-24 py-20"><div className="text-center"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-neural">Technical skills</span><h2 className="mt-2 font-heading text-3xl font-bold text-white sm:text-5xl">Tools I ship with.</h2></div><SpotlightCard className="mx-auto mt-10 max-w-5xl p-7 sm:p-10"><div className="flex flex-wrap justify-center gap-3">{skills.map(([name, Icon]) => <div key={name} className="flex items-center gap-2 rounded-xl border border-border bg-black/20 px-4 py-3 font-mono text-xs text-zinc-400 transition hover:border-neural/30 hover:text-white"><Icon className="text-lg text-zinc-500" />{name}</div>)}</div></SpotlightCard></section>
-
-        <section className="py-24 text-center"><span className="font-mono text-[10px] uppercase tracking-[.2em] text-electric">Let&apos;s build</span><h2 className="mx-auto mt-3 max-w-3xl font-heading text-4xl font-extrabold tracking-tight text-white sm:text-6xl">Turn an AI idea into a product people can use.</h2><p className="mx-auto mt-5 max-w-xl text-zinc-500">If you are building something ambitious with AI, product engineering or intelligent interfaces, let&apos;s talk.</p><div className="mt-8 flex justify-center"><MagneticButton href="mailto:omjavia18@gmail.com" className="rounded-2xl bg-neural px-7 py-3.5 text-sm font-bold text-white shadow-neural">Start a conversation ↗</MagneticButton></div></section>
-        <footer className="border-t border-border py-8 text-center font-mono text-[10px] uppercase tracking-widest text-zinc-600">© {new Date().getFullYear()} Om Javia · AI Product Engineer</footer>
-      </main>
-=======
         {/* ══════════════════════════════════════════════════════
             AI STACK / CAPABILITIES SECTION
         ══════════════════════════════════════════════════════ */}
@@ -1049,7 +967,6 @@ export default function Home() {
           </p>
         </section>
       </div>
->>>>>>> b33423f (Updated Theme of the website)
     </Layout>
   );
 }
