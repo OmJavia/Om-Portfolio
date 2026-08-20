@@ -294,7 +294,7 @@ export default function Home() {
                 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.05]"
                 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
               >
-                I&apos;m{" "}
+                <span className="text-neutral-900 dark:text-white">I&apos;m</span>{" "}
                 <span className="text-[#f97316]">Om Javia,</span>
                 <br />
                 <span className="text-neutral-700 dark:text-neutral-300">AI Product</span>{" "}
@@ -402,7 +402,7 @@ export default function Home() {
               className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-4"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
-              The Full{" "}
+              <span className="text-neutral-900 dark:text-white font-serif italic font-medium pr-2">The Full</span>
               <span className="font-serif italic font-normal text-[#f97316]">AI Stack</span>.
             </h2>
             <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
