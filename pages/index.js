@@ -291,13 +291,13 @@ export default function Home() {
               <motion.h1
                 variants={fadeUp}
                 custom={0.08}
-                className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.05]"
+                className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.05]"
                 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
               >
                 I&apos;m{" "}
                 <span className="text-[#f97316]">Om Javia,</span>
                 <br />
-                <span className="text-neutral-300">AI Product</span>{" "}
+                <span className="text-neutral-700 dark:text-neutral-300">AI Product</span>{" "}
                 <span className="text-[#f97316]">Engineer</span>
               </motion.h1>
 
@@ -305,7 +305,7 @@ export default function Home() {
               <motion.p
                 variants={fadeUp}
                 custom={0.16}
-                className="text-neutral-400 text-lg sm:text-xl leading-relaxed max-w-xl font-normal tracking-tight"
+                className="text-neutral-600 dark:text-neutral-400 text-lg sm:text-xl leading-relaxed max-w-xl font-normal tracking-tight"
               >
                 I engineer intelligent, production-grade systems that synthesize artificial intelligence with robust software architecture to solve complex business challenges.
               </motion.p>
@@ -329,7 +329,7 @@ export default function Home() {
                   href="https://cal.com/Om-Javia"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-[#18181b] border border-[#27272a] text-neutral-200 hover:border-[#f97316]/40 hover:text-white h-11 px-6 py-2.5"
+                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-900 dark:text-neutral-200 hover:border-[#f97316]/40 hover:text-[#f97316] dark:hover:text-white shadow-sm h-11 px-6 py-2.5"
                   strength={0.3}
                 >
                   <span>Schedule a Meeting</span>
@@ -356,7 +356,7 @@ export default function Home() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={social.label}
-                    className="p-3 rounded-2xl bg-[#18181b] border border-[#27272a] text-xl text-neutral-400 hover:text-[#f97316] hover:border-[#f97316]/30 transition-all shadow-sm"
+                    className="p-3 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-xl text-neutral-700 dark:text-neutral-400 hover:text-[#f97316] hover:border-[#f97316]/30 transition-all shadow-sm"
                   >
                     {social.icon}
                   </a>
@@ -371,7 +371,7 @@ export default function Home() {
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             >
-              <div className="p-2.5 rounded-3xl border border-[#27272a] bg-[#18181b]/60 shadow-xl backdrop-blur-sm" style={{ animation: "float 4s ease-in-out infinite" }}>
+              <div className="p-2.5 rounded-3xl border border-neutral-300 dark:border-[#27272a] bg-white/80 dark:bg-[#18181b]/60 shadow-xl backdrop-blur-sm" style={{ animation: "float 4s ease-in-out infinite" }}>
                 <Image
                   src={front}
                   width={700}
@@ -399,13 +399,13 @@ export default function Home() {
           >
             <span className="neural-label">Capabilities</span>
             <h2
-              className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-2 mb-4"
+              className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-4"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               The Full{" "}
               <span className="font-serif italic font-normal text-[#f97316]">AI Stack</span>.
             </h2>
-            <p className="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
               From architecting neural networks to deploying scalable production environments. I provide end-to-end AI design and engineering.
             </p>
           </motion.div>
@@ -413,73 +413,73 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {/* Computer Vision */}
             <SpotlightCard
-              className="p-7 rounded-3xl bg-[#18181b]/80 border border-[#27272a] ai-glow-card flex flex-col items-center text-center transition-colors duration-300 hover:border-[#27272a]/80"
+              className="p-7 rounded-3xl bg-white/90 dark:bg-[#18181b]/80 border border-neutral-200 dark:border-[#27272a] ai-glow-card flex flex-col items-center text-center transition-colors duration-300 hover:border-[#f97316]/30 dark:hover:border-[#27272a]/80 shadow-sm"
               delay={0}
             >
               <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-5 text-2xl">
                 <FaBrain aria-hidden />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Computer Vision</h3>
-              <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
+              <h3 className="text-lg font-bold text-neutral-950 dark:text-white mb-2" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Computer Vision</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
                 Real-time vision systems that track, segment, and understand the physical world with precision.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-auto">
-                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-[#09090b] border border-[#27272a] text-[#38bdf8]">OpenCV</span>
-                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-[#09090b] border border-[#27272a] text-[#38bdf8]">YOLO</span>
+                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] text-[#0369a1] dark:text-[#38bdf8]">OpenCV</span>
+                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] text-[#0369a1] dark:text-[#38bdf8]">YOLO</span>
               </div>
             </SpotlightCard>
 
             {/* NLP & LLMs */}
             <SpotlightCard
-              className="p-7 rounded-3xl bg-[#18181b]/80 border border-[#27272a] ai-glow-card flex flex-col items-center text-center transition-colors duration-300 hover:border-[#27272a]/80"
+              className="p-7 rounded-3xl bg-white/90 dark:bg-[#18181b]/80 border border-neutral-200 dark:border-[#27272a] ai-glow-card flex flex-col items-center text-center transition-colors duration-300 hover:border-[#f97316]/30 dark:hover:border-[#27272a]/80 shadow-sm"
               delay={0.08}
             >
               <div className="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-5 text-2xl">
                 <FaProjectDiagram aria-hidden />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>NLP & LLMs</h3>
-              <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
+              <h3 className="text-lg font-bold text-neutral-950 dark:text-white mb-2" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>NLP & LLMs</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
                 RAG pipelines, autonomous agents, and fine-tuned language models optimized for complex reasoning.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-auto">
-                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-[#09090b] border border-[#27272a] text-[#38bdf8]">LangChain</span>
-                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-[#09090b] border border-[#27272a] text-[#38bdf8]">RAG</span>
+                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] text-[#0369a1] dark:text-[#38bdf8]">LangChain</span>
+                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] text-[#0369a1] dark:text-[#38bdf8]">RAG</span>
               </div>
             </SpotlightCard>
 
             {/* Data Science */}
             <SpotlightCard
-              className="p-7 rounded-3xl bg-[#18181b]/80 border border-[#27272a] ai-glow-card flex flex-col items-center text-center transition-colors duration-300 hover:border-[#27272a]/80"
+              className="p-7 rounded-3xl bg-white/90 dark:bg-[#18181b]/80 border border-neutral-200 dark:border-[#27272a] ai-glow-card flex flex-col items-center text-center transition-colors duration-300 hover:border-[#f97316]/30 dark:hover:border-[#27272a]/80 shadow-sm"
               delay={0.16}
             >
               <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-5 text-2xl">
                 <FaDatabase aria-hidden />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Data Science</h3>
-              <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
+              <h3 className="text-lg font-bold text-neutral-950 dark:text-white mb-2" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Data Science</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
                 Extracting actionable intelligence and predictive patterns from complex data streams.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-auto">
-                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-[#09090b] border border-[#27272a] text-[#38bdf8]">Pandas</span>
-                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-[#09090b] border border-[#27272a] text-[#38bdf8]">Scikit</span>
+                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] text-[#0369a1] dark:text-[#38bdf8]">Pandas</span>
+                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] text-[#0369a1] dark:text-[#38bdf8]">Scikit</span>
               </div>
             </SpotlightCard>
 
             {/* AI Deployment */}
             <SpotlightCard
-              className="p-7 rounded-3xl bg-[#18181b]/80 border border-[#27272a] ai-glow-card flex flex-col items-center text-center transition-colors duration-300 hover:border-[#27272a]/80"
+              className="p-7 rounded-3xl bg-white/90 dark:bg-[#18181b]/80 border border-neutral-200 dark:border-[#27272a] ai-glow-card flex flex-col items-center text-center transition-colors duration-300 hover:border-[#f97316]/30 dark:hover:border-[#27272a]/80 shadow-sm"
               delay={0.24}
             >
               <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-[#f97316] flex items-center justify-center mb-5 text-2xl">
                 <FaCloudUploadAlt aria-hidden />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>AI Deployment</h3>
-              <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
+              <h3 className="text-lg font-bold text-neutral-950 dark:text-white mb-2" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>AI Deployment</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm leading-relaxed mb-6 flex-1">
                 Production-ready cloud microservices engineered for low latency and high availability.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-auto">
-                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-[#09090b] border border-[#27272a] text-[#38bdf8]">AWS</span>
-                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-[#09090b] border border-[#27272a] text-[#38bdf8]">Docker</span>
+                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] text-[#0369a1] dark:text-[#38bdf8]">AWS</span>
+                <span className="font-mono text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] text-[#0369a1] dark:text-[#38bdf8]">Docker</span>
               </div>
             </SpotlightCard>
           </div>
@@ -498,14 +498,14 @@ export default function Home() {
           >
             <span className="neural-label">Toolkit</span>
             <h2
-              className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-2 mb-3"
+              className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               Technical{" "}
               <span className="text-[#f97316]">Skills</span>{" "}
               <span className="text-3xl">👨‍💻</span>
             </h2>
-            <p className="text-neutral-400 text-base leading-relaxed">
+            <p className="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed">
               The tools, languages, and frameworks I use to bring ideas to life.
             </p>
           </motion.div>
@@ -517,21 +517,21 @@ export default function Home() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
-            <div className="bg-[#18181b] shadow-card rounded-3xl p-10 max-w-5xl w-full border border-[#27272a]">
+            <div className="bg-white dark:bg-[#18181b] shadow-sm dark:shadow-card rounded-3xl p-10 max-w-5xl w-full border border-neutral-200 dark:border-[#27272a]">
               <div className="flex flex-wrap justify-center gap-4 sm:gap-5 items-center">
                 {skillsData.map((skill, index) => (
                   <div
                     key={index}
-                    className="group relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-[#09090b] border border-[#27272a] hover:border-[#f97316]/30 hover:scale-110 shadow-sm hover:shadow-amber-sm transition-all duration-300 cursor-pointer overflow-hidden"
+                    className="group relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-neutral-50 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] hover:border-[#f97316]/30 hover:scale-110 shadow-sm hover:shadow-amber-sm transition-all duration-300 cursor-pointer overflow-hidden"
                     title={skill.name}
                   >
                     <skill.icon
-                      className="text-5xl sm:text-6xl drop-shadow-md transition-transform duration-300 group-hover:-translate-y-4"
+                      className="text-5xl sm:text-6xl text-neutral-900 dark:text-white drop-shadow-md transition-transform duration-300 group-hover:-translate-y-4"
                       aria-label={`${skill.name} technology icon`}
                       style={{
                         color:
                           skill.name === "Vercel"
-                            ? "#ffffff"
+                            ? "currentColor"
                             : skill.name === "AWS"
                             ? "#ff9900"
                             : skill.color,
@@ -539,11 +539,11 @@ export default function Home() {
                     />
                     <div className="absolute bottom-1 sm:bottom-2 w-full px-1 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span
-                        className="font-mono text-[8px] sm:text-[9px] font-bold leading-none"
+                        className="font-mono text-[8px] sm:text-[9px] font-bold leading-none text-neutral-900 dark:text-white"
                         style={{
                           color:
                             skill.name === "Vercel"
-                              ? "#ffffff"
+                              ? "currentColor"
                               : skill.name === "AWS"
                               ? "#ff9900"
                               : skill.color,
@@ -572,14 +572,14 @@ export default function Home() {
           >
             <span className="neural-label">Career</span>
             <h2
-              className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-2 mb-3"
+              className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               Past{" "}
               <span className="text-[#f97316]">Experiences</span>{" "}
               <span className="text-3xl">💼</span>
             </h2>
-            <p className="text-neutral-400 text-base leading-relaxed max-w-2xl">
+            <p className="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed max-w-2xl">
               I have always been eager to explore{" "}
               <span className="text-[#38bdf8]">development and analytics</span>, gaining hands-on experience by building projects, cloning websites,
               and working with data to uncover insights, refine skills, and solve real-world problems.
@@ -599,18 +599,18 @@ export default function Home() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
-                <p className="font-mono text-sm font-bold text-neutral-300">November 2025 — Present</p>
+                <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">November 2025 — Present</p>
                 <p className="font-mono text-xs text-neutral-500 mt-0.5">Bangalore, Karnataka</p>
               </div>
               <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-[#f97316] timeline-dot-amber border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
                 <span className="text-white text-xl" aria-hidden>💼</span>
               </div>
               <div className="order-1 md:order-2 w-full md:w-5/12">
-                <div className="bg-[#18181b] border border-[#27272a] hover:border-[#f97316]/30 p-6 rounded-2xl transition-all duration-300 hover:shadow-amber-sm">
+                <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#f97316]/30 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-amber-sm">
                   <div className="flex items-center gap-4 mb-4">
                     <Image src={Metashot} width={50} height={50} alt="Metashot company logo" className="rounded-lg shadow-sm" />
                     <div>
-                      <h3 className="text-lg font-bold text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Metashot</h3>
+                      <h3 className="text-lg font-bold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Metashot</h3>
                       <h4 className="font-mono text-xs font-semibold text-[#f97316]">AI Product Engineer</h4>
                     </div>
                   </div>
@@ -619,7 +619,7 @@ export default function Home() {
                       <span key={tag} className="font-mono text-[10px] bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 px-3 py-1 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <ul className="font-mono text-xs text-neutral-400 text-left list-disc pl-4 space-y-2">
+                  <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
                     <li>Led cross-functional execution of a sports gaming product across 3 workstreams: Engineering, UX and Go-to-Market.</li>
                     <li>Translated user feedback into PRDs, prioritizing features for a Sport Tech product in the $9.1B global pickleball market.</li>
                     <li>Validated product-market fit through user feedback from <MetricCounter value={185} suffix="+" showPing={false} /> players, driving <MetricCounter value={12} suffix="+" showPing={false} /> iterative product improvements.</li>
@@ -637,11 +637,11 @@ export default function Home() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
             >
               <div className="order-1 w-full md:w-5/12">
-                <div className="bg-[#18181b] border border-[#27272a] hover:border-emerald-500/30 p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_0_24px_rgba(16,185,129,0.15)]">
+                <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-emerald-500/30 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_0_24px_rgba(16,185,129,0.15)]">
                   <div className="flex items-center gap-4 mb-4">
                     <Image src={Metashot} width={50} height={50} alt="Metashot company logo" className="rounded-lg shadow-sm" />
                     <div>
-                      <h3 className="text-lg font-bold text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Metashot</h3>
+                      <h3 className="text-lg font-bold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Metashot</h3>
                       <h4 className="font-mono text-xs font-semibold text-emerald-400">AI Engineer</h4>
                     </div>
                   </div>
@@ -650,7 +650,7 @@ export default function Home() {
                       <span key={tag} className="font-mono text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <ul className="font-mono text-xs text-neutral-400 text-left list-disc pl-4 space-y-2">
+                  <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
                     <li>Strengthened real-time cricket shot detection by <MetricCounter value={33} suffix="%" /> using OpenCV and deep learning, integrated into Unity engine.</li>
                     <li>Refined churn prediction and user segmentation models, increasing retention by <MetricCounter value={17} suffix="%" /> & repeat play frequency by <MetricCounter value={21} suffix="%" />.</li>
                     <li>Optimized computer vision pipelines using PyTorch and OpenCV, reducing real-time prediction latency by <MetricCounter value={28} suffix="%" />.</li>
@@ -661,7 +661,7 @@ export default function Home() {
                 <span className="text-white text-xl" aria-hidden>🏏</span>
               </div>
               <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
-                <p className="font-mono text-sm font-bold text-neutral-300">July 2025 — October 2025</p>
+                <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">July 2025 — October 2025</p>
                 <p className="font-mono text-xs text-neutral-500 mt-0.5">Bangalore, Karnataka</p>
               </div>
             </motion.div>
@@ -675,18 +675,18 @@ export default function Home() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             >
               <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
-                <p className="font-mono text-sm font-bold text-neutral-300">May 2024 — July 2025</p>
+                <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">May 2024 — July 2025</p>
                 <p className="font-mono text-xs text-neutral-500 mt-0.5">Indore, Madhya Pradesh</p>
               </div>
               <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-[#f97316] timeline-dot-amber border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
                 <span className="text-white text-xl" aria-hidden>💼</span>
               </div>
               <div className="order-1 md:order-2 w-full md:w-5/12">
-                <div className="bg-[#18181b] border border-[#27272a] hover:border-[#f97316]/30 p-6 rounded-2xl transition-all duration-300 hover:shadow-amber-sm">
+                <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#f97316]/30 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-amber-sm">
                   <div className="flex items-center gap-4 mb-4">
                     <Image src={Apoliums} width={50} height={50} alt="Apoliums Infotech company logo" className="rounded-lg shadow-sm" />
                     <div>
-                      <h3 className="text-lg font-bold text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Apoliums Infotech</h3>
+                      <h3 className="text-lg font-bold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Apoliums Infotech</h3>
                       <h4 className="font-mono text-xs font-semibold text-[#f97316]">Associate AI Engineer</h4>
                     </div>
                   </div>
@@ -695,7 +695,7 @@ export default function Home() {
                       <span key={tag} className="font-mono text-[10px] bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 px-3 py-1 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <ul className="font-mono text-xs text-neutral-400 text-left list-disc pl-4 space-y-2">
+                  <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
                     <li>Architected feature engineering and preprocessing pipelines in Python and Pandas, cutting model training time by <MetricCounter value={25} suffix="%" />.</li>
                     <li>Deployed FastAPI endpoints for real-time ML model predictions, contributing to 7K+ user growth on the platform.</li>
                     <li>Automated model deployment workflows with CI/CD, shortening release cycles and boosting performance by <MetricCounter value={30} suffix="%" />.</li>
@@ -713,11 +713,11 @@ export default function Home() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
             >
               <div className="order-1 w-full md:w-5/12">
-                <div className="bg-[#18181b] border border-[#27272a] hover:border-red-500/30 p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_0_24px_rgba(239,68,68,0.15)]">
+                <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-red-500/30 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_0_24px_rgba(239,68,68,0.15)]">
                   <div className="flex items-center gap-4 mb-4">
                     <Image src={Sac} width={50} height={50} alt="ISRO Space Applications Centre logo" className="rounded-lg shadow-sm bg-white p-0.5" />
                     <div>
-                      <h3 className="text-lg font-bold text-white leading-tight" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Indian Space Research Organisation (ISRO)</h3>
+                      <h3 className="text-lg font-bold text-neutral-950 dark:text-white leading-tight" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Indian Space Research Organisation (ISRO)</h3>
                       <h4 className="font-mono text-xs font-semibold text-red-400">Research & Development Intern</h4>
                     </div>
                   </div>
@@ -726,7 +726,7 @@ export default function Home() {
                       <span key={tag} className="font-mono text-[10px] bg-red-500/10 text-red-400 border border-red-500/20 px-3 py-1 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <ul className="font-mono text-xs text-neutral-400 text-left list-disc pl-4 space-y-2">
+                  <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
                     <li>Preprocessed and annotated <MetricCounter value={800} showPing={false} /> HiRISE satellite image datasets and developed neural network models using PyTorch.</li>
                     <li>Engineered obstacle-aware path planning for rover, boosted navigation efficiency by <MetricCounter value={87.4} suffix="%" decimals={1} /> and ensured safe traversal.</li>
                     <li>Labeled 5 terrain types (including craters and boulders) to build high-quality datasets for rover navigation models.</li>
@@ -737,7 +737,7 @@ export default function Home() {
                 <span className="text-white text-xl" aria-hidden>🚀</span>
               </div>
               <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
-                <p className="font-mono text-sm font-bold text-neutral-300">February 2024 — May 2024</p>
+                <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">February 2024 — May 2024</p>
                 <p className="font-mono text-xs text-neutral-500 mt-0.5">Ahmedabad, Gujarat</p>
               </div>
             </motion.div>
@@ -751,18 +751,18 @@ export default function Home() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             >
               <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
-                <p className="font-mono text-sm font-bold text-neutral-300">July 2023 — August 2023</p>
+                <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">July 2023 — August 2023</p>
                 <p className="font-mono text-xs text-neutral-500 mt-0.5">Rajkot, Gujarat</p>
               </div>
               <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-purple-500 timeline-dot-purple border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
                 <span className="text-white text-xl" aria-hidden>💻</span>
               </div>
               <div className="order-1 md:order-2 w-full md:w-5/12">
-                <div className="bg-[#18181b] border border-[#27272a] hover:border-purple-500/30 p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_0_24px_rgba(168,85,247,0.15)]">
+                <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-purple-500/30 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_0_24px_rgba(168,85,247,0.15)]">
                   <div className="flex items-center gap-4 mb-4">
                     <Image src={Ace} width={50} height={50} alt="Ace Infoway company logo" className="rounded-lg shadow-sm" />
                     <div>
-                      <h3 className="text-lg font-bold text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Ace Infoway</h3>
+                      <h3 className="text-lg font-bold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Ace Infoway</h3>
                       <h4 className="font-mono text-xs font-semibold text-purple-400">Software Engineer Intern</h4>
                     </div>
                   </div>
@@ -771,7 +771,7 @@ export default function Home() {
                       <span key={tag} className="font-mono text-[10px] bg-purple-500/10 text-purple-400 border border-purple-500/20 px-3 py-1 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <ul className="font-mono text-xs text-neutral-400 text-left list-disc pl-4 space-y-2">
+                  <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
                     <li>Introduced an abandoned cart push notification feature, boosting conversions by <MetricCounter value={25} suffix="%" />.</li>
                     <li>Restructured Budgie Cart, integrating mobile-first eCommerce capabilities & enhancing the experience for 3M+ users.</li>
                     <li>Accelerated page load performance by optimizing frontend assets and APIs, reducing average load time by <MetricCounter value={30} suffix="%" />.</li>
@@ -789,11 +789,11 @@ export default function Home() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
             >
               <div className="order-1 w-full md:w-5/12">
-                <div className="bg-[#18181b] border border-[#27272a] hover:border-blue-500/30 p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_0_24px_rgba(59,130,246,0.15)]">
+                <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-blue-500/30 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_0_24px_rgba(59,130,246,0.15)]">
                   <div className="flex items-center gap-4 mb-4">
                     <Image src={Relcon} width={50} height={50} alt="Relcon System company logo" className="rounded-lg shadow-sm" />
                     <div>
-                      <h3 className="text-lg font-bold text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Relcon System</h3>
+                      <h3 className="text-lg font-bold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Relcon System</h3>
                       <h4 className="font-mono text-xs font-semibold text-blue-400">Software Engineer Intern</h4>
                     </div>
                   </div>
@@ -802,7 +802,7 @@ export default function Home() {
                       <span key={tag} className="font-mono text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full">{tag}</span>
                     ))}
                   </div>
-                  <ul className="font-mono text-xs text-neutral-400 text-left list-disc pl-4 space-y-2">
+                  <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
                     <li>Redefined the smart fuel mobile dispensing unit, ensuring compatibility across 5 OS platforms for improved versatility.</li>
                     <li>Constructed a dashboard to monitor fuel consumption and manage assignments, enhancing efficiency for 450+ stations.</li>
                     <li>Facilitated real-time monitoring of fuel dispensing operations, improving overall operational efficiency by <MetricCounter value={25} suffix="%" />.</li>
@@ -813,7 +813,7 @@ export default function Home() {
                 <span className="text-white text-xl" aria-hidden>⚙️</span>
               </div>
               <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
-                <p className="font-mono text-sm font-bold text-neutral-300">June 2022 — August 2022</p>
+                <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">June 2022 — August 2022</p>
                 <p className="font-mono text-xs text-neutral-500 mt-0.5">Vadodara, Gujarat</p>
               </div>
             </motion.div>
@@ -833,14 +833,14 @@ export default function Home() {
           >
             <span className="neural-label">Work</span>
             <h2
-              className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-2 mb-3"
+              className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               Recent{" "}
               <span className="text-[#f97316]">Projects</span>{" "}
               <span className="text-3xl">🚀</span>
             </h2>
-            <p className="text-neutral-400 text-base leading-relaxed max-w-xl mx-auto">
+            <p className="text-neutral-600 dark:text-neutral-400 text-base leading-relaxed max-w-xl mx-auto">
               Every project starts with an idea — something I wish existed or could work better.{" "}
               I love <span className="text-[#38bdf8]">building, breaking, and improving things</span> that turn ideas into meaningful, working solutions.
             </p>
@@ -854,7 +854,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
-            <div className="flex items-center gap-1 p-1 rounded-2xl bg-[#18181b] border border-[#27272a]">
+            <div className="flex items-center gap-1 p-1 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm">
               {FILTER_TABS.map((tab) => (
                 <button
                   key={tab}
@@ -862,7 +862,7 @@ export default function Home() {
                   className={`relative px-4 py-2 rounded-xl font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-200 ${
                     activeFilter === tab
                       ? "text-white"
-                      : "text-neutral-500 hover:text-neutral-300"
+                      : "text-neutral-600 hover:text-neutral-950 dark:text-neutral-500 dark:hover:text-neutral-300"
                   }`}
                   aria-pressed={activeFilter === tab}
                   aria-label={`Filter projects by ${tab}`}
@@ -903,7 +903,7 @@ export default function Home() {
         ══════════════════════════════════════════════════════ */}
         <section id="contact" className="py-20">
           <motion.div
-            className="relative overflow-hidden rounded-3xl border border-[#27272a] bg-[#18181b] p-10 text-center"
+            className="relative overflow-hidden rounded-3xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] p-10 text-center shadow-sm"
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
@@ -920,18 +920,18 @@ export default function Home() {
             <div className="relative z-10">
               <span className="neural-label block mb-3">Let&apos;s Connect</span>
               <h2
-                className="text-3xl sm:text-4xl font-extrabold text-white mb-4"
+                className="text-3xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white mb-4"
                 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
               >
                 Ready to build something{" "}
                 <span className="text-[#f97316]">extraordinary</span>?
               </h2>
-              <p className="text-neutral-400 text-base mb-8 max-w-md mx-auto">
+              <p className="text-neutral-600 dark:text-neutral-400 text-base mb-8 max-w-md mx-auto">
                 Scan the QR code for my full resume, or reach out directly — always happy to discuss AI, product, and engineering challenges.
               </p>
 
               <div className="flex justify-center mb-8">
-                <div className="p-4 rounded-2xl bg-[#09090b] border border-[#27272a] inline-block">
+                <div className="p-4 rounded-2xl bg-neutral-50 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] inline-block">
                   <Image
                     src={QR}
                     width={160}
@@ -954,7 +954,7 @@ export default function Home() {
                   href="https://cal.com/Om-Javia"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm bg-[#09090b] border border-[#27272a] text-neutral-200 hover:border-[#f97316]/40 hover:text-white transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm bg-white dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] text-neutral-900 dark:text-neutral-200 hover:border-[#f97316]/40 hover:text-[#f97316] dark:hover:text-white transition-all shadow-sm"
                 >
                   Schedule a Call
                 </MagneticButton>
