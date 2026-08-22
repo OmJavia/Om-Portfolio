@@ -22,17 +22,20 @@ export default function SpotlightCard({
 }) {
   const cardRef = useRef(null);
 
-  const handleMouseMove = useCallback((e) => {
-    const card = cardRef.current;
-    if (!card) return;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    card.style.setProperty("--x", `${x}px`);
-    card.style.setProperty("--y", `${y}px`);
-    card.style.setProperty("--glow-color", glowColor);
-    card.style.setProperty("--glow-size", `${glowSize}px`);
-  }, [glowColor, glowSize]);
+  const handleMouseMove = useCallback(
+    (e) => {
+      const card = cardRef.current;
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty("--x", `${x}px`);
+      card.style.setProperty("--y", `${y}px`);
+      card.style.setProperty("--glow-color", glowColor);
+      card.style.setProperty("--glow-size", `${glowSize}px`);
+    },
+    [glowColor, glowSize],
+  );
 
   const handleMouseLeave = useCallback(() => {
     const card = cardRef.current;
@@ -67,7 +70,7 @@ export default function SpotlightCard({
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
       variants={animationVariants || defaultVariants}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
     >
