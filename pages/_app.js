@@ -30,8 +30,11 @@ if (typeof window !== 'undefined') {
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
-  // Track pageviews on client-side route transitions
+  // Track pageviews on initial load & client-side route transitions
   useEffect(() => {
+    if (typeof window !== 'undefined' && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+      posthog.capture('$pageview');
+    }
     const handleRouteChange = () => posthog.capture('$pageview');
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
