@@ -111,7 +111,7 @@ export default function AskOmWidget() {
               <div className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-50 dark:bg-[#f97316]/10 border border-orange-200 dark:border-[#f97316]/30">
                 <HiSparkles className="text-base text-[#f97316]" />
                 <span
-                  aria-hidden
+                  aria-hidden="true"
                   className="absolute inset-0 rounded-full border border-[#f97316]/40"
                   style={{ animation: "ping-ring 2.5s cubic-bezier(0,0,0.2,1) infinite" }}
                 />
@@ -260,12 +260,12 @@ export default function AskOmWidget() {
         {!isOpen && (
           <>
             <span
-              aria-hidden
+              aria-hidden="true"
               className="absolute inset-0 rounded-full border border-[#f97316]/50"
               style={{ animation: "ping-ring 2s cubic-bezier(0,0,0.2,1) infinite" }}
             />
             <span
-              aria-hidden
+              aria-hidden="true"
               className="absolute inset-0 rounded-full border border-[#f97316]/20"
               style={{ animation: "ping-ring 2s cubic-bezier(0,0,0.2,1) infinite 0.5s" }}
             />

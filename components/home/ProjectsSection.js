@@ -71,6 +71,7 @@ const featuredProjects = [
     image: aerpace,
     tags: ["Frontend", "Product", "Web"],
     liveUrl: "https://www.aerpace.com/",
+    caseStudyUrl: "/case-studies/aerpace",
   },
   {
     title: "PDF Searcher",
@@ -89,6 +90,7 @@ const featuredProjects = [
     image: PDF_Seacrher,
     tags: ["Python", "RAG", "PDF"],
     githubUrl: "https://github.com/OmJavia/PDF_Searcher",
+    caseStudyUrl: "/case-studies/pdf-searcher",
   },
   {
     title: "Movieflix",
@@ -107,6 +109,7 @@ const featuredProjects = [
     image: netflix,
     tags: ["React", "API", "UI"],
     liveUrl: "https://movieflix-om.vercel.app/",
+    caseStudyUrl: "/case-studies/movieflix",
   },
   {
     title: "Coding Sharks",
@@ -125,6 +128,7 @@ const featuredProjects = [
     image: CodingShark,
     tags: ["Frontend", "Community", "Web"],
     liveUrl: "https://www.thecodingsharks.in/",
+    caseStudyUrl: "/case-studies/coding-sharks",
   },
   {
     title: "Apna Mechanic",
@@ -140,6 +144,7 @@ const featuredProjects = [
     image: Car,
     tags: ["React", "UX", "Services"],
     liveUrl: "https://apna-mechanic.vercel.app/",
+    caseStudyUrl: "/case-studies/apna-mechanic",
   },
   {
     title: "AI Blog Generator",
@@ -158,6 +163,7 @@ const featuredProjects = [
     image: Blog,
     tags: ["OpenAI", "Python", "GenAI"],
     githubUrl: "https://github.com/OmJavia/Generate_Blogs",
+    caseStudyUrl: "/case-studies/ai-blog-generator",
   },
   {
     title: "Metashot",
