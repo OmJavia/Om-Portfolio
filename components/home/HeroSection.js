@@ -10,6 +10,7 @@ import { MdEmail } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
 import front from "../../public/front.png";
 import MagneticButton from "../MagneticButton";
+import posthog from 'posthog-js';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -88,6 +89,7 @@ export default function HeroSection() {
               href="/contact"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-[#f97316] text-white hover:bg-[#ea6c0a] shadow-amber-sm hover:shadow-amber-md h-11 px-6 py-2.5"
               strength={0.3}
+              onClick={() => posthog.capture('hire_me_clicked', { source: 'hero_section' })}
             >
               <span className="chroma-text-out chroma-text-out-animate">
                 Hire me
@@ -101,6 +103,7 @@ export default function HeroSection() {
               rel="noreferrer"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-900 dark:text-neutral-200 hover:border-[#f97316]/40 hover:text-[#f97316] dark:hover:text-white shadow-sm h-11 px-6 py-2.5"
               strength={0.3}
+              onClick={() => posthog.capture('schedule_meeting_clicked', { source: 'hero_section' })}
             >
               <span>Schedule a Meeting</span>
               <FaArrowRight className="text-xs" />
@@ -118,26 +121,31 @@ export default function HeroSection() {
                 icon: <AiFillLinkedin />,
                 link: "https://www.linkedin.com/in/omjavia/",
                 label: "Om Javia on LinkedIn",
+                platform: "linkedin",
               },
               {
                 icon: <AiFillTwitterCircle />,
                 link: "https://twitter.com/OmJavia1",
                 label: "Om Javia on Twitter",
+                platform: "twitter",
               },
               {
                 icon: <AiFillGithub />,
                 link: "https://github.com/omjavia",
                 label: "Om Javia on GitHub",
+                platform: "github",
               },
               {
                 icon: <AiFillInstagram />,
                 link: "https://instagram.com/om_javia_",
                 label: "Om Javia on Instagram",
+                platform: "instagram",
               },
               {
                 icon: <MdEmail />,
                 link: "mailto:omjavia18@gmail.com",
                 label: "Email Om Javia",
+                platform: "email",
               },
             ].map((social, i) => (
               <a
@@ -147,6 +155,7 @@ export default function HeroSection() {
                 rel="noreferrer"
                 aria-label={social.label}
                 className="p-3 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-xl text-neutral-700 dark:text-neutral-400 hover:text-[#f97316] hover:border-[#f97316]/30 transition-all shadow-sm"
+                onClick={() => posthog.capture('social_link_clicked', { platform: social.platform })}
               >
                 {social.icon}
               </a>

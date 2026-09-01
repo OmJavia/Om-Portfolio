@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes, FaPaperPlane, FaRobot, FaSpinner } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
+import posthog from 'posthog-js';
 
 const SUGGESTED_QUESTIONS = [
   "What was Om's role at ISRO?",
@@ -41,9 +42,15 @@ export default function AskOmWidget() {
     }
   }, [isOpen]);
 
-  const sendMessage = async (text) => {
+  const sendMessage = async (text, isSuggestion = false) => {
     const userText = text || input.trim();
     if (!userText || isLoading) return;
+
+    if (isSuggestion) {
+      posthog.capture('ai_chat_suggestion_clicked', { suggestion: userText });
+    } else {
+      posthog.capture('ai_chat_message_sent', { message_count: messages.length });
+    }
 
     const userMsg = { id: Date.now(), role: "user", text: userText };
     setMessages((prev) => [...prev, userMsg]);
@@ -53,7 +60,11 @@ export default function AskOmWidget() {
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          // Pass PostHog distinct ID for server-side event correlation
+          "x-posthog-distinct-id": posthog.get_distinct_id() || 'anonymous_visitor',
+        },
         body: JSON.stringify({ message: userText }),
       });
       const data = await res.json();
@@ -176,7 +187,7 @@ export default function AskOmWidget() {
                   {SUGGESTED_QUESTIONS.map((q) => (
                     <button
                       key={q}
-                      onClick={() => sendMessage(q)}
+                      onClick={() => sendMessage(q, true)}
                       className="rounded-full border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] px-3 py-1 font-mono text-[10px] text-neutral-600 dark:text-[#38bdf8] transition-all hover:border-[#f97316]/50 hover:bg-orange-50 dark:hover:bg-[#27272a] hover:text-[#f97316] dark:hover:text-white"
                     >
                       {q}
@@ -236,7 +247,11 @@ export default function AskOmWidget() {
 
       {/* FAB Toggle Button */}
       <motion.button
-        onClick={() => setIsOpen((v) => !v)}
+        onClick={() => {
+          const opening = !isOpen;
+          setIsOpen(opening);
+          if (opening) posthog.capture('ai_chat_opened');
+        }}
         aria-label={isOpen ? "Close Om AI assistant" : "Open Om AI assistant — RAG-powered chat"}
         className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-700 dark:text-white shadow-lg shadow-black/10 dark:shadow-black/40 transition-all duration-300"
         whileHover={{ scale: 1.08 }}

@@ -11,6 +11,7 @@ import {
   FaPaperPlane,
   FaRegClock,
 } from "react-icons/fa";
+import posthog from 'posthog-js';
 
 // --- CONFIGURATION ---
 const FORMSPREE_ID = "xjgajbyk";
@@ -60,6 +61,7 @@ export default function Contact() {
       if (response.ok) {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
+        posthog.capture('contact_form_submitted', { success: true });
       } else {
         setStatus("error");
       }
@@ -96,6 +98,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 className="group rounded-2xl border border-neutral-200 bg-neutral-950 p-5 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#ff6b00] dark:border-neutral-800"
+                onClick={() => posthog.capture('book_call_clicked', { source: 'contact_page' })}
               >
                 <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-lg">
                   <FaCalendarAlt />
@@ -109,6 +112,7 @@ export default function Contact() {
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="group rounded-2xl border border-neutral-200 bg-white/80 p-5 text-neutral-900 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-300 hover:shadow-xl dark:border-neutral-800 dark:bg-neutral-900/80 dark:text-white"
+                onClick={() => posthog.capture('contact_email_clicked', { source: 'contact_page' })}
               >
                 <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-full bg-blue-500/10 text-lg text-blue-600 dark:text-blue-400">
                   <FaEnvelope />

@@ -139,6 +139,17 @@ export default function MetashotCaseStudy() {
               priority
             />
           </div>
+
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://metashot.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl bg-neutral-950 px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-neutral-950 shadow-sm"
+            >
+              <FaExternalLinkAlt className="text-xs" /> Visit Metashot Website
+            </a>
+          </div>
         </div>
 
         {/* Problem Statement */}
@@ -238,9 +249,17 @@ export default function MetashotCaseStudy() {
             I'm currently serving as AI Product Engineer at Metashot, leading the product and engineering roadmap. If you're working on a Sports AI or Computer Vision product, let's talk.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="https://metashot.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-2.5 text-sm font-semibold text-neutral-950 transition-opacity hover:opacity-90 shadow-sm"
+            >
+              <FaExternalLinkAlt className="text-xs" /> Visit Metashot Website
+            </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-2xl bg-white px-5 py-2.5 text-sm font-semibold text-neutral-950 transition-opacity hover:opacity-90 shadow-sm"
+              className="inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/20"
             >
               Discuss Sports AI / CV work
             </Link>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import posthog from 'posthog-js';
 import Car from "../../public/Car.png";
 import Blog from "../../public/Blog.png";
 import NirmanHome from "../../public/nirmanbook.png";
@@ -174,6 +175,7 @@ const featuredProjects = [
       "Achieving sub-80ms end-to-end inference latency while maintaining accuracy across varied lighting and camera angles in real-world practice environments.",
     image: Metashot,
     tags: ["PyTorch", "YOLO", "FastAPI", "Sports AI"],
+    liveUrl: "https://metashot.in/",
     caseStudyUrl: "/case-studies/metashot",
   },
 ];
@@ -223,7 +225,10 @@ export default function ProjectsSection() {
           {FILTER_TABS.map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveFilter(tab)}
+              onClick={() => {
+              setActiveFilter(tab);
+              posthog.capture('project_filter_changed', { filter_tab: tab });
+            }}
               className={`relative px-4 py-2 rounded-xl font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-200 ${
                 activeFilter === tab
                   ? "text-white"

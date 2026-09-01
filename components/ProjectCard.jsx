@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaTimes, FaLayerGroup, FaTools, FaBookOpen } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
 import SpotlightCard from "./SpotlightCard";
+import posthog from 'posthog-js';
 
 // System architecture SVG diagrams for featured projects
 const ArchitectureDiagrams = {
@@ -107,7 +109,42 @@ export default function ProjectCard({
   filterCategory,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const clickTimerRef = useRef(null);
+  const router = useRouter();
   const ArchDiagram = ArchitectureDiagrams[title];
+
+  const handleCardClick = (e) => {
+    if (clickTimerRef.current) {
+      // Double click detected -> Go to Case Study
+      clearTimeout(clickTimerRef.current);
+      clickTimerRef.current = null;
+      posthog.capture('project_card_double_clicked', { project_title: title, project_category: category });
+
+      if (caseStudyUrl) {
+        router.push(caseStudyUrl);
+      } else {
+        const targetUrl = liveUrl || githubUrl;
+        if (targetUrl) {
+          window.open(targetUrl, "_blank", "noopener,noreferrer");
+        } else {
+          setIsModalOpen(true);
+        }
+      }
+    } else {
+      // Single click -> Open Live Project Website
+      clickTimerRef.current = setTimeout(() => {
+        clickTimerRef.current = null;
+        posthog.capture('project_card_single_clicked', { project_title: title, project_category: category });
+
+        const targetUrl = liveUrl || githubUrl;
+        if (targetUrl) {
+          window.open(targetUrl, "_blank", "noopener,noreferrer");
+        } else {
+          setIsModalOpen(true);
+        }
+      }, 250);
+    }
+  };
 
   return (
     <>
@@ -116,7 +153,7 @@ export default function ProjectCard({
         className="group relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] shadow-sm dark:shadow-card transition-all duration-500 hover:border-[#f97316]/40 hover:shadow-md dark:hover:shadow-card-hover cursor-pointer"
         glowColor="rgba(249, 115, 22, 0.08)"
         glowSize={400}
-        onClick={() => setIsModalOpen(true)}
+        onClick={handleCardClick}
       >
         {/* Image area */}
         <div className="relative w-full aspect-video overflow-hidden bg-neutral-100 dark:bg-[#09090b]">
@@ -158,6 +195,40 @@ export default function ProjectCard({
                     {tag}
                   </span>
                 ))}
+              </div>
+              {/* Direct Action Buttons on Hover */}
+              <div className="flex items-center gap-2 pt-4">
+                {(liveUrl || githubUrl) && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(liveUrl || githubUrl, "_blank", "noopener,noreferrer");
+                    }}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#f97316] text-white text-xs font-semibold hover:bg-[#ea6c0a] transition-colors shadow-sm"
+                  >
+                    <FaExternalLinkAlt className="text-[10px]" /> Visit Site
+                  </button>
+                )}
+                {caseStudyUrl && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      router.push(caseStudyUrl);
+                    }}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-white text-xs font-semibold backdrop-blur-md transition-colors border border-white/20"
+                  >
+                    <FaBookOpen className="text-[10px]" /> Case Study
+                  </button>
+                )}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsModalOpen(true);
+                  }}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/40 hover:bg-black/60 text-white/90 text-xs font-semibold backdrop-blur-md transition-colors border border-white/10"
+                >
+                  Overview
+                </button>
               </div>
             </div>
           </div>
@@ -227,6 +298,7 @@ export default function ProjectCard({
                     <Link
                       href={caseStudyUrl}
                       className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#f97316] text-white font-semibold text-sm hover:bg-[#ea6c0a] transition-colors shadow-amber-sm hover:shadow-amber-md"
+                      onClick={() => posthog.capture('project_case_study_clicked', { project_title: title, project_category: category })}
                     >
                       <FaBookOpen /> Read Case Study
                     </Link>
@@ -237,6 +309,7 @@ export default function ProjectCard({
                       target="_blank"
                       rel="noreferrer"
                       className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-neutral-900 dark:bg-white/5 border border-neutral-700 dark:border-[#27272a] text-white font-semibold text-sm hover:bg-neutral-700 dark:hover:bg-white/10 transition-all"
+                      onClick={() => posthog.capture('project_live_demo_clicked', { project_title: title, project_category: category })}
                     >
                       <FaExternalLinkAlt /> View Live
                     </a>

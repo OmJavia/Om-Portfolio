@@ -7,6 +7,8 @@
 // AGENTROUTER_BASE_URL="https://co.agentrouter.org/v1"
 // AGENTROUTER_MODEL="gpt-5.5"
 
+import { getPostHogClient } from '../../lib/posthog-server';
+
 const OM_KNOWLEDGE_BASE = `
 You are "Om's AI Assistant" — a knowledgeable, concise, and professional portfolio chatbot representing Om Javia, an AI Product Engineer.
 
@@ -421,6 +423,22 @@ export default async function handler(req, res) {
     // --------------------------------------------------
     // SUCCESS
     // --------------------------------------------------
+
+    // Track successful AI chat query server-side.
+    // Correlate with the client session via the PostHog distinct ID header.
+    const phClient = getPostHogClient();
+    if (phClient) {
+      const distinctId = req.headers['x-posthog-distinct-id'] || 'anonymous_visitor';
+      phClient.capture({
+        distinctId,
+        event: 'ai_chat_query_received',
+        properties: {
+          model_used: model,
+          success: true,
+        },
+      });
+      await phClient.flush();
+    }
 
     return res.status(200).json({
       reply: reply.trim(),

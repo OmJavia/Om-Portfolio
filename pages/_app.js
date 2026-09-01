@@ -2,8 +2,43 @@ import '.././styles/globals.css';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Script from 'next/script';
+import posthog from 'posthog-js';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+
+// Initialize PostHog (client-side only)
+if (typeof window !== 'undefined') {
+  const token = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+  if (token) {
+    posthog.init(token, {
+      api_host: '/ingest',
+      ui_host: 'https://us.posthog.com',
+      defaults: '2026-01-30',
+      capture_exceptions: true,
+      capture_pageview: false, // Managed manually via router events below
+      debug: process.env.NODE_ENV === 'development',
+    });
+  } else if (process.env.NODE_ENV === 'development') {
+    console.error(
+      'NEXT_PUBLIC_POSTHOG_KEY variable required by PostHog is missing or un-configured, ' +
+      'this causes events to be silently missed. ' +
+      'This error stops appearing once NEXT_PUBLIC_POSTHOG_KEY is configured'
+    );
+  }
+}
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  // Track pageviews on client-side route transitions
+  useEffect(() => {
+    const handleRouteChange = () => posthog.capture('$pageview');
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       {/* Include your main component */}
