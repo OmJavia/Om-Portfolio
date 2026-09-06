@@ -16,9 +16,9 @@ export default function ExperienceContact() {
       <section id="experience" className="py-20 scroll-mt-24">
         <motion.div
           className="mb-12"
-          initial={{ opacity: 0, y: 24 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="neural-label">Career Arc</span>
@@ -40,9 +40,9 @@ export default function ExperienceContact() {
           {/* ── Metashot AI Product Engineer ── */}
           <motion.div
             className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
@@ -108,9 +108,9 @@ export default function ExperienceContact() {
           {/* ── Metashot AI Engineer ── */}
           <motion.div
             className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
           >
             <div className="order-1 w-full md:w-5/12">
@@ -176,9 +176,9 @@ export default function ExperienceContact() {
           {/* ── Apoliums Infotech ── */}
           <motion.div
             className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
             <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
@@ -244,9 +244,9 @@ export default function ExperienceContact() {
           {/* ── ISRO ── */}
           <motion.div
             className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
           >
             <div className="order-1 w-full md:w-5/12">
@@ -312,9 +312,9 @@ export default function ExperienceContact() {
           {/* ── Ace Infoway ── */}
           <motion.div
             className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           >
             <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
@@ -380,9 +380,9 @@ export default function ExperienceContact() {
           {/* ── Relcon System ── */}
           <motion.div
             className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
           >
             <div className="order-1 w-full md:w-5/12">
@@ -454,9 +454,9 @@ export default function ExperienceContact() {
       <section id="contact" className="py-20 scroll-mt-24">
         <motion.div
           className="relative overflow-hidden rounded-3xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] p-8 sm:p-12 text-center shadow-lg"
-          initial={{ opacity: 0, y: 24 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Ambient glow */}

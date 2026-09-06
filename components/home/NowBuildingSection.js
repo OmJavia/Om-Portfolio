@@ -20,9 +20,9 @@ export default function NowBuildingSection() {
       {/* Section label */}
       <motion.div
         className="text-center mb-10"
-        initial={{ opacity: 0, y: 20 }}
+        initial={false}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
+        viewport={{ once: true }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       >
         <span className="neural-label">Current Work</span>
@@ -41,9 +41,9 @@ export default function NowBuildingSection() {
       {/* Main card */}
       <motion.div
         className="rounded-3xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] overflow-hidden shadow-xl relative"
-        initial={{ opacity: 0, y: 24 }}
+        initial={false}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         {/* Ambient glow */}
@@ -125,7 +125,7 @@ export default function NowBuildingSection() {
             </div>
 
             {/* Tagline */}
-            <p className="font-mono text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-[#09090b]/80 border border-neutral-200 dark:border-[#27272a] px-4 py-2.5 rounded-2xl inline-block">
+            <p className="font-mono text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-[#09090b]/80 border border-neutral-200 dark:border-[#27272a] px-4 py-2.5 rounded-2xl inline-block max-w-full text-center sm:text-left leading-relaxed">
               Hardware <span className="text-[#f97316]">×</span> Software <span className="text-[#f97316]">×</span> Interactive Gaming <span className="text-[#f97316]">×</span> Intelligent Systems
             </p>
 

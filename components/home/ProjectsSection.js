@@ -229,9 +229,9 @@ export default function ProjectsSection() {
     <section id="featured-work" className="py-20 scroll-mt-24">
       <motion.div
         className="text-center mb-10"
-        initial={{ opacity: 0, y: 24 }}
+        initial={false}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <span className="neural-label">Projects & Portfolio</span>
@@ -248,8 +248,8 @@ export default function ProjectsSection() {
 
       {/* ── Filter Tabs ── */}
       <motion.div
-        className="flex justify-center mb-10 overflow-x-auto pb-2 px-4"
-        initial={{ opacity: 0, y: 16 }}
+        className="flex justify-start md:justify-center mb-10 overflow-x-auto pb-2 px-2 sm:px-4 max-w-full"
+        initial={false}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
@@ -288,7 +288,7 @@ export default function ProjectsSection() {
         <motion.div
           key={activeFilter}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
-          initial={{ opacity: 0, y: 16 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}

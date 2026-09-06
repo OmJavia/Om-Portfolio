@@ -34,9 +34,9 @@ export default function OpenSourceSection() {
     <section id="open-source" className="py-16 scroll-mt-24">
       <motion.div
         className="text-center mb-12"
-        initial={{ opacity: 0, y: 24 }}
+        initial={false}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <span className="neural-label">Code Proof</span>
@@ -56,9 +56,9 @@ export default function OpenSourceSection() {
           <motion.div
             key={repo.name}
             className="p-7 rounded-3xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm hover:border-[#f97316]/40 transition-all duration-300 flex flex-col justify-between"
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.08 }}
           >
             <div>

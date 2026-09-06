@@ -233,6 +233,57 @@ export default function ProjectCard({
             </div>
           </div>
         </div>
+
+        {/* Mobile Info Strip (visible on mobile where hover does not exist) */}
+        <div className="p-4 border-t border-neutral-100 dark:border-[#27272a] md:hidden">
+          <div className="flex items-center justify-between gap-2 mb-1.5">
+            <h3 className="font-bold text-base text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+              {title}
+            </h3>
+            <span className="font-mono text-[9px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 shrink-0">
+              {category}
+            </span>
+          </div>
+          <p className="text-xs text-neutral-600 dark:text-neutral-400 line-clamp-2 mb-3 leading-relaxed">
+            {description}
+          </p>
+          <div className="flex items-center gap-2 flex-wrap">
+            {(liveUrl || githubUrl) && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(liveUrl || githubUrl, "_blank", "noopener,noreferrer");
+                }}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#f97316] text-white text-xs font-semibold hover:bg-[#ea6c0a] transition-colors shadow-sm"
+              >
+                <FaExternalLinkAlt className="text-[10px]" /> Visit
+              </button>
+            )}
+            {caseStudyUrl && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  router.push(caseStudyUrl);
+                }}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-200 text-xs font-semibold border border-neutral-200 dark:border-neutral-700 transition-colors"
+              >
+                <FaBookOpen className="text-[10px]" /> Case Study
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsModalOpen(true);
+              }}
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-neutral-500 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white text-xs font-medium ml-auto"
+            >
+              Details →
+            </button>
+          </div>
+        </div>
       </SpotlightCard>
 
       {/* ── Modal ── */}

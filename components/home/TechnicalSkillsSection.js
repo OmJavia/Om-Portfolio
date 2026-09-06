@@ -99,9 +99,9 @@ export default function TechnicalSkillsSection() {
       {/* Section Header */}
       <motion.div
         className="text-center mb-14"
-        initial={{ opacity: 0, y: 24 }}
+        initial={false}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <span className="neural-label">Technical Stack</span>
@@ -123,9 +123,9 @@ export default function TechnicalSkillsSection() {
             className={`p-7 rounded-3xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm hover:border-[#f97316]/30 transition-all duration-300 ${
               idx === 4 ? "lg:col-span-2" : ""
             }`}
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: idx * 0.08 }}
           >
             <div className="flex items-center gap-3 mb-5 pb-4 border-b border-neutral-100 dark:border-[#27272a]">
