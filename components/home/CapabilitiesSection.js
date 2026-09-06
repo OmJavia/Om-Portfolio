@@ -53,10 +53,10 @@ const capabilities = [
 
 export default function CapabilitiesSection() {
   return (
-    <section id="capabilities" className="py-20 scroll-mt-24">
+    <section id="capabilities" className="py-12 sm:py-20 scroll-mt-24">
       {/* Section Header */}
       <motion.div
-        className="text-center mb-14"
+        className="text-center mb-10 sm:mb-14"
         initial={false}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -64,12 +64,12 @@ export default function CapabilitiesSection() {
       >
         <span className="neural-label">Core Capabilities</span>
         <h2
-          className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-4"
+          className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-4"
           style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
         >
           What I <span className="text-[#f97316]">Build</span>
         </h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
           I build at the intersection of AI engineering, software systems, product design, and intelligent connected devices.
         </p>
       </motion.div>
@@ -79,7 +79,7 @@ export default function CapabilitiesSection() {
         {capabilities.map((cap, idx) => (
           <SpotlightCard
             key={cap.title}
-            className={`p-7 rounded-3xl bg-white/90 dark:bg-[#18181b]/80 border border-neutral-200 dark:border-[#27272a] flex flex-col justify-between transition-all duration-300 hover:border-[#f97316]/40 shadow-sm ${
+            className={`p-5 sm:p-7 rounded-3xl bg-white/90 dark:bg-[#18181b]/80 border border-neutral-200 dark:border-[#27272a] flex flex-col justify-between transition-all duration-300 hover:border-[#f97316]/40 shadow-sm ${
               idx === 4 ? "md:col-span-2 lg:col-span-1" : ""
             }`}
             delay={idx * 0.08}

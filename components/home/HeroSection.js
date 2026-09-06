@@ -44,10 +44,10 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 select-none">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12 select-none">
         {/* ── Left: Text ── */}
         <motion.div
-          className="flex-1 flex flex-col gap-6 text-center lg:text-left items-center lg:items-start"
+          className="flex-1 flex flex-col gap-4 sm:gap-6 text-center lg:text-left items-center lg:items-start"
           variants={staggerContainer}
           initial={false}
           animate="visible"
@@ -63,7 +63,7 @@ export default function HeroSection() {
           <motion.h1
             variants={fadeUp}
             custom={0.08}
-            className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.08]"
+            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.1]"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
             Building{" "}
@@ -75,7 +75,7 @@ export default function HeroSection() {
           <motion.p
             variants={fadeUp}
             custom={0.16}
-            className="text-neutral-600 dark:text-neutral-300 text-lg sm:text-xl leading-relaxed max-w-xl font-normal tracking-tight"
+            className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base lg:text-xl leading-relaxed max-w-xl font-normal tracking-tight"
           >
             I work across Computer Vision, LLMs, RAG, backend systems, and
             intelligent products to turn emerging AI capabilities into things
@@ -194,6 +194,8 @@ export default function HeroSection() {
               alt="Om Javia's AI engineering workspace — code editor, neural network visualization"
               className="rounded-2xl object-cover w-full h-auto"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+              placeholder="blur"
+              quality={85}
               priority
             />
           </div>

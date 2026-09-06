@@ -95,10 +95,10 @@ const skillGroups = [
 
 export default function TechnicalSkillsSection() {
   return (
-    <section id="skills" className="py-20 scroll-mt-24">
+    <section id="skills" className="py-12 sm:py-20 scroll-mt-24">
       {/* Section Header */}
       <motion.div
-        className="text-center mb-14"
+        className="text-center mb-10 sm:mb-14"
         initial={false}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -106,12 +106,12 @@ export default function TechnicalSkillsSection() {
       >
         <span className="neural-label">Technical Stack</span>
         <h2
-          className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
+          className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
           style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
         >
           Grouped <span className="text-[#f97316]">Competencies</span>
         </h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
           Grounded technical capabilities organized across machine learning, language models, backend infrastructure, product design, and interactive hardware.
         </p>
       </motion.div>
@@ -120,7 +120,7 @@ export default function TechnicalSkillsSection() {
         {skillGroups.map((group, idx) => (
           <motion.div
             key={group.category}
-            className={`p-7 rounded-3xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm hover:border-[#f97316]/30 transition-all duration-300 ${
+            className={`p-5 sm:p-7 rounded-3xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm hover:border-[#f97316]/30 transition-all duration-300 ${
               idx === 4 ? "lg:col-span-2" : ""
             }`}
             initial={false}

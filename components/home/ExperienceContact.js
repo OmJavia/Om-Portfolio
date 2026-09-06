@@ -13,9 +13,9 @@ import MagneticButton from "../MagneticButton";
 export default function ExperienceContact() {
   return (
     <>
-      <section id="experience" className="py-20 scroll-mt-24">
+      <section id="experience" className="py-12 sm:py-20 scroll-mt-24">
         <motion.div
-          className="mb-12"
+          className="mb-10 sm:mb-12"
           initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -23,12 +23,12 @@ export default function ExperienceContact() {
         >
           <span className="neural-label">Career Arc</span>
           <h2
-            className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
+            className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
             Engineering <span className="text-[#f97316]">Experience</span>
           </h2>
-          <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+          <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl">
             My career has evolved through satellite research, production machine learning APIs, computer vision systems, and AI product engineering.
           </p>
         </motion.div>
@@ -59,7 +59,7 @@ export default function ExperienceContact() {
               </span>
             </div>
             <div className="order-1 md:order-2 w-full md:w-5/12">
-              <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#f97316]/40 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-amber-sm">
+              <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#f97316]/40 p-4 sm:p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-amber-sm">
                 <div className="flex items-center gap-4 mb-4">
                   <Image
                     src={Metashot}
@@ -451,9 +451,9 @@ export default function ExperienceContact() {
             CONTACT & CTA SECTION
         ══════════════════════════════════════════════════════ */}
 
-      <section id="contact" className="py-20 scroll-mt-24">
+      <section id="contact" className="py-12 sm:py-20 scroll-mt-24">
         <motion.div
-          className="relative overflow-hidden rounded-3xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] p-8 sm:p-12 text-center shadow-lg"
+          className="relative overflow-hidden rounded-3xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] p-6 sm:p-8 md:p-12 text-center shadow-lg"
           initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -472,13 +472,13 @@ export default function ExperienceContact() {
             <span className="neural-label block mb-3">Let&apos;s Build Together</span>
 
             <h2
-              className="text-3xl sm:text-5xl font-extrabold text-neutral-950 dark:text-white mb-4"
+              className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-950 dark:text-white mb-4"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               Have an <span className="text-[#f97316]">AI product</span> idea?
             </h2>
 
-            <p className="text-neutral-600 dark:text-neutral-300 text-base sm:text-lg mb-8 leading-relaxed">
+            <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base lg:text-lg mb-8 leading-relaxed">
               Whether you&apos;re exploring an AI idea, building an intelligent product, experimenting with Computer Vision, or improving an existing system, I&apos;m always open to discussing interesting engineering challenges.
             </p>
 

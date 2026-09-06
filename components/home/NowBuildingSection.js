@@ -16,10 +16,10 @@ const SYSTEM_STEPS = [
 
 export default function NowBuildingSection() {
   return (
-    <section id="now-building" className="py-12 scroll-mt-24">
+    <section id="now-building" className="py-8 sm:py-12 scroll-mt-24">
       {/* Section label */}
       <motion.div
-        className="text-center mb-10"
+        className="text-center mb-8 sm:mb-10"
         initial={false}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -27,13 +27,13 @@ export default function NowBuildingSection() {
       >
         <span className="neural-label">Current Work</span>
         <h2
-          className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
+          className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
           style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
         >
           MegaShot Pickl+ —{" "}
           <span className="text-[#f97316]">Smart At-Home Gaming</span>
         </h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
           Motion sensors, Bluetooth sync, and a connected gaming app — bringing real pickleball swings into interactive digital gameplay at home.
         </p>
       </motion.div>
@@ -57,7 +57,7 @@ export default function NowBuildingSection() {
         />
 
         {/* ── Top grid: info left + image right ── */}
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 sm:p-10 border-b border-neutral-200 dark:border-[#27272a]">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 p-5 sm:p-8 lg:p-10 border-b border-neutral-200 dark:border-[#27272a]">
 
           {/* Left — description, pills, role cards, CTA */}
           <div className="lg:col-span-7 space-y-6">
@@ -76,12 +76,12 @@ export default function NowBuildingSection() {
             {/* Title */}
             <div>
               <h3
-                className="text-2xl sm:text-3xl font-extrabold text-neutral-950 dark:text-white"
+                className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-neutral-950 dark:text-white"
                 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
               >
                 Motion-Sensing Pickleball Paddle &amp; Connected Gaming
               </h3>
-              <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base leading-relaxed mt-2">
+              <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed mt-2">
                 MegaShot Pickl+ bridges physical sports hardware with connected digital gaming. Players use a smart paddle that tracks swings, stroke power, and velocity in real time — turning every hit into interactive gameplay at home.
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function NowBuildingSection() {
             </div>
 
             {/* Tagline */}
-            <p className="font-mono text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-[#09090b]/80 border border-neutral-200 dark:border-[#27272a] px-4 py-2.5 rounded-2xl inline-block max-w-full text-center sm:text-left leading-relaxed">
+            <p className="font-mono text-xs font-semibold text-neutral-800 dark:text-neutral-200 bg-neutral-100 dark:bg-[#09090b]/80 border border-neutral-200 dark:border-[#27272a] px-3 sm:px-4 py-2.5 rounded-2xl inline-block max-w-full text-center leading-relaxed">
               Hardware <span className="text-[#f97316]">×</span> Software <span className="text-[#f97316]">×</span> Interactive Gaming <span className="text-[#f97316]">×</span> Intelligent Systems
             </p>
 
@@ -158,6 +158,8 @@ export default function NowBuildingSection() {
               <Image
                 src={PickleImg}
                 alt="MegaShot Pickl+ Smart Pickleball Gaming Platform"
+                placeholder="blur"
+                quality={82}
                 className="w-full object-cover h-auto hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 42vw, 480px"
               />
@@ -169,7 +171,7 @@ export default function NowBuildingSection() {
         </div>
 
         {/* ── Bottom strip: product system architecture ── */}
-        <div className="relative z-10 p-8 sm:p-10 bg-neutral-50 dark:bg-[#09090b]/50">
+        <div className="relative z-10 p-5 sm:p-8 lg:p-10 bg-neutral-50 dark:bg-[#09090b]/50">
           <span className="font-mono text-xs uppercase tracking-widest font-bold text-[#f97316] block mb-4">
             PRODUCT SYSTEM ARCHITECTURE
           </span>

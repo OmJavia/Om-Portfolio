@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import MermaidDiagram from "../../components/MermaidDiagram";
-import Mars from "../../public/Mars.png";
+import Mars from "../../public/Mars.jpg";
 import { FaArrowLeft, FaExternalLinkAlt } from "react-icons/fa";
 
 const ARCHITECTURE_DIAGRAM = `

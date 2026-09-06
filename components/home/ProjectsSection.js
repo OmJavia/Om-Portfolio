@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import posthog from 'posthog-js';
-import Car from "../../public/Car.png";
+import Car from "../../public/Car.jpg";
 import Blog from "../../public/Blog.png";
-import NirmanHome from "../../public/nirmanbook.png";
-import Mars from "../../public/Mars.png";
-import Metashot from "../../public/Metashot1.png";
+import NirmanHome from "../../public/nirmanbook.jpg";
+import Mars from "../../public/Mars.jpg";
+import Metashot from "../../public/Metashot.jpg";
 import Pickle from "../../public/Pickle.jpeg";
-import CodingShark from "../../public/Coding-Shark.png";
-import netflix from "../../public/netflix.png";
-import aerpace from "../../public/aerpace.png";
-import PDF_Seacrher from "../../public/PDF_Searcher.png";
+import CodingShark from "../../public/Coding-Shark.jpg";
+import netflix from "../../public/netflix.jpg";
+import aerpace from "../../public/aerpace.jpg";
+import PDF_Seacrher from "../../public/PDF_Searcher.jpg";
 import ProjectCard from "../ProjectCard";
 
 const FILTER_TABS = [
@@ -226,9 +226,9 @@ export default function ProjectsSection() {
   );
 
   return (
-    <section id="featured-work" className="py-20 scroll-mt-24">
+    <section id="featured-work" className="py-12 sm:py-20 scroll-mt-24">
       <motion.div
-        className="text-center mb-10"
+        className="text-center mb-8 sm:mb-10"
         initial={false}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -236,12 +236,12 @@ export default function ProjectsSection() {
       >
         <span className="neural-label">Projects & Portfolio</span>
         <h2
-          className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
+          className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
           style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
         >
           Featured <span className="text-[#f97316]">Work</span>
         </h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto">
           Explore production AI products, computer vision pipelines, research work, and engineering applications built across the full product lifecycle.
         </p>
       </motion.div>

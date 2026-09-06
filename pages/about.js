@@ -121,6 +121,9 @@ export default function About() {
                 width={520}
                 height={620}
                 alt="Om Javia"
+                placeholder="blur"
+                quality={85}
+                sizes="(max-width: 768px) 100vw, 500px"
                 priority
                 className="aspect-[4/5] w-full rounded-[1.35rem] object-cover"
               />

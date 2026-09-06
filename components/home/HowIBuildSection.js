@@ -55,9 +55,9 @@ const steps = [
 
 export default function HowIBuildSection() {
   return (
-    <section id="how-i-build" className="py-20 scroll-mt-24">
+    <section id="how-i-build" className="py-12 sm:py-20 scroll-mt-24">
       <motion.div
-        className="text-center mb-14"
+        className="text-center mb-10 sm:mb-14"
         initial={false}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -65,12 +65,12 @@ export default function HowIBuildSection() {
       >
         <span className="neural-label">Methodology</span>
         <h2
-          className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-4"
+          className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-4"
           style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
         >
           How I Build <span className="text-[#f97316]">AI Products</span>
         </h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
           AI product development is a complete lifecycle — from initial feasibility to production infrastructure and user-driven iteration.
         </p>
       </motion.div>
@@ -79,7 +79,7 @@ export default function HowIBuildSection() {
         {steps.map((step, idx) => (
           <motion.div
             key={step.number}
-            className="p-7 rounded-3xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm hover:border-[#f97316]/40 transition-all duration-300 relative group flex flex-col justify-between"
+            className="p-5 sm:p-7 rounded-3xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm hover:border-[#f97316]/40 transition-all duration-300 relative group flex flex-col justify-between"
             initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

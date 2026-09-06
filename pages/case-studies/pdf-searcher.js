@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import MermaidDiagram from "../../components/MermaidDiagram";
-import PDF_Searcher from "../../public/PDF_Searcher.png";
+import PDF_Searcher from "../../public/PDF_Searcher.jpg";
 import { FaArrowLeft, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const ARCHITECTURE_DIAGRAM = `

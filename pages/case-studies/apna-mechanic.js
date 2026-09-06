@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import MermaidDiagram from "../../components/MermaidDiagram";
-import Car from "../../public/Car.png";
+import Car from "../../public/Car.jpg";
 import { FaArrowLeft, FaExternalLinkAlt } from "react-icons/fa";
 
 const ARCHITECTURE_DIAGRAM = `

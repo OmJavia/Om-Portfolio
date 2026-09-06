@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import MermaidDiagram from "../../components/MermaidDiagram";
-import aerpace from "../../public/aerpace.png";
+import aerpace from "../../public/aerpace.jpg";
 import { FaArrowLeft, FaExternalLinkAlt } from "react-icons/fa";
 
 const ARCHITECTURE_DIAGRAM = `

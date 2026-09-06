@@ -162,8 +162,11 @@ export default function ProjectCard({
               src={image}
               alt={`${title} — ${category} project screenshot`}
               fill
+              placeholder="blur"
+              loading="lazy"
+              quality={82}
               className="object-contain transition-all duration-700 ease-out group-hover:scale-[1.03] group-hover:brightness-[0.35] group-hover:saturate-[0.8]"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -176,12 +179,12 @@ export default function ProjectCard({
           </div>
 
           {/* Hover content overlay */}
-          <div className="absolute inset-x-0 bottom-0 z-10 translate-y-full p-5 text-white opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 sm:p-6">
-            <h3 className="text-xl sm:text-2xl font-bold tracking-tight drop-shadow-sm" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+          <div className="absolute inset-x-0 bottom-0 z-10 translate-y-full p-4 sm:p-6 text-white opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 max-h-full overflow-y-auto">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight drop-shadow-sm" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
               {title}
             </h3>
-            <div className="mt-3">
-              <p className="text-sm leading-relaxed text-white/80">{description}</p>
+            <div className="mt-2 sm:mt-3">
+              <p className="text-xs sm:text-sm leading-relaxed text-white/90">{description}</p>
               {bullets.length > 0 && (
                 <ul className="mt-2.5 text-xs text-white/70 space-y-1 list-disc pl-4">
                   {bullets.map((bullet, idx) => (
@@ -237,14 +240,14 @@ export default function ProjectCard({
         {/* Mobile Info Strip (visible on mobile where hover does not exist) */}
         <div className="p-4 border-t border-neutral-100 dark:border-[#27272a] md:hidden">
           <div className="flex items-center justify-between gap-2 mb-1.5">
-            <h3 className="font-bold text-base text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h3 className="font-bold text-sm sm:text-base text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
               {title}
             </h3>
             <span className="font-mono text-[9px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 shrink-0">
               {category}
             </span>
           </div>
-          <p className="text-xs text-neutral-600 dark:text-neutral-400 line-clamp-2 mb-3 leading-relaxed">
+          <p className="text-[12px] sm:text-xs text-neutral-600 dark:text-neutral-300 mb-3 leading-relaxed">
             {description}
           </p>
           <div className="flex items-center gap-2 flex-wrap">
@@ -305,7 +308,7 @@ export default function ProjectCard({
 
             {/* Modal panel */}
             <motion.div
-              className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-white dark:bg-[#09090b] rounded-3xl shadow-2xl border border-neutral-200 dark:border-[#27272a] flex flex-col md:flex-row"
+              className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-white dark:bg-[#09090b] rounded-3xl shadow-2xl border border-neutral-200 dark:border-[#27272a] flex flex-col"
               initial={{ opacity: 0, scale: 0.94, y: 24 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.94, y: 16 }}
@@ -321,8 +324,8 @@ export default function ProjectCard({
               </button>
 
               {/* Left panel: Image / Architecture + Links */}
-              <div className="w-full md:w-2/5 relative bg-neutral-50 dark:bg-[#18181b] border-r border-neutral-200 dark:border-[#27272a] flex flex-col rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none overflow-hidden">
-                <div className="relative flex-1 p-6 flex items-center justify-center min-h-[200px]">
+              <div className="w-full md:w-2/5 relative bg-neutral-50 dark:bg-[#18181b] border-b md:border-b-0 md:border-r border-neutral-200 dark:border-[#27272a] flex flex-col rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none overflow-hidden">
+                <div className="relative flex-1 p-4 sm:p-6 flex items-center justify-center min-h-[160px] sm:min-h-[200px]">
                   {ArchDiagram ? (
                     <div className="w-full">
                       <p className="font-mono text-[9px] uppercase tracking-widest text-[#f97316] mb-3 text-center">
@@ -336,6 +339,8 @@ export default function ProjectCard({
                         src={image}
                         alt={`${title} project preview`}
                         fill
+                        placeholder="blur"
+                        quality={85}
                         className="object-contain p-6"
                         sizes="(max-width: 768px) 100vw, 40vw"
                       />
@@ -379,7 +384,7 @@ export default function ProjectCard({
               </div>
 
               {/* Right panel: Content */}
-              <div className="w-full md:w-3/5 p-6 sm:p-10 flex flex-col gap-7">
+              <div className="w-full md:w-3/5 p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col gap-5 sm:gap-7">
                 {/* Header */}
                 <div>
                   <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.14em] font-semibold px-2.5 py-1 rounded-md bg-orange-50 dark:bg-[#f97316]/10 text-[#f97316] border border-orange-200 dark:border-[#f97316]/20 mb-3">
@@ -387,7 +392,7 @@ export default function ProjectCard({
                     {category}
                   </span>
                   <h2
-                    className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-3"
+                    className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-white mb-3"
                     style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                   >
                     {title}
