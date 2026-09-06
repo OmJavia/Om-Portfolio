@@ -470,7 +470,7 @@ export default function ExperienceContact() {
           />
           <div className="relative z-10 max-w-2xl mx-auto">
             <span className="neural-label block mb-3">Let&apos;s Build Together</span>
-            
+
             <h2
               className="text-3xl sm:text-5xl font-extrabold text-neutral-950 dark:text-white mb-4"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}

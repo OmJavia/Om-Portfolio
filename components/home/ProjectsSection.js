@@ -5,7 +5,8 @@ import Car from "../../public/Car.png";
 import Blog from "../../public/Blog.png";
 import NirmanHome from "../../public/nirmanbook.png";
 import Mars from "../../public/Mars.png";
-import Metashot from "../../public/Metashot.png";
+import Metashot from "../../public/Metashot1.png";
+import Pickle from "../../public/Pickle.jpeg";
 import CodingShark from "../../public/Coding-Shark.png";
 import netflix from "../../public/netflix.png";
 import aerpace from "../../public/aerpace.png";
@@ -39,6 +40,7 @@ const projectsData = [
       "Hardware motion sensor integration feeding real-time swing tracking into a connected mobile gaming experience with haptic and interactive gameplay feedback.",
     hurdles:
       "Translating raw motion sensor data into instant, accurate digital swing interpretations for real-time multiplayer gaming.",
+    image: Pickle,
     tags: ["Hardware x Software", "Sensors", "Interactive Gaming", "Product"],
     liveUrl: "https://pickleball.themegashot.com/",
     caseStudyUrl: "/case-studies/megashot-pickl",
@@ -61,7 +63,6 @@ const projectsData = [
     image: Metashot,
     tags: ["PyTorch", "YOLO", "FastAPI", "Sports AI"],
     liveUrl: "https://metashot.in/",
-    caseStudyUrl: "/case-studies/metashot",
     isFeatured: true,
   },
   {
@@ -261,11 +262,10 @@ export default function ProjectsSection() {
                 setActiveFilter(tab);
                 posthog.capture('project_filter_changed', { filter_tab: tab });
               }}
-              className={`relative px-3.5 py-2 rounded-xl font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-200 whitespace-nowrap ${
-                activeFilter === tab
-                  ? "text-white"
-                  : "text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
-              }`}
+              className={`relative px-3.5 py-2 rounded-xl font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-200 whitespace-nowrap ${activeFilter === tab
+                ? "text-white"
+                : "text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
+                }`}
               aria-pressed={activeFilter === tab}
               aria-label={`Filter projects by ${tab}`}
             >

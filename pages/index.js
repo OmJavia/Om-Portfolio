@@ -1,14 +1,15 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import Layout from "../components/Layout";
 import HeroSection from "../components/home/HeroSection";
 import NowBuildingSection from "../components/home/NowBuildingSection";
-import FeaturedCaseStudySection from "../components/home/FeaturedCaseStudySection";
 import CapabilitiesSection from "../components/home/CapabilitiesSection";
 import HowIBuildSection from "../components/home/HowIBuildSection";
 import ProjectsSection from "../components/home/ProjectsSection";
-import OpenSourceSection from "../components/home/OpenSourceSection";
-import TechnicalSkillsSection from "../components/home/TechnicalSkillsSection";
-import ExperienceContact from "../components/home/ExperienceContact";
+
+const OpenSourceSection = dynamic(() => import("../components/home/OpenSourceSection"));
+const TechnicalSkillsSection = dynamic(() => import("../components/home/TechnicalSkillsSection"));
+const ExperienceContact = dynamic(() => import("../components/home/ExperienceContact"));
 
 export default function Home() {
   return (
@@ -90,8 +91,7 @@ export default function Home() {
         {/* 1. Currently Building Spotlight: MegaShot Pickl+ */}
         <NowBuildingSection />
 
-        {/* 2. Featured Case Study Spotlight: MetaShot */}
-        <FeaturedCaseStudySection />
+
 
         {/* 3. Core Capabilities: What I Build */}
         <CapabilitiesSection />

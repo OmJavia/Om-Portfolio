@@ -52,12 +52,12 @@ export default function HeroSection() {
           initial={false}
           animate="visible"
         >
-          {/* Eyebrow badge */}
+          {/* Eyebrow badge
           <motion.div variants={fadeUp} custom={0.04}>
             <span className="font-mono text-xs uppercase tracking-widest font-bold px-3.5 py-1.5 rounded-full bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 shadow-sm">
               AI PRODUCT ENGINEER
             </span>
-          </motion.div>
+          </motion.div> */}
 
           {/* Big Heading */}
           <motion.h1
@@ -111,7 +111,7 @@ export default function HeroSection() {
             </MagneticButton>
 
             {/* Subtle CTA */}
-            <a
+            {/* <a
               href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
@@ -120,7 +120,7 @@ export default function HeroSection() {
             >
               <span>Download Resume</span>
               <FaArrowRight className="text-[10px]" />
-            </a>
+            </a> */}
           </motion.div>
 
           {/* Social Icons */}
@@ -179,7 +179,7 @@ export default function HeroSection() {
         {/* ── Right: Illustration ── */}
         <motion.div
           className="flex-1 w-full max-w-lg lg:max-w-xl"
-          initial={{ opacity: 0, scale: 0.95, x: 20 }}
+          initial={false}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >
@@ -193,6 +193,7 @@ export default function HeroSection() {
               height={700}
               alt="Om Javia's AI engineering workspace — code editor, neural network visualization"
               className="rounded-2xl object-cover w-full h-auto"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
               priority
             />
           </div>

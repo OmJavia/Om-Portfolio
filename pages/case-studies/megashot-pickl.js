@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Layout from "../../components/Layout";
 import MermaidDiagram from "../../components/MermaidDiagram";
+import PickleImg from "../../public/Pickle.jpeg";
 import { FaArrowLeft, FaExternalLinkAlt, FaGamepad, FaWifi, FaMobileAlt, FaBolt } from "react-icons/fa";
 
 const PICKLEBALL_ARCHITECTURE = `
@@ -88,6 +90,16 @@ export default function MegaShotPicklCaseStudy() {
             ))}
           </div>
 
+          {/* Product Image Banner */}
+          <div className="pt-4 overflow-hidden rounded-3xl border border-neutral-200 dark:border-[#27272a] shadow-2xl">
+            <Image
+              src={PickleImg}
+              alt="MegaShot Pickl+ Smart Pickleball Gaming Experience"
+              className="w-full object-cover max-h-[500px]"
+              priority
+            />
+          </div>
+
           <div className="pt-4">
             <a
               href="https://pickleball.themegashot.com/"
@@ -95,7 +107,7 @@ export default function MegaShotPicklCaseStudy() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-2xl bg-[#f97316] px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-[#ea6c0a] shadow-amber-sm"
             >
-              <span>Explore MegaShot Pickl+</span>
+              <span>Explore MegaShot Pickl+ Website</span>
               <FaExternalLinkAlt className="text-xs" />
             </a>
           </div>

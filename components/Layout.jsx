@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import AskOmWidget from "./AskOmWidget";
+
+const AskOmWidget = dynamic(() => import("./AskOmWidget"), { ssr: false });
 
 export default function Layout({ children }) {
   // Default to dark mode aggressively — Obsidian Neural is the primary experience
