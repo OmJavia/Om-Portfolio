@@ -1,4 +1,3 @@
-"use client";
 import { useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 
@@ -70,7 +69,7 @@ export default function SpotlightCard({
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
       variants={animationVariants || defaultVariants}
-      initial={false}
+      initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
     >

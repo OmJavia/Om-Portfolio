@@ -52,62 +52,75 @@ export default function HeroSection() {
           initial={false}
           animate="visible"
         >
+          {/* Eyebrow badge */}
+          <motion.div variants={fadeUp} custom={0.04}>
+            <span className="font-mono text-xs uppercase tracking-widest font-bold px-3.5 py-1.5 rounded-full bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 shadow-sm">
+              AI PRODUCT ENGINEER
+            </span>
+          </motion.div>
+
           {/* Big Heading */}
           <motion.h1
             variants={fadeUp}
             custom={0.08}
-            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.05]"
+            className="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.08]"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
-            <span className="text-neutral-900 dark:text-white">I&apos;m</span>{" "}
-            <span className="text-[#f97316]">Om Javia,</span>
-            <br />
-            <span className="text-neutral-700 dark:text-neutral-300">
-              AI Product
-            </span>{" "}
-            <span className="text-[#f97316]">Engineer</span>
+            Building{" "}
+            <span className="text-[#f97316]">production-ready</span> AI
+            products from idea to deployment.
           </motion.h1>
 
           {/* Subtext */}
           <motion.p
             variants={fadeUp}
             custom={0.16}
-            className="text-neutral-600 dark:text-neutral-400 text-lg sm:text-xl leading-relaxed max-w-xl font-normal tracking-tight"
+            className="text-neutral-600 dark:text-neutral-300 text-lg sm:text-xl leading-relaxed max-w-xl font-normal tracking-tight"
           >
-            I engineer intelligent, production-grade systems that synthesize
-            artificial intelligence with robust software architecture to solve
-            complex business challenges.
+            I work across Computer Vision, LLMs, RAG, backend systems, and
+            intelligent products to turn emerging AI capabilities into things
+            people can actually use.
           </motion.p>
 
-          {/* CTA Buttons — Magnetic */}
+          {/* CTA Buttons — Clear Hierarchy */}
           <motion.div
             variants={fadeUp}
             custom={0.24}
-            className="flex flex-wrap justify-center lg:justify-start gap-4 mt-2"
+            className="flex flex-wrap justify-center lg:justify-start gap-3 mt-2"
           >
+            {/* Primary CTA */}
             <MagneticButton
-              href="/contact"
+              href="#featured-work"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-[#f97316] text-white hover:bg-[#ea6c0a] shadow-amber-sm hover:shadow-amber-md h-11 px-6 py-2.5"
               strength={0.3}
-              onClick={() => posthog.capture('hire_me_clicked', { source: 'hero_section' })}
+              onClick={() => posthog.capture('view_work_clicked', { source: 'hero_section' })}
             >
-              <span className="chroma-text-out chroma-text-out-animate">
-                Hire me
-              </span>
+              <span>View Featured Work</span>
               <FaArrowRight className="text-xs" />
             </MagneticButton>
 
+            {/* Secondary CTA */}
             <MagneticButton
-              href="https://cal.com/Om-Javia"
-              target="_blank"
-              rel="noreferrer"
+              href="/contact"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-900 dark:text-neutral-200 hover:border-[#f97316]/40 hover:text-[#f97316] dark:hover:text-white shadow-sm h-11 px-6 py-2.5"
               strength={0.3}
-              onClick={() => posthog.capture('schedule_meeting_clicked', { source: 'hero_section' })}
+              onClick={() => posthog.capture('contact_clicked', { source: 'hero_section' })}
             >
-              <span>Schedule a Meeting</span>
+              <span>Let&apos;s Work Together</span>
               <FaArrowRight className="text-xs" />
             </MagneticButton>
+
+            {/* Subtle CTA */}
+            <a
+              href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-xs sm:text-sm font-semibold tracking-tight text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white px-4 py-2.5 transition-colors"
+              onClick={() => posthog.capture('resume_clicked', { source: 'hero_section' })}
+            >
+              <span>Download Resume</span>
+              <FaArrowRight className="text-[10px]" />
+            </a>
           </motion.div>
 
           {/* Social Icons */}
@@ -166,7 +179,7 @@ export default function HeroSection() {
         {/* ── Right: Illustration ── */}
         <motion.div
           className="flex-1 w-full max-w-lg lg:max-w-xl"
-          initial={false}
+          initial={{ opacity: 0, scale: 0.95, x: 20 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >

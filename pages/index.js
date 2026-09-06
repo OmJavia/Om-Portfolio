@@ -1,8 +1,13 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
 import HeroSection from "../components/home/HeroSection";
-import AboutSkills from "../components/home/AboutSkills";
+import NowBuildingSection from "../components/home/NowBuildingSection";
+import FeaturedCaseStudySection from "../components/home/FeaturedCaseStudySection";
+import CapabilitiesSection from "../components/home/CapabilitiesSection";
+import HowIBuildSection from "../components/home/HowIBuildSection";
 import ProjectsSection from "../components/home/ProjectsSection";
+import OpenSourceSection from "../components/home/OpenSourceSection";
+import TechnicalSkillsSection from "../components/home/TechnicalSkillsSection";
 import ExperienceContact from "../components/home/ExperienceContact";
 
 export default function Home() {
@@ -10,12 +15,12 @@ export default function Home() {
     <>
       <Head>
         {/* Primary SEO */}
-        <title>Om Javia | AI Product Engineer — Computer Vision, RAG & LLMs</title>
+        <title>Om Javia | AI Product Engineer — Computer Vision, RAG & Intelligent Products</title>
         <meta
           name="description"
-          content="Om Javia is an AI Product Engineer building production-grade computer vision, RAG, NLP, and LLM systems. Based in Bangalore. Available for AI/ML and product engineering roles."
+          content="Om Javia is an AI Product Engineer building production-ready AI products across Computer Vision, LLMs, RAG, backend systems, and intelligent interactive products."
         />
-        <meta name="keywords" content="Om Javia, AI Product Engineer, Computer Vision, RAG, LLMs, PyTorch, NLP, Machine Learning, Bangalore, ISRO, Metashot" />
+        <meta name="keywords" content="Om Javia, AI Product Engineer, Computer Vision, RAG, LLMs, PyTorch, Sports AI, Metashot, MegaShot Pickl+, Intelligent Products, Bangalore" />
         <meta name="author" content="Om Javia" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://omjavia.vercel.app" />
@@ -24,7 +29,7 @@ export default function Home() {
         <meta property="og:title" content="Om Javia | AI Product Engineer" />
         <meta
           property="og:description"
-          content="Explore Om Javia's AI engineering work across computer vision, LLMs, data systems, and product-focused web applications."
+          content="Building production-ready AI products from idea to deployment across Computer Vision, LLMs, RAG, backend systems, and intelligent connected products."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://omjavia.vercel.app" />
@@ -41,18 +46,69 @@ export default function Home() {
         <meta name="twitter:title" content="Om Javia | AI Product Engineer" />
         <meta
           name="twitter:description"
-          content="Computer Vision · LLMs · RAG · Production AI. Building at the intersection of AI and product."
+          content="Computer Vision · LLMs · RAG · Production AI · Intelligent Hardware. Turning emerging AI into products people actually use."
         />
         <meta name="twitter:image" content="https://omjavia.vercel.app/og-image.jpg" />
+
+        {/* Structured Data (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Om Javia",
+              jobTitle: "AI Product Engineer",
+              url: "https://omjavia.vercel.app",
+              sameAs: [
+                "https://www.linkedin.com/in/omjavia/",
+                "https://twitter.com/OmJavia1",
+                "https://github.com/omjavia",
+              ],
+              knowsAbout: [
+                "Artificial Intelligence",
+                "Computer Vision",
+                "Large Language Models",
+                "Retrieval-Augmented Generation",
+                "PyTorch",
+                "FastAPI",
+                "Product Engineering",
+                "Intelligent Interactive Products",
+              ],
+            }),
+          }}
+        />
 
         {/* Favicon */}
         <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
       </Head>
 
       <Layout>
+        {/* Hero Section */}
         <HeroSection />
-        <AboutSkills />
+
+        {/* 1. Currently Building Spotlight: MegaShot Pickl+ */}
+        <NowBuildingSection />
+
+        {/* 2. Featured Case Study Spotlight: MetaShot */}
+        <FeaturedCaseStudySection />
+
+        {/* 3. Core Capabilities: What I Build */}
+        <CapabilitiesSection />
+
+        {/* 4. Methodology: How I Build AI Products */}
+        <HowIBuildSection />
+
+        {/* 5. Projects Section: Featured & Categorized Catalog */}
         <ProjectsSection />
+
+        {/* 6. Code Proof: Open Source & Experiments */}
+        <OpenSourceSection />
+
+        {/* 7. Stack: Grouped Technical Competencies */}
+        <TechnicalSkillsSection />
+
+        {/* 8. Experience Arc & Contact CTA */}
         <ExperienceContact />
       </Layout>
     </>
