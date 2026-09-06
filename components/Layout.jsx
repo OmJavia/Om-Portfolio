@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ScrollToTop from "./ScrollToTop";
 
 const AskOmWidget = dynamic(() => import("./AskOmWidget"), { ssr: false });
 
@@ -38,6 +39,7 @@ export default function Layout({ children }) {
           {children}
         </main>
         <Footer />
+        <ScrollToTop />
         <AskOmWidget />
       </div>
     </div>
