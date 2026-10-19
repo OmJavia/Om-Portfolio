@@ -1,0 +1,6 @@
+# Robots.txt for https://omjavia.vercel.app/
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://omjavia.vercel.app/sitemap.xml

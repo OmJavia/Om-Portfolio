@@ -29,7 +29,7 @@ IMPORTANT RULES:
 === ABOUT OM JAVIA ===
 
 Name: Om Javia
-Role: AI Product Engineer
+Role: Founding Manager, MegaShot (AI Product & Go-to-Market) | AI Product Engineer
 Location: Bangalore, India
 Email: omjavia18@gmail.com
 
@@ -37,43 +37,33 @@ LinkedIn:
 https://www.linkedin.com/in/omjavia/
 
 GitHub:
-https://github.com/omjavia
+https://github.com/omjavia/
 
 Education:
-B.Tech Computer Science, CGPA 9.0
+B.Tech Computer Science, CGPA 9.0/10
 
 
 === WORK EXPERIENCE ===
 
-1. AI Product Engineer @ Metashot (2025 - Present)
+1. Founding Manager @ MegaShot (Metashot) (November 2025 – Present)
+- Taking connected AI products from idea to launch across physical hardware, connected software, gameplay, and GTM.
+- MegaShot Pickl+: motion-sensing smart pickleball paddle with companion gaming application.
+- Crowdfunding launch: campaign reached 500% of its goal within 24 hours (company-reported).
+- Featured on Pickleball.com: "World’s first smart pickleball game launched by MetaShot".
 
-- Leading AI product execution across engineering, UX, product feedback, and go-to-market loops.
-- Real-time sports AI including cricket shot detection.
-- Player-facing intelligence.
-- Retention models.
-- Built product feedback systems used by 185+ players.
+2. AI Engineer @ Metashot (July 2025 – October 2025)
+- Optimized real-time cricket shot detection for <80ms inference latency using PyTorch and OpenCV.
+- Integrated video classification streams into Unity engine workflows.
+- Built session analytics pipelines using FastAPI and Redis.
 
+3. Associate AI Engineer @ Apoliums Infotech (May 2024 – June 2025)
+- Built feature engineering and preprocessing pipelines in Python and Pandas.
+- Deployed Dockerized FastAPI prediction microservices and standardized CI/CD workflows.
 
-2. AI Engineer @ Metashot (2025)
-
-- Improved real-time cricket shot detection accuracy.
-- Worked on low-latency computer vision pipelines.
-- Built and shipped player-facing features.
-
-
-3. Associate AI Engineer @ Apoliums (2024 - 2025)
-
-- Built data pipelines.
-- Built ML prediction APIs.
-- Worked on deployment workflows for production products.
-- Supported 7K+ users through ML endpoints.
-
-
-4. R&D Intern @ ISRO (2024)
-
-- Worked on terrain understanding.
-- Worked on obstacle-aware rover path planning using satellite imagery.
-- Achieved 87.4% rover navigation efficiency improvement using computer vision models.
+4. Research & Development Intern @ ISRO Space Applications Centre (February 2024 – May 2024)
+- Curated and annotated 800+ HiRISE satellite images for terrain understanding across 5 categories.
+- Built PyTorch CNN segmentation models and integrated A*/Dijkstra path planners.
+- Produced an 87.4% navigation-efficiency score in simulated rover traversal.
 
 
 === CORE SKILLS ===
@@ -161,7 +151,7 @@ Description:
 - Real-time cricket shot classification using computer vision.
 - Low-latency inference pipeline.
 - Player-facing feedback.
-- Used by 185+ players in feedback loops.
+- Validated with real-time swing capture and edge-case shot variations.
 
 
 4. PDF Searcher

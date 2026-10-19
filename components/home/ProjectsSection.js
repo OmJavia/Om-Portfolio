@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import posthog from 'posthog-js';
+import { FaChevronDown, FaChevronUp, FaFolderOpen } from "react-icons/fa";
 import Car from "../../public/Car.jpg";
 import Blog from "../../public/Blog.png";
 import NirmanHome from "../../public/nirmanbook.jpg";
@@ -15,8 +16,8 @@ import ProjectCard from "../ProjectCard";
 
 const FILTER_TABS = [
   "All",
-  "Current Work",
   "Featured",
+  "Current Work",
   "AI Systems",
   "Computer Vision",
   "LLM / RAG",
@@ -25,16 +26,17 @@ const FILTER_TABS = [
   "Experiments",
 ];
 
-const projectsData = [
+// 4 High-Signal Core Featured Projects
+const FEATURED_PROJECTS = [
   {
     title: "MegaShot Pickl+",
     category: "Current Work",
-    filterCategory: ["All", "Current Work", "Featured", "AI Systems", "Product Engineering"],
+    filterCategory: ["All", "Featured", "Current Work", "AI Systems", "Product Engineering"],
     description:
       "A motion-sensing smart pickleball paddle and connected gaming experience that brings real swings into interactive gameplay at home.",
     bullets: [
-      "Real-time motion sensing and swing tracking",
-      "Connected mobile gameplay experience & Bluetooth connectivity",
+      "Real-time motion sensing and low-latency BLE swing tracking",
+      "Connected mobile gameplay experience & handle haptics",
     ],
     architecture:
       "Hardware motion sensor integration feeding real-time swing tracking into a connected mobile gaming experience with haptic and interactive gameplay feedback.",
@@ -51,7 +53,7 @@ const projectsData = [
     category: "Sports AI",
     filterCategory: ["All", "Featured", "AI Systems", "Computer Vision", "Product Engineering"],
     description:
-      "Real-time cricket shot detection and player-facing AI feedback system deployed in production and used by 185+ players across practice sessions.",
+      "Real-time cricket shot detection and player-facing AI feedback system deployed in production across active training and practice sessions.",
     bullets: [
       "Real-time shot classification from video streams (<80ms latency)",
       "Player feedback dashboard with weak-shot analysis module",
@@ -63,6 +65,8 @@ const projectsData = [
     image: Metashot,
     tags: ["PyTorch", "YOLO", "FastAPI", "Sports AI"],
     liveUrl: "https://metashot.in/",
+    // Note: No dedicated case study exists yet for MetaShot sports-AI; liveUrl links to official site.
+    // TODO(Om): create dedicated MetaShot sports-AI case study
     isFeatured: true,
   },
   {
@@ -72,7 +76,7 @@ const projectsData = [
     description:
       "Computer vision and path-planning research for terrain understanding using satellite imagery and neural network workflows.",
     bullets: [
-      "Obstacle-aware rover navigation experiments",
+      "Obstacle-aware rover navigation experiments (87.4% efficiency score)",
       "Terrain labeling (5 categories) and 800+ annotated image datasets",
     ],
     architecture:
@@ -88,13 +92,13 @@ const projectsData = [
   },
   {
     title: "PDF Searcher",
-    category: "AI Utility",
+    category: "Applied AI / RAG",
     filterCategory: ["All", "Featured", "AI Systems", "LLM / RAG"],
     description:
-      "A document search utility focused on helping users find answers inside PDFs faster through a practical retrieval workflow.",
+      "A document search utility focused on helping users find answers inside PDFs faster through a practical semantic retrieval workflow.",
     bullets: [
       "PDF ingestion and semantic search experience",
-      "Useful foundation for RAG-style document intelligence tools",
+      "Vector retrieval foundation for document intelligence tools",
     ],
     architecture:
       "Python backend utilizing LangChain for document chunking, OpenAI embeddings for semantic search, and a lightweight vector store for fast retrieval.",
@@ -106,6 +110,11 @@ const projectsData = [
     caseStudyUrl: "/case-studies/pdf-searcher",
     isFeatured: true,
   },
+  // TODO(Om): build and evaluate flagship LLM/agent project with README, metrics and demo
+];
+
+// Additional Projects (Kept in accessible collapsible section)
+const MORE_PROJECTS = [
   {
     title: "NirmanBook",
     category: "PropTech",
@@ -221,9 +230,27 @@ const projectsData = [
 
 export default function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState("All");
-  const filteredProjects = projectsData.filter((p) =>
-    p.filterCategory.includes(activeFilter),
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
+
+  // Filter logic
+  const filteredFeatured = FEATURED_PROJECTS.filter((p) =>
+    p.filterCategory.includes(activeFilter)
   );
+
+  const filteredMore = MORE_PROJECTS.filter((p) =>
+    p.filterCategory.includes(activeFilter)
+  );
+
+  // Auto-expand "More projects" if active filter selects only items in that section
+  const handleFilterClick = (tab) => {
+    setActiveFilter(tab);
+    posthog.capture('project_filter_changed', { filter_tab: tab });
+    const matchesMore = MORE_PROJECTS.some((p) => p.filterCategory.includes(tab));
+    const matchesFeatured = FEATURED_PROJECTS.some((p) => p.filterCategory.includes(tab));
+    if (matchesMore && !matchesFeatured) {
+      setIsMoreOpen(true);
+    }
+  };
 
   return (
     <section id="featured-work" className="py-12 sm:py-20 scroll-mt-24">
@@ -234,7 +261,7 @@ export default function ProjectsSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span className="neural-label">Projects & Portfolio</span>
+        <span className="neural-label">High-Signal Portfolio</span>
         <h2
           className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
           style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
@@ -242,7 +269,7 @@ export default function ProjectsSection() {
           Featured <span className="text-[#f97316]">Work</span>
         </h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto">
-          Explore production AI products, computer vision pipelines, research work, and engineering applications built across the full product lifecycle.
+          Production AI systems, computer vision models, research pipelines, and connected hardware taking AI from concept to shipped product.
         </p>
       </motion.div>
 
@@ -258,14 +285,12 @@ export default function ProjectsSection() {
           {FILTER_TABS.map((tab) => (
             <button
               key={tab}
-              onClick={() => {
-                setActiveFilter(tab);
-                posthog.capture('project_filter_changed', { filter_tab: tab });
-              }}
-              className={`relative px-3.5 py-2 rounded-xl font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-200 whitespace-nowrap ${activeFilter === tab
-                ? "text-white"
-                : "text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
-                }`}
+              onClick={() => handleFilterClick(tab)}
+              className={`relative px-3.5 py-2 rounded-xl font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-200 whitespace-nowrap ${
+                activeFilter === tab
+                  ? "text-white"
+                  : "text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
+              }`}
               aria-pressed={activeFilter === tab}
               aria-label={`Filter projects by ${tab}`}
             >
@@ -283,21 +308,66 @@ export default function ProjectsSection() {
         </div>
       </motion.div>
 
-      {/* ── Project Grid ── */}
+      {/* ── Core Featured Grid (4 High-Signal Projects) ── */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={activeFilter}
+          key={activeFilter + "-featured"}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
           initial={false}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
-          {filteredProjects.map((project) => (
+          {filteredFeatured.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
         </motion.div>
       </AnimatePresence>
+
+      {/* ── Collapsible "More projects" Section ── */}
+      <div className="mt-12 pt-8 border-t border-neutral-200/80 dark:border-[#27272a]">
+        <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
+          <div>
+            <h3 className="font-bold text-lg text-neutral-950 dark:text-white flex items-center gap-2">
+              <FaFolderOpen className="text-[#f97316]" /> Additional Projects &amp; Web Systems
+            </h3>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
+              Earlier engineering projects, mobility web experiences, PropTech platforms, and frontend experiments.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              const nextState = !isMoreOpen;
+              setIsMoreOpen(nextState);
+              posthog.capture('more_projects_toggled', { open: nextState });
+            }}
+            aria-expanded={isMoreOpen}
+            aria-controls="more-projects-grid"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-800 dark:text-neutral-200 hover:border-[#f97316]/50 hover:text-[#f97316] transition-all shadow-sm"
+          >
+            <span>{isMoreOpen ? "Hide More Projects" : `More Projects (${MORE_PROJECTS.length})`}</span>
+            {isMoreOpen ? <FaChevronUp className="text-[10px]" /> : <FaChevronDown className="text-[10px]" />}
+          </button>
+        </div>
+
+        {/* Collapsible Container */}
+        {isMoreOpen && (
+          <motion.div
+            id="more-projects-grid"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 pt-2"
+          >
+            {filteredMore.map((project) => (
+              <ProjectCard key={project.title} {...project} />
+            ))}
+          </motion.div>
+        )}
+      </div>
     </section>
   );
 }

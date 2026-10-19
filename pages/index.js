@@ -15,42 +15,43 @@ export default function Home() {
     <>
       <Head>
         {/* Primary SEO */}
-        <title>Om Javia | AI Product Engineer — Computer Vision, RAG & Intelligent Products</title>
+        <title>Om Javia Founding Manager, MegaShot | AI Product &amp; Go-to-Market</title>
         <meta
           name="description"
-          content="Om Javia is an AI Product Engineer building production-ready AI products across Computer Vision, LLMs, RAG, backend systems, and intelligent interactive products."
+          content="Om Javia is Founding Manager at MegaShot, taking connected AI products from idea to launch, and an AI Product Engineer experienced in computer vision, PyTorch, LLMs, and RAG."
         />
-        <meta name="keywords" content="Om Javia, AI Product Engineer, Computer Vision, RAG, LLMs, PyTorch, Sports AI, Metashot, MegaShot Pickl+, Intelligent Products, Bangalore" />
+        <meta name="keywords" content="Om Javia, Founding Manager, MegaShot, AI Product Engineer, AI Product Manager, Go-to-Market, Computer Vision, LLMs, RAG, PyTorch, Sports AI, Metashot, MegaShot Pickl+, Bangalore" />
         <meta name="author" content="Om Javia" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://omjavia.vercel.app" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Om Javia | AI Product Engineer" />
+        <meta property="og:title" content="Om Javia — Founding Manager, MegaShot | AI Product &amp; Go-to-Market" />
         <meta
           property="og:description"
-          content="Building production-ready AI products from idea to deployment across Computer Vision, LLMs, RAG, backend systems, and intelligent connected products."
+          content="I build computer-vision and LLM systems and take connected AI products from idea to launch. Founding Manager at MegaShot."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://omjavia.vercel.app" />
         <meta property="og:image" content="https://omjavia.vercel.app/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Om Javia — AI Product Engineer portfolio preview" />
+        <meta property="og:image:alt" content="Om Javia — Founding Manager, MegaShot | AI Product &amp; Go-to-Market" />
         <meta property="og:site_name" content="Om Javia Portfolio" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@OmJavia1" />
         <meta name="twitter:creator" content="@OmJavia1" />
-        <meta name="twitter:title" content="Om Javia | AI Product Engineer" />
+        <meta name="twitter:title" content="Om Javia — Founding Manager, MegaShot | AI Product &amp; Go-to-Market" />
         <meta
           name="twitter:description"
-          content="Computer Vision · LLMs · RAG · Production AI · Intelligent Hardware. Turning emerging AI into products people actually use."
+          content="I build computer-vision and LLM systems and take connected AI products from idea to launch. Hands-on technical product execution across hardware and software."
         />
         <meta name="twitter:image" content="https://omjavia.vercel.app/og-image.jpg" />
 
         {/* Structured Data (JSON-LD) */}
+        {/* TODO(Om): verify legal employer entity name and corporate relationship between Metashot and MegaShot */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -58,7 +59,13 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Om Javia",
-              jobTitle: "AI Product Engineer",
+              jobTitle: "Founding Manager",
+              description: "Founding Manager at MegaShot (AI Product & Go-to-Market) and AI Product Engineer.",
+              worksFor: {
+                "@type": "Organization",
+                name: "Metashot",
+                url: "https://metashot.in/",
+              },
               url: "https://omjavia.vercel.app",
               sameAs: [
                 "https://www.linkedin.com/in/omjavia/",
@@ -70,10 +77,10 @@ export default function Home() {
                 "Computer Vision",
                 "Large Language Models",
                 "Retrieval-Augmented Generation",
+                "Product Strategy & Go-to-Market",
+                "Hardware-Software Integration",
                 "PyTorch",
                 "FastAPI",
-                "Product Engineering",
-                "Intelligent Interactive Products",
               ],
             }),
           }}

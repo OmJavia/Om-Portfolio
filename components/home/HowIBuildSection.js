@@ -71,7 +71,7 @@ export default function HowIBuildSection() {
           How I Build <span className="text-[#f97316]">AI Products</span>
         </h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-          AI product development is a complete lifecycle — from initial feasibility to production infrastructure and user-driven iteration.
+          AI product development is a complete lifecycle - from initial feasibility to production infrastructure and user-driven iteration.
         </p>
       </motion.div>
 

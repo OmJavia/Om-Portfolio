@@ -39,7 +39,7 @@ export default function OpenSourceSection() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span className="neural-label">Code Proof</span>
+        <span className="neural-label">Experiments</span>
         <h2
           className="text-3xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
           style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}

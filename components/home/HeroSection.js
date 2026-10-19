@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import {
   AiFillTwitterCircle,
   AiFillLinkedin,
@@ -7,7 +8,15 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
-import { FaArrowRight } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaExternalLinkAlt,
+  FaCalendarAlt,
+  FaFileAlt,
+  FaBriefcase,
+  FaNewspaper,
+} from "react-icons/fa";
+import { SiKickstarter } from "react-icons/si";
 import front from "../../public/front.png";
 import MagneticButton from "../MagneticButton";
 import posthog from 'posthog-js';
@@ -28,7 +37,7 @@ const staggerContainer = {
 
 export default function HeroSection() {
   return (
-    <section id="home" className="scroll-mt-24 pt-4 pb-16 relative">
+    <section id="home" className="scroll-mt-24 pt-4 pb-12 sm:pb-16 relative">
       {/* Ambient amber glow blob behind hero */}
       <div
         aria-hidden
@@ -52,41 +61,41 @@ export default function HeroSection() {
           initial={false}
           animate="visible"
         >
-          {/* Eyebrow badge
-          <motion.div variants={fadeUp} custom={0.04}>
-            <span className="font-mono text-xs uppercase tracking-widest font-bold px-3.5 py-1.5 rounded-full bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 shadow-sm">
-              AI PRODUCT ENGINEER
-            </span>
-          </motion.div> */}
 
-          {/* Big Heading */}
+          {/* Primary Headline */}
           <motion.h1
             variants={fadeUp}
             custom={0.08}
             className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.1]"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
-            Building{" "}
-            <span className="text-[#f97316]">production-ready</span> AI
-            products from idea to deployment.
+            Founding Manager,{" "}
+            <span className="text-[#f97316]">AI Product &amp; Go-to-Market</span>
           </motion.h1>
 
-          {/* Subtext */}
+          {/* Supporting statement */}
           <motion.p
             variants={fadeUp}
             custom={0.16}
             className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base lg:text-xl leading-relaxed max-w-xl font-normal tracking-tight"
           >
-            I work across Computer Vision, LLMs, RAG, backend systems, and
-            intelligent products to turn emerging AI capabilities into things
-            people can actually use.
+            I build computer-vision and LLM systems and take connected AI products from idea to launch.
+          </motion.p>
+
+          {/* Recruiter-friendly technical & execution differentiator */}
+          <motion.p
+            variants={fadeUp}
+            custom={0.20}
+            className="text-neutral-500 dark:text-neutral-400 text-xs sm:text-sm leading-relaxed max-w-xl"
+          >
+            Combining hands-on technical depth (computer vision, PyTorch, Python backend services, ML pipelines, and RAG) with product decisions, cross-functional execution, and launch operations.
           </motion.p>
 
           {/* CTA Buttons — Clear Hierarchy */}
           <motion.div
             variants={fadeUp}
             custom={0.24}
-            className="flex flex-wrap justify-center lg:justify-start gap-3 mt-2"
+            className="flex flex-wrap justify-center lg:justify-start gap-3 mt-1"
           >
             {/* Primary CTA */}
             <MagneticButton
@@ -102,32 +111,36 @@ export default function HeroSection() {
             {/* Secondary CTA */}
             <MagneticButton
               href="/contact"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-900 dark:text-neutral-200 hover:border-[#f97316]/40 hover:text-[#f97316] dark:hover:text-white shadow-sm h-11 px-6 py-2.5"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-900 dark:text-neutral-200 hover:border-[#f97316]/40 hover:text-[#f97316] dark:hover:text-white shadow-sm h-11 px-5 py-2.5"
               strength={0.3}
               onClick={() => posthog.capture('contact_clicked', { source: 'hero_section' })}
             >
-              <span>Let&apos;s Work Together</span>
+              <span>Hiring? Let&apos;s talk</span>
               <FaArrowRight className="text-xs" />
             </MagneticButton>
 
-            {/* Subtle CTA */}
-            {/* <a
-              href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing"
+            {/* Cal.com Scheduling */}
+            <a
+              href="https://cal.com/Om-Javia"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-xs sm:text-sm font-semibold tracking-tight text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white px-4 py-2.5 transition-colors"
-              onClick={() => posthog.capture('resume_clicked', { source: 'hero_section' })}
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-xs sm:text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-neutral-100 dark:bg-[#121214] border border-neutral-200 dark:border-[#27272a] text-neutral-700 dark:text-neutral-300 hover:border-[#f97316]/40 hover:text-[#f97316] dark:hover:text-white h-11 px-4 py-2.5"
+              onClick={() => posthog.capture('book_call_clicked', { source: 'hero_section' })}
             >
-              <span>Download Resume</span>
-              <FaArrowRight className="text-[10px]" />
-            </a> */}
+              <FaCalendarAlt className="text-xs text-[#f97316]" />
+              <span>Schedule Call</span>
+            </a>
+
+            {/* Resume Action */}
+            {/* TODO(Om): add current resume PDF to public/resume.pdf */}
+
           </motion.div>
 
           {/* Social Icons */}
           <motion.div
             variants={fadeUp}
             custom={0.32}
-            className="flex flex-wrap gap-3 pt-2"
+            className="flex flex-wrap gap-3 pt-1"
           >
             {[
               {
@@ -201,6 +214,75 @@ export default function HeroSection() {
           </div>
         </motion.div>
       </div>
+
+      {/* ── Compact Proof Strip (Max 4 items) ── */}
+      <motion.div
+        className="mt-10 sm:mt-12 pt-6 border-t border-neutral-200/80 dark:border-[#27272a]"
+        initial={false}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+          {/* Proof 1: Kickstarter */}
+          <a
+            href="https://www.kickstarter.com/projects/megashot/megashot-pickl-smart-pickleball-gaming-device"
+            target="_blank"
+            rel="noreferrer"
+            className="group p-4 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#05ce78]/50 shadow-sm transition-all flex flex-col justify-between"
+            onClick={() => posthog.capture('proof_kickstarter_clicked', { source: 'hero_proof_strip' })}
+          >
+            <div className="flex items-center justify-between gap-2 mb-2">
+              <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-[#05ce78] flex items-center gap-1.5">
+                <SiKickstarter className="text-sm" /> Kickstarter Launch
+              </span>
+              <FaExternalLinkAlt className="text-[10px] text-neutral-400 group-hover:text-[#05ce78] transition-colors" />
+            </div>
+            <p className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-neutral-100 leading-snug">
+              Campaign reached 500% of its goal within 24 hours (company-reported).
+            </p>
+          </a>
+
+          {/* Proof 2: Pickleball.com Product Coverage */}
+          <a
+            href="https://pickleball.com/news/worlds-first-smart-pickleball-game-launched-by-metashot"
+            target="_blank"
+            rel="noreferrer"
+            className="group p-4 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#f97316]/50 shadow-sm transition-all flex flex-col justify-between"
+            onClick={() => posthog.capture('proof_pickleball_clicked', { source: 'hero_proof_strip' })}
+          >
+            <div className="flex items-center justify-between gap-2 mb-2">
+              <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-[#f97316] flex items-center gap-1.5">
+                <FaNewspaper className="text-sm" /> Product Coverage
+              </span>
+              <FaExternalLinkAlt className="text-[10px] text-neutral-400 group-hover:text-[#f97316] transition-colors" />
+            </div>
+            <p className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-neutral-100 leading-snug">
+              Pickleball.com: &quot;World’s first smart pickleball game launched by MetaShot&quot;
+            </p>
+          </a>
+
+          {/* Proof 3: Metashot Role Progression */}
+          <Link
+            href="#experience"
+            className="group p-4 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#38bdf8]/50 shadow-sm transition-all flex flex-col justify-between"
+          >
+            <div className="flex items-center justify-between gap-2 mb-2">
+              <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-[#38bdf8] flex items-center gap-1.5">
+                <FaBriefcase className="text-sm" /> Role Progression
+              </span>
+              <span className="text-[10px] text-neutral-400 group-hover:text-[#38bdf8] transition-colors font-mono">
+                View →
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-neutral-100 leading-snug">
+              Metashot: AI Engineer (July–Oct 2025) → Founding Manager (Nov 2025–Present).
+            </p>
+          </Link>
+
+          {/* TODO(Om): New York Toy Fair beta-showing reference omitted from public strip pending confirmed dates, booth verification, and photo/press artifact. See CONTENT_VERIFICATION.md */}
+        </div>
+      </motion.div>
     </section>
   );
 }

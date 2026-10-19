@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaTimes, FaLayerGroup, FaTools, FaBookOpen } from "react-icons/fa";
@@ -57,7 +57,7 @@ const ArchitectureDiagrams = {
       <rect x="219" y="55" width="80" height="50" rx="8" fill="#18181b" stroke="#a855f7" strokeWidth="1.5" />
       <text x="259" y="72" textAnchor="middle" fill="#a855f7" fontSize="8" fontFamily="JetBrains Mono, monospace" fontWeight="600">Path Planner</text>
       <text x="259" y="84" textAnchor="middle" fill="#a1a1aa" fontSize="7" fontFamily="JetBrains Mono, monospace">A* / Dijkstra</text>
-      <text x="259" y="96" textAnchor="middle" fill="#a1a1aa" fontSize="6.5" fontFamily="JetBrains Mono, monospace">+87.4% efficiency</text>
+      <text x="259" y="96" textAnchor="middle" fill="#a1a1aa" fontSize="6.5" fontFamily="JetBrains Mono, monospace">87.4% efficiency score</text>
       <line x1="259" y1="105" x2="259" y2="128" stroke="#a855f7" strokeWidth="1" strokeDasharray="3,2" />
       <rect x="219" y="130" width="80" height="28" rx="6" fill="#18181b" stroke="#10b981" strokeWidth="1" strokeDasharray="3,2" />
       <text x="259" y="146" textAnchor="middle" fill="#10b981" fontSize="7" fontFamily="JetBrains Mono, monospace">Safe Traversal Route</text>
@@ -79,7 +79,7 @@ const ArchitectureDiagrams = {
       <text x="147" y="77" textAnchor="middle" fill="#38bdf8" fontSize="8" fontFamily="JetBrains Mono, monospace" fontWeight="600">YOLO + PyTorch</text>
       <text x="147" y="89" textAnchor="middle" fill="#a1a1aa" fontSize="7" fontFamily="JetBrains Mono, monospace">Shot Detection</text>
       <text x="147" y="101" textAnchor="middle" fill="#10b981" fontSize="6.5" fontFamily="JetBrains Mono, monospace">{'<'}80ms latency</text>
-      <text x="147" y="109" textAnchor="middle" fill="#a1a1aa" fontSize="6" fontFamily="JetBrains Mono, monospace">+33% accuracy</text>
+      <text x="147" y="109" textAnchor="middle" fill="#a1a1aa" fontSize="6" fontFamily="JetBrains Mono, monospace">Shot Classification</text>
       <line x1="187" y1="88" x2="212" y2="88" stroke="#38bdf8" strokeWidth="1.5" markerEnd="url(#ms-arrow)" />
       <rect x="214" y="60" width="80" height="56" rx="8" fill="#18181b" stroke="#a855f7" strokeWidth="1.5" />
       <text x="254" y="77" textAnchor="middle" fill="#a855f7" fontSize="8" fontFamily="JetBrains Mono, monospace" fontWeight="600">FastAPI + Redis</text>
@@ -88,7 +88,7 @@ const ArchitectureDiagrams = {
       <line x1="254" y1="116" x2="254" y2="135" stroke="#a855f7" strokeWidth="1" strokeDasharray="3,2" />
       <rect x="194" y="137" width="120" height="28" rx="6" fill="#18181b" stroke="#10b981" strokeWidth="1" strokeDasharray="3,2" />
       <text x="254" y="150" textAnchor="middle" fill="#10b981" fontSize="7" fontFamily="JetBrains Mono, monospace">Player Dashboard</text>
-      <text x="254" y="160" textAnchor="middle" fill="#a1a1aa" fontSize="6" fontFamily="JetBrains Mono, monospace">185+ players · session insights</text>
+      <text x="254" y="160" textAnchor="middle" fill="#a1a1aa" fontSize="6" fontFamily="JetBrains Mono, monospace">practice analytics · session insights</text>
       <text x="180" y="22" textAnchor="middle" fill="#52525b" fontSize="9" fontFamily="JetBrains Mono, monospace">Sports AI Real-Time Pipeline</text>
     </svg>
   ),
@@ -112,6 +112,18 @@ export default function ProjectCard({
   const clickTimerRef = useRef(null);
   const router = useRouter();
   const ArchDiagram = ArchitectureDiagrams[title];
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!isModalOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setIsModalOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isModalOpen]);
 
   const handleCardClick = (e) => {
     if (clickTimerRef.current) {
@@ -308,6 +320,9 @@ export default function ProjectCard({
 
             {/* Modal panel */}
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label={`${title} project details`}
               className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-white dark:bg-[#09090b] rounded-3xl shadow-2xl border border-neutral-200 dark:border-[#27272a] flex flex-col"
               initial={{ opacity: 0, scale: 0.94, y: 24 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}

@@ -94,6 +94,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
         {/* Right Controls */}
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Resume Pill */}
+          {/* TODO(Om): add current resume PDF to public/resume.pdf */}
           <a
             href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing"
             target="_blank"
@@ -104,12 +105,12 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <FaArrowRight className="text-[10px]" />
           </a>
 
-          {/* Let's Talk CTA */}
+          {/* Primary Header CTA */}
           <Link
             href="/contact"
             className="hidden lg:inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-xs sm:text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-[#f97316] text-white hover:bg-[#ea6c0a] shadow-amber-sm h-9 px-4 py-2"
           >
-            <span>Let&apos;s Talk</span>
+            <span>Hiring? Let&apos;s talk</span>
             <FaArrowRight className="text-[10px]" />
           </Link>
 
@@ -200,7 +201,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
               onClick={() => setIsMenuOpen(false)}
               className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-[#f97316] text-white hover:bg-[#ea6c0a] h-10 px-6 py-2.5 shadow-amber-sm"
             >
-              <span>Let&apos;s Talk</span>
+              <span>Hiring? Let&apos;s talk</span>
               <FaArrowRight className="text-xs" />
             </Link>
           </div>

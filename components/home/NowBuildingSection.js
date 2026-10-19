@@ -7,11 +7,11 @@ import posthog from 'posthog-js';
 
 const SYSTEM_STEPS = [
   { step: "01", title: "Motion Sensors", desc: "Smart Paddle Hardware" },
-  { step: "02", title: "BLE Sync",       desc: "Low-Latency Data Stream" },
-  { step: "03", title: "Swing Logic",    desc: "Stroke Interpreter" },
-  { step: "04", title: "Mobile UI",      desc: "Connected App Loop" },
-  { step: "05", title: "Game Engine",    desc: "Interactive Gameplay" },
-  { step: "06", title: "Feedback",       desc: "Haptic & RGB Response" },
+  { step: "02", title: "BLE Sync", desc: "Low-Latency Data Stream" },
+  { step: "03", title: "Swing Logic", desc: "Stroke Interpreter" },
+  { step: "04", title: "Mobile UI", desc: "Connected App Loop" },
+  { step: "05", title: "Game Engine", desc: "Interactive Gameplay" },
+  { step: "06", title: "Feedback", desc: "Haptic & RGB Response" },
 ];
 
 export default function NowBuildingSection() {
@@ -30,11 +30,11 @@ export default function NowBuildingSection() {
           className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
           style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
         >
-          MegaShot Pickl+ —{" "}
+          MegaShot Pickl+ {" "}
           <span className="text-[#f97316]">Smart At-Home Gaming</span>
         </h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-          Motion sensors, Bluetooth sync, and a connected gaming app — bringing real pickleball swings into interactive digital gameplay at home.
+          Motion sensors, Bluetooth sync, and a connected gaming app bringing real pickleball swings into interactive digital gameplay at home.
         </p>
       </motion.div>
 
@@ -82,17 +82,17 @@ export default function NowBuildingSection() {
                 Motion-Sensing Pickleball Paddle &amp; Connected Gaming
               </h3>
               <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed mt-2">
-                MegaShot Pickl+ bridges physical sports hardware with connected digital gaming. Players use a smart paddle that tracks swings, stroke power, and velocity in real time — turning every hit into interactive gameplay at home.
+                MegaShot Pickl+ bridges physical sports hardware with connected digital gaming. Players use a smart paddle that tracks swings, stroke power, and velocity in real time turning every hit into interactive gameplay at home.
               </p>
             </div>
 
             {/* Feature pills */}
             <div className="flex flex-wrap gap-2">
               {[
-                { label: "Motion Sensing",           icon: FaBolt },
+                { label: "Motion Sensing", icon: FaBolt },
                 { label: "Real-Time Swing Tracking", icon: FaGamepad },
                 { label: "Connected Mobile Gameplay", icon: FaMobileAlt },
-                { label: "Bluetooth Connectivity",   icon: FaWifi },
+                { label: "Bluetooth Connectivity", icon: FaWifi },
               ].map(({ label, icon: Icon }) => (
                 <span
                   key={label}
@@ -119,7 +119,7 @@ export default function NowBuildingSection() {
                   MY ROLE
                 </span>
                 <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                  AI Product Engineer — motion data integration, mobile gameplay workflows, product architecture, and user testing loops.
+                  Founding Manager - AI Product &amp; Go-to-Market: motion data integration, mobile gameplay workflows, product architecture, launch execution, and user testing loops.
                 </p>
               </div>
             </div>

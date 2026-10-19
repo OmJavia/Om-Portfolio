@@ -1,18 +1,110 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRight, FaCalendarAlt, FaDownload } from "react-icons/fa";
-import QR from "../../public/Download Resume.png";
+import {
+  FaArrowRight,
+  FaCalendarAlt,
+  FaDownload,
+  FaLinkedin,
+  FaCheckCircle,
+  FaLightbulb,
+  FaCogs,
+  FaSyncAlt,
+} from "react-icons/fa";
 import Metashot from "../../public/Metashot.png";
 import Sac from "../../public/sac.png";
 import Ace from "../../public/ace-infoway.png";
 import Apoliums from "../../public/Apoliums.png";
 import Relcon from "../../public/relcon.png";
 import MagneticButton from "../MagneticButton";
+import posthog from 'posthog-js';
 
 export default function ExperienceContact() {
   return (
     <>
+      {/* ══════════════════════════════════════════════════════
+            HOW I WORK (Working Practices)
+        ══════════════════════════════════════════════════════ */}
+      <section id="how-i-work" className="py-10 sm:py-16 scroll-mt-24 border-b border-neutral-200/80 dark:border-[#27272a]">
+        <motion.div
+          className="mb-8 sm:mb-10 text-center max-w-2xl mx-auto"
+          initial={false}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <span className="neural-label">Execution Approach</span>
+          <h2
+            className="text-2xl sm:text-4xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
+            style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+          >
+            How I <span className="text-[#f97316]">Work</span>
+          </h2>
+          <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed">
+            Practical operating principles demonstrated across early-stage AI products, computer vision pipelines, and connected hardware.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          {/* Practice 1 */}
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-[#f97316]/10 text-[#f97316] flex items-center justify-center text-lg">
+                <FaLightbulb />
+              </div>
+              <h3 className="font-bold text-base text-neutral-950 dark:text-white">
+                Turning Ambiguous Problems into Structured Requirements
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Transforming loose product concepts into clear PRDs, prioritized engineering backlogs, and explicit success criteria before committing development resources.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-neutral-100 dark:border-[#27272a] font-mono text-[10px] text-[#f97316]">
+              Demonstrated in: MegaShot Pickl+ PRDs &amp; Sensor Scoping
+            </div>
+          </div>
+
+          {/* Practice 2 */}
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-lg">
+                <FaCogs />
+              </div>
+              <h3 className="font-bold text-base text-neutral-950 dark:text-white">
+                Connecting Technical Constraints with Delivery Decisions
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Evaluating hardware battery limitations, BLE packet budgets, and inference latencies alongside user experience goals to choose practical architectural trade-offs.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-neutral-100 dark:border-[#27272a] font-mono text-[10px] text-blue-500">
+              Demonstrated in: Metashot &lt;80ms Inference &amp; Pickl+ BLE Architecture
+            </div>
+          </div>
+
+          {/* Practice 3 */}
+          <div className="p-6 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm flex flex-col justify-between">
+            <div className="space-y-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-lg">
+                <FaSyncAlt />
+              </div>
+              <h3 className="font-bold text-base text-neutral-950 dark:text-white">
+                Coordinating Execution &amp; Learning from Feedback
+              </h3>
+              <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Aligning cross-functional sprints across engineering, UX, and launch streams while using real player test telemetry to drive firmware and software revisions.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-neutral-100 dark:border-[#27272a] font-mono text-[10px] text-emerald-500">
+              Demonstrated in: MegaShot Prototype Iterations &amp; GTM Launch
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════
+            EXPERIENCE TIMELINE
+        ══════════════════════════════════════════════════════ */}
       <section id="experience" className="py-12 sm:py-20 scroll-mt-24">
         <motion.div
           className="mb-10 sm:mb-12"
@@ -26,10 +118,10 @@ export default function ExperienceContact() {
             className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
-            Engineering <span className="text-[#f97316]">Experience</span>
+            Professional <span className="text-[#f97316]">Experience</span>
           </h2>
           <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl">
-            My career has evolved through satellite research, production machine learning APIs, computer vision systems, and AI product engineering.
+            My career progression spans satellite research, production ML APIs, low-latency computer vision pipelines, and early-stage AI product execution.
           </p>
         </motion.div>
 
@@ -37,7 +129,8 @@ export default function ExperienceContact() {
           {/* Timeline center line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 border-l-2 border-dashed border-[#f97316]/20 hidden md:block" />
 
-          {/* ── Metashot AI Product Engineer ── */}
+          {/* ── METASHOT (Single Employer with Two Headings) ── */}
+          {/* TODO(Om): verify legal employer entity name and corporate relationship between Metashot and MegaShot */}
           <motion.div
             className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
             initial={false}
@@ -46,25 +139,36 @@ export default function ExperienceContact() {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
-              <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">
-                November 2025 — Present
+              <p className="font-mono text-sm font-bold text-neutral-800 dark:text-neutral-200">
+                July 2025 - Present
               </p>
               <p className="font-mono text-xs text-neutral-500 mt-0.5">
-                Bangalore, Karnataka
+                Bangalore, Karnataka · Full-time
               </p>
+              <div className="mt-3 flex flex-wrap gap-1.5 justify-start md:justify-end">
+                <span className="font-mono text-[10px] bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 px-2 py-0.5 rounded-full font-semibold">
+                  Two Roles
+                </span>
+                <span className="font-mono text-[10px] bg-neutral-100 dark:bg-[#18181b] text-neutral-600 dark:text-neutral-400 border border-neutral-200 dark:border-[#27272a] px-2 py-0.5 rounded-full">
+                  Sports AI &amp; Hardware
+                </span>
+              </div>
             </div>
+
             <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-[#f97316] timeline-dot-amber border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
               <span className="text-white text-xl" aria-hidden>
                 💼
               </span>
             </div>
+
             <div className="order-1 md:order-2 w-full md:w-5/12">
-              <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#f97316]/40 p-4 sm:p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-amber-sm">
-                <div className="flex items-center gap-4 mb-4">
+              <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#f97316]/40 p-5 sm:p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-amber-sm space-y-6">
+                {/* Employer Header */}
+                <div className="flex items-center gap-3.5 pb-4 border-b border-neutral-100 dark:border-[#27272a]">
                   <Image
                     src={Metashot}
-                    width={48}
-                    height={48}
+                    width={44}
+                    height={44}
                     alt="Metashot logo"
                     className="rounded-lg shadow-sm"
                   />
@@ -75,105 +179,62 @@ export default function ExperienceContact() {
                     >
                       Metashot
                     </h3>
-                    <h4 className="font-mono text-xs font-semibold text-[#f97316]">
-                      AI Product Engineer
-                    </h4>
+                    <p className="font-mono text-xs text-neutral-500">
+                      Sports AI &amp; Connected Gaming Products
+                    </p>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {["Product Strategy", "FastAPI", "User Loops", "PRDs"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-mono text-[10px] bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 px-2.5 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
-                  <li>
-                    Led product execution across Engineering, UX, and Go-to-Market streams for smart sports gaming products.
-                  </li>
-                  <li>
-                    Translated user feedback into actionable PRDs, prioritizing features for connected sports tech products.
-                  </li>
-                  <li>
-                    Validated product-market fit through active feedback loops with 185+ players across real practice environments.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </motion.div>
 
-          {/* ── Metashot AI Engineer ── */}
-          <motion.div
-            className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
-            initial={false}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
-          >
-            <div className="order-1 w-full md:w-5/12">
-              <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-emerald-500/40 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_0_24px_rgba(16,185,129,0.15)]">
-                <div className="flex items-center gap-4 mb-4">
-                  <Image
-                    src={Metashot}
-                    width={48}
-                    height={48}
-                    alt="Metashot logo"
-                    className="rounded-lg shadow-sm"
-                  />
-                  <div>
-                    <h3
-                      className="text-lg font-bold text-neutral-950 dark:text-white"
-                      style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
-                    >
-                      Metashot
-                    </h3>
-                    <h4 className="font-mono text-xs font-semibold text-emerald-400">
+                {/* Role 1: Founding Manager */}
+                <div className="space-y-2">
+                  <div className="flex items-baseline justify-between flex-wrap gap-1">
+                    <h4 className="font-bold text-sm text-[#f97316]">
+                      Founding Manager
+                    </h4>
+                    <span className="font-mono text-xs font-semibold text-neutral-500 dark:text-neutral-400">
+                      November 2025 - Present
+                    </span>
+                  </div>
+                  <ul className="text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-1.5 leading-relaxed">
+                    <li>
+                      <strong>Accelerated product readiness:</strong> Defined PRDs, feature roadmaps, and cross-functional milestones across firmware, mobile app, and hardware industrial design teams for connected sports tech products.
+                    </li>
+                    <li>
+                      <strong>Streamlined motion integration:</strong> Coordinated translation of 9-axis sensor readings into low-latency mobile gaming mechanics and real-time stroke feedback.
+                    </li>
+                    <li>
+                      <strong>Led go-to-market execution:</strong> Formulated technical product positioning, campaign page structure, and media narrative for product launches.
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Role 2: AI Engineer */}
+                <div className="space-y-2 pt-3 border-t border-neutral-100 dark:border-[#27272a]">
+                  <div className="flex items-baseline justify-between flex-wrap gap-1">
+                    <h4 className="font-bold text-sm text-emerald-500">
                       AI Engineer
                     </h4>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {["PyTorch", "YOLO", "OpenCV", "FastAPI"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-mono text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full"
-                    >
-                      {tag}
+                    <span className="font-mono text-xs font-semibold text-neutral-500 dark:text-neutral-400">
+                      July - October 2025
                     </span>
-                  ))}
+                  </div>
+                  <ul className="text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-1.5 leading-relaxed">
+                    <li>
+                      <strong>Optimized inference latency:</strong> Achieved sub-80ms real-time inference latency for cricket shot classification by profiling and optimizing PyTorch and OpenCV video pipelines.
+                    </li>
+                    <li>
+                      <strong>Integrated gaming engine workflows:</strong> Deployed live video classification models into Unity engine pipelines for immediate player feedback on shot execution.
+                    </li>
+                    <li>
+                      <strong>Structured session analytics:</strong> Engineered FastAPI and Redis backend services to cache and deliver player training session metrics.
+                    </li>
+                  </ul>
                 </div>
-                <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
-                  <li>
-                    Optimized computer vision shot detection pipelines using PyTorch and OpenCV for sub-80ms real-time inference latency.
-                  </li>
-                  <li>
-                    Integrated real-time shot classification models directly into Unity engine workflows for seamless video feedback.
-                  </li>
-                  <li>
-                    Refined user session analytics and player retention models to improve repeat practice session engagement.
-                  </li>
-                </ul>
               </div>
-            </div>
-            <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-emerald-500 timeline-dot-emerald border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
-              <span className="text-white text-xl" aria-hidden>
-                🏏
-              </span>
-            </div>
-            <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
-              <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">
-                July 2025 — October 2025
-              </p>
-              <p className="font-mono text-xs text-neutral-500 mt-0.5">
-                Bangalore, Karnataka
-              </p>
             </div>
           </motion.div>
 
-          {/* ── Apoliums Infotech ── */}
+          {/* ── APOLIUMS INFOTECH ── */}
           <motion.div
             className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
             initial={false}
@@ -181,26 +242,13 @@ export default function ExperienceContact() {
             viewport={{ once: true }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           >
-            <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
-              <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">
-                May 2024 — July 2025
-              </p>
-              <p className="font-mono text-xs text-neutral-500 mt-0.5">
-                Indore, Madhya Pradesh
-              </p>
-            </div>
-            <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-[#f97316] timeline-dot-amber border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
-              <span className="text-white text-xl" aria-hidden>
-                💼
-              </span>
-            </div>
-            <div className="order-1 md:order-2 w-full md:w-5/12">
+            <div className="order-1 w-full md:w-5/12">
               <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#f97316]/40 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-amber-sm">
                 <div className="flex items-center gap-4 mb-4">
                   <Image
                     src={Apoliums}
-                    width={48}
-                    height={48}
+                    width={44}
+                    height={44}
                     alt="Apoliums Infotech logo"
                     className="rounded-lg shadow-sm"
                   />
@@ -216,32 +264,50 @@ export default function ExperienceContact() {
                     </h4>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {["Python", "Pandas", "FastAPI", "CI/CD"].map((tag) => (
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {["Python", "Pandas", "FastAPI", "Docker", "CI/CD"].map((tag) => (
                     <span
                       key={tag}
-                      className="font-mono text-[10px] bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 px-2.5 py-1 rounded-full"
+                      className="font-mono text-[10px] bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 px-2 py-0.5 rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
+                <p className="font-mono text-xs font-semibold text-neutral-500 mb-2">
+                  May 2024 - June 2025
+                </p>
+                <ul className="text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2 leading-relaxed">
                   <li>
-                    Architected feature engineering and data preprocessing pipelines in Python and Pandas to accelerate model iteration cycles.
+                    <strong>Accelerated model iteration:</strong> Architected feature engineering and data preprocessing pipelines in Python and Pandas for machine learning datasets.
                   </li>
                   <li>
-                    Deployed RESTful FastAPI inference endpoints for real-time machine learning predictions supporting 7K+ users on the platform.
+                    <strong>Deployed production endpoints:</strong> Built and deployed RESTful FastAPI prediction services packaged with Docker, maintaining health checks and automated CI/CD validation.
                   </li>
                   <li>
-                    Automated model deployment and validation workflows using CI/CD pipelines to ensure seamless updates and production stability.
+                    <strong>Automated deployment workflows:</strong> Standardized continuous integration pipelines on GitHub Actions to test, package, and deploy backend microservices reliably.
                   </li>
                 </ul>
               </div>
             </div>
+
+            <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-[#f97316] timeline-dot-amber border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+              <span className="text-white text-xl" aria-hidden>
+                ⚙️
+              </span>
+            </div>
+
+            <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
+              <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">
+                May 2024 - June 2025
+              </p>
+              <p className="font-mono text-xs text-neutral-500 mt-0.5">
+                Indore, Madhya Pradesh
+              </p>
+            </div>
           </motion.div>
 
-          {/* ── ISRO ── */}
+          {/* ── ISRO (Space Applications Centre) ── */}
           <motion.div
             className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
             initial={false}
@@ -249,13 +315,28 @@ export default function ExperienceContact() {
             viewport={{ once: true }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
           >
-            <div className="order-1 w-full md:w-5/12">
+            <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
+              <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">
+                February 2024 - May 2024
+              </p>
+              <p className="font-mono text-xs text-neutral-500 mt-0.5">
+                Ahmedabad, Gujarat · Research Internship
+              </p>
+            </div>
+
+            <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-red-500 timeline-dot-red border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+              <span className="text-white text-xl" aria-hidden>
+                🚀
+              </span>
+            </div>
+
+            <div className="order-1 md:order-2 w-full md:w-5/12">
               <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-red-500/40 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_0_24px_rgba(239,68,68,0.15)]">
                 <div className="flex items-center gap-4 mb-4">
                   <Image
                     src={Sac}
-                    width={48}
-                    height={48}
+                    width={44}
+                    height={44}
                     alt="ISRO logo"
                     className="rounded-lg shadow-sm bg-white p-0.5"
                   />
@@ -267,190 +348,74 @@ export default function ExperienceContact() {
                       ISRO Space Applications Centre
                     </h3>
                     <h4 className="font-mono text-xs font-semibold text-red-400">
-                      Research & Development Intern
+                      Research &amp; Development Intern
                     </h4>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {["PyTorch", "Computer Vision", "Path Planning"].map((tag) => (
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {["PyTorch", "Computer Vision", "Satellite Data", "Path Planning"].map((tag) => (
                     <span
                       key={tag}
-                      className="font-mono text-[10px] bg-red-500/10 text-red-400 border border-red-500/20 px-2.5 py-1 rounded-full"
+                      className="font-mono text-[10px] bg-red-500/10 text-red-400 border border-red-500/20 px-2 py-0.5 rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
+                <p className="font-mono text-xs font-semibold text-neutral-500 mb-2">
+                  February 2024 - May 2024
+                </p>
+                <ul className="text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2 leading-relaxed">
                   <li>
-                    Preprocessed and annotated 800+ HiRISE satellite images, categorizing 5 distinct terrain types including craters and boulders.
+                    <strong>Rover path evaluation:</strong> Produced an 87.4% navigation-efficiency score in simulated rover traversal using PyTorch terrain segmentation models.
                   </li>
                   <li>
-                    Developed PyTorch neural network segmentation models and integrated obstacle-aware path planning algorithms (A*, Dijkstra).
+                    <strong>Satellite imagery curation:</strong> Preprocessed and annotated 800+ HiRISE satellite images, categorizing 5 distinct terrain types including craters and dune ridges.
                   </li>
                   <li>
-                    Achieved an 87.4% navigation efficiency score in obstacle-aware rover traversal simulations.
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-red-500 timeline-dot-red border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
-              <span className="text-white text-xl" aria-hidden>
-                🚀
-              </span>
-            </div>
-            <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
-              <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">
-                February 2024 — May 2024
-              </p>
-              <p className="font-mono text-xs text-neutral-500 mt-0.5">
-                Ahmedabad, Gujarat
-              </p>
-            </div>
-          </motion.div>
-
-          {/* ── Ace Infoway ── */}
-          <motion.div
-            className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
-            initial={false}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          >
-            <div className="order-2 md:order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-right mt-4 md:mt-0">
-              <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">
-                July 2023 — August 2023
-              </p>
-              <p className="font-mono text-xs text-neutral-500 mt-0.5">
-                Rajkot, Gujarat
-              </p>
-            </div>
-            <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-purple-500 timeline-dot-purple border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
-              <span className="text-white text-xl" aria-hidden>
-                💻
-              </span>
-            </div>
-            <div className="order-1 md:order-2 w-full md:w-5/12">
-              <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-purple-500/40 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_0_24px_rgba(168,85,247,0.15)]">
-                <div className="flex items-center gap-4 mb-4">
-                  <Image
-                    src={Ace}
-                    width={48}
-                    height={48}
-                    alt="Ace Infoway logo"
-                    className="rounded-lg shadow-sm"
-                  />
-                  <div>
-                    <h3
-                      className="text-lg font-bold text-neutral-950 dark:text-white"
-                      style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
-                    >
-                      Ace Infoway
-                    </h3>
-                    <h4 className="font-mono text-xs font-semibold text-purple-400">
-                      Software Engineer Intern
-                    </h4>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {["E-Commerce", "Frontend", "APIs"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-mono text-[10px] bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2.5 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
-                  <li>
-                    Implemented abandoned cart push notification workflows to recover lost customer intent.
-                  </li>
-                  <li>
-                    Refactored Budgie Cart web application interfaces for mobile-first user experiences.
-                  </li>
-                  <li>
-                    Optimized frontend assets and bundle delivery to improve page loading responsiveness.
+                    <strong>Graph pathfinding integration:</strong> Combined semantic terrain segmentation outputs with A* and Dijkstra path planning algorithms to calculate obstacle-circumventing navigation routes.
                   </li>
                 </ul>
               </div>
             </div>
           </motion.div>
 
-          {/* ── Relcon System ── */}
-          <motion.div
-            className="relative flex flex-col md:flex-row justify-between items-center w-full mb-12 group"
-            initial={false}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
-          >
-            <div className="order-1 w-full md:w-5/12">
-              <div className="bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-blue-500/40 p-6 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_0_24px_rgba(59,130,246,0.15)]">
-                <div className="flex items-center gap-4 mb-4">
-                  <Image
-                    src={Relcon}
-                    width={48}
-                    height={48}
-                    alt="Relcon System logo"
-                    className="rounded-lg shadow-sm"
-                  />
-                  <div>
-                    <h3
-                      className="text-lg font-bold text-neutral-950 dark:text-white"
-                      style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
-                    >
-                      Relcon System
-                    </h3>
-                    <h4 className="font-mono text-xs font-semibold text-blue-400">
-                      Software Engineer Intern
-                    </h4>
-                  </div>
+          {/* ── Earlier Internships: Ace Infoway & Relcon System ── */}
+          <div className="pt-4 text-center">
+            <details className="inline-block text-left group">
+              <summary className="cursor-pointer font-mono text-xs text-neutral-500 dark:text-neutral-400 hover:text-[#f97316] list-none p-3 rounded-xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] shadow-sm">
+                <span>View Earlier Internships (Ace Infoway, Relcon System) ↓</span>
+              </summary>
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <div className="p-4 rounded-xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-xs space-y-1">
+                  <p className="font-bold text-neutral-900 dark:text-white">Ace Infoway</p>
+                  <p className="font-mono text-[10px] text-purple-400">Software Engineer Intern · Jul–Aug 2023</p>
+                  <p className="text-neutral-600 dark:text-neutral-400">Frontend optimization, abandoned cart recovery workflows, responsive refactoring.</p>
                 </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {["Dashboard", "Operations", "IoT Software"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-mono text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2.5 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div className="p-4 rounded-xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-xs space-y-1">
+                  <p className="font-bold text-neutral-900 dark:text-white">Relcon System</p>
+                  <p className="font-mono text-[10px] text-blue-400">Software Engineer Intern · Jun–Aug 2022</p>
+                  <p className="text-neutral-600 dark:text-neutral-400">Fuel dispensing monitoring dashboard, IoT station software tracking metrics.</p>
                 </div>
-                <ul className="font-mono text-xs text-neutral-600 dark:text-neutral-400 text-left list-disc pl-4 space-y-2">
-                  <li>
-                    Contributed to smart fuel dispensing unit mobile applications with multi-OS compatibility.
-                  </li>
-                  <li>
-                    Constructed operational monitoring dashboards for tracking real-time fuel dispensing metrics across 450+ stations.
-                  </li>
-                  <li>
-                    Streamlined operational tracking workflows for field technicians and station operators.
-                  </li>
-                </ul>
               </div>
-            </div>
-            <div className="z-20 items-center justify-center order-1 w-12 h-12 rounded-full bg-blue-500 timeline-dot-blue border-4 border-[#09090b] absolute left-1/2 transform -translate-x-1/2 hidden md:flex transition-transform duration-300 group-hover:scale-110">
-              <span className="text-white text-xl" aria-hidden>
-                ⚙️
-              </span>
-            </div>
-            <div className="order-1 w-full md:w-5/12 px-6 py-4 flex flex-col text-left md:text-left mt-4 md:mt-0">
-              <p className="font-mono text-sm font-bold text-neutral-700 dark:text-neutral-300">
-                June 2022 — August 2022
-              </p>
-              <p className="font-mono text-xs text-neutral-500 mt-0.5">
-                Vadodara, Gujarat
-              </p>
-            </div>
-          </motion.div>
+            </details>
+          </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════
-            CONTACT & CTA SECTION
+            RECOMMENDATIONS PLACEHOLDER (Prepared & Unpublished)
         ══════════════════════════════════════════════════════ */}
+      {/* TODO(Om): add one or two genuine recommendations with attribution and permission to publish */}
+      {/*
+      <section id="recommendations" className="py-12 border-t border-neutral-200/80 dark:border-[#27272a]">
+        <h3 className="font-bold text-lg text-neutral-950 dark:text-white mb-4">Recommendations</h3>
+      </section>
+      */}
 
+      {/* ══════════════════════════════════════════════════════
+            CONTACT & CREDENTIALS SECTION
+        ══════════════════════════════════════════════════════ */}
       <section id="contact" className="py-12 sm:py-20 scroll-mt-24">
         <motion.div
           className="relative overflow-hidden rounded-3xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] p-6 sm:p-8 md:p-12 text-center shadow-lg"
@@ -469,32 +434,33 @@ export default function ExperienceContact() {
             }}
           />
           <div className="relative z-10 max-w-2xl mx-auto">
-            <span className="neural-label block mb-3">Let&apos;s Build Together</span>
+            <span className="neural-label block mb-3">Let&apos;s Connect</span>
 
             <h2
               className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-950 dark:text-white mb-4"
               style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
-              Have an <span className="text-[#f97316]">AI product</span> idea?
+              Hiring or building an <span className="text-[#f97316]">AI product</span>?
             </h2>
 
             <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base lg:text-lg mb-8 leading-relaxed">
-              Whether you&apos;re exploring an AI idea, building an intelligent product, experimenting with Computer Vision, or improving an existing system, I&apos;m always open to discussing interesting engineering challenges.
+              Targeting product management and technical engineering opportunities across AI systems, computer vision, connected hardware, and launch execution.
             </p>
 
-            <div className="flex justify-center mb-8">
-              <div className="p-4 rounded-2xl bg-neutral-50 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] inline-block shadow-sm">
-                <Image
-                  src={QR}
-                  width={150}
-                  height={150}
-                  alt="QR code to download Om Javia's resume"
-                  className="mx-auto rounded-lg"
-                />
-                <p className="font-mono text-[10px] text-neutral-500 mt-2.5 uppercase tracking-widest font-bold">
-                  Scan to Download Resume
-                </p>
+            {/* Direct Professional Actions (Replaced QR code with clean accessible credential card) */}
+            <div className="p-5 rounded-2xl bg-neutral-50 dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] max-w-lg mx-auto mb-8 shadow-sm text-left space-y-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="font-bold text-sm text-neutral-900 dark:text-white">Om Javia</p>
+                  <p className="font-mono text-xs text-[#f97316]">Founding Manager · AI Product Engineer</p>
+                </div>
+                <span className="font-mono text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                  Available for Roles
+                </span>
               </div>
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                Connect directly for hiring conversations, project scoping, or to request a full verified portfolio resume package.
+              </p>
             </div>
 
             <div className="flex flex-wrap gap-3 justify-center">
@@ -503,11 +469,11 @@ export default function ExperienceContact() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl font-semibold text-sm bg-[#f97316] text-white hover:bg-[#ea6c0a] transition-all shadow-amber-sm hover:shadow-amber-md"
               >
-                <span>Let&apos;s Talk</span>
+                <span>Hiring? Let&apos;s talk</span>
                 <FaArrowRight className="text-xs" />
               </MagneticButton>
 
-              {/* Secondary CTA */}
+              {/* Secondary CTA: Cal.com */}
               <MagneticButton
                 href="https://cal.com/Om-Javia"
                 target="_blank"
@@ -518,7 +484,19 @@ export default function ExperienceContact() {
                 <span>Schedule a Call</span>
               </MagneticButton>
 
-              {/* Download Resume */}
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/omjavia/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl font-semibold text-sm border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#09090b] text-neutral-800 dark:text-neutral-200 hover:border-blue-500/40 hover:text-blue-500 transition-all shadow-sm"
+              >
+                <FaLinkedin className="text-sm text-blue-500" />
+                <span>LinkedIn Profile</span>
+              </a>
+
+              {/* Resume Button */}
+              {/* TODO(Om): add current resume PDF to public/resume.pdf */}
               <a
                 href="https://drive.google.com/file/d/1piCpXUSJk7BZzov8hJe--R90HaqbKr5L/view?usp=sharing"
                 target="_blank"
@@ -536,7 +514,7 @@ export default function ExperienceContact() {
           <Link href="/" className="hover:text-[#f97316] transition-colors">
             Om Javia
           </Link>{" "}
-          — AI Product Engineer © {new Date().getFullYear()}
+          Founding Manager, MegaShot · AI Product Engineer © {new Date().getFullYear()}
         </p>
       </section>
     </>

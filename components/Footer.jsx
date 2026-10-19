@@ -17,12 +17,12 @@ export default function Footer() {
             <span className="font-semibold tracking-tight text-sm text-neutral-900 dark:text-neutral-100">
               Om Javia
             </span>
-            <span className="font-mono text-[11px] px-2 py-0.5 rounded-full bg-neutral-200/70 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
-              AI Product Engineer
+            <span className="font-mono text-[11px] px-2.5 py-0.5 rounded-full bg-neutral-200/70 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300">
+              Founding Manager · AI Product Engineer
             </span>
           </div>
           <p className="text-xs text-neutral-500 dark:text-neutral-400">
-            © {new Date().getFullYear()} Om Javia. Building high-agency AI products.
+            © {new Date().getFullYear()} Om Javia. Taking connected AI products from idea to launch.
           </p>
         </div>
 

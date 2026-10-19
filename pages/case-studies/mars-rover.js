@@ -15,7 +15,7 @@ flowchart LR
     D -->|"No"| F["Traversable Zone\nMapping"]
     E --> F
     F --> G["Path Planner\n(A* / Dijkstra)"]
-    G --> H["Optimal Route\n(87.4% efficiency)"]
+    G --> H["Optimal Route\n(87.4% score)"]
     H --> I["🤖 Rover Navigation\nOutput"]
 `;
 
@@ -44,14 +44,15 @@ const CHALLENGES = [
   {
     challenge: "Evaluating navigation efficiency without a real rover",
     solution:
-      "Designed a simulation environment using OpenCV overlays on top of satellite imagery, comparing the AI-planned path against a naive straight-line baseline. This produced the 87.4% efficiency improvement metric.",
+      "Simulated rover traversal over traversability cost grids derived from satellite segmentation masks, recording an 87.4% navigation-efficiency score in simulated rover traversal across obstacle-dense map regions.",
     tag: "Research Methodology",
     color: "purple",
   },
 ];
 
+// TODO(Om): metric definition + baseline
 const METRICS = [
-  { value: "87.4%", label: "Navigation efficiency improvement" },
+  { value: "87.4%", label: "Navigation-efficiency score in simulated rover traversal" },
   { value: "~95ms", label: "Optimized inference time" },
   { value: "5×", label: "Effective dataset expansion" },
   { value: "ISRO", label: "Research partnership" },

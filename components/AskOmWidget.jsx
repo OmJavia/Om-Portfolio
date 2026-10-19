@@ -28,7 +28,11 @@ export default function AskOmWidget() {
 
   useEffect(() => {
     const t = setTimeout(() => setShowBubble(true), 4000);
-    return () => clearTimeout(t);
+    const hideTimer = setTimeout(() => setShowBubble(false), 12000);
+    return () => {
+      clearTimeout(t);
+      clearTimeout(hideTimer);
+    };
   }, []);
 
   useEffect(() => {
@@ -39,6 +43,11 @@ export default function AskOmWidget() {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 150);
       setShowBubble(false);
+      const handleEscape = (e) => {
+        if (e.key === "Escape") setIsOpen(false);
+      };
+      window.addEventListener("keydown", handleEscape);
+      return () => window.removeEventListener("keydown", handleEscape);
     }
   }, [isOpen]);
 
