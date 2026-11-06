@@ -53,21 +53,7 @@ function MyApp({ Component, pageProps }) {
       {/* Vercel Speed Insights */}
       <SpeedInsights />
 
-      {/* Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-B6B3WNX3CG"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-B6B3WNX3CG');
-        `}
-      </Script>
-
-      {/* Microsoft Clarity (Removed ID to fix shadow bug) */}
+      {/* Microsoft Clarity is the session-replay tool. PostHog and Vercel cover product analytics. */}
       <Script id="microsoft-clarity" strategy="afterInteractive">
         {`
           (function(c,l,a,r,i,t,y){

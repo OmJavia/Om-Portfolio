@@ -1,20 +1,20 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaTimes, FaPaperPlane, FaRobot, FaSpinner } from "react-icons/fa";
-import { HiSparkles } from "react-icons/hi2";
+import { FaTimes, FaPaperPlane, FaSpinner } from "react-icons/fa";
+import { FiMessageSquare } from "react-icons/fi";
 import posthog from 'posthog-js';
 
 const SUGGESTED_QUESTIONS = [
-  "What was Om's role at ISRO?",
-  "Show me Om's PyTorch & CV experience",
-  "Is Om available for freelance work?",
-  "What is the Metashot project?",
+  "What is Pickl+?",
+  "What did you do at ISRO?",
+  "What does sub-80ms include?",
+  "Is Om open to new opportunities?",
 ];
 
 const GREETING = {
   id: "greeting",
   role: "assistant",
-  text: "Hi! I'm Om's AI assistant. Ask me anything about his work, skills, projects, or availability.",
+  text: "Hi! Feel free to ask anything about Om's work, technical experience, projects, or background.",
 };
 
 export default function AskOmWidget() {
@@ -27,8 +27,8 @@ export default function AskOmWidget() {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    const t = setTimeout(() => setShowBubble(true), 4000);
-    const hideTimer = setTimeout(() => setShowBubble(false), 12000);
+    const t = setTimeout(() => setShowBubble(true), 5000);
+    const hideTimer = setTimeout(() => setShowBubble(false), 14000);
     return () => {
       clearTimeout(t);
       clearTimeout(hideTimer);
@@ -58,36 +58,47 @@ export default function AskOmWidget() {
     if (isSuggestion) {
       posthog.capture('ai_chat_suggestion_clicked', { suggestion: userText });
     } else {
-      posthog.capture('ai_chat_message_sent', { message_count: messages.length });
+      posthog.capture('ai_chat_message_sent', { query_length: userText.length });
     }
 
-    const userMsg = { id: Date.now(), role: "user", text: userText };
-    setMessages((prev) => [...prev, userMsg]);
+    const userMessage = {
+      id: Date.now().toString(),
+      role: "user",
+      text: userText,
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
 
     try {
-      const res = await fetch("/api/chat", {
+      const response = await fetch("/api/chat", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          // Pass PostHog distinct ID for server-side event correlation
-          "x-posthog-distinct-id": posthog.get_distinct_id() || 'anonymous_visitor',
-        },
-        body: JSON.stringify({ message: userText }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [...messages, userMessage].map((m) => ({
+            role: m.role,
+            content: m.text,
+          })),
+        }),
       });
-      const data = await res.json();
-      setMessages((prev) => [
-        ...prev,
-        { id: Date.now() + 1, role: "assistant", text: data.reply },
-      ]);
+
+      if (!response.ok) throw new Error("Network response was not ok");
+
+      const data = await response.json();
+      const assistantMessage = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        text: data.reply || "Thanks for your question. You can also contact Om directly via email at omjavia18@gmail.com.",
+      };
+      setMessages((prev) => [...prev, assistantMessage]);
     } catch {
       setMessages((prev) => [
         ...prev,
         {
-          id: Date.now() + 1,
+          id: (Date.now() + 1).toString(),
           role: "assistant",
-          text: "Something went wrong. Please try again or reach Om at omjavia18@gmail.com.",
+          text: "Thanks for asking! You can reach Om directly at omjavia18@gmail.com or connect via LinkedIn.",
         },
       ]);
     } finally {
@@ -103,68 +114,49 @@ export default function AskOmWidget() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3 max-w-[calc(100vw-2rem)]">
-
-      {/* Chat Panel */}
+    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-2.5">
+      {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="relative flex h-[500px] max-h-[82vh] w-[calc(100vw-2rem)] max-w-[380px] flex-col overflow-hidden rounded-3xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#09090b] shadow-2xl shadow-black/10 dark:shadow-black/50"
-            initial={{ opacity: 0, scale: 0.92, y: 16 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.92, y: 12 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 16, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 16, scale: 0.96 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="flex h-[480px] w-[350px] sm:w-[380px] flex-col overflow-hidden rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-[#faf8f5] dark:bg-[#121215] shadow-xl"
           >
             {/* Header */}
-            <div className="flex items-center gap-3 border-b border-neutral-200 dark:border-[#27272a] bg-neutral-50 dark:bg-[#18181b] px-5 py-4">
-              <div className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-orange-50 dark:bg-[#f97316]/10 border border-orange-200 dark:border-[#f97316]/30">
-                <HiSparkles className="text-base text-[#f97316]" />
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-0 rounded-full border border-[#f97316]/40"
-                  style={{ animation: "ping-ring 2.5s cubic-bezier(0,0,0.2,1) infinite" }}
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-bold text-neutral-900 dark:text-white leading-tight" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
-                  Ask Om AI
+            <div className="flex items-center justify-between border-b border-neutral-200/90 dark:border-neutral-800 bg-white/70 dark:bg-neutral-900/70 px-4 py-3">
+              <div>
+                <p className="text-sm font-bold text-neutral-900 dark:text-white">
+                  Ask Om
                 </p>
-                <p className="text-[10px] font-mono text-[#0ea5e9] dark:text-[#38bdf8] truncate">
-                  RAG-powered · Always online
+                <p className="text-[11px] font-mono text-neutral-500">
+                  Quick Q&amp;A about background &amp; work
                 </p>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="rounded-full p-1.5 text-neutral-400 transition-colors hover:bg-neutral-100 dark:hover:bg-[#27272a] hover:text-neutral-700 dark:hover:text-white"
-                aria-label="Close AI chat assistant"
+                className="rounded-lg p-1.5 text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                aria-label="Close assistant"
               >
                 <FaTimes className="text-xs" />
               </button>
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3">
+            <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 text-xs leading-relaxed">
               {messages.map((msg) => (
                 <div
                   key={msg.id}
-                  className={`flex gap-2.5 ${msg.role === "user" ? "flex-row-reverse" : "flex-row"}`}
+                  className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
-                  {msg.role === "assistant" && (
-                    <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-50 dark:bg-[#f97316]/10 border border-orange-200 dark:border-[#f97316]/20">
-                      <FaRobot className="text-[10px] text-[#f97316]" />
-                    </div>
-                  )}
                   <div
-                    className={`max-w-[82%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                    className={`max-w-[85%] rounded-xl px-3.5 py-2.5 ${
                       msg.role === "user"
-                        ? "rounded-tr-sm bg-[#f97316] text-white font-medium"
-                        : "rounded-tl-sm bg-neutral-100 dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] font-mono text-[#0369a1] dark:text-[#38bdf8]"
+                        ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 font-medium"
+                        : "bg-white dark:bg-[#18181c] border border-neutral-200/90 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200"
                     }`}
-                    style={
-                      msg.role === "assistant"
-                        ? { fontFamily: '"JetBrains Mono", monospace', fontSize: "12px", lineHeight: "1.6" }
-                        : {}
-                    }
                   >
                     {msg.text}
                   </div>
@@ -172,14 +164,11 @@ export default function AskOmWidget() {
               ))}
 
               {isLoading && (
-                <div className="flex gap-2.5">
-                  <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-50 dark:bg-[#f97316]/10 border border-orange-200 dark:border-[#f97316]/20">
-                    <FaRobot className="text-[10px] text-[#f97316]" />
-                  </div>
-                  <div className="flex items-center gap-1.5 rounded-2xl rounded-tl-sm bg-neutral-100 dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] px-4 py-3">
-                    <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#f97316] [animation-delay:0ms]" />
-                    <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#f97316] [animation-delay:150ms]" />
-                    <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#f97316] [animation-delay:300ms]" />
+                <div className="flex justify-start">
+                  <div className="flex items-center gap-1.5 rounded-xl bg-white dark:bg-[#18181c] border border-neutral-200 dark:border-neutral-800 px-3.5 py-2.5">
+                    <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-neutral-400 [animation-delay:0ms]" />
+                    <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-neutral-400 [animation-delay:150ms]" />
+                    <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-neutral-400 [animation-delay:300ms]" />
                   </div>
                 </div>
               )}
@@ -188,16 +177,16 @@ export default function AskOmWidget() {
 
             {/* Suggested questions */}
             {messages.length === 1 && (
-              <div className="border-t border-neutral-200 dark:border-[#27272a] bg-neutral-50 dark:bg-[#18181b]/60 px-4 py-3">
-                <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-neutral-400">
-                  Suggested
+              <div className="border-t border-neutral-200/80 dark:border-neutral-800 bg-white/50 dark:bg-neutral-900/40 px-3 py-2.5">
+                <p className="mb-1.5 font-mono text-[10px] uppercase text-neutral-400">
+                  Quick questions
                 </p>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1">
                   {SUGGESTED_QUESTIONS.map((q) => (
                     <button
                       key={q}
                       onClick={() => sendMessage(q, true)}
-                      className="rounded-full border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] px-3 py-1 font-mono text-[10px] text-neutral-600 dark:text-[#38bdf8] transition-all hover:border-[#f97316]/50 hover:bg-orange-50 dark:hover:bg-[#27272a] hover:text-[#f97316] dark:hover:text-white"
+                      className="rounded-lg border border-neutral-200/90 dark:border-neutral-800 bg-white dark:bg-neutral-800 px-2.5 py-1 text-[11px] text-neutral-600 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors"
                     >
                       {q}
                     </button>
@@ -207,24 +196,23 @@ export default function AskOmWidget() {
             )}
 
             {/* Input */}
-            <div className="border-t border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#09090b] px-4 py-3">
-              <div className="flex items-center gap-2.5 rounded-2xl border border-neutral-200 dark:border-[#27272a] bg-neutral-50 dark:bg-[#18181b] px-4 py-2.5 focus-within:border-[#f97316]/50 transition-colors">
+            <div className="border-t border-neutral-200/90 dark:border-neutral-800 bg-white dark:bg-neutral-900 px-3 py-2.5">
+              <div className="flex items-center gap-2 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-950 px-3 py-2 focus-within:border-neutral-400 dark:focus-within:border-neutral-600 transition-colors">
                 <input
                   ref={inputRef}
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Ask about Om's experience..."
-                  aria-label="Chat input for Om's AI assistant"
-                  className="flex-1 min-w-0 bg-transparent font-mono text-sm text-neutral-800 dark:text-neutral-200 outline-none placeholder:text-neutral-400"
-                  style={{ fontFamily: '"JetBrains Mono", monospace' }}
+                  placeholder="Ask a question..."
+                  aria-label="Question for Om"
+                  className="flex-1 min-w-0 bg-transparent text-xs text-neutral-900 dark:text-neutral-100 outline-none placeholder:text-neutral-400"
                 />
                 <button
                   onClick={() => sendMessage()}
                   disabled={!input.trim() || isLoading}
-                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f97316] text-white transition-all hover:bg-[#ea6c0a] disabled:opacity-30"
-                  aria-label="Send message to Om's AI assistant"
+                  className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-neutral-900 dark:bg-white text-white dark:text-neutral-950 disabled:opacity-30 transition-opacity"
+                  aria-label="Send"
                 >
                   {isLoading ? (
                     <FaSpinner className="animate-spin text-[10px]" />
@@ -238,62 +226,32 @@ export default function AskOmWidget() {
         )}
       </AnimatePresence>
 
-      {/* Attention Bubble */}
+      {/* Bubble Hint */}
       <AnimatePresence>
         {showBubble && !isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 8, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 6, scale: 0.95 }}
-            transition={{ duration: 0.25 }}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 4 }}
+            className="rounded-xl border border-neutral-200/90 dark:border-neutral-800 bg-white dark:bg-[#131316] px-3 py-1.5 text-xs text-neutral-700 dark:text-neutral-300 shadow-sm"
           >
-            <div className="rounded-2xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] px-4 py-2.5 font-mono text-xs text-neutral-700 dark:text-[#38bdf8] shadow-lg">
-              Ask me anything about Om 👋
-            </div>
+            Questions about Om&apos;s work? Ask here.
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* FAB Toggle Button */}
-      <motion.button
+      {/* Toggle Button */}
+      <button
         onClick={() => {
           const opening = !isOpen;
           setIsOpen(opening);
           if (opening) posthog.capture('ai_chat_opened');
         }}
-        aria-label={isOpen ? "Close Om AI assistant" : "Open Om AI assistant — RAG-powered chat"}
-        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-700 dark:text-white shadow-lg shadow-black/10 dark:shadow-black/40 transition-all duration-300"
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.94 }}
+        aria-label={isOpen ? "Close question dialog" : "Ask questions about Om's work"}
+        className="flex h-11 w-11 items-center justify-center rounded-full border border-neutral-300/90 dark:border-neutral-700 bg-white dark:bg-[#131316] text-neutral-800 dark:text-neutral-200 shadow-md hover:scale-105 transition-all"
       >
-        {!isOpen && (
-          <>
-            <span
-              aria-hidden="true"
-              className="absolute inset-0 rounded-full border border-[#f97316]/50"
-              style={{ animation: "ping-ring 2s cubic-bezier(0,0,0.2,1) infinite" }}
-            />
-            <span
-              aria-hidden="true"
-              className="absolute inset-0 rounded-full border border-[#f97316]/20"
-              style={{ animation: "ping-ring 2s cubic-bezier(0,0,0.2,1) infinite 0.5s" }}
-            />
-          </>
-        )}
-        <motion.div
-          key={isOpen ? "close" : "open"}
-          initial={{ rotate: -90, opacity: 0 }}
-          animate={{ rotate: 0, opacity: 1 }}
-          exit={{ rotate: 90, opacity: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          {isOpen ? (
-            <FaTimes className="text-base text-neutral-500 dark:text-neutral-300" />
-          ) : (
-            <HiSparkles className="text-xl text-[#f97316]" />
-          )}
-        </motion.div>
-      </motion.button>
+        {isOpen ? <FaTimes className="text-sm" /> : <FiMessageSquare className="text-base" />}
+      </button>
     </div>
   );
 }
