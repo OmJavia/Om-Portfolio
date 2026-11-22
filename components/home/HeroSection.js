@@ -113,7 +113,10 @@ export default function HeroSection() {
               href="/contact"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-900 dark:text-neutral-200 hover:border-[#f97316]/40 hover:text-[#f97316] dark:hover:text-white shadow-sm h-11 px-5 py-2.5"
               strength={0.3}
-              onClick={() => posthog.capture('contact_clicked', { source: 'hero_section' })}
+              onClick={() => {
+                posthog.capture('contact_clicked', { source: 'hero_section' });
+                posthog.capture('hire_me_clicked', { source: 'hero_section' });
+              }}
             >
               <span>Hiring? Let&apos;s talk</span>
               <FaArrowRight className="text-xs" />
@@ -125,7 +128,10 @@ export default function HeroSection() {
               target="_blank"
               rel="noreferrer"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-xs sm:text-sm font-semibold tracking-tight whitespace-nowrap transition-all duration-200 bg-neutral-100 dark:bg-[#121214] border border-neutral-200 dark:border-[#27272a] text-neutral-700 dark:text-neutral-300 hover:border-[#f97316]/40 hover:text-[#f97316] dark:hover:text-white h-11 px-4 py-2.5"
-              onClick={() => posthog.capture('book_call_clicked', { source: 'hero_section' })}
+              onClick={() => {
+                posthog.capture('book_call_clicked', { source: 'hero_section' });
+                posthog.capture('schedule_meeting_clicked', { source: 'hero_section' });
+              }}
             >
               <FaCalendarAlt className="text-xs text-[#f97316]" />
               <span>Schedule Call</span>
