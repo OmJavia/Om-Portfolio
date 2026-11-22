@@ -131,6 +131,7 @@ export default function ProjectCard({
       clearTimeout(clickTimerRef.current);
       clickTimerRef.current = null;
       posthog.capture('project_card_double_clicked', { project_title: title, project_category: category });
+      posthog.capture('project_card_opened', { project_title: title, project_category: category, open_type: 'double_click' });
 
       if (caseStudyUrl) {
         router.push(caseStudyUrl);
@@ -147,6 +148,7 @@ export default function ProjectCard({
       clickTimerRef.current = setTimeout(() => {
         clickTimerRef.current = null;
         posthog.capture('project_card_single_clicked', { project_title: title, project_category: category });
+        posthog.capture('project_card_opened', { project_title: title, project_category: category, open_type: 'single_click' });
 
         const targetUrl = liveUrl || githubUrl;
         if (targetUrl) {

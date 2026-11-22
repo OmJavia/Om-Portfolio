@@ -98,7 +98,10 @@ export default function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 className="group rounded-2xl border border-neutral-200 bg-neutral-950 p-5 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#ff6b00] dark:border-neutral-800"
-                onClick={() => posthog.capture('book_call_clicked', { source: 'contact_page' })}
+                onClick={() => {
+                  posthog.capture('book_call_clicked', { source: 'contact_page' });
+                  posthog.capture('schedule_meeting_clicked', { source: 'contact_page' });
+                }}
               >
                 <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-lg">
                   <FaCalendarAlt />
