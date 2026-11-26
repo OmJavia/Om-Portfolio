@@ -1,139 +1,150 @@
 /* ============================================================
-   Om Javia | Founding Manager & AI Product Engineer
-   Handcrafted, Editorial, and Human Personal Portfolio
+   Om Javia — Tactile Intelligence design system
+   Warm Gallery Light canvas, selective dark surfaces.
    ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ============================================================
-   BASE LAYER
-   ============================================================ */
 @layer base {
+  :root {
+    --canvas: #f5f5f0;
+    --ink: #15171c;
+    --muted: #626b78;
+    --line: #e3e5e8;
+    --cobalt: #4f5eeb;
+    --night: #111827;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
   html {
     scroll-behavior: smooth;
-    color-scheme: dark light;
-    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    color-scheme: light;
+    overflow-x: clip;
   }
 
-  /* Dark mode default */
   body {
-    overflow-x: hidden;
-    max-width: 100vw;
-    @apply bg-[#0c0c0e] text-neutral-100 font-sans antialiased;
-    @apply selection:bg-white/20 selection:text-white;
-    background-image:
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
-    background-size: 200px 200px;
+    overflow-x: clip;
+    @apply bg-canvas text-ink font-sans antialiased;
+    @apply selection:bg-cobalt/20 selection:text-ink;
   }
 
-  /* Light mode — warm editorial paper/cream tone */
-  html:not(.dark) body {
-    @apply bg-[#faf8f5] text-[#141413];
-    @apply selection:bg-black/10 selection:text-[#141413];
-    background-image:
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.018'/%3E%3C/svg%3E");
-  }
-}
-
-/* ============================================================
-   EDITORIAL & REFINED UTILITIES
-   ============================================================ */
-@layer components {
-  /* Subtle Section Label — understated, human, not overly shouted */
-  .section-label {
-    @apply font-mono text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400 font-medium;
+  :focus-visible {
+    outline: 2px solid var(--cobalt);
+    outline-offset: 3px;
+    border-radius: 6px;
   }
 
-  /* Calm Editorial Heading */
-  .editorial-heading {
-    @apply font-sans font-bold tracking-tight text-neutral-950 dark:text-neutral-50 leading-[1.15];
-  }
-
-  /* Monospace Microcopy */
-  .mono-meta {
-    @apply font-mono text-xs text-neutral-500 dark:text-neutral-400 tracking-tight;
-  }
-
-  /* Understated Surface */
-  .editorial-card {
-    @apply bg-white dark:bg-[#131316] border border-neutral-200/90 dark:border-neutral-800/80 rounded-2xl shadow-sm transition-all duration-200;
-  }
-
-  /* Interactive subtle hover */
-  .editorial-card-interactive {
-    @apply bg-white dark:bg-[#131316] border border-neutral-200/90 dark:border-neutral-800/80 rounded-2xl shadow-sm hover:border-neutral-400 dark:hover:border-neutral-700 transition-all duration-200;
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
 @layer components {
-  .chroma-button {
+  .container-x {
+    @apply mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply font-mono text-eyebrow uppercase text-muted;
+  }
+
+  /* Kept for case-study and notes pages */
+  .section-label { @apply font-mono text-xs uppercase tracking-widest text-cobalt font-medium; }
+  .neural-label { @apply font-mono text-xs uppercase tracking-widest text-cobalt font-medium; }
+  .editorial-heading { @apply font-sans font-bold tracking-tight text-ink leading-[1.15]; }
+  .mono-meta { @apply font-mono text-xs text-muted tracking-tight; }
+  .editorial-card { @apply bg-white border border-line rounded-2xl shadow-sm transition-all duration-200; }
+  .editorial-card-interactive { @apply bg-white border border-line rounded-2xl shadow-sm hover:border-neutral-400 transition-all duration-200; }
+
+  .tag {
+    @apply inline-flex items-center rounded-md border border-line bg-white/70 px-2 py-1 font-mono text-[11px] leading-none text-muted;
+  }
+
+  /* ---------- GlassSurface ----------
+     Tier 1 (default): solid translucent white — always readable.
+     Tier 2 (backdrop-filter support): frosted blur + saturation.
+     A gradient hairline border and an inner highlight give the refractive edge;
+     --gx/--gy move a soft specular highlight with the pointer. */
+  .glass {
+    --gx: 30%;
+    --gy: 0%;
     position: relative;
-    overflow: hidden;
+    isolation: isolate;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 -1px 0 rgba(21, 23, 28, 0.04),
+      0 1px 2px rgba(21, 23, 28, 0.04),
+      0 12px 32px -12px rgba(21, 23, 28, 0.18);
   }
-
-  .chroma-button > span,
-  .chroma-text-animate-parent > span {
-    transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1), opacity 240ms ease;
-  }
-
-  .chroma-button:hover,
-  .chroma-text-animate-parent:hover {
-    transform: translateY(-1px);
-  }
-
-  .chroma-button:hover > span:first-child,
-  .chroma-text-animate-parent:hover .chroma-text-out {
-    transform: translateY(-1.65rem);
-    opacity: 0;
-  }
-
-  .chroma-button:hover > span:last-child,
-  .chroma-text-animate-parent:hover .chroma-text-in {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .chroma-text-animate-parent {
-    transition: transform 300ms ease, box-shadow 300ms ease;
-  }
-
-  .chroma-text-animate-parent .chroma-text-in {
+  .glass::before {
+    content: "";
     position: absolute;
-    transform: translateY(1.65rem);
-    opacity: 0;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(79,94,235,0.28) 40%, rgba(34,184,168,0.22) 70%, rgba(255,130,110,0.3));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(240px circle at var(--gx) var(--gy), rgba(255,255,255,0.55), transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass {
+      background: rgba(255, 255, 255, 0.58);
+      -webkit-backdrop-filter: blur(18px) saturate(1.6);
+      backdrop-filter: blur(18px) saturate(1.6);
+    }
+    .glass-dark {
+      background: rgba(17, 24, 39, 0.55);
+    }
+  }
+  .glass-dark {
+    background: rgba(17, 24, 39, 0.9);
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 12px 32px -12px rgba(0,0,0,0.5);
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .glass { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+    .glass-dark { background: var(--night); }
+  }
+
+  /* Dark contrast surface used sparingly */
+  .surface-night {
+    @apply bg-night text-white;
+    background-image: radial-gradient(60% 50% at 85% 0%, rgba(79,94,235,0.28), transparent 70%),
+      radial-gradient(40% 40% at 0% 100%, rgba(34,184,168,0.16), transparent 70%);
+  }
+
+  .grid-paper {
+    background-image: linear-gradient(to right, rgba(21,23,28,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(21,23,28,0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
   }
 }
 
-/* ============================================================
-   SCROLLBAR — Restrained & minimal
-   ============================================================ */
-::-webkit-scrollbar {
-  width: 6px;
+/* Signal pulse travelling along the architecture path */
+@keyframes signal-dash {
+  to { stroke-dashoffset: -200; }
 }
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(160, 160, 160, 0.25);
-  border-radius: 9999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(160, 160, 160, 0.45);
-}
-
-/* Subtle terminal cursor blink */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.terminal-blink {
-  animation: blink 1s infinite;
+.signal-line {
+  stroke-dasharray: 6 194;
+  animation: signal-dash 3.2s linear infinite;
 }

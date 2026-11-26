@@ -1,0 +1,110 @@
+{
+  "snapshot_id": "sha256:dbbb3e671bc5357b5ac79897e9cd95ce1e55ff7402fea2d54bf470376b9800ec",
+  "format_version": 1,
+  "enola_version": "0.4.30",
+  "extractor_version": "v351",
+  "generated_at": "2026-11-26T17:00:32Z",
+  "duration": "133.508625ms",
+  "repo_path": "/Users/omjavia/Desktop/Om Documents/Projects/Om-Portfolio",
+  "git": {
+    "ref": "cursor/portfolio-market-upgrade",
+    "commit": "ca3b206462a739b15f204bd6a066e4adef97d33d",
+    "dirty": true,
+    "remote": "github.com/omjavia/om-portfolio"
+  },
+  "extractors": [
+    "manifests",
+    "mdintent",
+    "typescript"
+  ],
+  "explainers": [
+    "cycles",
+    "layers",
+    "crossrepo",
+    "coverage",
+    "unused-routes",
+    "domain",
+    "query-loops",
+    "dead-methods",
+    "entry-points",
+    "messaging-coverage",
+    "god-class",
+    "hotspots",
+    "dependency-depth",
+    "exported-surface",
+    "complexity-outliers",
+    "intent",
+    "constraints",
+    "vendored-candidates",
+    "import-closure",
+    "package-metrics",
+    "dead-code",
+    "performance"
+  ],
+  "renderers": [
+    "llm_context",
+    "flows"
+  ],
+  "config_hash": "sha256:3adc688a0f1dadd7c001cfc90ef05ce328f08b9a61c74a15e5f9839f222d0f08",
+  "ignore_glob_hash": "sha256:9ee2ed929411f65a0acebb88a0e8d236226c27d8061975f304e3b1ff2841c318",
+  "output_hashes": {
+    "facts.jsonl": "sha256:6a53863c90e0eb737305ff221aeb0f485abd20a39653c734cee2ad6781287315",
+    "flows.json": "sha256:e19f2e3cbaea60c71e7cc6217dc07fc2f9ebd6fa21a4da916e8b30be654264ef",
+    "insights.json": "sha256:579e422d7a33733165c4dfcf37b6330d138c49b7134db5e6fee8e0a86871bf46",
+    "llm_context.md": "sha256:4a137bf59a94a807949345d984729dce4038e4c39592fa97697831e8ab8512ea"
+  },
+  "fact_count": 442,
+  "insight_count": 16,
+  "quality": {
+    "files_seen": 92,
+    "files_parsed": 54,
+    "files_skipped": 0,
+    "dirs_skipped": 3,
+    "skipped_sample": [
+      ".git/ (glob: **/.git/**)",
+      ".next/ (glob: .next/**)",
+      "node_modules/ (glob: **/node_modules/**)"
+    ],
+    "parse_errors": 0,
+    "heuristic_insights": 15,
+    "coverage": {
+      "services_total": 0,
+      "coverage_gaps": 0,
+      "unresolved_edges": 0,
+      "extractors_reporting": 1,
+      "extraction_unresolved": 11
+    },
+    "census": {
+      "files_walked": 92,
+      "parsed": 54,
+      "excluded_by_ignore": 0,
+      "excluded_by_kind": 35,
+      "excluded_kinds": {
+        ".css": 1,
+        ".ds_store": 3,
+        ".gitignore": 1,
+        ".jpeg": 1,
+        ".jpg": 11,
+        ".json": 3,
+        ".local": 1,
+        ".otf": 1,
+        ".pdf": 1,
+        ".png": 9,
+        ".svg": 1,
+        ".txt": 1,
+        ".xml": 1
+      },
+      "skipped_with_cause": 3,
+      "top_skip_causes": [
+        {
+          "cause": "claimed by typescript, no facts emitted",
+          "count": 2
+        },
+        {
+          "cause": "claimed by manifests, no facts emitted",
+          "count": 1
+        }
+      ]
+    }
+  }
+}

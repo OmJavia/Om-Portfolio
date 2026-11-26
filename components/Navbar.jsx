@@ -1,200 +1,136 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import Icon from "../public/icon.png";
-import { BsFillMoonStarsFill, BsSunFill } from "react-icons/bs";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { FiArrowUpRight } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
+import { nav, site } from "@/data/content";
+import GlassSurface from "./site/GlassSurface";
 
-export default function Navbar({ darkMode, setDarkMode }) {
+export default function Navbar({ onOpenCommand }) {
   const router = useRouter();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const onHome = router.pathname === "/";
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+  const firstLinkRef = useRef(null);
+  const href = (id) => (onHome ? `#${id}` : `/#${id}`);
 
-  const goHome = (event) => {
-    setIsMenuOpen(false);
-    if (router.pathname === "/") {
-      event.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      if (window.location.hash) {
-        router.replace("/", undefined, { shallow: true, scroll: false });
-      }
-    }
-  };
+  // Active-section indicator: the section crossing the upper third of the viewport wins.
+  useEffect(() => {
+    if (!onHome) return;
+    const sections = nav.map((n) => document.getElementById(n.id)).filter(Boolean);
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      { rootMargin: "-35% 0px -60% 0px" }
+    );
+    sections.forEach((s) => io.observe(s));
+    return () => io.disconnect();
+  }, [onHome]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setIsMenuOpen(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("keydown", handleKeyDown);
+    if (!open) return;
+    firstLinkRef.current?.focus();
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
     };
-  }, []);
+  }, [open]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 pt-4 transition-all duration-300">
-      <nav
-        aria-label="Main Navigation"
-        className={`mx-auto max-w-5xl flex items-center justify-between px-4 sm:px-5 py-2.5 rounded-full border transition-all duration-300 ${
-          scrolled
-            ? "border-neutral-200/90 dark:border-neutral-800/80 bg-[#faf8f5]/90 dark:bg-[#0c0c0e]/90 backdrop-blur-md shadow-sm"
-            : "border-transparent bg-transparent"
-        }`}
-      >
-        {/* Brand / Name */}
-        <Link href="/" onClick={goHome} className="flex items-center gap-2.5 group">
-          <div className="relative w-7 h-7 rounded-full overflow-hidden border border-neutral-300/80 dark:border-neutral-700/80 bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center transition-transform group-hover:scale-105">
-            <Image src={Icon} alt="Om Javia" width={28} height={28} className="object-contain" priority />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-semibold tracking-tight text-sm text-neutral-900 dark:text-neutral-100 group-hover:text-[#ea580c] dark:group-hover:text-[#f97316] transition-colors">
-              Om Javia
-            </span>
-          </div>
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4">
+      <GlassSurface as="nav" aria-label="Main" className="mx-auto flex max-w-[1240px] items-center justify-between rounded-2xl px-3 py-2 sm:px-4">
+        <Link href="/" className="flex items-center gap-2.5 rounded-lg px-1 py-1" aria-label="Om Javia, home">
+          <span aria-hidden className="grid h-8 w-8 place-items-center rounded-lg bg-ink font-display text-lg italic text-white">O</span>
+          <span className="text-sm font-semibold tracking-tight">Om Javia</span>
         </Link>
 
-        {/* Center Editorial Links */}
-        <div className="hidden md:flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-400">
-          <Link
-            href="/#featured-work"
-            className="hover:text-neutral-950 dark:hover:text-neutral-100 transition-colors"
-          >
-            Work
-          </Link>
-          <Link
-            href="/notes"
-            className="hover:text-neutral-950 dark:hover:text-neutral-100 transition-colors"
-          >
-            Notes
-          </Link>
-          <Link
-            href="/#how-i-work"
-            className="hover:text-neutral-950 dark:hover:text-neutral-100 transition-colors"
-          >
-            Approach
-          </Link>
-          <Link
-            href="/#experience"
-            className="hover:text-neutral-950 dark:hover:text-neutral-100 transition-colors"
-          >
-            Experience
-          </Link>
-          <Link
-            href="/about"
-            className="hover:text-neutral-950 dark:hover:text-neutral-100 transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="hover:text-neutral-950 dark:hover:text-neutral-100 transition-colors"
-          >
-            Contact
-          </Link>
-        </div>
+        <ul className="hidden items-center gap-1 lg:flex">
+          {nav.map((n) => (
+            <li key={n.id} className="relative">
+              <Link
+                href={href(n.id)}
+                aria-current={active === n.id ? "location" : undefined}
+                className={`relative z-10 block rounded-lg px-3 py-2 text-sm transition-colors ${active === n.id ? "text-ink" : "text-muted hover:text-ink"}`}
+              >
+                {n.label}
+              </Link>
+              {active === n.id && (
+                <motion.span layoutId="nav-active" className="absolute inset-0 rounded-lg bg-white shadow-sm ring-1 ring-line" transition={{ type: "spring", stiffness: 420, damping: 34 }} />
+              )}
+            </li>
+          ))}
+        </ul>
 
-        {/* Right Controls: Resume & Theme */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
-          <a
-            href="/resume.pdf"
-            className="hidden sm:inline-flex items-center gap-1 text-xs font-mono font-medium px-3 py-1.5 rounded-lg border border-neutral-200/90 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/80 text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white hover:border-neutral-400 dark:hover:border-neutral-700 transition-all shadow-sm"
-          >
-            <span>Resume</span>
-            <FiArrowUpRight className="text-xs opacity-70" />
-          </a>
-
-          {/* Theme Toggle Button */}
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-lg text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800/60 transition-colors focus:outline-none"
-            aria-label="Toggle Theme"
-          >
-            {darkMode ? (
-              <BsSunFill className="text-amber-400 text-sm" />
-            ) : (
-              <BsFillMoonStarsFill className="text-neutral-700 text-sm" />
-            )}
-          </button>
-
-          {/* Mobile Menu Hamburger */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-            aria-label="Toggle Navigation Menu"
-            aria-expanded={isMenuOpen}
-          >
-            {isMenuOpen ? <HiX className="text-lg" /> : <HiMenuAlt3 className="text-lg" />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu Dropdown */}
-      {isMenuOpen && (
-        <div className="md:hidden mt-2 mx-auto max-w-5xl rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-[#faf8f5]/95 dark:bg-[#0c0c0e]/95 backdrop-blur-xl p-5 shadow-xl flex flex-col gap-3 text-sm font-medium text-neutral-800 dark:text-neutral-200">
-          <Link
-            href="/#featured-work"
-            onClick={() => setIsMenuOpen(false)}
-            className="px-3 py-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/60"
-          >
-            Work
-          </Link>
-          <Link
-            href="/notes"
-            onClick={() => setIsMenuOpen(false)}
-            className="px-3 py-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/60"
-          >
-            Notes
-          </Link>
-          <Link
-            href="/#how-i-work"
-            onClick={() => setIsMenuOpen(false)}
-            className="px-3 py-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/60"
-          >
-            Approach
-          </Link>
-          <Link
-            href="/#experience"
-            onClick={() => setIsMenuOpen(false)}
-            className="px-3 py-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/60"
-          >
-            Experience
-          </Link>
-          <Link
-            href="/about"
-            onClick={() => setIsMenuOpen(false)}
-            className="px-3 py-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/60"
-          >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            onClick={() => setIsMenuOpen(false)}
-            className="px-3 py-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800/60"
-          >
-            Contact
-          </Link>
-
-          <div className="pt-3 border-t border-neutral-200 dark:border-neutral-800 flex flex-col gap-2">
-            <a
-              href="/resume.pdf"
-              onClick={() => setIsMenuOpen(false)}
-              className="inline-flex w-full items-center justify-center gap-1.5 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-xs font-mono font-medium text-neutral-800 dark:text-neutral-200"
+        <div className="flex items-center gap-2">
+          {onOpenCommand && (
+            <button
+              type="button"
+              onClick={onOpenCommand}
+              aria-label="Open command menu (Command + K)"
+              className="hidden h-10 items-center gap-1.5 rounded-xl border border-line bg-white/75 px-3 font-mono text-xs text-muted transition-colors hover:border-ink/40 hover:text-ink sm:inline-flex"
             >
-              <span>Download Resume</span>
-              <FiArrowUpRight className="text-xs" />
-            </a>
-          </div>
+              <span>⌘K</span>
+            </button>
+          )}
+          <Link
+            href={href("contact")}
+            className="hidden h-10 items-center gap-1.5 rounded-xl bg-ink px-4 text-sm font-medium text-white transition-transform hover:-translate-y-px sm:inline-flex"
+          >
+            Let&apos;s Talk <FiArrowUpRight aria-hidden />
+          </Link>
+          <button
+            type="button"
+            className="grid h-11 w-11 place-items-center rounded-xl text-ink lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <FiX className="text-xl" /> : <FiMenu className="text-xl" />}
+          </button>
         </div>
-      )}
+      </GlassSurface>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-nav"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site navigation"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="mx-auto mt-2 max-w-[1240px] rounded-2xl border border-line bg-white p-3 shadow-xl lg:hidden"
+          >
+            <ul className="flex flex-col">
+              {nav.map((n, i) => (
+                <li key={n.id}>
+                  <Link
+                    ref={i === 0 ? firstLinkRef : undefined}
+                    href={href(n.id)}
+                    onClick={() => setOpen(false)}
+                    className="flex min-h-[48px] items-center rounded-xl px-4 text-base font-medium hover:bg-canvas"
+                  >
+                    {n.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-2 grid grid-cols-2 gap-2 border-t border-line pt-3">
+              <Link href={href("contact")} onClick={() => setOpen(false)} className="flex h-12 items-center justify-center rounded-xl bg-ink text-sm font-medium text-white">
+                Let&apos;s Talk
+              </Link>
+              <a href={site.resume} className="flex h-12 items-center justify-center rounded-xl border border-line text-sm font-medium">
+                Résumé
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

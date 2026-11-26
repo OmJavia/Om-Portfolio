@@ -1,0 +1,110 @@
+{
+  "snapshot_id": "sha256:93c10bc8a4765a7d7300dda814d5c256b4f2c3e474fee16f16bdbf7ba0fc27bf",
+  "format_version": 1,
+  "enola_version": "0.4.30",
+  "extractor_version": "v351",
+  "generated_at": "2026-11-26T17:22:53Z",
+  "duration": "411.51175ms",
+  "repo_path": "/Users/omjavia/Desktop/Om Documents/Projects/Om-Portfolio",
+  "git": {
+    "ref": "cursor/portfolio-market-upgrade",
+    "commit": "ca3b206462a739b15f204bd6a066e4adef97d33d",
+    "dirty": true,
+    "remote": "github.com/omjavia/om-portfolio"
+  },
+  "extractors": [
+    "manifests",
+    "mdintent",
+    "typescript"
+  ],
+  "explainers": [
+    "cycles",
+    "layers",
+    "crossrepo",
+    "coverage",
+    "unused-routes",
+    "domain",
+    "query-loops",
+    "dead-methods",
+    "entry-points",
+    "messaging-coverage",
+    "god-class",
+    "hotspots",
+    "dependency-depth",
+    "exported-surface",
+    "complexity-outliers",
+    "intent",
+    "constraints",
+    "vendored-candidates",
+    "import-closure",
+    "package-metrics",
+    "dead-code",
+    "performance"
+  ],
+  "renderers": [
+    "llm_context",
+    "flows"
+  ],
+  "config_hash": "sha256:3adc688a0f1dadd7c001cfc90ef05ce328f08b9a61c74a15e5f9839f222d0f08",
+  "ignore_glob_hash": "sha256:9ee2ed929411f65a0acebb88a0e8d236226c27d8061975f304e3b1ff2841c318",
+  "output_hashes": {
+    "facts.jsonl": "sha256:9b450e2ec9ed275a1ab288289f3a97b0f3d45b1efebb19f28c54e77eef63c303",
+    "flows.json": "sha256:709323dfc6bdd7dec0b33c786c072788c53203cb61c0fc4ec958f89e4e6e37c2",
+    "insights.json": "sha256:dc6505821e294ee2354cc80f1d8e73fdc0712db84961c0050d95b03085f43a9a",
+    "llm_context.md": "sha256:d20afb655ccf049634b69d9b23cc93cfe79578ea676ebc79536a9f71f67764e6"
+  },
+  "fact_count": 424,
+  "insight_count": 12,
+  "quality": {
+    "files_seen": 79,
+    "files_parsed": 42,
+    "files_skipped": 0,
+    "dirs_skipped": 3,
+    "skipped_sample": [
+      ".git/ (glob: **/.git/**)",
+      ".next/ (glob: .next/**)",
+      "node_modules/ (glob: **/node_modules/**)"
+    ],
+    "parse_errors": 0,
+    "heuristic_insights": 11,
+    "coverage": {
+      "services_total": 0,
+      "coverage_gaps": 0,
+      "unresolved_edges": 0,
+      "extractors_reporting": 1,
+      "extraction_unresolved": 15
+    },
+    "census": {
+      "files_walked": 79,
+      "parsed": 42,
+      "excluded_by_ignore": 0,
+      "excluded_by_kind": 34,
+      "excluded_kinds": {
+        ".css": 1,
+        ".ds_store": 2,
+        ".gitignore": 1,
+        ".jpeg": 1,
+        ".jpg": 11,
+        ".json": 3,
+        ".local": 1,
+        ".otf": 1,
+        ".pdf": 1,
+        ".png": 9,
+        ".svg": 1,
+        ".txt": 1,
+        ".xml": 1
+      },
+      "skipped_with_cause": 3,
+      "top_skip_causes": [
+        {
+          "cause": "claimed by typescript, no facts emitted",
+          "count": 2
+        },
+        {
+          "cause": "claimed by manifests, no facts emitted",
+          "count": 1
+        }
+      ]
+    }
+  }
+}

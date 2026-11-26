@@ -1,143 +1,60 @@
-<<<<<<< ours
+# Om Javia — AI Product & GTM Engineer
+
+Personal portfolio website for [Om Javia](https://omjavia.vercel.app/) — Founding Manager at MegaShot (AI Product & Go-to-Market) and AI Product Engineer.
+
 ---
+
+## Design Language — "Tactile Intelligence"
+
+Warm editorial light canvas (`#F5F5F0`), **Instrument Serif** display typography, **Geist Sans / Geist Mono** for body and technical metadata, and intentional signal accents (Cobalt `#4F5EEB`, Signal Teal `#22B8A8`, Signal Coral `#FF826E`, Electric Lime `#C8E879`), with dark contrast surfaces reserved selectively for the MegaShot Pickl+ flagship section and footer.
+
+- **Liquid Glass (`GlassSurface`)**: Tiered translucent surface with `backdrop-filter` blur, refractive hairline gradient border, pointer-reactive specular highlight, and `prefers-reduced-transparency` fallback.
+- **Interactive 3D Smart Paddle**: Stylized procedural Three.js / React Three Fiber paddle (`components/three/`) with scroll-driven state progression, pointer parallax, drag-to-rotate, intersection-based off-screen pause, demand rendering on mobile/reduced-motion, and static product-photo fallback.
+- **Command Menu (`⌘K` / `Ctrl+K`)**: Keyboard-accessible recruiter navigation for jumping to sections, opening the résumé, or copying contact details.
+
 ---
 
-# Om Javia's Portfolio
+## Architecture
 
+| Path | Purpose |
+|---|---|
+| `data/content.js` | Single source of truth for homepage copy, verified metrics, projects, experience, and links. Every metric carries its source context (see `CONTENT_VERIFICATION.md`). |
+| `components/site/` | Homepage sections (`Hero`, `Proof`, `Pickl`, `Capabilities`, `Projects`, `Method`, `Experience`, `Closing`), `GlassSurface`, and shared motion primitives. |
+| `components/three/` | Lazy-loaded client-only WebGL paddle (`PaddleStage`, `PaddleScene`) with ErrorBoundary and fallback. |
+| `components/CommandMenu.jsx` | `Cmd/Ctrl + K` accessible command palette. |
+| `pages/case-studies/`, `pages/notes/` | Long-form project case studies and engineering decision notes. |
+| `CONTENT_VERIFICATION.md` | Claims and metrics verification matrix. |
 
-Welcome to my portfolio website! Here, you’ll find an overview of my professional journey, technical expertise, and personal projects. Feel free to explore and connect with me.
+---
 
-![image](https://github.com/user-attachments/assets/0e232dac-8bde-4730-ac1c-d2e01a0a1358)
+## Tech Stack
 
+- **Framework:** Next.js 14 (Pages Router), React 18
+- **Styling:** Tailwind CSS 3 (`tailwind.config.js`, `styles/globals.css`)
+- **Typography:** `geist` (`GeistSans`, `GeistMono`) + `next/font/google` (`Instrument_Serif`)
+- **Motion & 3D:** `framer-motion`, `three`, `@react-three/fiber`
+- **Analytics:** Vercel Analytics, Speed Insights, PostHog, Microsoft Clarity
 
-## Table of Contents
-1. [About Me](#about-me)
-2. [Skills](#skills)
-3. [Past Experiences](#past-experience)
-4. [Projects](#projects)
-5. [Contact](#contact)
+---
 
-## About Me
+## Local Development & Deployment
 
-I'm Om Javia, a Computer Science and Engineering graduate from Medi-Caps University with a specialization in Cloud Technology and Information Security. My work spans across AI, software development, and data analysis, with hands-on experience gained through internships at organizations like ISRO’s Space Application Centre and software firms. Through my projects, I aim to address real-world challenges and provide user-focused solutions.
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run lint     # ESLint check
+npm run build    # Production build
+npm start        # Serve production build
+```
 
+Deploys automatically to Vercel from `main`. Set `NEXT_PUBLIC_POSTHOG_KEY` in Vercel environment variables for PostHog analytics.
 
-## Skills
-- **Programming Languages:** Python, JavaScript, HTML, CSS
-- **Frameworks:** Django, React, Node.js, Tailwind, Retrieval-Augmented Generation(RAG), Llama3
-- **Libraries & Tools:** OpenCV, Detectron2, YOLO, D3.js, Postman, Docker, Power BI
-- **Databases:** MySQL, MongoDB
-- **DevOps & Cloud:** Docker, Vercel, GitHub Actions, AWS
-- **Other Tools:** Figma, Jira, Shopify
-- **Version Control:** GitHub
-
-
-## Past Experience  
-
-### **Metashot** – *Bangalore, Karnataka*  
-**Junior Software Engineer** (July 2025 - Present)  
-- **Integrated RESTful APIs across 3 microservices to cut post-release defects by 30% and improve QA velocity by 20%.**
-- **Optimized validation pipelines with an AI agent, automating workflows and reducing manual checks across 5+ regions.**
-
-### **Apoliums Infotech** – *Indore, Madhya Pradesh*  
-**Software Development Engineer** (May 2024 – July 2025)  
-- **Implemented CI/CD pipelines on Hotel Management App to automate deployments, improving performance by 30%.**
-- **Pioneered a MERN Stack Solution for Coding Sharks, integrating UI and APIs and attracting over 7K new visitors.**  
-
-### **Space Applications Centre (SAC), ISRO** – *Ahmedabad, Gujarat*  
-**Research and Development Intern** (February 2024 – May 2024)  
-- **Preprocessed and Annotated 800 Hi-Rise satellite image datasets and developed neural network models using PyTorch.**
-- **Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.**
-
-### **Ace Infoway** – *Rajkot, Gujarat*  
-**Software Engineer Intern** (July 2023 – August 2023)  
-- **Introduced an abandoned cart push notification feature, boosting conversions by 25% on the eCommerce website.**
-- **Restructured Budgie Cart, integrating mobile first eCommerce capabilities to enhance the experience for 3M+ users.** 
-
-### **Relcon System** – *Vadodara, Gujarat*  
-**Software Engineer Intern** (June 2022 – August 2022)  
-- **Redesigned a smart fuel mobile dispensing unit, ensuring compatibility with 5 OS platforms for versatility**.  
-- **Developed a dynamic dashboard to monitor fuel consumption and manage station assignments for efficient operations**.  
-
+---
 
 ## Contact
 
-I’m always open to connecting with like-minded individuals and exploring potential collaborations. You can reach me at:
+- **Website:** [omjavia.vercel.app](https://omjavia.vercel.app/)
 - **Email:** [omjavia18@gmail.com](mailto:omjavia18@gmail.com)
-- **LinkedIn:** [linkedin.com/in/omjavia](https://linkedin.com/in/omjavia)
-- **GitHub:** [github.com/omjavia](https://github.com/omjavia)
-- **Resume:** [omjavia.vercel.app/resume.pdf](https://omjavia.vercel.app/resume.pdf)
-
-Thank you for visiting my portfolio! Let’s build something great together.
-=======
----
----
-
-# Om Javia's Portfolio
-
-
-Welcome to my portfolio website! Here, you’ll find an overview of my professional journey, technical expertise, and personal projects. Feel free to explore and connect with me.
-
-![image](https://github.com/user-attachments/assets/0e232dac-8bde-4730-ac1c-d2e01a0a1358)
-
-
-## Table of Contents
-1. [About Me](#about-me)
-2. [Skills](#skills)
-3. [Past Experiences](#past-experience)
-4. [Projects](#projects)
-5. [Contact](#contact)
-
-## About Me
-
-I'm Om Javia, a Computer Science and Engineering graduate from Medi-Caps University with a specialization in Cloud Technology and Information Security. My work spans across AI, software development, and data analysis, with hands-on experience gained through internships at organizations like ISRO’s Space Application Centre and software firms. Through my projects, I aim to address real-world challenges and provide user-focused solutions.
-
-
-## Skills
-- **Programming Languages:** Python, JavaScript, HTML, CSS
-- **Frameworks:** Django, React, Node.js, Tailwind, Retrieval-Augmented Generation(RAG), Llama3
-- **Libraries & Tools:** OpenCV, Detectron2, YOLO, D3.js, Postman, Docker, Power BI
-- **Databases:** MySQL, MongoDB
-- **DevOps & Cloud:** Docker, Vercel, GitHub Actions, AWS
-- **Other Tools:** Figma, Jira, Shopify
-- **Version Control:** GitHub
-
-
-## Past Experience  
-
-### **Metashot** – *Bangalore, Karnataka*  
-**Junior Software Engineer** (July 2025 - Present)  
-- **Integrated RESTful APIs across 3 microservices to cut post-release defects by 30% and improve QA velocity by 20%.**
-- **Optimized validation pipelines with an AI agent, automating workflows and reducing manual checks across 5+ regions.**
-
-### **Apoliums Infotech** – *Indore, Madhya Pradesh*  
-**Software Development Engineer** (May 2024 – July 2025)  
-- **Implemented CI/CD pipelines on Hotel Management App to automate deployments, improving performance by 30%.**
-- **Pioneered a MERN Stack Solution for Coding Sharks, integrating UI and APIs and attracting over 7K new visitors.**  
-
-### **Space Applications Centre (SAC), ISRO** – *Ahmedabad, Gujarat*  
-**Research and Development Intern** (February 2024 – May 2024)  
-- **Preprocessed and Annotated 800 Hi-Rise satellite image datasets and developed neural network models using PyTorch.**
-- **Engineered obstacle-aware path planning for rover, boosted navigation efficiency by 87.4% and ensured safe traversal.**
-
-### **Ace Infoway** – *Rajkot, Gujarat*  
-**Software Engineer Intern** (July 2023 – August 2023)  
-- **Introduced an abandoned cart push notification feature, boosting conversions by 25% on the eCommerce website.**
-- **Restructured Budgie Cart, integrating mobile first eCommerce capabilities to enhance the experience for 3M+ users.** 
-
-### **Relcon System** – *Vadodara, Gujarat*  
-**Software Engineer Intern** (June 2022 – August 2022)  
-- **Redesigned a smart fuel mobile dispensing unit, ensuring compatibility with 5 OS platforms for versatility**.  
-- **Developed a dynamic dashboard to monitor fuel consumption and manage station assignments for efficient operations**.  
-
-
-## Contact
-
-I’m always open to connecting with like-minded individuals and exploring potential collaborations. You can reach me at:
-- **Email:** [omjavia18@gmail.com](mailto:omjavia18@gmail.com)
-- **LinkedIn:** [linkedin.com/in/omjavia](https://linkedin.com/in/omjavia)
-- **GitHub:** [github.com/omjavia](https://github.com/omjavia)
-- **Resume:** [omjavia.vercel.app/resume.pdf](https://omjavia.vercel.app/resume.pdf)
-
-Thank you for visiting my portfolio! Let’s build something great together.
->>>>>>> theirs
+- **LinkedIn:** [linkedin.com/in/omjavia](https://www.linkedin.com/in/omjavia/)
+- **GitHub:** [github.com/OmJavia](https://github.com/OmJavia)
+- **Résumé:** [omjavia.vercel.app/resume.pdf](https://omjavia.vercel.app/resume.pdf)

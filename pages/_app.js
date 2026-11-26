@@ -5,6 +5,18 @@ import Script from 'next/script';
 import posthog from 'posthog-js';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { MotionConfig } from 'framer-motion';
+import { Instrument_Serif } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+
+const display = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+});
 
 // Initialize PostHog (client-side only)
 if (typeof window !== 'undefined') {
@@ -44,8 +56,12 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      {/* Include your main component */}
-      <Component {...pageProps} />
+      {/* reducedMotion="user" drops transform animations for prefers-reduced-motion users */}
+      <MotionConfig reducedMotion="user">
+        <div className={`${GeistSans.variable} ${GeistMono.variable} ${display.variable} font-sans`}>
+          <Component {...pageProps} />
+        </div>
+      </MotionConfig>
 
       {/* Vercel Analytics */}
       <Analytics />

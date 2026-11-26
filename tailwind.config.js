@@ -9,13 +9,31 @@ module.exports = {
     extend: {
       fontFamily: {
         burtons: ['burtons', 'sans-serif'],
-        // Headings: Plus Jakarta Sans (premium, modern)
-        sans: ['"Plus Jakarta Sans"', '"Outfit"', '"Inter"', 'sans-serif'],
-        // Technical tags, metrics, code: JetBrains Mono
-        mono: ['"JetBrains Mono"', '"IBM Plex Mono"', 'Courier New', 'monospace'],
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
+        serif: ['var(--font-display)', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+      },
+      // Tactile Intelligence tokens (Warm Gallery Light)
+      fontSize: {
+        'display-xl': ['clamp(2.75rem, 6.4vw, 5.75rem)', { lineHeight: '0.98', letterSpacing: '-0.02em' }],
+        'display-lg': ['clamp(2.25rem, 4.6vw, 4rem)', { lineHeight: '1.02', letterSpacing: '-0.015em' }],
+        'h1': ['clamp(2rem, 3.4vw, 3rem)', { lineHeight: '1.08', letterSpacing: '-0.02em' }],
+        'h2': ['clamp(1.5rem, 2.4vw, 2rem)', { lineHeight: '1.15', letterSpacing: '-0.015em' }],
+        'h3': ['1.25rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.65' }],
+        'eyebrow': ['0.75rem', { lineHeight: '1', letterSpacing: '0.14em' }],
+        'meta': ['0.75rem', { lineHeight: '1.4' }],
       },
       colors: {
+        canvas: '#F5F5F0',
+        surface: '#FFFFFF',
+        ink: '#15171C',
+        muted: '#626B78',
+        cobalt: '#4F5EEB',
+        signal: { teal: '#22B8A8', coral: '#FF826E', lime: '#C8E879' },
+        line: '#E3E5E8',
+        night: '#111827',
         // Obsidian Neural Design Tokens
         obsidian: {
           bg: '#09090b',       // Deep Obsidian background

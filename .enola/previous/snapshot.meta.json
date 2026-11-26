@@ -1,0 +1,586 @@
+{
+  "repo_path": "/Users/omjavia/Desktop/Om Documents/Projects/Om-Portfolio",
+  "repo_label": "om-portfolio",
+  "generated_at": "2026-11-26T17:00:32Z",
+  "duration": "133.508625ms",
+  "extractors": [
+    "manifests",
+    "mdintent",
+    "typescript"
+  ],
+  "explainers": [
+    "cycles",
+    "layers",
+    "crossrepo",
+    "coverage",
+    "unused-routes",
+    "domain",
+    "query-loops",
+    "dead-methods",
+    "entry-points",
+    "messaging-coverage",
+    "god-class",
+    "hotspots",
+    "dependency-depth",
+    "exported-surface",
+    "complexity-outliers",
+    "intent",
+    "constraints",
+    "vendored-candidates",
+    "import-closure",
+    "package-metrics",
+    "dead-code",
+    "performance"
+  ],
+  "renderers": [
+    "llm_context",
+    "flows"
+  ],
+  "file_hashes": [
+    {
+      "path": "public/aerpace.jpg",
+      "hash": "9d70bde27a83a10b2516c4cdcb8bcdeeb7f0eac340a4a3cb5e0aea766e600e91",
+      "mod_time": "2026-09-06T09:19:38Z"
+    },
+    {
+      "path": "components/Navbar.jsx",
+      "hash": "74d473f736e0db4b12e5637976eda6bc8c8770790a1be5de2bbcb7a1cea62f54",
+      "mod_time": "2026-11-06T09:29:30Z"
+    },
+    {
+      "path": "components.json",
+      "hash": "99a716c7acecafd3f167a5bf8e3e61e1b809a8977b84f05460d53adefd2d773f",
+      "mod_time": "2026-11-02T09:34:24Z"
+    },
+    {
+      "path": "jsconfig.json",
+      "hash": "17fd594268093c7da2b8f7ab392af0f637a0c73292643d61060ec17a1c680be5",
+      "mod_time": "2026-11-02T09:34:17Z"
+    },
+    {
+      "path": "public/Artboard 1 copy 2.jpg",
+      "hash": "a4936f1caa1e028e4405bbc58023b878a54b3a0c012f9a4a70152e7e38ecaab8",
+      "mod_time": "2026-11-02T09:50:25Z"
+    },
+    {
+      "path": "tailwind.config.js",
+      "hash": "76f7f3448849fdc59e9e523b8a491c78c77aa89f1c16d134a7f0d8347331951d",
+      "mod_time": "2026-08-20T18:47:05Z"
+    },
+    {
+      "path": "components/AskOmWidget.jsx",
+      "hash": "85e7d439d919b79de1309fe092ee612cac1655a64e4aa7328893a33635b8d709",
+      "mod_time": "2026-11-06T09:17:16Z"
+    },
+    {
+      "path": "components/home/OpenSourceSection.js",
+      "hash": "5be4da6cc8a50ec9c910f1b8865e6e135a434f197b74d876e0526c2fce6ddffc",
+      "mod_time": "2026-10-18T18:38:50Z"
+    },
+    {
+      "path": "pages/about.js",
+      "hash": "f1b604e7ba99bd4fc5122ed0d97dcc58102aa4ce13cebb1454fc2c02576e5dc5",
+      "mod_time": "2026-10-19T11:51:34Z"
+    },
+    {
+      "path": "pages/case-studies/ai-blog-generator.js",
+      "hash": "d04f759a29fd5815dd1ff559bfe14ddbb6386e3649417322cee797dc7460b385",
+      "mod_time": "2026-09-01T18:07:26Z"
+    },
+    {
+      "path": "styles/globals.css",
+      "hash": "18c7b907d6d4204783b4bc7aab3c9f9314969673dc836fb9432da93e318552df",
+      "mod_time": "2026-11-26T15:46:18Z"
+    },
+    {
+      "path": "components/ProjectCard.jsx",
+      "hash": "4aba100481a3ba4fce271123bd876f448610c47d561011ee586b1a5dc16ce970",
+      "mod_time": "2026-10-18T18:42:35Z"
+    },
+    {
+      "path": "components/ui/card.jsx",
+      "hash": "71cf91208db6403bef432e93bf6d8497dd4574f373cccbc90c64d910aaa17180",
+      "mod_time": "2026-11-02T09:35:05Z"
+    },
+    {
+      "path": "pages/contact.js",
+      "hash": "fd378683fe8b50185d4b83d14c20bdee0a13de3376db2a0a750ff070c7896e0a",
+      "mod_time": "2026-08-22T10:13:03Z"
+    },
+    {
+      "path": "pages/notes/isro-path-planner.js",
+      "hash": "148af64a985c974532376c21ca65a70c8fbc2d8763c0bc7cb3d65bc813d8a50f",
+      "mod_time": "2026-11-06T09:17:01Z"
+    },
+    {
+      "path": "public/Pickle.jpeg",
+      "hash": "44a0ad1b273077beeb8bfe9e8875c9b9cf5f62230bab37b173d4bc719847491b",
+      "mod_time": "2026-09-06T09:19:39Z"
+    },
+    {
+      "path": "components/ScrollToTop.jsx",
+      "hash": "d622bf0640a17b06c7b8167f821b223a854280acb8a1fadee950d5e1adaae9e0",
+      "mod_time": "2026-09-06T09:26:13Z"
+    },
+    {
+      "path": "components/home/NowBuildingSection.js",
+      "hash": "7da67849b1251abeaae544bcbe2ff0f8ffdd4014b1416a54f6a66514f9a6ce03",
+      "mod_time": "2026-11-06T09:15:37Z"
+    },
+    {
+      "path": "package-lock.json",
+      "hash": "e1cf070b40831cdcdc4ba04a8d8ac60f994279d337e5bca13e6c877559f83c10",
+      "mod_time": "2026-11-26T17:00:30Z"
+    },
+    {
+      "path": "pages/case-studies/apna-mechanic.js",
+      "hash": "f52b2e60fa9a8f2b3ffbf2799c71b339adbb22ae1a567ea029c305e986f6b57d",
+      "mod_time": "2026-09-06T09:20:58Z"
+    },
+    {
+      "path": "public/Car.jpg",
+      "hash": "9527f059e50212026a77e4b77ac3bfc4780d3fc491f9d20574418fe2eb6dae25",
+      "mod_time": "2026-09-06T09:19:38Z"
+    },
+    {
+      "path": "public/ace-infoway.png",
+      "hash": "21d13c810ddf9c47b9d650d2d1db6de8ca80bc6d82b6278cebdc5b5fcdc65dc8",
+      "mod_time": "2025-03-07T05:53:48Z"
+    },
+    {
+      "path": "public/og-image.jpg",
+      "hash": "171e1bedcc904c92162d2c11198fbfbe148470991612d7c516b95ef389eb8245",
+      "mod_time": "2026-09-06T09:19:39Z"
+    },
+    {
+      "path": "public/relcon.png",
+      "hash": "e7802ed97e072238de0466c29c2d43acd32e57b02237b32a7f4fc5f92bc20c39",
+      "mod_time": "2025-03-07T05:49:06Z"
+    },
+    {
+      "path": "components/Footer.jsx",
+      "hash": "966bffb26962a91996082ceb0d2649a7dd77e7cf593d6c1b94454ddbf1f5823c",
+      "mod_time": "2026-11-06T09:15:29Z"
+    },
+    {
+      "path": "components/ui/separator.jsx",
+      "hash": "a4ce4bba20eb5d209258e6bc1cad5a12eaab026a155ffe01531ce05eb9a23c2f",
+      "mod_time": "2026-11-02T09:35:13Z"
+    },
+    {
+      "path": "lib/utils.js",
+      "hash": "eda3beb73fdfba01f4aacb1b6c1913b02238bc20254793bc9c6ef3c0dc5e72ea",
+      "mod_time": "2026-11-02T09:34:08Z"
+    },
+    {
+      "path": "public/nirmanbook.jpg",
+      "hash": "a6f9311c4b532c27922151aa8f8bc1980eb5b08134c3f8250115a0545d9e1222",
+      "mod_time": "2026-09-06T09:19:39Z"
+    },
+    {
+      "path": "components/SpotlightCard.jsx",
+      "hash": "5defc371a2e64b23208fe81a2f2d292326e2e37af0a7d9e99408140e831194ba",
+      "mod_time": "2026-09-06T08:15:53Z"
+    },
+    {
+      "path": "public/Mars.jpg",
+      "hash": "3c873cc8b6e23fd0f0b705adf29dbc552b1893e14ac69eba07bc4f2cba9deadd",
+      "mod_time": "2026-09-06T09:19:38Z"
+    },
+    {
+      "path": "public/contact.svg",
+      "hash": "444a7fe3e0f46af8d47ea47fb4e540d7bcb2b28f71e878c2f46515414a6c509d",
+      "mod_time": "2026-03-23T11:09:38Z"
+    },
+    {
+      "path": "public/robots.txt",
+      "hash": "0f51b1b0a1138dbcb30bbbbd4a23c193682b14361babe773032b3ca35b6dbdeb",
+      "mod_time": "2026-10-18T18:32:39Z"
+    },
+    {
+      "path": "components/ui/tabs.jsx",
+      "hash": "146e41ec1943bbd1fbd0d714cdf072303ef38ac8e40dcc8f2467e931675f3d34",
+      "mod_time": "2026-11-02T09:35:22Z"
+    },
+    {
+      "path": "pages/case-studies/coding-sharks.js",
+      "hash": "c4a1ee4d2a3b08bbbee86552bc6b970b456c377a9755d8ff23b00e312715a15a",
+      "mod_time": "2026-09-06T09:22:44Z"
+    },
+    {
+      "path": "pages/case-studies/megashot-pickl.js",
+      "hash": "b8a3a666358a84485420037d8c39dc4f28c77679a5d5eaac65157f38e26fceca",
+      "mod_time": "2026-11-06T09:16:02Z"
+    },
+    {
+      "path": ".DS_Store",
+      "hash": "feb5451c050e007345695d454fe19f4cbb43fabe6aa773509ce2f7e7eefef7d2",
+      "mod_time": "2026-11-09T09:56:08Z"
+    },
+    {
+      "path": "components/home/AboutSkills.js",
+      "hash": "86c4b548bab6840d1e851a5eb04d149cbad5079169292167efddb13edf178aaa",
+      "mod_time": "2026-08-22T06:18:07Z"
+    },
+    {
+      "path": "next.config.js",
+      "hash": "6c77375f4a6aa1638eeaf256f854efd06e4d5df7618e063964d7324d205e0f8b",
+      "mod_time": "2026-09-06T08:27:35Z"
+    },
+    {
+      "path": "pages/api/chat.js",
+      "hash": "9a3604884f152b8c2175cfb0c06278dbcc0d4bdb7aa27361d2a6fed309f07e71",
+      "mod_time": "2026-11-06T09:17:37Z"
+    },
+    {
+      "path": "pages/case-studies/pdf-searcher.js",
+      "hash": "dbcab7243fd44d546ada9a43199a05bb9a72199002d757e0ecaa1e040ba4c99e",
+      "mod_time": "2026-09-06T09:22:25Z"
+    },
+    {
+      "path": "pages/notes/sub-80ms.js",
+      "hash": "2fd9d22122fb97eb4c97ce55cd317a517cfe9ce7514b6b96af28c4b7b99d1de3",
+      "mod_time": "2026-11-06T09:16:52Z"
+    },
+    {
+      "path": "public/Blog.png",
+      "hash": "6a91b773ae9c74b3713f5005728876cec90b0401af083e8249c8663bd8642c88",
+      "mod_time": "2024-07-24T12:04:40Z"
+    },
+    {
+      "path": "public/Metashot.jpg",
+      "hash": "7bb643db136278fc0b3915933e272bf9374b870d36060d8b77ea1fb5b011dc29",
+      "mod_time": "2026-09-06T09:19:38Z"
+    },
+    {
+      "path": ".gitignore",
+      "hash": "1c1004a2d7af33f1c57f72a623d9f3c8534f2ee6f306ac5df71b183d743cd614",
+      "mod_time": "2023-06-16T19:18:40Z"
+    },
+    {
+      "path": "README.md",
+      "hash": "1f5477e975ce2a4826086ebd183920ac29c911f0c562181243ca44140413cfa0",
+      "mod_time": "2026-11-26T15:46:42Z"
+    },
+    {
+      "path": "components/home/ProjectsSection.js",
+      "hash": "f67044575b9457f0baef76fa9d40a392a1615dc3ae51b1900dcac489acb8262b",
+      "mod_time": "2026-11-06T09:15:51Z"
+    },
+    {
+      "path": "public/PDF_Searcher.jpg",
+      "hash": "066695224260fb9810b0458ab82fd6cb3de6b9b44dd6465846236eb38f045d93",
+      "mod_time": "2026-09-06T09:19:39Z"
+    },
+    {
+      "path": "public/netflix.jpg",
+      "hash": "8be96ea202e8503de40eebd30fc38fb5a761944a28691b13e75aca62c9093b82",
+      "mod_time": "2026-09-06T09:19:38Z"
+    },
+    {
+      "path": "components/ArchitectureDiagram.jsx",
+      "hash": "17ab5093909b64ad9894ecc4793d21e23763c76a003222c0a53142b22a8b1ea8",
+      "mod_time": "2026-08-20T18:36:39Z"
+    },
+    {
+      "path": "components/MermaidDiagram.jsx",
+      "hash": "87bbabd6063e58bcf8fbf006d60834cd3920ca77551cd5d5ab8d49ff7e06a80a",
+      "mod_time": "2026-10-18T18:35:16Z"
+    },
+    {
+      "path": "components/home/ExperienceContact.js",
+      "hash": "35927733305e6506d0620ab24fbe3c9233ff5cd817b1cd740f5e02a69c101155",
+      "mod_time": "2026-11-06T09:15:43Z"
+    },
+    {
+      "path": "components/home/HowIBuildSection.js",
+      "hash": "118b6e641d1ea71821131ed1fb7d482fc22c47d517e9516f36907826c1e14286",
+      "mod_time": "2026-11-26T16:57:15Z"
+    },
+    {
+      "path": "public/Metashot.png",
+      "hash": "50844cb5010ac4e07a1ecb1f175580eaa674621f4db4b8b17dc4a6704770fede",
+      "mod_time": "2026-03-08T10:40:06Z"
+    },
+    {
+      "path": "components/home/CapabilitiesSection.js",
+      "hash": "ae2b99a87a64ed12d69379547b2c993b80b38671843252b1082c67984858ac6d",
+      "mod_time": "2026-09-06T09:00:33Z"
+    },
+    {
+      "path": "components/ui/button.jsx",
+      "hash": "4e742aa5f899e52627064b2b5a2952937dae246b125600ea2ae7a7347e912079",
+      "mod_time": "2026-11-26T15:46:18Z"
+    },
+    {
+      "path": "lib/notes.js",
+      "hash": "bf69f015e22e0eeaed0b0cde73eb2f13c5f0d53b9211edc9c237b7139470cd4a",
+      "mod_time": "2026-11-06T09:16:05Z"
+    },
+    {
+      "path": "pages/case-studies/mars-rover.js",
+      "hash": "0ccb3f2d8c884584d24ada5ba9d4a6f21fd2b1b361e1ea4f3c9fcff973087517",
+      "mod_time": "2026-11-06T09:15:57Z"
+    },
+    {
+      "path": "pages/case-studies/metashot.js",
+      "hash": "f2dc47de1681001ed93c8df0e8a235a78c1ae15bebc6425feac5f0f638ec41cc",
+      "mod_time": "2026-11-06T09:16:28Z"
+    },
+    {
+      "path": "public/Om_pic.jpg",
+      "hash": "a6edf545a020258a5e1df60f8919468e81d520a8311c6407cda117aee5a6d552",
+      "mod_time": "2026-09-06T09:19:39Z"
+    },
+    {
+      "path": "public/sitemap.xml",
+      "hash": "2665a4f784ff0a73c70b87298a6a286396a802128ea93027bc734d203f6a430a",
+      "mod_time": "2026-11-06T09:17:20Z"
+    },
+    {
+      "path": "components/AnimatedCounter.jsx",
+      "hash": "a2c8ddd2b3bd0d65593aeea5c09083fb4e95c10368c97570d13ab450bb9f968b",
+      "mod_time": "2026-08-20T18:36:39Z"
+    },
+    {
+      "path": "components/Layout.jsx",
+      "hash": "c479513ff09fb36726523ee7be50a7590f5fa26a9c2ae67652074f9b9cef4750",
+      "mod_time": "2026-11-02T09:35:57Z"
+    },
+    {
+      "path": "components/MetricCounter.jsx",
+      "hash": "7aa663912aca72ab42a63ef37624d49c7002ed2e3b284026802b5119cf4323a5",
+      "mod_time": "2026-08-20T18:36:39Z"
+    },
+    {
+      "path": "pages/notes/index.js",
+      "hash": "e22f70454282dcbe845f4dee36d400ec6cdb77fe7f9b7b6b195bb0f3ad6d3fb3",
+      "mod_time": "2026-11-06T09:16:33Z"
+    },
+    {
+      "path": "public/.DS_Store",
+      "hash": "246be116e4de2ec74d15da84f5f69ad32e6f3dc671e926612f33a914c2da2719",
+      "mod_time": "2026-11-17T07:23:26Z"
+    },
+    {
+      "path": "public/Download Resume.png",
+      "hash": "12705255672a0b9ca3eb4430a3941a39b9cd28988cbf8fda631e01110c7e40cb",
+      "mod_time": "2025-03-07T06:49:14Z"
+    },
+    {
+      "path": "public/icon.png",
+      "hash": "121744ec621e8d665f167a9c0c9b44d67249d680a17ae6968ec267ad3717ce00",
+      "mod_time": "2024-11-22T17:25:34Z"
+    },
+    {
+      "path": "public/sac.png",
+      "hash": "82b774db06fc7e7c6ccae7dfe19fb1d9d94f91161871508b46ef4e7fd7800c94",
+      "mod_time": "2025-03-05T17:12:36Z"
+    },
+    {
+      "path": "lib/posthog-server.js",
+      "hash": "97d62652d0dcc0ed766f655814d371cffcc71b7764892ae943759684211ebc30",
+      "mod_time": "2026-08-22T10:11:06Z"
+    },
+    {
+      "path": "pages/case-studies/aerpace.js",
+      "hash": "1f7bfc4e7ba7b0bbe4f884a517a1bbe24755e1c426a24ff25a6cad339e43e0bd",
+      "mod_time": "2026-09-06T09:21:54Z"
+    },
+    {
+      "path": "postcss.config.js",
+      "hash": "54a758307a2ce79551eac8e5a0646f6a291b4e5e81e498b07a5d89329c5dd068",
+      "mod_time": "2023-06-16T19:18:40Z"
+    },
+    {
+      "path": "public/front.png",
+      "hash": "18ccb9a94ad059dd6c3c99457103bf36c9f9567be3665e053a65f8d992d3ad26",
+      "mod_time": "2026-09-06T07:24:11Z"
+    },
+    {
+      "path": "package.json",
+      "hash": "df9ce26a730008d0f94019e8d6ecbbef172de5bc1ff009b5192d9e73ee6fdfac",
+      "mod_time": "2026-11-26T17:00:29Z"
+    },
+    {
+      "path": "pages/case-studies/movieflix.js",
+      "hash": "0aef23a650a89f20cc1969818ed9e9e5a2ca821c70245eb192cb5323c4f6c31f",
+      "mod_time": "2026-09-06T09:21:39Z"
+    },
+    {
+      "path": "public/Burtons.otf",
+      "hash": "e9cc3934c0e50655059cbe96bbb83adc1396a81658ae389da02ba5be88e0a35b",
+      "mod_time": "2023-06-16T19:18:40Z"
+    },
+    {
+      "path": "public/Coding-Shark.jpg",
+      "hash": "103dc9f1df33fbd670bfa5480f405a1aee8f3633a40a31e460c5b366cceb3a94",
+      "mod_time": "2026-09-06T09:19:39Z"
+    },
+    {
+      "path": "public/resume.pdf",
+      "hash": "7e4d0045e113a11f1c01b85671861c8b4997caf9bd980349162957d2a289dcdb",
+      "mod_time": "2026-11-06T09:15:10Z"
+    },
+    {
+      "path": ".env.local",
+      "hash": "be7de73b6564906cf28a34cb9a7f0aace79853af6110b19b793d1ca226cd5323",
+      "mod_time": "2026-08-22T10:10:21Z"
+    },
+    {
+      "path": "CONTENT_VERIFICATION.md",
+      "hash": "f99ed50a81e46fe5a6c9d51432733e323c00ede2e9ab86769926a33f3e3b34c5",
+      "mod_time": "2026-11-06T09:15:24Z"
+    },
+    {
+      "path": "components/AiAssistantModal.jsx",
+      "hash": "03c08644db7f0f4de83e90ca867c3ba0edcc705ac00cddf04a6316221ddbc146",
+      "mod_time": "2026-08-20T18:36:39Z"
+    },
+    {
+      "path": "components/MagneticButton.jsx",
+      "hash": "5048f2faf7ab8683c0ba665b7b46d45a6a3277ec2bdae71109cd056d2e254843",
+      "mod_time": "2026-09-02T10:17:16Z"
+    },
+    {
+      "path": "components/home/.DS_Store",
+      "hash": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3",
+      "mod_time": "2026-11-17T07:16:02Z"
+    },
+    {
+      "path": "components/home/HeroSection.js",
+      "hash": "ee4568390dba11f2bcef4e5619e45d5fb70e21aea8da89e5bbee7a68a4fe86ed",
+      "mod_time": "2026-11-26T15:46:18Z"
+    },
+    {
+      "path": "components/home/TechnicalSkillsSection.js",
+      "hash": "9cb6549f6e9595a34cc5164042cd0d77566df6584819c8d905ac1da636b2575d",
+      "mod_time": "2026-11-02T09:39:13Z"
+    },
+    {
+      "path": "pages/_app.js",
+      "hash": "a0cdb7b20a2a2faa692b7464e2d45b83f29e9f064074ccd012eafefb9c976e61",
+      "mod_time": "2026-11-06T09:17:18Z"
+    },
+    {
+      "path": ".eslintrc.json",
+      "hash": "f72832802c6e7957df28f944f9adddf44e04d705f519c2de547c12bfb604b6c1",
+      "mod_time": "2026-08-20T18:36:39Z"
+    },
+    {
+      "path": "components/ExperienceCard.jsx",
+      "hash": "26b7ac41f226e7d68716d9f2fff27c6a52ad5bab45719ecf3d446c2d3edf5258",
+      "mod_time": "2026-08-08T12:19:07Z"
+    },
+    {
+      "path": "components/ui/badge.jsx",
+      "hash": "9f2fbd3577465434cecac2941057e37bc56086006b30794c4789b6be1dba9ef7",
+      "mod_time": "2026-11-02T09:34:56Z"
+    },
+    {
+      "path": "pages/case-studies/nirmanbook.js",
+      "hash": "def3050a2c455cde490328d47cefbb77b5f143ca3a4f8de63394e9fc657917bd",
+      "mod_time": "2026-09-06T09:21:25Z"
+    },
+    {
+      "path": "pages/index.js",
+      "hash": "1b013700d953c8e6353d2a54e43e7380e076c1244ed739402a994fc3e3af2a97",
+      "mod_time": "2026-11-26T15:46:18Z"
+    },
+    {
+      "path": "pages/notes/pickl-swing-loop.js",
+      "hash": "1b3927a5cca8d8626f3b3b433f5fc9fa1f2e6422bc7fcddbe9fff1a54d7f0602",
+      "mod_time": "2026-11-06T09:16:43Z"
+    },
+    {
+      "path": "public/Apoliums.png",
+      "hash": "73cdd2dc4e09f49edf048010f6a8d4397e2a2e20b526966618e46501c09fb8f4",
+      "mod_time": "2025-03-05T17:31:18Z"
+    }
+  ],
+  "fact_count": 442,
+  "insight_count": 16,
+  "enola_version": "0.4.30",
+  "snapshot_id": "sha256:dbbb3e671bc5357b5ac79897e9cd95ce1e55ff7402fea2d54bf470376b9800ec",
+  "git": {
+    "ref": "cursor/portfolio-market-upgrade",
+    "commit": "ca3b206462a739b15f204bd6a066e4adef97d33d",
+    "dirty": true,
+    "remote": "github.com/omjavia/om-portfolio"
+  },
+  "config_hash": "sha256:3adc688a0f1dadd7c001cfc90ef05ce328f08b9a61c74a15e5f9839f222d0f08",
+  "extractor_version": "v351",
+  "files_seen": 92,
+  "files_parsed": 54,
+  "source_bytes": 389641,
+  "dirs_skipped": 3,
+  "skipped_sample": [
+    ".git/ (glob: **/.git/**)",
+    ".next/ (glob: .next/**)",
+    "node_modules/ (glob: **/node_modules/**)"
+  ],
+  "ignore_glob_hash": "sha256:9ee2ed929411f65a0acebb88a0e8d236226c27d8061975f304e3b1ff2841c318",
+  "heuristic_insights": 15,
+  "coverage": {
+    "services_total": 0,
+    "coverage_gaps": 0,
+    "unresolved_edges": 0,
+    "extractors_reporting": 1,
+    "extraction_unresolved": 11
+  },
+  "census": {
+    "files_walked": 92,
+    "parsed": 54,
+    "excluded_by_ignore": 0,
+    "excluded_by_kind": 35,
+    "excluded_kinds": {
+      ".css": 1,
+      ".ds_store": 3,
+      ".gitignore": 1,
+      ".jpeg": 1,
+      ".jpg": 11,
+      ".json": 3,
+      ".local": 1,
+      ".otf": 1,
+      ".pdf": 1,
+      ".png": 9,
+      ".svg": 1,
+      ".txt": 1,
+      ".xml": 1
+    },
+    "skipped_with_cause": 3,
+    "top_skip_causes": [
+      {
+        "cause": "claimed by typescript, no facts emitted",
+        "count": 2
+      },
+      {
+        "cause": "claimed by manifests, no facts emitted",
+        "count": 1
+      }
+    ]
+  },
+  "output_hashes": {
+    "facts.jsonl": "sha256:6a53863c90e0eb737305ff221aeb0f485abd20a39653c734cee2ad6781287315",
+    "flows.json": "sha256:e19f2e3cbaea60c71e7cc6217dc07fc2f9ebd6fa21a4da916e8b30be654264ef",
+    "insights.json": "sha256:579e422d7a33733165c4dfcf37b6330d138c49b7134db5e6fee8e0a86871bf46",
+    "llm_context.md": "sha256:4a137bf59a94a807949345d984729dce4038e4c39592fa97697831e8ab8512ea"
+  },
+  "unseen": {
+    "files_excluded_by_ignore": 0,
+    "dirs_excluded_by_ignore": 3,
+    "outside_graph": {
+      "imports": 152
+    },
+    "outside_graph_prefixes": {
+      "@/components": 2,
+      "@/lib": 5,
+      "@vercel/analytics": 1,
+      "@vercel/speed-insights": 1,
+      "next": 64,
+      "react-icons": 33
+    },
+    "dead_exemptions": 0,
+    "dynamic_feature_classes": 0
+  }
+}
