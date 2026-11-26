@@ -111,7 +111,33 @@ Frontend:
 
 === FLAGSHIP PROJECTS ===
 
-1. NirmanBook
+1. MegaShot Pickl+
+
+Category:
+Connected sports hardware and go-to-market
+
+Description:
+- Motion-sensing smart pickleball paddle and companion game.
+- Sensors read stroke type, swing velocity, and angle. Bluetooth carries that into the game. The handle can return haptic feedback.
+- Om's role from November 2025: Founding Manager, product execution across hardware, software, gameplay, and launch.
+- Campaign reached 500% of its goal within 24 hours (company-reported).
+- Companion-app screenshots are not published on the portfolio. Point people to the product site and Kickstarter.
+- Do not repeat player-sample or iteration counts unless asked about the case study feedback section, and keep the qualified wording already on that page.
+
+Product site:
+https://pickleball.themegashot.com/
+
+Kickstarter:
+https://www.kickstarter.com/projects/megashot/megashot-pickl-smart-pickleball-gaming-device
+
+Case study:
+https://omjavia.vercel.app/case-studies/megashot-pickl
+
+Note:
+https://omjavia.vercel.app/notes/pickl-swing-loop
+
+
+2. NirmanBook
 
 Category:
 PropTech
@@ -126,7 +152,7 @@ Website:
 https://www.nirmanbook.com/
 
 
-2. Mars Rover Path Planning
+3. Mars Rover Path Planning
 
 Category:
 AI Research @ ISRO
@@ -136,25 +162,38 @@ Description:
 - Terrain understanding using satellite imagery.
 - Used PyTorch CNN models for terrain segmentation.
 - Used A* and Dijkstra for path planning.
-- Improved navigation efficiency by 87.4%.
+- Produced an 87.4% navigation-efficiency score in simulated rover traversal.
+- Do not describe this as an improvement. The formal baseline is not published.
+- Case study: https://omjavia.vercel.app/case-studies/mars-rover
+- Note: https://omjavia.vercel.app/notes/isro-path-planner
 
 Demo:
 https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing
 
 
-3. Metashot
+4. Metashot
 
 Category:
 Sports AI
 
 Description:
-- Real-time cricket shot classification using computer vision.
-- Low-latency inference pipeline.
-- Player-facing feedback.
-- Validated with real-time swing capture and edge-case shot variations.
+- Real-time cricket shot classification. Separate from MegaShot Pickl+.
+- AI Engineer role, July 2025 to October 2025.
+- PyTorch, YOLO, and OpenCV on a live camera stream. Published budget: under 80ms live-stream inference.
+- FastAPI and Redis for session metrics. Unity for in-session player feedback.
+- Do not claim an accuracy percentage. Do not invent camera frame rate, quantization, or a stage-by-stage latency split.
+
+Site:
+https://metashot.in/
+
+Case study:
+https://omjavia.vercel.app/case-studies/metashot
+
+Note:
+https://omjavia.vercel.app/notes/sub-80ms
 
 
-4. PDF Searcher
+5. PDF Searcher
 
 Category:
 AI Utility
@@ -168,7 +207,7 @@ GitHub:
 https://github.com/OmJavia/PDF_Searcher
 
 
-5. AI Blog Generator
+6. AI Blog Generator
 
 Category:
 Generative AI
@@ -181,7 +220,7 @@ GitHub:
 https://github.com/OmJavia/Generate_Blogs
 
 
-6. Aerpace
+7. Aerpace
 
 Category:
 Frontend / Product
@@ -194,7 +233,7 @@ Website:
 https://www.aerpace.com/
 
 
-7. Movieflix
+8. Movieflix
 
 Category:
 Frontend
@@ -232,6 +271,15 @@ https://www.linkedin.com/in/omjavia/
 
 GitHub:
 https://github.com/omjavia
+
+Resume:
+https://omjavia.vercel.app/resume.pdf
+
+Notes index:
+https://omjavia.vercel.app/notes
+
+Do not invent employers, metrics, recommendations, or availability beyond this document.
+Do not give out a phone number. Contact is email, Cal.com, and LinkedIn.
 `;
 
 
@@ -252,7 +300,18 @@ export default async function handler(req, res) {
   // GET USER MESSAGE
   // --------------------------------------------------
 
-  const { message } = req.body || {};
+  const body = req.body || {};
+  const messageFromThread = Array.isArray(body.messages)
+    ? [...body.messages].reverse().find((entry) => entry && entry.role === "user")
+    : null;
+  const message =
+    typeof body.message === "string"
+      ? body.message
+      : typeof messageFromThread?.content === "string"
+        ? messageFromThread.content
+        : typeof messageFromThread?.text === "string"
+          ? messageFromThread.text
+          : "";
 
 
   // --------------------------------------------------

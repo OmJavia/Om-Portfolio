@@ -1,371 +1,341 @@
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import posthog from 'posthog-js';
-import { FaChevronDown, FaChevronUp, FaFolderOpen } from "react-icons/fa";
-import Car from "../../public/Car.jpg";
-import Blog from "../../public/Blog.png";
-import NirmanHome from "../../public/nirmanbook.jpg";
-import Mars from "../../public/Mars.jpg";
-import Metashot from "../../public/Metashot.jpg";
-import Pickle from "../../public/Pickle.jpeg";
-import CodingShark from "../../public/Coding-Shark.jpg";
-import netflix from "../../public/netflix.jpg";
-import aerpace from "../../public/aerpace.jpg";
-import PDF_Seacrher from "../../public/PDF_Searcher.jpg";
-import ProjectCard from "../ProjectCard";
+import { FiArrowRight, FiExternalLink, FiGithub, FiFileText, FiCode, FiLayers } from "react-icons/fi";
+import MetashotImg from "../../public/Metashot.jpg";
+import MarsImg from "../../public/Mars.jpg";
+import PDFImg from "../../public/PDF_Searcher.jpg";
+import posthog from "posthog-js";
 
-const FILTER_TABS = [
-  "All",
-  "Featured",
-  "Current Work",
-  "AI Systems",
-  "Computer Vision",
-  "LLM / RAG",
-  "Product Engineering",
-  "Research",
-  "Experiments",
-];
-
-// 4 High-Signal Core Featured Projects
-const FEATURED_PROJECTS = [
-  {
-    title: "MegaShot Pickl+",
-    category: "Current Work",
-    filterCategory: ["All", "Featured", "Current Work", "AI Systems", "Product Engineering"],
-    description:
-      "A motion-sensing smart pickleball paddle and connected gaming experience that brings real swings into interactive gameplay at home.",
-    bullets: [
-      "Real-time motion sensing and low-latency BLE swing tracking",
-      "Connected mobile gameplay experience & handle haptics",
-    ],
-    architecture:
-      "Hardware motion sensor integration feeding real-time swing tracking into a connected mobile gaming experience with haptic and interactive gameplay feedback.",
-    hurdles:
-      "Translating raw motion sensor data into instant, accurate digital swing interpretations for real-time multiplayer gaming.",
-    image: Pickle,
-    tags: ["Hardware x Software", "Sensors", "Interactive Gaming", "Product"],
-    liveUrl: "https://pickleball.themegashot.com/",
-    caseStudyUrl: "/case-studies/megashot-pickl",
-    isFeatured: true,
-  },
-  {
-    title: "Metashot",
-    category: "Sports AI",
-    filterCategory: ["All", "Featured", "AI Systems", "Computer Vision", "Product Engineering"],
-    description:
-      "Real-time cricket shot detection and player-facing AI feedback system deployed in production across active training and practice sessions.",
-    bullets: [
-      "Real-time shot classification from video streams (<80ms latency)",
-      "Player feedback dashboard with weak-shot analysis module",
-    ],
-    architecture:
-      "YOLO-based shot detection pipeline feeding into a FastAPI + Redis backend, with a player-facing dashboard for session insights.",
-    hurdles:
-      "Achieving sub-80ms end-to-end inference latency while maintaining accuracy across varied lighting and camera angles in real-world practice environments.",
-    image: Metashot,
-    tags: ["PyTorch", "YOLO", "FastAPI", "Sports AI"],
-    liveUrl: "https://metashot.in/",
-    // Note: No dedicated case study exists yet for MetaShot sports-AI; liveUrl links to official site.
-    // TODO(Om): create dedicated MetaShot sports-AI case study
-    isFeatured: true,
-  },
-  {
-    title: "Mars Rover Path Planning",
-    category: "AI Research",
-    filterCategory: ["All", "Featured", "AI Systems", "Computer Vision", "Research"],
-    description:
-      "Computer vision and path-planning research for terrain understanding using satellite imagery and neural network workflows.",
-    bullets: [
-      "Obstacle-aware rover navigation experiments (87.4% efficiency score)",
-      "Terrain labeling (5 categories) and 800+ annotated image datasets",
-    ],
-    architecture:
-      "PyTorch-based computer vision models for terrain segmentation, integrated with classic pathfinding algorithms (A*, Dijkstra) for optimal route calculation.",
-    hurdles:
-      "Training models on sparse satellite imagery datasets and optimizing inference times to simulate real-time rover decision making.",
-    image: Mars,
-    tags: ["PyTorch", "CV", "Pathfinding", "Research"],
-    liveUrl:
-      "https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing",
-    caseStudyUrl: "/case-studies/mars-rover",
-    isFeatured: true,
-  },
-  {
-    title: "PDF Searcher",
-    category: "Applied AI / RAG",
-    filterCategory: ["All", "Featured", "AI Systems", "LLM / RAG"],
-    description:
-      "A document search utility focused on helping users find answers inside PDFs faster through a practical semantic retrieval workflow.",
-    bullets: [
-      "PDF ingestion and semantic search experience",
-      "Vector retrieval foundation for document intelligence tools",
-    ],
-    architecture:
-      "Python backend utilizing LangChain for document chunking, OpenAI embeddings for semantic search, and a lightweight vector store for fast retrieval.",
-    hurdles:
-      "Extracting clean text from highly formatted, multi-column PDFs and tuning chunk sizes to preserve semantic context for accurate answers.",
-    image: PDF_Seacrher,
-    tags: ["Python", "LangChain", "OpenAI", "RAG"],
-    githubUrl: "https://github.com/OmJavia/PDF_Searcher",
-    caseStudyUrl: "/case-studies/pdf-searcher",
-    isFeatured: true,
-  },
-  // TODO(Om): build and evaluate flagship LLM/agent project with README, metrics and demo
-];
-
-// Additional Projects (Kept in accessible collapsible section)
-const MORE_PROJECTS = [
+const ARCHIVE_PROJECTS = [
   {
     title: "NirmanBook",
-    category: "PropTech",
-    filterCategory: ["All", "Product Engineering"],
-    description:
-      "A construction and real-estate focused platform built to make project discovery and service workflows feel cleaner and more reliable.",
-    bullets: [
-      "Production website with polished customer-facing flows",
-      "Clear service discovery path for construction users",
-    ],
-    architecture:
-      "Next.js frontend communicating with a scalable Node.js backend. State management via Redux, and optimized image delivery through Vercel's edge network.",
-    hurdles:
-      "Handling complex, multi-step service booking workflows while maintaining a highly responsive and polished UI on mobile devices.",
-    image: NirmanHome,
-    tags: ["Next.js", "Product", "UX"],
-    liveUrl: "https://www.nirmanbook.com/",
-    caseStudyUrl: "/case-studies/nirmanbook",
+    type: "PropTech Platform",
+    role: "Full-Stack & Product",
+    desc: "Construction workflow and service discovery platform with polished customer booking journey.",
+    tech: "Next.js · Node.js · Redux",
+    link: "https://www.nirmanbook.com/",
+    caseStudy: "/case-studies/nirmanbook",
   },
   {
     title: "Aerpace",
-    category: "Mobility",
-    filterCategory: ["All", "Product Engineering"],
-    description:
-      "A future-mobility product website with a clean, performance-conscious presentation for a high-consideration category.",
-    bullets: [
-      "Responsive public website",
-      "Brand-forward product storytelling",
-    ],
-    architecture:
-      "React-based architecture with highly optimized asset loading and custom CSS transitions to create a fluid, cinematic browsing experience.",
-    hurdles:
-      "Balancing high-resolution media and smooth micro-animations with strict performance budgets for Core Web Vitals.",
-    image: aerpace,
-    tags: ["Frontend", "Product", "Web"],
-    liveUrl: "https://www.aerpace.com/",
-    caseStudyUrl: "/case-studies/aerpace",
+    type: "Mobility Web Experience",
+    role: "Frontend Engineering",
+    desc: "Future-mobility product website with high-performance responsive media and brand storytelling.",
+    tech: "React · CSS Motion · Webpack",
+    link: "https://www.aerpace.com/",
+    caseStudy: "/case-studies/aerpace",
   },
   {
     title: "Apna Mechanic",
-    category: "Service App",
-    filterCategory: ["All", "Product Engineering"],
-    description:
-      "A service-booking style web app concept for mechanic discovery and automotive support.",
-    bullets: ["Service-focused landing flow", "Mobile-friendly user journey"],
-    architecture:
-      "Component-driven React UI focusing on mobile-first interaction patterns, mocking backend API responses for the service booking flow.",
-    hurdles:
-      "Creating a seamless mobile booking wizard that minimizes user friction during high-stress situations.",
-    image: Car,
-    tags: ["React", "UX", "Services"],
-    liveUrl: "https://apna-mechanic.vercel.app/",
-    caseStudyUrl: "/case-studies/apna-mechanic",
+    type: "Service App Concept",
+    role: "UX & Frontend",
+    desc: "Automotive service booking and discovery interface optimized for mobile workflows.",
+    tech: "React · Tailwind · Mobile-First",
+    link: "https://apna-mechanic.vercel.app/",
+    caseStudy: "/case-studies/apna-mechanic",
   },
   {
     title: "Movieflix",
-    category: "Frontend",
-    filterCategory: ["All", "Experiments"],
-    description:
-      "A streaming-inspired web interface that demonstrates API-driven UI patterns, browsing flows, and responsive layout work.",
-    bullets: [
-      "Movie discovery interface",
-      "Responsive cards and media-first browsing",
-    ],
-    architecture:
-      "React single-page application integrated with TMDB API. Uses custom hooks for data fetching and caching, styled with Tailwind CSS.",
-    hurdles:
-      "Managing complex asynchronous state across multiple carousels and handling infinite scroll pagination without degrading performance.",
-    image: netflix,
-    tags: ["React", "API", "UI"],
-    liveUrl: "https://movieflix-om.vercel.app/",
-    caseStudyUrl: "/case-studies/movieflix",
-  },
-  {
-    title: "Coding Sharks",
-    category: "Community",
-    filterCategory: ["All", "Experiments"],
-    description:
-      "A public web experience for a coding education/community brand with a direct, approachable visual system.",
-    bullets: [
-      "Public website implementation",
-      "Clear navigation for learners and visitors",
-    ],
-    architecture:
-      "Static site generation (SSG) for high performance and SEO, using standard web technologies with a focus on accessibility.",
-    hurdles:
-      "Designing an intuitive content architecture that caters to both absolute beginners and advanced developers seeking community resources.",
-    image: CodingShark,
-    tags: ["Frontend", "Community", "Web"],
-    liveUrl: "https://www.thecodingsharks.in/",
-    caseStudyUrl: "/case-studies/coding-sharks",
+    type: "Web Application",
+    role: "Frontend Experiment",
+    desc: "Media browsing and discovery interface demonstrating API caching and responsive carousel architecture.",
+    tech: "React · TMDB API · Tailwind",
+    link: "https://movieflix-om.vercel.app/",
+    caseStudy: "/case-studies/movieflix",
   },
   {
     title: "AI Blog Generator",
-    category: "Generative AI",
-    filterCategory: ["All", "AI Systems", "LLM / RAG", "Experiments"],
-    description:
-      "An AI writing project that explores automated blog generation and prompt-driven content workflows.",
-    bullets: [
-      "Prompt-based content generation",
-      "Repository-ready AI workflow",
-    ],
-    architecture:
-      "Python automation script that interfaces with OpenAI's GPT models, utilizing structured prompt templates to ensure consistent output formatting.",
-    hurdles:
-      "Engineering robust prompts that prevent the model from generating hallucinated content or straying from the requested tone and topic.",
-    image: Blog,
-    tags: ["OpenAI", "Python", "GenAI"],
-    githubUrl: "https://github.com/OmJavia/Generate_Blogs",
-    caseStudyUrl: "/case-studies/ai-blog-generator",
+    type: "LLM Utility",
+    role: "Python Scripting",
+    desc: "Prompt-driven automated technical blog writing tool utilizing OpenAI models.",
+    tech: "Python · OpenAI API",
+    link: "https://github.com/OmJavia/Generate_Blogs",
+    caseStudy: "/case-studies/ai-blog-generator",
+  },
+  {
+    title: "Coding Sharks",
+    type: "Community Platform",
+    role: "Web Design & Implementation",
+    desc: "Education website for coding community with accessible navigation and fast static delivery.",
+    tech: "HTML/CSS · JavaScript",
+    link: "https://www.thecodingsharks.in/",
+    caseStudy: "/case-studies/coding-sharks",
   },
 ];
 
 export default function ProjectsSection() {
-  const [activeFilter, setActiveFilter] = useState("All");
-  const [isMoreOpen, setIsMoreOpen] = useState(false);
-
-  // Filter logic
-  const filteredFeatured = FEATURED_PROJECTS.filter((p) =>
-    p.filterCategory.includes(activeFilter)
-  );
-
-  const filteredMore = MORE_PROJECTS.filter((p) =>
-    p.filterCategory.includes(activeFilter)
-  );
-
-  // Auto-expand "More projects" if active filter selects only items in that section
-  const handleFilterClick = (tab) => {
-    setActiveFilter(tab);
-    posthog.capture('project_filter_changed', { filter_tab: tab });
-    const matchesMore = MORE_PROJECTS.some((p) => p.filterCategory.includes(tab));
-    const matchesFeatured = FEATURED_PROJECTS.some((p) => p.filterCategory.includes(tab));
-    if (matchesMore && !matchesFeatured) {
-      setIsMoreOpen(true);
-    }
-  };
+  const [showArchive, setShowArchive] = useState(false);
 
   return (
-    <section id="featured-work" className="py-12 sm:py-20 scroll-mt-24">
-      <motion.div
-        className="text-center mb-8 sm:mb-10"
-        initial={false}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <span className="neural-label">High-Signal Portfolio</span>
-        <h2
-          className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2 mb-3"
-          style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
-        >
-          Featured <span className="text-[#f97316]">Work</span>
+    <section id="featured-work" className="py-12 sm:py-20 border-t border-neutral-200/90 dark:border-neutral-800/80">
+      {/* Section Header */}
+      <div className="mb-12 sm:mb-16">
+        <span className="font-mono text-xs uppercase tracking-widest text-[#ea580c] dark:text-[#f97316] font-medium block">
+          Selected Work
+        </span>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2">
+          Things I&apos;ve Shipped &amp; Researched
         </h2>
-        <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto">
-          Production AI systems, computer vision models, research pipelines, and connected hardware taking AI from concept to shipped product.
+        <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 mt-2 max-w-2xl">
+          A selection of production systems, applied research, and engineering utilities with measurable results.
         </p>
-      </motion.div>
+      </div>
 
-      {/* ── Filter Tabs ── */}
-      <motion.div
-        className="flex justify-start md:justify-center mb-10 overflow-x-auto pb-2 px-2 sm:px-4 max-w-full"
-        initial={false}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-      >
-        <div className="flex items-center gap-1 p-1 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm shrink-0">
-          {FILTER_TABS.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => handleFilterClick(tab)}
-              className={`relative px-3.5 py-2 rounded-xl font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-200 whitespace-nowrap ${
-                activeFilter === tab
-                  ? "text-white"
-                  : "text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
-              }`}
-              aria-pressed={activeFilter === tab}
-              aria-label={`Filter projects by ${tab}`}
-            >
-              {activeFilter === tab && (
-                <motion.span
-                  layoutId="filter-indicator"
-                  className="absolute inset-0 rounded-xl bg-[#f97316]"
-                  style={{ zIndex: -1 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
-              )}
-              {tab}
-            </button>
-          ))}
+      <div className="space-y-16 sm:space-y-24">
+        {/* ── PROJECT 1: MetaShot (Split Image + Text Layout) ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-6 relative aspect-[16/10] rounded-2xl overflow-hidden border border-neutral-200/90 dark:border-neutral-800 bg-neutral-900 shadow-sm">
+            <Image
+              src={MetashotImg}
+              alt="Metashot Real-Time Sports AI Platform"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 512px"
+              quality={75}
+            />
+          </div>
+
+          <div className="lg:col-span-6 space-y-4">
+            <div className="flex items-center gap-2 text-xs font-mono">
+              <span className="text-[#ea580c] dark:text-[#f97316] font-medium">Production AI</span>
+              <span className="text-neutral-300 dark:text-neutral-700">/</span>
+              <span className="text-neutral-500">Metashot · 2025</span>
+            </div>
+
+            <h3 className="text-2xl sm:text-3xl font-bold text-neutral-950 dark:text-white tracking-tight">
+              Metashot: Sub-80ms Sports AI Perception
+            </h3>
+
+            <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              Real-time cricket shot detection and player feedback system deployed in production. Engineered an optimized PyTorch/YOLO inference pipeline that processes live camera streams in under 80ms, connected to a FastAPI backend and Redis session cache for immediate player metrics.
+            </p>
+
+            {/* Key Technical Highlights */}
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <div className="p-3 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50 dark:bg-neutral-900/40">
+                <span className="font-mono text-[11px] text-neutral-500 block">Latency</span>
+                <span className="text-base font-bold text-neutral-900 dark:text-white font-mono">&lt;80ms</span>
+                <span className="text-[11px] text-neutral-500 block">Live stream inference</span>
+              </div>
+              <div className="p-3 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80 bg-neutral-50 dark:bg-neutral-900/40">
+                <span className="font-mono text-[11px] text-neutral-500 block">Architecture</span>
+                <span className="text-base font-bold text-neutral-900 dark:text-white font-mono">YOLO + FastAPI</span>
+                <span className="text-[11px] text-neutral-500 block">Redis cached metrics</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 pt-2">
+              <Link
+                href="/case-studies/metashot"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-900 dark:text-white hover:text-[#ea580c] dark:hover:text-[#f97316] transition-colors"
+                onClick={() => posthog.capture("view_metashot_case_study", { source: "projects_section" })}
+              >
+                <span>Read case study</span>
+                <FiArrowRight className="text-xs" />
+              </Link>
+              <a
+                href="https://metashot.in/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                onClick={() => posthog.capture("metashot_site_clicked", { source: "projects_section" })}
+              >
+                <span>Visit Metashot site</span>
+                <FiExternalLink className="text-xs" />
+              </a>
+              <span className="text-xs font-mono text-neutral-400">·</span>
+              <span className="text-xs font-mono text-neutral-500">PyTorch · YOLO · Redis · OpenCV</span>
+            </div>
+          </div>
         </div>
-      </motion.div>
 
-      {/* ── Core Featured Grid (4 High-Signal Projects) ── */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeFilter + "-featured"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
-          initial={false}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {filteredFeatured.map((project) => (
-            <ProjectCard key={project.title} {...project} />
-          ))}
-        </motion.div>
-      </AnimatePresence>
+        {/* ── PROJECT 2: Mars Rover Path Planning (Research Notebook Style) ── */}
+        <div className="p-6 sm:p-8 rounded-2xl border border-neutral-300/80 dark:border-neutral-800 bg-[#f6f4ee]/70 dark:bg-[#121215] space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-neutral-200 dark:border-neutral-800 pb-4">
+            <div>
+              <span className="font-mono text-xs uppercase font-medium text-[#ea580c] dark:text-[#f97316]">
+                ISRO Space Applications Centre · Applied Research
+              </span>
+              <h3 className="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mt-1">
+                Mars Rover Terrain Segmentation &amp; Obstacle Pathfinding
+              </h3>
+            </div>
+            <span className="font-mono text-xs text-neutral-500 shrink-0">
+              Feb 2024 — May 2024
+            </span>
+          </div>
 
-      {/* ── Collapsible "More projects" Section ── */}
-      <div className="mt-12 pt-8 border-t border-neutral-200/80 dark:border-[#27272a]">
-        <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div className="lg:col-span-5 relative aspect-[16/10] rounded-xl overflow-hidden border border-neutral-300/80 dark:border-neutral-700 bg-neutral-900">
+              <Image
+                src={MarsImg}
+                alt="Mars Rover terrain segmentation research"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
+
+            <div className="lg:col-span-7 space-y-4">
+              <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                Computer vision research exploring semantic terrain understanding from HiRISE satellite imagery to assist autonomous rover traversal on the Martian surface.
+              </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-xs">
+                <div className="p-2.5 rounded-lg bg-white/80 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
+                  <span className="text-neutral-500 block text-[10px]">EFFICIENCY SCORE</span>
+                  <span className="font-bold text-sm text-[#ea580c] dark:text-[#f97316]">87.4%</span>
+                </div>
+                <div className="p-2.5 rounded-lg bg-white/80 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
+                  <span className="text-neutral-500 block text-[10px]">ANNOTATED IMAGES</span>
+                  <span className="font-bold text-sm text-neutral-900 dark:text-white">800+ HiRISE</span>
+                </div>
+                <div className="p-2.5 rounded-lg bg-white/80 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 col-span-2 sm:col-span-1">
+                  <span className="text-neutral-500 block text-[10px]">TERRAIN CLASSES</span>
+                  <span className="font-bold text-sm text-neutral-900 dark:text-white">5 Categories</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <Link
+                  href="/case-studies/mars-rover"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-neutral-900 dark:text-white hover:text-[#ea580c] dark:hover:text-[#f97316] transition-colors"
+                >
+                  <FiFileText className="text-xs" />
+                  <span>Read research breakdown →</span>
+                </Link>
+
+                <a
+                  href="https://colab.research.google.com/drive/1q_rFDovpVtDDQyHsSS3_tieyP8snlNtG?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+                >
+                  <FiCode className="text-xs" />
+                  <span>Colab Notebook ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── PROJECT 3: PDF Searcher (Utility Card) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 p-6 sm:p-7 rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-white dark:bg-[#131316] items-center">
+          <div className="md:col-span-4 relative aspect-[16/10] rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-neutral-900">
+            <Image
+              src={PDFImg}
+              alt="PDF Searcher RAG application"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 30vw"
+            />
+          </div>
+
+          <div className="md:col-span-8 space-y-3">
+            <div className="flex items-center gap-2 text-xs font-mono">
+              <span className="text-[#ea580c] dark:text-[#f97316] font-medium">Applied AI / Retrieval</span>
+              <span className="text-neutral-300 dark:text-neutral-700">/</span>
+              <span className="text-neutral-500">Open Source Utility</span>
+            </div>
+
+            <h3 className="text-xl font-bold text-neutral-950 dark:text-white">
+              PDF Searcher: Semantic Document Retrieval Workflow
+            </h3>
+
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              A pragmatic document search tool designed to help users find relevant answers inside large PDFs. Ingests and chunks multi-page documents, generates embeddings with OpenAI, and uses vector similarity search for exact passage grounding.
+            </p>
+
+            <div className="flex items-center gap-4 pt-1">
+              <Link
+                href="/case-studies/pdf-searcher"
+                className="text-xs font-mono font-medium text-neutral-900 dark:text-white hover:text-[#ea580c] dark:hover:text-[#f97316] transition-colors"
+              >
+                View case study →
+              </Link>
+              <a
+                href="https://github.com/OmJavia/PDF_Searcher"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+              >
+                <FiGithub className="text-xs" />
+                <span>GitHub Repository ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── COMPACT LIST: Other Shipped Work & Projects ── */}
+      <div className="mt-16 pt-10 border-t border-neutral-200/90 dark:border-neutral-800/80">
+        <div className="flex items-center justify-between mb-6">
           <div>
-            <h3 className="font-bold text-lg text-neutral-950 dark:text-white flex items-center gap-2">
-              <FaFolderOpen className="text-[#f97316]" /> Additional Projects &amp; Web Systems
+            <h3 className="text-lg font-bold text-neutral-950 dark:text-white tracking-tight">
+              Other Shipped Work &amp; Web Systems
             </h3>
             <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
-              Earlier engineering projects, mobility web experiences, PropTech platforms, and frontend experiments.
+              PropTech platforms, mobility experiences, service apps, and earlier experiments.
             </p>
           </div>
 
           <button
             type="button"
-            onClick={() => {
-              const nextState = !isMoreOpen;
-              setIsMoreOpen(nextState);
-              posthog.capture('more_projects_toggled', { open: nextState });
-            }}
-            aria-expanded={isMoreOpen}
-            aria-controls="more-projects-grid"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] text-neutral-800 dark:text-neutral-200 hover:border-[#f97316]/50 hover:text-[#f97316] transition-all shadow-sm"
+            onClick={() => setShowArchive(!showArchive)}
+            className="text-xs font-mono font-medium text-[#ea580c] dark:text-[#f97316] hover:underline"
           >
-            <span>{isMoreOpen ? "Hide More Projects" : `More Projects (${MORE_PROJECTS.length})`}</span>
-            {isMoreOpen ? <FaChevronUp className="text-[10px]" /> : <FaChevronDown className="text-[10px]" />}
+            {showArchive ? "Hide earlier work ↑" : `Earlier work (${ARCHIVE_PROJECTS.length}) ↓`}
           </button>
         </div>
 
-        {/* Collapsible Container */}
-        {isMoreOpen && (
-          <motion.div
-            id="more-projects-grid"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 pt-2"
-          >
-            {filteredMore.map((project) => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
-          </motion.div>
+        {/* Earlier client and experiment work stays collapsed so the flagship stories stay first. */}
+        {showArchive && (
+        <div className="divide-y divide-neutral-200/80 dark:divide-neutral-800/80 border-y border-neutral-200/80 dark:border-neutral-800/80">
+          {ARCHIVE_PROJECTS.map((proj) => (
+            <div
+              key={proj.title}
+              className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 group hover:bg-neutral-50/50 dark:hover:bg-neutral-900/30 transition-colors px-2 rounded-lg"
+            >
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2">
+                  <h4 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-[#ea580c] dark:group-hover:text-[#f97316] transition-colors">
+                    {proj.title}
+                  </h4>
+                  <span className="text-[11px] font-mono text-neutral-400">· {proj.type}</span>
+                </div>
+                <p className="text-xs text-neutral-600 dark:text-neutral-400 max-w-xl">
+                  {proj.desc}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3 shrink-0 pt-1 sm:pt-0">
+                <span className="text-[11px] font-mono text-neutral-400 hidden md:inline-block">
+                  {proj.tech}
+                </span>
+                {proj.caseStudy && (
+                  <Link
+                    href={proj.caseStudy}
+                    className="text-xs font-mono font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white"
+                  >
+                    Case study →
+                  </Link>
+                )}
+                {proj.link && (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors p-1"
+                    aria-label={`External link for ${proj.title}`}
+                  >
+                    <FiExternalLink className="text-xs" />
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
         )}
       </div>
     </section>

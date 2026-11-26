@@ -128,6 +128,12 @@ export default function MarsRoverCaseStudy() {
           >
             <FaExternalLinkAlt className="text-xs" /> Open in Colab
           </a>
+          <Link
+            href="/notes/isro-path-planner"
+            className="ml-4 text-sm font-medium text-neutral-600 underline-offset-4 hover:underline dark:text-neutral-300"
+          >
+            Note: what the planner optimized
+          </Link>
         </div>
 
         {/* Problem Statement */}

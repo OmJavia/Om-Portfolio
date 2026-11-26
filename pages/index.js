@@ -2,11 +2,7 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import HeroSection from "../components/home/HeroSection";
 import NowBuildingSection from "../components/home/NowBuildingSection";
-import CapabilitiesSection from "../components/home/CapabilitiesSection";
-import HowIBuildSection from "../components/home/HowIBuildSection";
 import ProjectsSection from "../components/home/ProjectsSection";
-
-import OpenSourceSection from "../components/home/OpenSourceSection";
 import TechnicalSkillsSection from "../components/home/TechnicalSkillsSection";
 import ExperienceContact from "../components/home/ExperienceContact";
 
@@ -15,43 +11,45 @@ export default function Home() {
     <>
       <Head>
         {/* Primary SEO */}
-        <title>Om Javia Founding Manager, MegaShot | AI Product &amp; Go-to-Market</title>
+        <title>Om Javia — Founding Manager &amp; AI Product Engineer</title>
         <meta
           name="description"
-          content="Om Javia is Founding Manager at MegaShot, taking connected AI products from idea to launch, and an AI Product Engineer experienced in computer vision, PyTorch, LLMs, and RAG."
+          content="Om Javia is Founding Manager at MegaShot, taking connected AI products from idea to launch. Experienced in computer vision, PyTorch, LLMs, and hardware-software systems."
         />
-        <meta name="keywords" content="Om Javia, Founding Manager, MegaShot, AI Product Engineer, AI Product Manager, Go-to-Market, Computer Vision, LLMs, RAG, PyTorch, Sports AI, Metashot, MegaShot Pickl+, Bangalore" />
+        <meta
+          name="keywords"
+          content="Om Javia, Founding Manager, MegaShot, AI Product Engineer, AI Product Manager, Go-to-Market, Computer Vision, LLMs, RAG, PyTorch, Sports AI, Metashot, MegaShot Pickl+, Bangalore"
+        />
         <meta name="author" content="Om Javia" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://omjavia.vercel.app" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Om Javia — Founding Manager, MegaShot | AI Product &amp; Go-to-Market" />
+        <meta property="og:title" content="Om Javia — Founding Manager &amp; AI Product Engineer" />
         <meta
           property="og:description"
-          content="I build computer-vision and LLM systems and take connected AI products from idea to launch. Founding Manager at MegaShot."
+          content="I build AI products and connected systems — from early product decisions to production. Founding Manager at MegaShot."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://omjavia.vercel.app" />
         <meta property="og:image" content="https://omjavia.vercel.app/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Om Javia — Founding Manager, MegaShot | AI Product &amp; Go-to-Market" />
-        <meta property="og:site_name" content="Om Javia Portfolio" />
+        <meta property="og:image:alt" content="Om Javia — Founding Manager &amp; AI Product Engineer" />
+        <meta property="og:site_name" content="Om Javia" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@OmJavia1" />
         <meta name="twitter:creator" content="@OmJavia1" />
-        <meta name="twitter:title" content="Om Javia — Founding Manager, MegaShot | AI Product &amp; Go-to-Market" />
+        <meta name="twitter:title" content="Om Javia — Founding Manager &amp; AI Product Engineer" />
         <meta
           name="twitter:description"
-          content="I build computer-vision and LLM systems and take connected AI products from idea to launch. Hands-on technical product execution across hardware and software."
+          content="I build AI products and connected systems — from early product decisions to production. Hands-on technical product execution across hardware and software."
         />
         <meta name="twitter:image" content="https://omjavia.vercel.app/og-image.jpg" />
 
         {/* Structured Data (JSON-LD) */}
-        {/* TODO(Om): verify legal employer entity name and corporate relationship between Metashot and MegaShot */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -91,30 +89,19 @@ export default function Home() {
       </Head>
 
       <Layout>
-        {/* Hero Section */}
+        {/* 1. WHO I AM: Personal introduction with portrait */}
         <HeroSection />
 
-        {/* 1. Currently Building Spotlight: MegaShot Pickl+ */}
+        {/* 2. WHAT I'M BUILDING: MegaShot Pickl+ Flagship Case Study */}
         <NowBuildingSection />
 
-
-
-        {/* 3. Core Capabilities: What I Build */}
-        <CapabilitiesSection />
-
-        {/* 4. Methodology: How I Build AI Products */}
-        <HowIBuildSection />
-
-        {/* 5. Projects Section: Featured & Categorized Catalog */}
+        {/* 3. WHAT I'VE SHIPPED: Selected Work (Metashot, Mars Rover, PDF Searcher, archive) */}
         <ProjectsSection />
 
-        {/* 6. Code Proof: Open Source & Experiments */}
-        <OpenSourceSection />
-
-        {/* 7. Stack: Grouped Technical Competencies */}
+        {/* 4. WHAT I USE: Scannable Technical Toolkit & Current Focus */}
         <TechnicalSkillsSection />
 
-        {/* 8. Experience Arc & Contact CTA */}
+        {/* 6. WHERE I'VE WORKED & LET'S TALK: Career Timeline & Contact */}
         <ExperienceContact />
       </Layout>
     </>

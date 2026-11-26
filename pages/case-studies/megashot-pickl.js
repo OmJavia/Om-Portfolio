@@ -712,6 +712,35 @@ export default function MegaShotPicklCaseStudy() {
           </div>
 
           {/* TODO(Om): add high-resolution UI screenshots of companion mobile game and Kickstarter campaign graphics once official design export assets are available */}
+          <div className="p-5 rounded-2xl border border-neutral-200 dark:border-[#27272a] bg-neutral-50 dark:bg-[#18181b] space-y-3">
+            <p className="font-mono text-xs uppercase tracking-widest font-bold text-[#f97316]">
+              Product interface
+            </p>
+            <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Companion-app and campaign stills are not published on this site yet. The live product site and Kickstarter page are the current references for gameplay and campaign creative. The photo above is the paddle hardware.
+            </p>
+            <div className="flex flex-wrap gap-4 text-sm font-medium">
+              <a
+                href="https://pickleball.themegashot.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#f97316] inline-flex items-center gap-1"
+              >
+                Product site <FaExternalLinkAlt className="text-[10px]" />
+              </a>
+              <a
+                href="https://www.kickstarter.com/projects/megashot/megashot-pickl-smart-pickleball-gaming-device"
+                target="_blank"
+                rel="noreferrer"
+                className="text-[#f97316] inline-flex items-center gap-1"
+              >
+                Kickstarter <FaExternalLinkAlt className="text-[10px]" />
+              </a>
+              <Link href="/notes/pickl-swing-loop" className="text-neutral-700 dark:text-neutral-200 underline-offset-4 hover:underline">
+                Note: how the swing loop was scoped
+              </Link>
+            </div>
+          </div>
 
           {/* Action banner */}
           <div className="mt-8 p-6 sm:p-8 rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
