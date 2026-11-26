@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Icon from "../public/icon.png";
 import { BsFillMoonStarsFill, BsSunFill } from "react-icons/bs";
@@ -7,8 +8,20 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { FiArrowUpRight } from "react-icons/fi";
 
 export default function Navbar({ darkMode, setDarkMode }) {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const goHome = (event) => {
+    setIsMenuOpen(false);
+    if (router.pathname === "/") {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (window.location.hash) {
+        router.replace("/", undefined, { shallow: true, scroll: false });
+      }
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +51,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
         }`}
       >
         {/* Brand / Name */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+        <Link href="/" onClick={goHome} className="flex items-center gap-2.5 group">
           <div className="relative w-7 h-7 rounded-full overflow-hidden border border-neutral-300/80 dark:border-neutral-700/80 bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center transition-transform group-hover:scale-105">
             <Image src={Icon} alt="Om Javia" width={28} height={28} className="object-contain" priority />
           </div>

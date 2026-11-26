@@ -51,21 +51,21 @@ export default function HeroSection() {
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Button
               asChild
-              className="bg-neutral-950 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-950 dark:hover:bg-neutral-200 h-11 px-5 rounded-xl font-medium"
+              className="group bg-neutral-950 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-950 dark:hover:bg-neutral-200 h-12 px-6 rounded-2xl font-bold tracking-[-0.011em]"
             >
               <Link
                 href="#featured-work"
                 onClick={() => posthog.capture("view_work_clicked", { source: "hero" })}
               >
                 <span>View my work</span>
-                <FiArrowDown className="ml-2 text-sm" />
+                <span className="transition-transform duration-300 group-hover:translate-y-0.5"><FiArrowDown className="ml-2 text-sm" /></span>
               </Link>
             </Button>
 
             <Button
               asChild
               variant="outline"
-              className="h-11 px-5 rounded-xl font-medium border-neutral-300 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200"
+              className="h-12 px-6 rounded-2xl font-bold border-neutral-300 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200"
             >
               <Link
                 href="/contact"
