@@ -43,6 +43,7 @@ export const projectEntries: ProjectEntry[] = [
     category: "GTM & Launches",
     categories: ["GTM & Launches", "LLM & RAG", "Product Engineering"],
     type: "personal",
+    thumbnail: "/Signal_Desk.png",
     technologies: ["Next.js", "Supabase", "LLM APIs", "HubSpot"],
     results: [
       "Scores ICP-fit accounts and generates personalised outreach.",
@@ -63,6 +64,7 @@ export const projectEntries: ProjectEntry[] = [
     category: "LLM & RAG",
     categories: ["LLM & RAG", "AI & Machine Learning"],
     type: "personal",
+    thumbnail: "/AI_Response_Agent.png",
     technologies: ["Python", "LangChain", "ChromaDB", "Streamlit"],
     results: [
       "Extracts 150+ RFP requirements and drafts grounded answers via RAG.",
