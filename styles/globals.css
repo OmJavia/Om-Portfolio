@@ -59,26 +59,6 @@
     @apply font-sans text-eyebrow font-semibold uppercase text-accent;
   }
 
-  .section-label {
-    @apply font-sans text-xs font-semibold uppercase tracking-[0.1em] text-accent;
-  }
-
-  .editorial-heading {
-    @apply font-sans font-semibold tracking-tight text-ink leading-[1.15];
-  }
-
-  .mono-meta {
-    @apply font-sans text-xs font-medium text-muted;
-  }
-
-  .editorial-card {
-    @apply rounded-2xl border border-line bg-surface transition-colors duration-200;
-  }
-
-  .editorial-card-interactive {
-    @apply rounded-2xl border border-line bg-surface hover:border-ink/30 transition-colors duration-200;
-  }
-
   .tag {
     @apply inline-flex items-center rounded-md border border-line bg-canvas px-2.5 py-1 font-sans text-xs font-medium leading-none text-muted;
   }

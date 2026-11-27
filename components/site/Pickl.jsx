@@ -4,10 +4,12 @@ import Link from "next/link";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiArrowUpRight, FiCheck } from "react-icons/fi";
 import posthog from "posthog-js";
-import { pickl, architecture } from "@/data/content";
+import { picklShowcase, profile } from "@/data";
 import GlassSurface from "./GlassSurface";
 import PaddleStage from "../three/PaddleStage";
 import { Reveal } from "./primitives";
+
+const architecture = picklShowcase.architecture;
 
 function Architecture() {
   const ref = useRef(null);
@@ -112,24 +114,24 @@ export default function Pickl() {
           <span className="rounded-md bg-accent px-2.5 py-1 text-white">Flagship</span>
           <span>MegaShot Pickl+</span>
           <span aria-hidden>·</span>
-          <span>{pickl.period}</span>
+          <span>{picklShowcase.period}</span>
         </Reveal>
         <Reveal as="h2" id="pickl-title" className="mt-5 max-w-4xl text-display-lg font-semibold text-white">
-          {pickl.title}
+          {picklShowcase.title}
         </Reveal>
-        <Reveal as="p" className="mt-3 text-sm font-medium text-[#7DC3AA]">{pickl.role}</Reveal>
+        <Reveal as="p" className="mt-3 text-sm font-medium text-[#7DC3AA]">{profile.positioning}</Reveal>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-12">
           <div className="space-y-8 lg:col-span-6">
             <Reveal>
-              <p className="text-body-lg text-white/85">{pickl.intro}</p>
+              <p className="text-body-lg text-white/85">{picklShowcase.intro}</p>
               <h3 className="mt-8 text-xs font-semibold uppercase tracking-[0.1em] text-white/55">The problem</h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-white/75">{pickl.problem}</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-white/75">{picklShowcase.problem}</p>
             </Reveal>
             <Reveal>
               <h3 className="text-xs font-semibold uppercase tracking-[0.1em] text-white/55">Product execution</h3>
               <ul className="mt-4 space-y-3 text-[15px]">
-                {pickl.execution.map((e) => (
+                {picklShowcase.execution.map((e) => (
                   <li key={e} className="flex gap-3 text-white/80">
                     <FiCheck aria-hidden className="mt-1 shrink-0 text-[#7DC3AA]" />
                     <span>{e}</span>
@@ -145,10 +147,10 @@ export default function Pickl() {
               >
                 Read the case study <FiArrowRight aria-hidden />
               </Link>
-              <a href={pickl.site} target="_blank" rel="noreferrer" className="inline-flex h-11 items-center gap-2 rounded-xl border border-white/25 px-5 text-sm font-medium text-white hover:border-white/55">
+              <a href={picklShowcase.site} target="_blank" rel="noreferrer" className="inline-flex h-11 items-center gap-2 rounded-xl border border-white/25 px-5 text-sm font-medium text-white hover:border-white/55">
                 Product site <FiArrowUpRight aria-hidden />
               </a>
-              <a href={pickl.kickstarter} target="_blank" rel="noreferrer" className="inline-flex h-11 items-center gap-2 rounded-xl border border-white/25 px-5 text-sm font-medium text-white hover:border-white/55">
+              <a href={picklShowcase.kickstarter} target="_blank" rel="noreferrer" className="inline-flex h-11 items-center gap-2 rounded-xl border border-white/25 px-5 text-sm font-medium text-white hover:border-white/55">
                 Kickstarter <FiArrowUpRight aria-hidden />
               </a>
             </Reveal>
@@ -171,7 +173,7 @@ export default function Pickl() {
         </div>
 
         <ol className="mt-16 grid gap-4 md:grid-cols-3">
-          {pickl.story.map((s, i) => (
+          {picklShowcase.story.map((s, i) => (
             <Reveal as="li" key={s.step} delay={i * 0.06} className="rounded-2xl border border-white/15 p-6">
               <p className="text-xs font-semibold text-[#7DC3AA]">State 0{i + 1}</p>
               <p className="mt-2.5 text-h2 font-semibold text-white">{s.step}</p>
@@ -188,12 +190,12 @@ export default function Pickl() {
             <p className="mt-4 text-[15px] leading-relaxed text-white/70">
               The same person who wrote the PRDs ran the go-to-market. The launch story was built directly from what the product could do.
             </p>
-            <a href={pickl.press} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-[#7DC3AA] hover:underline">
+            <a href={picklShowcase.press} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-[#7DC3AA] hover:underline">
               Featured on Pickleball.com <FiArrowUpRight aria-hidden />
             </a>
           </Reveal>
           <ul className="grid gap-3 sm:grid-cols-2 lg:col-span-8">
-            {pickl.gtm.map((g, i) => (
+            {picklShowcase.gtm.map((g, i) => (
               <Reveal as="li" key={g.title} delay={i * 0.05} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
                 <p className="text-sm font-semibold text-white">{g.title}</p>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">{g.text}</p>

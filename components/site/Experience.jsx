@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
 import { formatRoleDates, getSortedExperiences, profile } from "@/data";
 import { cn } from "@/lib/utils";
-import { Reveal, SectionHeading } from "./primitives";
+import { buttonVariants, Reveal, SectionHeading, TagList } from "./primitives";
 
 function Role({ role }) {
   const isCurrent = Boolean(role.isCurrent || role.endDate === null);
@@ -43,15 +43,7 @@ function Role({ role }) {
         </ul>
       )}
 
-      {role.technologies?.length > 0 && (
-        <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies">
-          {role.technologies.map((t) => (
-            <li key={t} className="tag">
-              {t}
-            </li>
-          ))}
-        </ul>
-      )}
+      <TagList items={role.technologies} className="mt-4" />
     </div>
   );
 }
@@ -73,7 +65,7 @@ export default function Experience() {
           <a
             href={profile.resumeUrl}
             download="Om_Javia_Resume.pdf"
-            className="mt-8 inline-flex h-11 items-center rounded-xl border border-line bg-surface px-5 text-sm font-medium text-ink transition-colors hover:border-ink/30"
+            className={`mt-8 ${buttonVariants.secondary}`}
           >
             Download résumé (PDF)
           </a>

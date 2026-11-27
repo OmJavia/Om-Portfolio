@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiArrowUpRight, FiGithub } from "react-icons/fi";
 import { getAvailableCategories, getSortedProjects } from "@/data";
 import { cn } from "@/lib/utils";
-import { SectionHeading } from "./primitives";
+import { SectionHeading, TagList } from "./primitives";
 
 const TYPE_LABELS = {
   company: "Product",
@@ -68,13 +68,7 @@ function ProjectCard({ project }) {
           </p>
         )}
 
-        <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Technologies">
-          {project.technologies.slice(0, 4).map((tech) => (
-            <li key={tech} className="tag">
-              {tech}
-            </li>
-          ))}
-        </ul>
+        <TagList items={project.technologies.slice(0, 4)} className="mt-4" />
 
         <div className="mt-auto flex flex-wrap items-center gap-4 border-t border-line pt-4 mt-5 text-sm font-medium">
           {project.caseStudyUrl && (

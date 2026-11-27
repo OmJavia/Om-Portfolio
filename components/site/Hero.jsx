@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { FiArrowDown, FiArrowRight, FiDownload, FiMapPin } from "react-icons/fi";
 import posthog from "posthog-js";
 import { profile } from "@/data";
-import { ease, fadeUp, stagger } from "./primitives";
+import { buttonVariants, ease, fadeUp, stagger } from "./primitives";
 
 export default function Hero() {
   const emphasis = profile.headlineEmphasis;
@@ -40,14 +40,14 @@ export default function Hero() {
             <Link
               href="#projects"
               onClick={() => posthog.capture("view_work_clicked", { source: "hero" })}
-              className="inline-flex h-11 items-center gap-2 rounded-xl bg-accent px-6 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+              className={`${buttonVariants.primary} px-6`}
             >
               Explore My Work <FiArrowDown aria-hidden />
             </Link>
             <Link
               href="#contact"
               onClick={() => posthog.capture("contact_clicked", { source: "hero" })}
-              className="inline-flex h-11 items-center gap-2 rounded-xl border border-line bg-surface px-6 text-sm font-medium text-ink transition-colors hover:border-ink/30"
+              className={`${buttonVariants.secondary} px-6`}
             >
               Get in Touch <FiArrowRight aria-hidden />
             </Link>
@@ -55,7 +55,7 @@ export default function Hero() {
               href={profile.resumeUrl}
               download="Om_Javia_Resume.pdf"
               onClick={() => posthog.capture("resume_downloaded", { source: "hero" })}
-              className="inline-flex h-11 items-center gap-2 rounded-xl px-4 text-sm font-medium text-muted transition-colors hover:text-ink"
+              className={buttonVariants.ghost}
             >
               <FiDownload aria-hidden className="text-accent" />
               <span>Resume</span>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiArrowLeft, FiArrowRight, FiArrowUpRight, FiGithub } from "react-icons/fi";
 import Layout from "../Layout";
+import { buttonVariants, TagList } from "./primitives";
 import type { ProjectEntry } from "@/data/types";
 
 interface CaseStudySectionBlock {
@@ -47,13 +48,7 @@ export default function CaseStudyTemplate({ project, sections = [], nextProject 
           <h1 className="mt-3 text-display-lg font-semibold text-ink">{project.name}</h1>
           <p className="mt-4 max-w-2xl text-body-lg text-muted">{project.fullDescription}</p>
 
-          {project.technologies.length > 0 && (
-            <ul className="mt-5 flex flex-wrap gap-1.5" aria-label="Technologies">
-              {project.technologies.map((tech) => (
-                <li key={tech} className="tag">{tech}</li>
-              ))}
-            </ul>
-          )}
+          <TagList items={project.technologies} className="mt-5" />
 
           <div className="mt-6 flex flex-wrap gap-3">
             {project.liveDemoUrl && (
@@ -61,7 +56,7 @@ export default function CaseStudyTemplate({ project, sections = [], nextProject 
                 href={project.liveDemoUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-11 items-center gap-2 rounded-xl bg-accent px-5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+                className={buttonVariants.primary}
               >
                 Visit live project <FiArrowUpRight aria-hidden />
               </a>
@@ -71,7 +66,7 @@ export default function CaseStudyTemplate({ project, sections = [], nextProject 
                 href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-11 items-center gap-2 rounded-xl border border-line bg-surface px-5 text-sm font-medium text-ink transition-colors hover:border-ink/30"
+                className={buttonVariants.secondary}
               >
                 <FiGithub aria-hidden /> View source
               </a>

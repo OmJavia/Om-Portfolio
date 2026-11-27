@@ -10,6 +10,28 @@ export const fadeUp = {
 };
 export const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 
+export const buttonVariants = {
+  primary:
+    "inline-flex h-11 items-center gap-2 rounded-xl bg-accent px-5 text-sm font-medium text-white transition-colors hover:bg-accent-hover",
+  secondary:
+    "inline-flex h-11 items-center gap-2 rounded-xl border border-line bg-surface px-5 text-sm font-medium text-ink transition-colors hover:border-ink/30",
+  ghost:
+    "inline-flex h-11 items-center gap-2 rounded-xl px-4 text-sm font-medium text-muted transition-colors hover:text-ink",
+};
+
+export function TagList({ items, label = "Technologies", className }) {
+  if (!items || items.length === 0) return null;
+  return (
+    <ul className={cn("flex flex-wrap gap-1.5", className)} aria-label={label}>
+      {items.map((item) => (
+        <li key={item} className="tag">
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function Reveal({ as = "div", className, children, delay = 0, ...props }) {
   const M = motion[as];
   return (
