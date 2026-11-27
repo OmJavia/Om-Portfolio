@@ -94,7 +94,7 @@ export default function About() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-7">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="font-mono text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20">
+              <span className="font-medium text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-[#1F5E4B]/10 text-[#1F5E4B] border border-[#1F5E4B]/20">
                 ABOUT OM JAVIA
               </span>
             </div>
@@ -102,9 +102,9 @@ export default function About() {
             <div className="space-y-5">
               <h1
                 className="max-w-4xl text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-neutral-950 dark:text-white"
-                style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+                
               >
-                Bridging technical AI depth with early-stage <span className="text-[#f97316]">product execution</span>.
+                Bridging technical AI depth with early-stage <span className="text-[#1F5E4B]">product execution</span>.
               </h1>
               <p className="max-w-2xl text-base sm:text-lg leading-relaxed text-neutral-600 dark:text-neutral-300 font-normal">
                 I started my career writing computer vision models, satellite terrain segmentation pipelines, and production backend APIs. Over time, I transitioned into taking complete AI products from idea to launch combining technical understanding with PRD authorship, cross-functional engineering coordination, user testing loops, and go-to-market execution.
@@ -117,14 +117,14 @@ export default function About() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/#featured-work"
-                className="inline-flex items-center gap-2 rounded-2xl bg-[#f97316] text-white hover:bg-[#ea6c0a] px-6 py-3 text-sm font-semibold transition-all shadow-amber-sm"
+                className="inline-flex items-center gap-2 rounded-2xl bg-[#1F5E4B] text-white hover:bg-[#174839] px-6 py-3 text-sm font-semibold transition-all shadow-sm"
               >
                 <span>View Featured Work</span>
                 <FaArrowRight className="text-xs" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-2xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] px-6 py-3 text-sm font-semibold text-neutral-900 dark:text-neutral-200 hover:text-[#f97316] transition-all shadow-sm"
+                className="inline-flex items-center gap-2 rounded-2xl border border-neutral-200 dark:border-[#27272a] bg-white dark:bg-[#18181b] px-6 py-3 text-sm font-semibold text-neutral-900 dark:text-neutral-200 hover:text-[#1F5E4B] transition-all shadow-sm"
               >
                 <span>Hiring? Let&apos;s Talk</span>
               </Link>
@@ -132,7 +132,7 @@ export default function About() {
           </div>
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-lg">
-            <div className="absolute -inset-4 rounded-[2rem] bg-[#f97316]/10 blur-2xl" />
+            <div className="absolute -inset-4 rounded-[2rem] bg-[#1F5E4B]/10 blur-2xl" />
             <div className="relative overflow-hidden rounded-3xl border border-neutral-200 bg-white p-2 shadow-2xl dark:border-[#27272a] dark:bg-[#18181b]">
               <Image
                 src={peeps}
@@ -162,15 +162,15 @@ export default function About() {
               key={item.label}
               className="rounded-2xl border border-neutral-200 bg-white/80 p-5 shadow-sm dark:border-[#27272a] dark:bg-[#18181b]/80"
             >
-              <p className="text-2xl sm:text-3xl font-black tracking-tight text-[#f97316]">{item.value}</p>
-              <p className="mt-2 text-xs leading-5 font-mono text-neutral-600 dark:text-neutral-400">{item.label}</p>
+              <p className="text-2xl sm:text-3xl font-black tracking-tight text-[#1F5E4B]">{item.value}</p>
+              <p className="mt-2 text-xs leading-5 font-medium text-neutral-600 dark:text-neutral-400">{item.label}</p>
             </div>
           ))}
         </div>
 
         {/* Career Evolution Arc */}
         <div className="rounded-3xl border border-neutral-200 dark:border-[#27272a] bg-neutral-50 dark:bg-[#09090b] p-6 sm:p-10 space-y-6">
-          <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">
+          <span className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">
             CAREER EVOLUTION ARC
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-950 dark:text-white">
@@ -188,9 +188,9 @@ export default function About() {
             ].map((node) => (
               <div
                 key={node.step}
-                className="p-3.5 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm font-mono text-center font-semibold text-neutral-800 dark:text-neutral-200"
+                className="p-3.5 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm font-medium text-center font-semibold text-neutral-800 dark:text-neutral-200"
               >
-                <span className="text-[#f97316] text-[10px] block mb-1">STAGE {node.step}</span>
+                <span className="text-[#1F5E4B] text-[10px] block mb-1">STAGE {node.step}</span>
                 <p className="text-xs font-bold">{node.title}</p>
                 <p className="text-[10px] text-neutral-500 font-normal mt-0.5">{node.desc}</p>
               </div>
@@ -201,7 +201,7 @@ export default function About() {
         {/* How Technical Understanding Informs Product Decisions */}
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
           <div className="space-y-4">
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#f97316]">
+            <p className="font-medium text-xs font-semibold uppercase tracking-[0.18em] text-[#1F5E4B]">
               Core Competencies
             </p>
             <h2 className="text-3xl font-black tracking-tight text-neutral-950 dark:text-white sm:text-4xl">
@@ -218,7 +218,7 @@ export default function About() {
                 key={area.title}
                 className="rounded-2xl border border-neutral-200 bg-white/80 p-5 shadow-sm transition-all hover:-translate-y-1 dark:border-[#27272a] dark:bg-[#18181b]/80"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-2xl bg-[#f97316]/10 text-[#f97316]">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-2xl bg-[#1F5E4B]/10 text-[#1F5E4B]">
                   <area.icon />
                 </div>
                 <h3 className="text-base font-bold text-neutral-950 dark:text-white">{area.title}</h3>
@@ -231,7 +231,7 @@ export default function About() {
         {/* Career Timeline */}
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
           <div className="space-y-4">
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#f97316]">
+            <p className="font-medium text-xs font-semibold uppercase tracking-[0.18em] text-[#1F5E4B]">
               Career History
             </p>
             <h2 className="text-3xl font-black tracking-tight text-neutral-950 dark:text-white sm:text-4xl">
@@ -246,9 +246,9 @@ export default function About() {
             <div className="absolute bottom-5 left-[1.1rem] top-5 w-px bg-neutral-200 dark:bg-neutral-800" />
             {timeline.map((item) => (
               <div key={item.title} className="relative flex gap-4">
-                <div className="mt-1 h-9 w-9 shrink-0 rounded-full border-4 border-[#f5f4f2] bg-[#f97316] shadow-sm dark:border-[#09090b]" />
+                <div className="mt-1 h-9 w-9 shrink-0 rounded-full border-4 border-[#f5f4f2] bg-[#1F5E4B] shadow-sm dark:border-[#09090b]" />
                 <div className="rounded-2xl border border-neutral-200 bg-white/80 p-5 shadow-sm dark:border-[#27272a] dark:bg-[#18181b]/80">
-                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
+                  <p className="font-medium text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500 dark:text-neutral-400">
                     {item.period}
                   </p>
                   <h3 className="mt-1 text-base font-bold text-neutral-950 dark:text-white">{item.title}</h3>
@@ -263,7 +263,7 @@ export default function About() {
         <div className="rounded-3xl border border-neutral-200 bg-neutral-950 p-6 text-white shadow-2xl dark:border-[#27272a] sm:p-8 lg:p-10">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
             <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#f97316]">
+              <p className="font-medium text-xs font-semibold uppercase tracking-[0.18em] text-[#1F5E4B]">
                 Hiring &amp; Collaborations
               </p>
               <h2 className="mt-3 max-w-2xl text-2xl sm:text-4xl font-extrabold tracking-tight">
@@ -272,7 +272,7 @@ export default function About() {
             </div>
             <Link
               href="/contact"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-[#f97316] text-white hover:bg-[#ea6c0a] h-11 px-6 py-2.5 font-semibold text-sm shadow-amber-sm"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-[#1F5E4B] text-white hover:bg-[#174839] h-11 px-6 py-2.5 font-semibold text-sm shadow-sm"
             >
               <span>Hiring? Let&apos;s Talk</span>
               <FaArrowRight className="text-xs" />

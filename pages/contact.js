@@ -26,7 +26,7 @@ export default function Contact() {
     message: "",
   });
   const [status, setStatus] = useState("idle"); // idle, submitting, success, error
-  const accentColor = "#3b82f6";
+  const accentColor = "#1F5E4B";
   const mailtoHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
     `Portfolio Inquiry from ${formData.name || "a visitor"}`
   )}&body=${encodeURIComponent(formData.message)}`;
@@ -97,7 +97,7 @@ export default function Contact() {
                 href={CAL_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="group rounded-2xl border border-neutral-200 bg-neutral-950 p-5 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#ff6b00] dark:border-neutral-800"
+                className="group rounded-2xl border border-neutral-200 bg-neutral-950 p-5 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#1F5E4B] dark:border-neutral-800"
                 onClick={() => posthog.capture('book_call_clicked', { source: 'contact_page' })}
               >
                 <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-lg">
@@ -144,7 +144,7 @@ export default function Contact() {
           <div className="rounded-3xl border border-neutral-200 bg-white/85 p-5 shadow-2xl shadow-black/5 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/85 dark:shadow-black/40 sm:p-8">
             <div className="mb-7 flex flex-col justify-between gap-4 border-b border-neutral-200 pb-6 dark:border-neutral-800 sm:flex-row sm:items-end">
               <div>
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#ff6b00]">
+                <p className="font-medium text-xs font-semibold uppercase tracking-[0.18em] text-[#1F5E4B]">
                   Project inquiry
                 </p>
                 <h2 className="mt-2 text-2xl font-bold tracking-tight text-neutral-950 dark:text-white">
@@ -152,10 +152,10 @@ export default function Contact() {
                 </h2>
               </div>
               <div className="flex items-center gap-3 text-xl text-neutral-500 dark:text-neutral-400">
-                <a href="https://www.linkedin.com/in/omjavia/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-[#ff6b00]">
+                <a href="https://www.linkedin.com/in/omjavia/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-[#1F5E4B]">
                   <FaLinkedin />
                 </a>
-                <a href="https://github.com/omjavia" target="_blank" rel="noreferrer" aria-label="GitHub" className="transition-colors hover:text-[#ff6b00]">
+                <a href="https://github.com/omjavia" target="_blank" rel="noreferrer" aria-label="GitHub" className="transition-colors hover:text-[#1F5E4B]">
                   <FaGithub />
                 </a>
               </div>

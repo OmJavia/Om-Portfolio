@@ -75,16 +75,16 @@ export default function MegaShotPicklCaseStudy() {
         {/* Hero Header */}
         <div className="space-y-6">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="font-mono text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 shadow-sm flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#f97316] animate-pulse" />
+            <span className="font-medium text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-[#1F5E4B]/10 text-[#1F5E4B] border border-[#1F5E4B]/20 shadow-sm flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#1F5E4B] animate-pulse" />
               CASE STUDY · CURRENT WORK
             </span>
-            <span className="font-mono text-xs uppercase tracking-wider font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+            <span className="font-medium text-xs uppercase tracking-wider font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
               ACTIVE PRODUCT
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.02]" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.02]" >
             MegaShot Pickl+
           </h1>
 
@@ -105,7 +105,7 @@ export default function MegaShotPicklCaseStudy() {
               priority
               placeholder="blur"
             />
-            <div className="p-3 bg-neutral-950 text-center font-mono text-[11px] text-neutral-400 border-t border-neutral-800">
+            <div className="p-3 bg-neutral-950 text-center font-medium text-[11px] text-neutral-400 border-t border-neutral-800">
               MegaShot Pickl+ physical smart paddle hardware · Active production initiative
             </div>
           </div>
@@ -116,10 +116,10 @@ export default function MegaShotPicklCaseStudy() {
         ══════════════════════════════════════════════════════ */}
         <section className="space-y-6 pt-4 border-t border-neutral-200/80 dark:border-[#27272a]">
           <div className="space-y-1">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">
+            <span className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">
               01 / OVERVIEW
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" >
               The Product &amp; Target User
             </h2>
           </div>
@@ -137,21 +137,21 @@ export default function MegaShotPicklCaseStudy() {
             <p>
               <strong>Why Cross-Functional Coordination Is Critical:</strong> Building Pickl+ required tight synchronization across four distinct disciplines:
             </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 font-mono text-xs">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 font-medium text-xs">
               <li className="p-3 rounded-xl bg-neutral-100 dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a]">
-                <strong className="text-[#f97316] block mb-1">Physical Hardware</strong>
+                <strong className="text-[#1F5E4B] block mb-1">Physical Hardware</strong>
                 Sensor placement, 300g weight balance, battery layout, and handle haptic vibration mechanics.
               </li>
               <li className="p-3 rounded-xl bg-neutral-100 dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a]">
-                <strong className="text-[#f97316] block mb-1">Connected Software</strong>
+                <strong className="text-[#1F5E4B] block mb-1">Connected Software</strong>
                 Low-latency BLE streaming, packet buffering, and stroke classification algorithms.
               </li>
               <li className="p-3 rounded-xl bg-neutral-100 dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a]">
-                <strong className="text-[#f97316] block mb-1">Gameplay Experience</strong>
+                <strong className="text-[#1F5E4B] block mb-1">Gameplay Experience</strong>
                 Hit detection windows, game modes (practice, streak, career), and tactile visual feedback.
               </li>
               <li className="p-3 rounded-xl bg-neutral-100 dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a]">
-                <strong className="text-[#f97316] block mb-1">Launch &amp; GTM</strong>
+                <strong className="text-[#1F5E4B] block mb-1">Launch &amp; GTM</strong>
                 Crowdfunding campaign structure, product positioning, media coverage, and early backer engagement.
               </li>
             </ul>
@@ -163,10 +163,10 @@ export default function MegaShotPicklCaseStudy() {
         ══════════════════════════════════════════════════════ */}
         <section className="space-y-6 pt-4 border-t border-neutral-200/80 dark:border-[#27272a]">
           <div className="space-y-1">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">
+            <span className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">
               02 / PROBLEM AND USERS
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" >
               The Problem Space &amp; Experience Constraints
             </h2>
           </div>
@@ -202,13 +202,13 @@ export default function MegaShotPicklCaseStudy() {
         ══════════════════════════════════════════════════════ */}
         <section className="space-y-6 pt-4 border-t border-neutral-200/80 dark:border-[#27272a]">
           <div className="space-y-1">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">
+            <span className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">
               03 / MY ROLE
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" >
               Responsibilities Breakdown
             </h2>
-            <p className="text-xs text-neutral-500 font-mono">
+            <p className="text-xs text-neutral-500 font-medium">
               Working across cross-functional streams does not mean individual sole authorship; contributions are strictly delineated below.
             </p>
           </div>
@@ -217,12 +217,12 @@ export default function MegaShotPicklCaseStudy() {
             {/* Owned */}
             <div className="p-5 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm flex flex-col">
               <div className="flex items-center gap-2 mb-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#f97316]" />
-                <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-[#f97316]">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#1F5E4B]" />
+                <h3 className="font-medium text-xs font-bold uppercase tracking-wider text-[#1F5E4B]">
                   Owned
                 </h3>
               </div>
-              <p className="text-xs text-neutral-500 mb-3 font-mono">
+              <p className="text-xs text-neutral-500 mb-3 font-medium">
                 Decisions &amp; deliverables with direct individual ownership:
               </p>
               <ul className="text-xs text-neutral-700 dark:text-neutral-300 space-y-2 list-disc pl-4 leading-relaxed">
@@ -237,11 +237,11 @@ export default function MegaShotPicklCaseStudy() {
             <div className="p-5 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm flex flex-col">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-                <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-emerald-500">
+                <h3 className="font-medium text-xs font-bold uppercase tracking-wider text-emerald-500">
                   Led
                 </h3>
               </div>
-              <p className="text-xs text-neutral-500 mb-3 font-mono">
+              <p className="text-xs text-neutral-500 mb-3 font-medium">
                 Workstreams led collaboratively across disciplines:
               </p>
               <ul className="text-xs text-neutral-700 dark:text-neutral-300 space-y-2 list-disc pl-4 leading-relaxed">
@@ -256,11 +256,11 @@ export default function MegaShotPicklCaseStudy() {
             <div className="p-5 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm flex flex-col">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
-                <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-blue-500">
+                <h3 className="font-medium text-xs font-bold uppercase tracking-wider text-blue-500">
                   Contributed to
                 </h3>
               </div>
-              <p className="text-xs text-neutral-500 mb-3 font-mono">
+              <p className="text-xs text-neutral-500 mb-3 font-medium">
                 Work performed collaboratively with wider team:
               </p>
               <ul className="text-xs text-neutral-700 dark:text-neutral-300 space-y-2 list-disc pl-4 leading-relaxed">
@@ -278,13 +278,13 @@ export default function MegaShotPicklCaseStudy() {
         ══════════════════════════════════════════════════════ */}
         <section className="space-y-6 pt-4 border-t border-neutral-200/80 dark:border-[#27272a]">
           <div className="space-y-1">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">
+            <span className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">
               04 / KEY PRODUCT DECISIONS
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" >
               Product Decision Stories
             </h2>
-            <p className="text-xs text-neutral-500 font-mono">
+            <p className="text-xs text-neutral-500 font-medium">
               Real engineering and product trade-offs evaluated during prototype development.
             </p>
           </div>
@@ -296,7 +296,7 @@ export default function MegaShotPicklCaseStudy() {
                 <h3 className="font-bold text-neutral-950 dark:text-white text-base">
                   1. Direct-to-Device BLE Connection vs. Dedicated TV Console Hub
                 </h3>
-                <span className="font-mono text-[10px] uppercase font-bold text-[#f97316] bg-[#f97316]/10 px-2 py-0.5 rounded">
+                <span className="font-medium text-[10px] uppercase font-bold text-[#1F5E4B] bg-[#1F5E4B]/10 px-2 py-0.5 rounded">
                   Architecture &amp; BOM
                 </span>
               </div>
@@ -325,7 +325,7 @@ export default function MegaShotPicklCaseStudy() {
                 <h3 className="font-bold text-neutral-950 dark:text-white text-base">
                   2. Edge Microcontroller Feature Streaming vs. On-Paddle Model Inference
                 </h3>
-                <span className="font-mono text-[10px] uppercase font-bold text-[#f97316] bg-[#f97316]/10 px-2 py-0.5 rounded">
+                <span className="font-medium text-[10px] uppercase font-bold text-[#1F5E4B] bg-[#1F5E4B]/10 px-2 py-0.5 rounded">
                   Embedded vs Runtime
                 </span>
               </div>
@@ -354,7 +354,7 @@ export default function MegaShotPicklCaseStudy() {
                 <h3 className="font-bold text-neutral-950 dark:text-white text-base">
                   3. Synchronized Handle Haptics for Tactile Hit Confirmation
                 </h3>
-                <span className="font-mono text-[10px] uppercase font-bold text-[#f97316] bg-[#f97316]/10 px-2 py-0.5 rounded">
+                <span className="font-medium text-[10px] uppercase font-bold text-[#1F5E4B] bg-[#1F5E4B]/10 px-2 py-0.5 rounded">
                   User Experience
                 </span>
               </div>
@@ -384,20 +384,20 @@ export default function MegaShotPicklCaseStudy() {
         ══════════════════════════════════════════════════════ */}
         <section className="space-y-6 pt-4 border-t border-neutral-200/80 dark:border-[#27272a]">
           <div className="space-y-1">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">
+            <span className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">
               05 / LAUNCH
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" >
               Launch Execution &amp; Timeline
             </h2>
           </div>
 
           <div className="space-y-4">
-            <div className="relative pl-6 border-l-2 border-[#f97316]/30 space-y-6">
+            <div className="relative pl-6 border-l-2 border-[#1F5E4B]/30 space-y-6">
               {/* Timeline item 1 */}
               <div className="relative">
-                <span className="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-[#f97316] border-2 border-white dark:border-[#09090b]" />
-                <span className="font-mono text-[10px] uppercase font-bold text-[#f97316] tracking-wider">
+                <span className="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-[#1F5E4B] border-2 border-white dark:border-[#09090b]" />
+                <span className="font-medium text-[10px] uppercase font-bold text-[#1F5E4B] tracking-wider">
                   Phase 1 · Beta Validation &amp; System Prototyping
                 </span>
                 <h3 className="text-sm sm:text-base font-bold text-neutral-950 dark:text-white mt-0.5">
@@ -411,7 +411,7 @@ export default function MegaShotPicklCaseStudy() {
               {/* Timeline item 2 */}
               <div className="relative">
                 <span className="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white dark:border-[#09090b]" />
-                <span className="font-mono text-[10px] uppercase font-bold text-emerald-500 tracking-wider">
+                <span className="font-medium text-[10px] uppercase font-bold text-emerald-500 tracking-wider">
                   Phase 2 · Industry Preview
                 </span>
                 <h3 className="text-sm sm:text-base font-bold text-neutral-950 dark:text-white mt-0.5">
@@ -425,8 +425,8 @@ export default function MegaShotPicklCaseStudy() {
 
               {/* Timeline item 3 */}
               <div className="relative">
-                <span className="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-[#05ce78] border-2 border-white dark:border-[#09090b]" />
-                <span className="font-mono text-[10px] uppercase font-bold text-[#05ce78] tracking-wider">
+                <span className="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-[#1F5E4B] border-2 border-white dark:border-[#09090b]" />
+                <span className="font-medium text-[10px] uppercase font-bold text-[#1F5E4B] tracking-wider">
                   Phase 3 · Crowdfunding Launch
                 </span>
                 <h3 className="text-sm sm:text-base font-bold text-neutral-950 dark:text-white mt-0.5">
@@ -440,7 +440,7 @@ export default function MegaShotPicklCaseStudy() {
               {/* Timeline item 4 */}
               <div className="relative">
                 <span className="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-blue-500 border-2 border-white dark:border-[#09090b]" />
-                <span className="font-mono text-[10px] uppercase font-bold text-blue-500 tracking-wider">
+                <span className="font-medium text-[10px] uppercase font-bold text-blue-500 tracking-wider">
                   Phase 4 · Official Media &amp; Industry Coverage
                 </span>
                 <h3 className="text-sm sm:text-base font-bold text-neutral-950 dark:text-white mt-0.5">
@@ -459,13 +459,13 @@ export default function MegaShotPicklCaseStudy() {
         ══════════════════════════════════════════════════════ */}
         <section className="space-y-6 pt-4 border-t border-neutral-200/80 dark:border-[#27272a]">
           <div className="space-y-1">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">
+            <span className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">
               06 / OUTCOMES
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" >
               Attributable Launch Results
             </h2>
-            <p className="text-xs text-neutral-500 font-mono">
+            <p className="text-xs text-neutral-500 font-medium">
               Results are reported based on verified company milestones and public documentation.
             </p>
           </div>
@@ -473,7 +473,7 @@ export default function MegaShotPicklCaseStudy() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-6 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm flex flex-col justify-between">
               <div>
-                <span className="font-mono text-[10px] uppercase font-bold text-[#05ce78] tracking-wider block mb-2">
+                <span className="font-medium text-[10px] uppercase font-bold text-[#1F5E4B] tracking-wider block mb-2">
                   Crowdfunding Milestone
                 </span>
                 <p className="text-base sm:text-lg font-bold text-neutral-950 dark:text-white leading-snug">
@@ -485,7 +485,7 @@ export default function MegaShotPicklCaseStudy() {
                   href="https://www.kickstarter.com/projects/megashot/megashot-pickl-smart-pickleball-gaming-device"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#05ce78] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1F5E4B] hover:underline"
                 >
                   <SiKickstarter /> View Live Kickstarter Campaign →
                 </a>
@@ -494,7 +494,7 @@ export default function MegaShotPicklCaseStudy() {
 
             <div className="p-6 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] shadow-sm flex flex-col justify-between">
               <div>
-                <span className="font-mono text-[10px] uppercase font-bold text-[#f97316] tracking-wider block mb-2">
+                <span className="font-medium text-[10px] uppercase font-bold text-[#1F5E4B] tracking-wider block mb-2">
                   Official Industry Coverage
                 </span>
                 <p className="text-base sm:text-lg font-bold text-neutral-950 dark:text-white leading-snug">
@@ -506,7 +506,7 @@ export default function MegaShotPicklCaseStudy() {
                   href="https://pickleball.com/news/worlds-first-smart-pickleball-game-launched-by-metashot"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#f97316] hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1F5E4B] hover:underline"
                 >
                   <FaExternalLinkAlt className="text-[10px]" /> Read Pickleball.com Coverage →
                 </a>
@@ -520,13 +520,13 @@ export default function MegaShotPicklCaseStudy() {
         ══════════════════════════════════════════════════════ */}
         <section className="space-y-6 pt-4 border-t border-neutral-200/80 dark:border-[#27272a]">
           <div className="space-y-1">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">
+            <span className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">
               07 / FEEDBACK LOOP
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" >
               User Testing &amp; Iteration Cycle
             </h2>
-            <p className="text-xs text-neutral-500 font-mono">
+            <p className="text-xs text-neutral-500 font-medium">
               {/* TODO(Om): confirm the player sample, product attribution, research location, date range and supporting feedback artifact */}
               {/* TODO(Om): confirm the 12+ iteration count and define what counted as an iteration */}
               Documenting concrete changes driven by early tester feedback.
@@ -535,10 +535,10 @@ export default function MegaShotPicklCaseStudy() {
 
           <div className="p-6 rounded-2xl bg-neutral-50 dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] space-y-4">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20">
+              <span className="font-medium text-xs font-bold px-3 py-1 rounded-full bg-[#1F5E4B]/10 text-[#1F5E4B] border border-[#1F5E4B]/20">
                 Validated demand and usability with 185+ players.
               </span>
-              <span className="font-mono text-xs font-bold px-3 py-1 rounded-full bg-neutral-200/70 dark:bg-[#27272a] text-neutral-700 dark:text-neutral-300">
+              <span className="font-medium text-xs font-bold px-3 py-1 rounded-full bg-neutral-200/70 dark:bg-[#27272a] text-neutral-700 dark:text-neutral-300">
                 12+ iterations across hardware balance &amp; stroke sensitivity.
               </span>
             </div>
@@ -549,13 +549,13 @@ export default function MegaShotPicklCaseStudy() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               <div className="p-4 rounded-xl bg-white dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] space-y-1.5">
-                <span className="font-mono text-[10px] uppercase font-bold text-red-500 block">
+                <span className="font-medium text-[10px] uppercase font-bold text-red-500 block">
                   Before: Soft Shot Dropouts
                 </span>
                 <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
                   Gentle drop shots and kitchen dinks were initially discarded by the stroke classifier as incomplete swings due to high velocity threshold cutoffs.
                 </p>
-                <span className="font-mono text-[10px] uppercase font-bold text-emerald-500 block pt-1">
+                <span className="font-medium text-[10px] uppercase font-bold text-emerald-500 block pt-1">
                   After: Dynamic Velocity Floor
                 </span>
                 <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
@@ -564,13 +564,13 @@ export default function MegaShotPicklCaseStudy() {
               </div>
 
               <div className="p-4 rounded-xl bg-white dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] space-y-1.5">
-                <span className="font-mono text-[10px] uppercase font-bold text-red-500 block">
+                <span className="font-medium text-[10px] uppercase font-bold text-red-500 block">
                   Before: Paddle Handle Weight Fatigue
                 </span>
                 <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
                   Testers reported forearm strain after 15 minutes of continuous play because early battery placement leaned heavily toward the handle base.
                 </p>
-                <span className="font-mono text-[10px] uppercase font-bold text-emerald-500 block pt-1">
+                <span className="font-medium text-[10px] uppercase font-bold text-emerald-500 block pt-1">
                   After: Center-of-Mass Rebalancing
                 </span>
                 <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
@@ -586,13 +586,13 @@ export default function MegaShotPicklCaseStudy() {
         ══════════════════════════════════════════════════════ */}
         <section className="space-y-6 pt-4 border-t border-neutral-200/80 dark:border-[#27272a]">
           <div className="space-y-1">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">
+            <span className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">
               08 / WHAT I&apos;D DO DIFFERENTLY
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" >
               Retrospective &amp; Engineering Lessons
             </h2>
-            <p className="text-xs text-neutral-500 font-mono">
+            <p className="text-xs text-neutral-500 font-medium">
               Honest operational reflections from early-stage connected hardware development.
             </p>
           </div>
@@ -632,13 +632,13 @@ export default function MegaShotPicklCaseStudy() {
         ══════════════════════════════════════════════════════ */}
         <section className="space-y-6 pt-4 border-t border-neutral-200/80 dark:border-[#27272a]">
           <div className="space-y-1">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">
+            <span className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">
               09 / LINKS &amp; ARCHITECTURE
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-neutral-950 dark:text-white" >
               System Architecture &amp; Verified Resources
             </h2>
-            <p className="text-xs text-neutral-500 font-mono">
+            <p className="text-xs text-neutral-500 font-medium">
               Implemented runtime architecture distinguished from planned multi-sport expansion.
             </p>
           </div>
@@ -657,17 +657,17 @@ export default function MegaShotPicklCaseStudy() {
               href="https://pickleball.themegashot.com/"
               target="_blank"
               rel="noreferrer"
-              className="p-4 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#f97316]/50 transition-all shadow-sm flex flex-col justify-between"
+              className="p-4 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#1F5E4B]/50 transition-all shadow-sm flex flex-col justify-between"
             >
               <div>
-                <span className="font-mono text-[10px] uppercase font-bold text-[#f97316] tracking-wider block mb-1">
+                <span className="font-medium text-[10px] uppercase font-bold text-[#1F5E4B] tracking-wider block mb-1">
                   Product Site
                 </span>
                 <p className="font-bold text-xs sm:text-sm text-neutral-900 dark:text-white">
                   pickleball.themegashot.com
                 </p>
               </div>
-              <span className="text-xs text-[#f97316] font-semibold mt-3 inline-flex items-center gap-1">
+              <span className="text-xs text-[#1F5E4B] font-semibold mt-3 inline-flex items-center gap-1">
                 Visit Website <FaExternalLinkAlt className="text-[10px]" />
               </span>
             </a>
@@ -676,17 +676,17 @@ export default function MegaShotPicklCaseStudy() {
               href="https://www.kickstarter.com/projects/megashot/megashot-pickl-smart-pickleball-gaming-device"
               target="_blank"
               rel="noreferrer"
-              className="p-4 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#05ce78]/50 transition-all shadow-sm flex flex-col justify-between"
+              className="p-4 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-[#1F5E4B]/50 transition-all shadow-sm flex flex-col justify-between"
             >
               <div>
-                <span className="font-mono text-[10px] uppercase font-bold text-[#05ce78] tracking-wider block mb-1">
+                <span className="font-medium text-[10px] uppercase font-bold text-[#1F5E4B] tracking-wider block mb-1">
                   Crowdfunding
                 </span>
                 <p className="font-bold text-xs sm:text-sm text-neutral-900 dark:text-white">
                   Live Kickstarter Campaign
                 </p>
               </div>
-              <span className="text-xs text-[#05ce78] font-semibold mt-3 inline-flex items-center gap-1">
+              <span className="text-xs text-[#1F5E4B] font-semibold mt-3 inline-flex items-center gap-1">
                 View Campaign <FaExternalLinkAlt className="text-[10px]" />
               </span>
             </a>
@@ -698,7 +698,7 @@ export default function MegaShotPicklCaseStudy() {
               className="p-4 rounded-2xl bg-white dark:bg-[#18181b] border border-neutral-200 dark:border-[#27272a] hover:border-blue-500/50 transition-all shadow-sm flex flex-col justify-between"
             >
               <div>
-                <span className="font-mono text-[10px] uppercase font-bold text-blue-500 tracking-wider block mb-1">
+                <span className="font-medium text-[10px] uppercase font-bold text-blue-500 tracking-wider block mb-1">
                   Official Press Coverage
                 </span>
                 <p className="font-bold text-xs sm:text-sm text-neutral-900 dark:text-white">
@@ -713,7 +713,7 @@ export default function MegaShotPicklCaseStudy() {
 
           {/* TODO(Om): add high-resolution UI screenshots of companion mobile game and Kickstarter campaign graphics once official design export assets are available */}
           <div className="p-5 rounded-2xl border border-neutral-200 dark:border-[#27272a] bg-neutral-50 dark:bg-[#18181b] space-y-3">
-            <p className="font-mono text-xs uppercase tracking-widest font-bold text-[#f97316]">
+            <p className="font-medium text-xs uppercase tracking-widest font-bold text-[#1F5E4B]">
               Product interface
             </p>
             <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
@@ -724,7 +724,7 @@ export default function MegaShotPicklCaseStudy() {
                 href="https://pickleball.themegashot.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#f97316] inline-flex items-center gap-1"
+                className="text-[#1F5E4B] inline-flex items-center gap-1"
               >
                 Product site <FaExternalLinkAlt className="text-[10px]" />
               </a>
@@ -732,7 +732,7 @@ export default function MegaShotPicklCaseStudy() {
                 href="https://www.kickstarter.com/projects/megashot/megashot-pickl-smart-pickleball-gaming-device"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#f97316] inline-flex items-center gap-1"
+                className="text-[#1F5E4B] inline-flex items-center gap-1"
               >
                 Kickstarter <FaExternalLinkAlt className="text-[10px]" />
               </a>
@@ -745,7 +745,7 @@ export default function MegaShotPicklCaseStudy() {
           {/* Action banner */}
           <div className="mt-8 p-6 sm:p-8 rounded-3xl bg-neutral-950 text-white border border-neutral-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <p className="font-mono text-xs uppercase tracking-widest text-[#f97316] font-bold">
+              <p className="font-medium text-xs uppercase tracking-widest text-[#1F5E4B] font-bold">
                 Connect on AI &amp; Connected Hardware
               </p>
               <h3 className="text-xl font-bold mt-1">
@@ -754,7 +754,7 @@ export default function MegaShotPicklCaseStudy() {
             </div>
             <Link
               href="/contact"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-[#f97316] text-white hover:bg-[#ea6c0a] px-6 py-3 font-semibold text-sm transition-all shadow-amber-sm"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl bg-[#1F5E4B] text-white hover:bg-[#174839] px-6 py-3 font-semibold text-sm transition-all shadow-sm"
             >
               <span>Hiring? Let&apos;s talk</span>
               <FaExternalLinkAlt className="text-xs" />

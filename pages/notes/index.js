@@ -24,7 +24,7 @@ export default function NotesIndex() {
 
       <div className="max-w-3xl space-y-10">
         <div className="space-y-3">
-          <p className="font-mono text-xs uppercase tracking-widest text-[#ea580c] dark:text-[#f97316]">Notes</p>
+          <p className="font-medium text-xs uppercase tracking-widest text-[#1F5E4B] dark:text-[#1F5E4B]">Notes</p>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white">
             Decisions, written down
           </h1>
@@ -36,9 +36,9 @@ export default function NotesIndex() {
         <ul className="divide-y divide-neutral-200 dark:divide-neutral-800 border-y border-neutral-200 dark:border-neutral-800">
           {NOTES.map((note) => (
             <li key={note.slug} className="py-6">
-              <p className="font-mono text-[11px] text-neutral-500">{note.date}</p>
+              <p className="font-medium text-[11px] text-neutral-500">{note.date}</p>
               <h2 className="mt-1 text-xl font-bold text-neutral-950 dark:text-white">
-                <Link href={`/notes/${note.slug}`} className="hover:text-[#ea580c] dark:hover:text-[#f97316]">
+                <Link href={`/notes/${note.slug}`} className="hover:text-[#1F5E4B] dark:hover:text-[#1F5E4B]">
                   {note.title}
                 </Link>
               </h2>

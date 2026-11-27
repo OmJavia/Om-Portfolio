@@ -1,0 +1,495 @@
+[
+  {
+    "title": "Architecture pattern: nextjs",
+    "source": "layers",
+    "description": "Recognised nextjs from directory names: 8 of 9 typescript modules classified. All 37 imports between ordered layers run inward; none run against the order.",
+    "confidence": 0.8888888888888888,
+    "evidence": [
+      {
+        "fact": "components",
+        "detail": "module \"components\" maps to layer \"components\"",
+        "fact_id": "dc8786bad90db5dbba8bfd2edfd209c3"
+      },
+      {
+        "fact": "components/home",
+        "detail": "module \"components/home\" maps to layer \"components\"",
+        "fact_id": "05c1bd6ac02a37ac80b090e597fa9e99"
+      },
+      {
+        "fact": "components/ui",
+        "detail": "module \"components/ui\" maps to layer \"components\"",
+        "fact_id": "a42701659beda5985e3d7a6c938bd701"
+      },
+      {
+        "fact": "lib",
+        "detail": "module \"lib\" maps to layer \"lib\"",
+        "fact_id": "e2b85b2e76d6c541cbe38ba6ed41bc2b"
+      },
+      {
+        "fact": "pages",
+        "detail": "module \"pages\" maps to layer \"pages\"",
+        "fact_id": "cda402d17c82ed4d721682902aa4bc45"
+      },
+      {
+        "fact": "pages/api",
+        "detail": "module \"pages/api\" maps to layer \"pages\"",
+        "fact_id": "d8932d0b80bba3924c80a7b67fc79e05"
+      },
+      {
+        "fact": "pages/case-studies",
+        "detail": "module \"pages/case-studies\" maps to layer \"pages\"",
+        "fact_id": "8ffe0518cc6bf4fe562dcdd525a41226"
+      },
+      {
+        "fact": "pages/notes",
+        "detail": "module \"pages/notes\" maps to layer \"pages\"",
+        "fact_id": "f07b2f8f492a96fcfd873db5db66c2c9"
+      }
+    ],
+    "suggested_actions": [
+      "Ensure new code follows the detected layer structure",
+      "Review cross-layer dependencies for violations"
+    ],
+    "informational": true,
+    "metrics": {
+      "cohort_languages": [
+        "typescript"
+      ],
+      "imports_against": 0,
+      "imports_inward": 37,
+      "imports_same_level": 7,
+      "layer_examples": {
+        "components": "components",
+        "lib": "lib",
+        "pages": "pages"
+      },
+      "layer_levels": {
+        "components": 2,
+        "lib": 0,
+        "pages": 3
+      },
+      "layers_ordered": [
+        "pages",
+        "components",
+        "lib"
+      ],
+      "layers_unordered": null,
+      "modules_classified": 8,
+      "modules_graded": 8,
+      "modules_scanned": 9
+    }
+  },
+  {
+    "title": "Domain findings do not apply to this repository",
+    "source": "domain",
+    "description": "Three of this explainer's four findings read declarations only Rails writes — associations, controller#action handlers, and a model's table — and this repository declares none of them. That is not a clean result on those three; they were not asked. Outbound integrations, the fourth, is language-agnostic and did run.",
+    "confidence": 1,
+    "evidence": [
+      {
+        "detail": "examined: 0 associations, 0 controller handlers, 0 model tables"
+      }
+    ]
+  },
+  {
+    "title": "High fan-in symbol: lib.cn (12 dependents)",
+    "source": "god-class",
+    "description": "\"lib.cn\" is depended upon by 12 other symbols — well above the repo average. High fan-in concentrates change risk: edits here ripple across many call sites, and it often indicates a missing or overly broad abstraction.",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "file": "lib/utils.js",
+        "symbol": "lib.cn",
+        "detail": "12 symbols depend on this",
+        "line": 4,
+        "fact_id": "af5c70bb55fe0f5db3169a4e32f09d1e"
+      },
+      {
+        "symbol": "components/ui.Card",
+        "detail": "depends on lib.cn",
+        "fact_id": "a13b009d4c81c146a6269a6e8a4d8342"
+      },
+      {
+        "symbol": "components/ui.CardContent",
+        "detail": "depends on lib.cn",
+        "fact_id": "2c1e9c19be1dae8c48f68ee6403cd4c4"
+      },
+      {
+        "symbol": "components/ui.CardDescription",
+        "detail": "depends on lib.cn",
+        "fact_id": "12e33f23e8dcd695df910cb75bdc770b"
+      },
+      {
+        "symbol": "components/ui.CardFooter",
+        "detail": "depends on lib.cn",
+        "fact_id": "b5bcf78d128914bfeffd1fdbe401f979"
+      },
+      {
+        "symbol": "components/ui.CardHeader",
+        "detail": "depends on lib.cn",
+        "fact_id": "b178b8d408eab5931aa24b5a2af86a9e"
+      },
+      {
+        "symbol": "components/ui.CardTitle",
+        "detail": "depends on lib.cn",
+        "fact_id": "260f2be1ae8f6e820c1f815f9f2d23e5"
+      },
+      {
+        "symbol": "components/ui.Separator",
+        "detail": "depends on lib.cn",
+        "fact_id": "76da24773f048d00dff95ae8dd399da5"
+      },
+      {
+        "symbol": "components/ui.TabsContent",
+        "detail": "depends on lib.cn",
+        "fact_id": "463e14616375543f0ced16afa92fa165"
+      }
+    ],
+    "suggested_actions": [
+      "Split the symbol along distinct responsibilities its callers use",
+      "Introduce narrower interfaces so callers depend only on what they need",
+      "Stabilize its public contract to limit churn for dependents"
+    ]
+  },
+  {
+    "title": "Call-graph hotspot: lib.cn (fan-in 12, fan-out 3)",
+    "source": "hotspots",
+    "description": "\"lib.cn\" is a pinch point: 12 symbols call into it and it calls out to 3 others, so a large share of call chains pass through it (degree-centrality proxy for betweenness). Such chokepoints are high-risk to change and high-value to test.",
+    "confidence": 0.7,
+    "evidence": [
+      {
+        "file": "lib/utils.js",
+        "symbol": "lib.cn",
+        "detail": "fan-in 12 × fan-out 3 = score 36",
+        "line": 4,
+        "fact_id": "af5c70bb55fe0f5db3169a4e32f09d1e"
+      },
+      {
+        "symbol": "components/ui.Card",
+        "detail": "calls into lib.cn",
+        "fact_id": "a13b009d4c81c146a6269a6e8a4d8342"
+      },
+      {
+        "symbol": "components/ui.CardContent",
+        "detail": "calls into lib.cn",
+        "fact_id": "2c1e9c19be1dae8c48f68ee6403cd4c4"
+      },
+      {
+        "symbol": "components/ui.CardDescription",
+        "detail": "calls into lib.cn",
+        "fact_id": "12e33f23e8dcd695df910cb75bdc770b"
+      },
+      {
+        "symbol": "components/ui.CardFooter",
+        "detail": "calls into lib.cn",
+        "fact_id": "b5bcf78d128914bfeffd1fdbe401f979"
+      },
+      {
+        "symbol": "components/ui.CardHeader",
+        "detail": "calls into lib.cn",
+        "fact_id": "b178b8d408eab5931aa24b5a2af86a9e"
+      },
+      {
+        "symbol": "clsx.clsx",
+        "detail": "called by lib.cn"
+      },
+      {
+        "symbol": "lib",
+        "detail": "called by lib.cn",
+        "fact_id": "e2b85b2e76d6c541cbe38ba6ed41bc2b"
+      },
+      {
+        "symbol": "tailwind-merge.twMerge",
+        "detail": "called by lib.cn"
+      }
+    ],
+    "suggested_actions": [
+      "Add focused tests around this chokepoint before refactoring",
+      "Consider decomposing it so call paths don't all funnel through one symbol",
+      "Verify it isn't doing orchestration that belongs in callers"
+    ]
+  },
+  {
+    "title": "Large public surface: components/ui exports 15 of 15 symbols (100%)",
+    "source": "exported-surface",
+    "description": "Module \"components/ui\" exports 15 of its 15 symbols (100%). A large, near-fully-exported module hides little of its implementation, so consumers can couple to internals and it is hard to change without breaking them. Worth a visibility review — though a deliberate library API may legitimately export most of its surface.",
+    "confidence": 0.6,
+    "evidence": [
+      {
+        "symbol": "components/ui.Badge",
+        "detail": "exported",
+        "fact_id": "abb3c8eb7bd269e2bb4c59734aa42b29"
+      },
+      {
+        "symbol": "components/ui.Button",
+        "detail": "exported",
+        "fact_id": "dbf3ae20b6fe7086d2a777998a08cc27"
+      },
+      {
+        "symbol": "components/ui.Card",
+        "detail": "exported",
+        "fact_id": "a13b009d4c81c146a6269a6e8a4d8342"
+      },
+      {
+        "symbol": "components/ui.CardContent",
+        "detail": "exported",
+        "fact_id": "2c1e9c19be1dae8c48f68ee6403cd4c4"
+      },
+      {
+        "symbol": "components/ui.CardDescription",
+        "detail": "exported",
+        "fact_id": "12e33f23e8dcd695df910cb75bdc770b"
+      },
+      {
+        "symbol": "components/ui.CardFooter",
+        "detail": "exported",
+        "fact_id": "b5bcf78d128914bfeffd1fdbe401f979"
+      },
+      {
+        "symbol": "components/ui.CardHeader",
+        "detail": "exported",
+        "fact_id": "b178b8d408eab5931aa24b5a2af86a9e"
+      },
+      {
+        "symbol": "components/ui.CardTitle",
+        "detail": "exported",
+        "fact_id": "260f2be1ae8f6e820c1f815f9f2d23e5"
+      }
+    ],
+    "suggested_actions": [
+      "Unexport symbols that are only used within the module",
+      "Define a small, intentional public API and hide the rest",
+      "Split the module if it has several independent public responsibilities"
+    ]
+  },
+  {
+    "title": "High cyclomatic complexity: components.ProjectCard (30)",
+    "source": "complexity-outliers",
+    "description": "\"components.ProjectCard\" has a cyclomatic complexity of 30 — well above the repo average. Highly branched functions are hard to test fully and are frequent defect sites.",
+    "confidence": 0.7,
+    "evidence": [
+      {
+        "file": "components/ProjectCard.jsx",
+        "symbol": "components.ProjectCard",
+        "detail": "cyclomatic complexity 30 at line 97",
+        "line": 97,
+        "fact_id": "6b4f9899b8d95a16aa37ba17f7632cf5"
+      }
+    ],
+    "suggested_actions": [
+      "Extract guard clauses and nested branches into helper functions",
+      "Replace deep conditionals with table/strategy dispatch where possible",
+      "Add tests covering the distinct branches before refactoring"
+    ]
+  },
+  {
+    "title": "High cyclomatic complexity: components.AskOmWidget (27)",
+    "source": "complexity-outliers",
+    "description": "\"components.AskOmWidget\" has a cyclomatic complexity of 27 — well above the repo average. Highly branched functions are hard to test fully and are frequent defect sites.",
+    "confidence": 0.7,
+    "evidence": [
+      {
+        "file": "components/AskOmWidget.jsx",
+        "symbol": "components.AskOmWidget",
+        "detail": "cyclomatic complexity 27 at line 20",
+        "line": 20,
+        "fact_id": "de0f88b46da26595f2fc375787b1cced"
+      }
+    ],
+    "suggested_actions": [
+      "Extract guard clauses and nested branches into helper functions",
+      "Replace deep conditionals with table/strategy dispatch where possible",
+      "Add tests covering the distinct branches before refactoring"
+    ]
+  },
+  {
+    "title": "High cyclomatic complexity: pages/api.handler (22)",
+    "source": "complexity-outliers",
+    "description": "\"pages/api.handler\" has a cyclomatic complexity of 22 — well above the repo average. Highly branched functions are hard to test fully and are frequent defect sites.",
+    "confidence": 0.7,
+    "evidence": [
+      {
+        "file": "pages/api/chat.js",
+        "symbol": "pages/api.handler",
+        "detail": "cyclomatic complexity 22 at line 286",
+        "line": 286,
+        "fact_id": "187b205b4a3c8fccd7b70f7f55d2b654"
+      }
+    ],
+    "suggested_actions": [
+      "Extract guard clauses and nested branches into helper functions",
+      "Replace deep conditionals with table/strategy dispatch where possible",
+      "Add tests covering the distinct branches before refactoring"
+    ]
+  },
+  {
+    "title": "Dead code candidate: function pages/notes.IsroPlannerNote",
+    "source": "dead-code",
+    "description": "function \"pages/notes.IsroPlannerNote\" is isolated — nothing in the snapshot graph references it (medium confidence). References are matched by short name and biased conservative, so verify against dynamic/reflective dispatch and consumers outside the snapshot before removing.",
+    "confidence": 0.6,
+    "evidence": [
+      {
+        "file": "pages/notes/isro-path-planner.js",
+        "symbol": "pages/notes.IsroPlannerNote",
+        "detail": "function · isolated · pages/notes/isro-path-planner.js:9",
+        "line": 9,
+        "fact_id": "82aa24861c37e9c39164a2bd6c56b6b1"
+      },
+      {
+        "symbol": "pages/notes.IsroPlannerNote",
+        "detail": "exported — may be used outside this snapshot; verify before removal",
+        "fact_id": "82aa24861c37e9c39164a2bd6c56b6b1"
+      }
+    ],
+    "suggested_actions": [
+      "Confirm no dynamic/reflective or out-of-snapshot callers, then remove the symbol"
+    ]
+  },
+  {
+    "title": "Dead code candidate: function pages/notes.NotesIndex",
+    "source": "dead-code",
+    "description": "function \"pages/notes.NotesIndex\" is isolated — nothing in the snapshot graph references it (medium confidence). References are matched by short name and biased conservative, so verify against dynamic/reflective dispatch and consumers outside the snapshot before removing.",
+    "confidence": 0.6,
+    "evidence": [
+      {
+        "file": "pages/notes/index.js",
+        "symbol": "pages/notes.NotesIndex",
+        "detail": "function · isolated · pages/notes/index.js:6",
+        "line": 6,
+        "fact_id": "2a6110c2cf790cf93c410ab4b1497ef1"
+      },
+      {
+        "symbol": "pages/notes.NotesIndex",
+        "detail": "exported — may be used outside this snapshot; verify before removal",
+        "fact_id": "2a6110c2cf790cf93c410ab4b1497ef1"
+      }
+    ],
+    "suggested_actions": [
+      "Confirm no dynamic/reflective or out-of-snapshot callers, then remove the symbol"
+    ]
+  },
+  {
+    "title": "Dead code candidate: function pages/notes.PicklSwingNote",
+    "source": "dead-code",
+    "description": "function \"pages/notes.PicklSwingNote\" is isolated — nothing in the snapshot graph references it (medium confidence). References are matched by short name and biased conservative, so verify against dynamic/reflective dispatch and consumers outside the snapshot before removing.",
+    "confidence": 0.6,
+    "evidence": [
+      {
+        "file": "pages/notes/pickl-swing-loop.js",
+        "symbol": "pages/notes.PicklSwingNote",
+        "detail": "function · isolated · pages/notes/pickl-swing-loop.js:9",
+        "line": 9,
+        "fact_id": "f97e132483d67ab929cabf36b968f5d1"
+      },
+      {
+        "symbol": "pages/notes.PicklSwingNote",
+        "detail": "exported — may be used outside this snapshot; verify before removal",
+        "fact_id": "f97e132483d67ab929cabf36b968f5d1"
+      }
+    ],
+    "suggested_actions": [
+      "Confirm no dynamic/reflective or out-of-snapshot callers, then remove the symbol"
+    ]
+  },
+  {
+    "title": "Dead code candidate: function pages/notes.Sub80Note",
+    "source": "dead-code",
+    "description": "function \"pages/notes.Sub80Note\" is isolated — nothing in the snapshot graph references it (medium confidence). References are matched by short name and biased conservative, so verify against dynamic/reflective dispatch and consumers outside the snapshot before removing.",
+    "confidence": 0.6,
+    "evidence": [
+      {
+        "file": "pages/notes/sub-80ms.js",
+        "symbol": "pages/notes.Sub80Note",
+        "detail": "function · isolated · pages/notes/sub-80ms.js:9",
+        "line": 9,
+        "fact_id": "0afac16ff06531e7825bcc0f0916f359"
+      },
+      {
+        "symbol": "pages/notes.Sub80Note",
+        "detail": "exported — may be used outside this snapshot; verify before removal",
+        "fact_id": "0afac16ff06531e7825bcc0f0916f359"
+      }
+    ],
+    "suggested_actions": [
+      "Confirm no dynamic/reflective or out-of-snapshot callers, then remove the symbol"
+    ]
+  },
+  {
+    "title": "Dead code candidate: function pages.Contact",
+    "source": "dead-code",
+    "description": "function \"pages.Contact\" is unreferenced — nothing in the snapshot graph references it (medium confidence). References are matched by short name and biased conservative, so verify against dynamic/reflective dispatch and consumers outside the snapshot before removing.",
+    "confidence": 0.6,
+    "evidence": [
+      {
+        "file": "pages/contact.js",
+        "symbol": "pages.Contact",
+        "detail": "function · unreferenced · pages/contact.js:22",
+        "line": 22,
+        "fact_id": "4d0d9f26b893a66b49bdda5e47327afc"
+      },
+      {
+        "symbol": "pages.Contact",
+        "detail": "exported — may be used outside this snapshot; verify before removal",
+        "fact_id": "4d0d9f26b893a66b49bdda5e47327afc"
+      }
+    ],
+    "suggested_actions": [
+      "Confirm no dynamic/reflective or out-of-snapshot callers, then remove the symbol"
+    ]
+  },
+  {
+    "title": "Dead code candidate: function pages.MyApp",
+    "source": "dead-code",
+    "description": "function \"pages.MyApp\" is unreferenced — nothing in the snapshot graph references it (medium confidence). References are matched by short name and biased conservative, so verify against dynamic/reflective dispatch and consumers outside the snapshot before removing.",
+    "confidence": 0.6,
+    "evidence": [
+      {
+        "file": "pages/_app.js",
+        "symbol": "pages.MyApp",
+        "detail": "function · unreferenced · pages/_app.js:30",
+        "line": 30,
+        "fact_id": "3751a54fbf6db73946d59cddf1219cb8"
+      },
+      {
+        "symbol": "pages.MyApp",
+        "detail": "exported — may be used outside this snapshot; verify before removal",
+        "fact_id": "3751a54fbf6db73946d59cddf1219cb8"
+      }
+    ],
+    "suggested_actions": [
+      "Confirm no dynamic/reflective or out-of-snapshot callers, then remove the symbol"
+    ]
+  },
+  {
+    "title": "Dead code candidate: function pages/api.handler",
+    "source": "dead-code",
+    "description": "function \"pages/api.handler\" is unreferenced — nothing in the snapshot graph references it (medium confidence). References are matched by short name and biased conservative, so verify against dynamic/reflective dispatch and consumers outside the snapshot before removing.",
+    "confidence": 0.6,
+    "evidence": [
+      {
+        "file": "pages/api/chat.js",
+        "symbol": "pages/api.handler",
+        "detail": "function · unreferenced · pages/api/chat.js:286",
+        "line": 286,
+        "fact_id": "187b205b4a3c8fccd7b70f7f55d2b654"
+      },
+      {
+        "symbol": "pages/api.handler",
+        "detail": "exported — may be used outside this snapshot; verify before removal",
+        "fact_id": "187b205b4a3c8fccd7b70f7f55d2b654"
+      }
+    ],
+    "suggested_actions": [
+      "Confirm no dynamic/reflective or out-of-snapshot callers, then remove the symbol"
+    ]
+  },
+  {
+    "title": "Additional dead-code candidates: 22 more (see find_orphans)",
+    "source": "dead-code",
+    "description": "0 further high/medium-confidence orphan(s) were omitted from individual insights and 22 low-confidence orphan(s) (methods/types/consts/vars — usage not edge-tracked) were not surfaced individually. Use the find_orphans tool (output_mode=full) for the complete list.",
+    "confidence": 0.4,
+    "evidence": null,
+    "suggested_actions": [
+      "Run find_orphans with confidence=high and visibility=unexported for the safest cleanup set"
+    ]
+  }
+]

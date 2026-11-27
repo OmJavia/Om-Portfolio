@@ -44,10 +44,10 @@ export default function MetashotCaseStudy() {
 
         <div className="space-y-6">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="font-mono text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20">
+            <span className="font-medium text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-[#1F5E4B]/10 text-[#1F5E4B] border border-[#1F5E4B]/20">
               Case study · Production AI
             </span>
-            <span className="font-mono text-xs uppercase tracking-wider font-semibold px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700">
+            <span className="font-medium text-xs uppercase tracking-wider font-semibold px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200 dark:border-neutral-700">
               AI Engineer · July–October 2025
             </span>
           </div>
@@ -72,7 +72,7 @@ export default function MetashotCaseStudy() {
         </div>
 
         <section className="space-y-4 border-t border-neutral-200 dark:border-neutral-800 pt-8">
-          <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">01 / Role</p>
+          <p className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">01 / Role</p>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-950 dark:text-white">What I owned</h2>
           <div className="space-y-3 text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
             <p>
@@ -85,7 +85,7 @@ export default function MetashotCaseStudy() {
         </section>
 
         <section className="space-y-4 border-t border-neutral-200 dark:border-neutral-800 pt-8">
-          <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">02 / Pipeline</p>
+          <p className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">02 / Pipeline</p>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-950 dark:text-white">Camera to feedback</h2>
           <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
             A live camera stream feeds a YOLO and OpenCV inference path. Results land in a FastAPI service. Redis holds session metrics so the feedback loop does not recompute them on every read. Unity consumes the classification for in-session player feedback.
@@ -107,18 +107,18 @@ export default function MetashotCaseStudy() {
         </section>
 
         <section className="space-y-4 border-t border-neutral-200 dark:border-neutral-800 pt-8">
-          <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">03 / Latency budget</p>
+          <p className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">03 / Latency budget</p>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-950 dark:text-white">The number that is published</h2>
           <p className="text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
             The site describes the optimized pipeline as processing live camera streams in under 80ms. That is the technical benchmark I am willing to state. A fuller note separates what that phrase covers from the setup details that are not on this site.
           </p>
-          <Link href="/notes/sub-80ms" className="inline-flex text-sm font-medium text-[#ea580c] dark:text-[#f97316] hover:underline">
+          <Link href="/notes/sub-80ms" className="inline-flex text-sm font-medium text-[#1F5E4B] dark:text-[#1F5E4B] hover:underline">
             Read the latency note →
           </Link>
         </section>
 
         <section className="space-y-4 border-t border-neutral-200 dark:border-neutral-800 pt-8">
-          <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#f97316]">04 / What I will not claim</p>
+          <p className="font-medium text-xs font-bold uppercase tracking-widest text-[#1F5E4B]">04 / What I will not claim</p>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-950 dark:text-white">Left out on purpose</h2>
           <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
             <li>No accuracy lift. A previous “+33% shot detection” figure is unpublished until the baseline model and test set are documented.</li>

@@ -1,89 +1,39 @@
 import Link from "next/link";
-import Image from "next/image";
-import Icon from "../public/icon.png";
-import { FiLinkedin, FiGithub, FiTwitter, FiMail } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { navigationItems, profile, siteConfig } from "@/data";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-neutral-200/80 dark:border-neutral-800/80 py-12 mt-12">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Left: Brand info */}
-        <div className="flex flex-col items-center md:items-start gap-1.5 text-center md:text-left">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full overflow-hidden border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center">
-              <Image src={Icon} alt="Om Javia" width={24} height={24} className="object-contain" />
-            </div>
-            <span className="font-semibold tracking-tight text-sm text-neutral-900 dark:text-neutral-100">
-              Om Javia
-            </span>
-            <span className="font-mono text-[11px] text-neutral-500">
-              · Bangalore, India
-            </span>
-          </div>
-          <p className="text-xs text-neutral-500 dark:text-neutral-400">
-            © {new Date().getFullYear()} Om Javia. Taking connected AI products from idea to launch.
+    <footer className="surface-night border-t border-line/20">
+      <div className="container-x grid gap-10 py-14 md:grid-cols-12">
+        <div className="md:col-span-6">
+          <p className="text-xl font-semibold tracking-tight text-white">{profile.name}</p>
+          <p className="mt-1 text-sm font-medium text-white/60">{profile.positioning}</p>
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/75">
+            {siteConfig.footerTagline}
           </p>
         </div>
-
-        {/* Center: Social Links */}
-        <div className="flex items-center gap-4 text-base text-neutral-500 dark:text-neutral-400">
-          <a
-            href="https://www.linkedin.com/in/omjavia/"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-neutral-950 dark:hover:text-white transition-colors p-1"
-            aria-label="LinkedIn"
-          >
-            <FiLinkedin />
-          </a>
-          <a
-            href="https://github.com/omjavia"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-neutral-950 dark:hover:text-white transition-colors p-1"
-            aria-label="GitHub"
-          >
-            <FiGithub />
-          </a>
-          <a
-            href="https://twitter.com/OmJavia1"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-neutral-950 dark:hover:text-white transition-colors p-1"
-            aria-label="Twitter"
-          >
-            <FiTwitter />
-          </a>
-          <a
-            href="mailto:omjavia18@gmail.com"
-            className="hover:text-neutral-950 dark:hover:text-white transition-colors p-1"
-            aria-label="Email"
-          >
-            <FiMail />
-          </a>
-        </div>
-
-        {/* Right: Quick Nav */}
-        <nav className="flex items-center gap-4 text-xs font-mono text-neutral-500 dark:text-neutral-400">
-          <Link href="/#featured-work" className="hover:text-neutral-950 dark:hover:text-white transition-colors">
-            Work
-          </Link>
-          <Link href="/notes" className="hover:text-neutral-950 dark:hover:text-white transition-colors">
-            Notes
-          </Link>
-          <Link href="/#how-i-work" className="hover:text-neutral-950 dark:hover:text-white transition-colors">
-            Approach
-          </Link>
-          <Link href="/#experience" className="hover:text-neutral-950 dark:hover:text-white transition-colors">
-            Experience
-          </Link>
-          <Link href="/about" className="hover:text-neutral-950 dark:hover:text-white transition-colors">
-            About
-          </Link>
-          <Link href="/contact" className="hover:text-neutral-950 dark:hover:text-white transition-colors">
-            Contact
-          </Link>
+        <nav aria-label="Footer" className="md:col-span-3">
+          <ul className="space-y-2.5 text-sm text-white/75">
+            {navigationItems.map((n) => (
+              <li key={n.id}>
+                <Link href={`/#${n.id}`} className="transition-colors hover:text-white">{n.label}</Link>
+              </li>
+            ))}
+            <li><Link href="/notes" className="transition-colors hover:text-white">Notes</Link></li>
+          </ul>
         </nav>
+        <div className="md:col-span-3">
+          <ul className="space-y-2.5 text-sm text-white/75">
+            <li><a href={profile.links.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-white"><FiLinkedin aria-hidden /> LinkedIn</a></li>
+            <li><a href={profile.links.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-white"><FiGithub aria-hidden /> GitHub</a></li>
+            <li><a href={`mailto:${profile.email}`} className="inline-flex items-center gap-2 transition-colors hover:text-white"><FiMail aria-hidden /> {profile.email}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="container-x flex flex-col gap-2 border-t border-white/10 py-6 text-xs font-medium text-white/55 sm:flex-row sm:justify-between">
+        <span>© {siteConfig.copyrightYear} {profile.name}</span>
+        <span>{profile.location}</span>
       </div>
     </footer>
   );

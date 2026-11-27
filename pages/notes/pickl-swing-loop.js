@@ -25,7 +25,7 @@ export default function PicklSwingNote() {
           ← Notes
         </Link>
         <header className="space-y-3">
-          <p className="font-mono text-xs text-neutral-500">2026-11-06 · MegaShot Pickl+</p>
+          <p className="font-medium text-xs text-neutral-500">2026-11-06 · MegaShot Pickl+</p>
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-950 dark:text-white">{TITLE}</h1>
           <p className="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">{DESCRIPTION}</p>
         </header>
@@ -46,7 +46,7 @@ export default function PicklSwingNote() {
         </div>
 
         <p>
-          <Link href="/case-studies/megashot-pickl" className="text-sm font-medium text-[#ea580c] dark:text-[#f97316] hover:underline">
+          <Link href="/case-studies/megashot-pickl" className="text-sm font-medium text-[#1F5E4B] dark:text-[#1F5E4B] hover:underline">
             Full Pickl+ case study →
           </Link>
         </p>

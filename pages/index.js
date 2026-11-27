@@ -1,108 +1,90 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
-import HeroSection from "../components/home/HeroSection";
-import NowBuildingSection from "../components/home/NowBuildingSection";
-import ProjectsSection from "../components/home/ProjectsSection";
-import TechnicalSkillsSection from "../components/home/TechnicalSkillsSection";
-import ExperienceContact from "../components/home/ExperienceContact";
+import Hero from "../components/site/Hero";
+import Proof from "../components/site/Proof";
+import Pickl from "../components/site/Pickl";
+import Capabilities from "../components/site/Capabilities";
+import Projects from "../components/site/Projects";
+import Method from "../components/site/Method";
+import Experience from "../components/site/Experience";
+import About from "../components/site/About";
+import { Stack, OpenSource, Contact } from "../components/site/Closing";
+import { profile, siteConfig } from "../data";
+
+const SECTION_COMPONENTS = {
+  hero: Hero,
+  proof: Proof,
+  projects: Projects,
+  flagship: Pickl,
+  capabilities: Capabilities,
+  experience: Experience,
+  method: Method,
+  stack: Stack,
+  openSource: OpenSource,
+  about: About,
+  contact: Contact,
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: profile.name,
+      jobTitle: profile.positioning,
+      description: profile.seo.description,
+      url: profile.seo.siteUrl,
+      email: `mailto:${profile.email}`,
+      address: { "@type": "PostalAddress", addressLocality: "Bangalore", addressCountry: "IN" },
+      alumniOf: { "@type": "CollegeOrUniversity", name: "Medi-Caps University" },
+      sameAs: [profile.links.linkedin, profile.links.github, profile.links.x],
+      knowsAbout: [
+        "Artificial Intelligence",
+        "Computer Vision",
+        "Retrieval-Augmented Generation",
+        "Product Strategy",
+        "Go-to-Market",
+        "Connected Hardware",
+      ],
+    },
+    { "@type": "WebSite", name: profile.seo.siteName, url: profile.seo.siteUrl },
+  ],
+};
 
 export default function Home() {
+  const orderedSections = [...siteConfig.sections]
+    .filter((s) => s.enabled)
+    .sort((a, b) => a.order - b.order);
+
   return (
     <>
       <Head>
-        {/* Primary SEO */}
-        <title>Om Javia — Founding Manager &amp; AI Product Engineer</title>
-        <meta
-          name="description"
-          content="Om Javia is Founding Manager at MegaShot, taking connected AI products from idea to launch. Experienced in computer vision, PyTorch, LLMs, and hardware-software systems."
-        />
-        <meta
-          name="keywords"
-          content="Om Javia, Founding Manager, MegaShot, AI Product Engineer, AI Product Manager, Go-to-Market, Computer Vision, LLMs, RAG, PyTorch, Sports AI, Metashot, MegaShot Pickl+, Bangalore"
-        />
-        <meta name="author" content="Om Javia" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://omjavia.vercel.app" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content="Om Javia — Founding Manager &amp; AI Product Engineer" />
-        <meta
-          property="og:description"
-          content="I build AI products and connected systems — from early product decisions to production. Founding Manager at MegaShot."
-        />
+        <title>{profile.seo.title}</title>
+        <meta name="description" content={profile.seo.description} />
+        <link rel="canonical" href={profile.seo.siteUrl} />
+        <meta property="og:title" content={profile.seo.title} />
+        <meta property="og:description" content={profile.shortIntro} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://omjavia.vercel.app" />
-        <meta property="og:image" content="https://omjavia.vercel.app/og-image.jpg" />
+        <meta property="og:url" content={profile.seo.siteUrl} />
+        <meta property="og:image" content={profile.seo.ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Om Javia — Founding Manager &amp; AI Product Engineer" />
-        <meta property="og:site_name" content="Om Javia" />
-
-        {/* Twitter Card */}
+        <meta property="og:site_name" content={profile.seo.siteName} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@OmJavia1" />
-        <meta name="twitter:creator" content="@OmJavia1" />
-        <meta name="twitter:title" content="Om Javia — Founding Manager &amp; AI Product Engineer" />
-        <meta
-          name="twitter:description"
-          content="I build AI products and connected systems — from early product decisions to production. Hands-on technical product execution across hardware and software."
-        />
-        <meta name="twitter:image" content="https://omjavia.vercel.app/og-image.jpg" />
-
-        {/* Structured Data (JSON-LD) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Om Javia",
-              jobTitle: "Founding Manager",
-              description: "Founding Manager at MegaShot (AI Product & Go-to-Market) and AI Product Engineer.",
-              worksFor: {
-                "@type": "Organization",
-                name: "Metashot",
-                url: "https://metashot.in/",
-              },
-              url: "https://omjavia.vercel.app",
-              sameAs: [
-                "https://www.linkedin.com/in/omjavia/",
-                "https://twitter.com/OmJavia1",
-                "https://github.com/omjavia",
-              ],
-              knowsAbout: [
-                "Artificial Intelligence",
-                "Computer Vision",
-                "Large Language Models",
-                "Retrieval-Augmented Generation",
-                "Product Strategy & Go-to-Market",
-                "Hardware-Software Integration",
-                "PyTorch",
-                "FastAPI",
-              ],
-            }),
-          }}
-        />
-
-        {/* Favicon */}
+        <meta name="twitter:creator" content={profile.seo.twitterHandle} />
+        <meta name="twitter:title" content={profile.seo.title} />
+        <meta name="twitter:description" content={profile.headline} />
+        <meta name="twitter:image" content={profile.seo.ogImage} />
+        <meta name="theme-color" content="#FAF9F6" />
         <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </Head>
 
-      <Layout>
-        {/* 1. WHO I AM: Personal introduction with portrait */}
-        <HeroSection />
-
-        {/* 2. WHAT I'M BUILDING: MegaShot Pickl+ Flagship Case Study */}
-        <NowBuildingSection />
-
-        {/* 3. WHAT I'VE SHIPPED: Selected Work (Metashot, Mars Rover, PDF Searcher, archive) */}
-        <ProjectsSection />
-
-        {/* 4. WHAT I USE: Scannable Technical Toolkit & Current Focus */}
-        <TechnicalSkillsSection />
-
-        {/* 6. WHERE I'VE WORKED & LET'S TALK: Career Timeline & Contact */}
-        <ExperienceContact />
+      <Layout bare>
+        {orderedSections.map(({ id }) => {
+          const Section = SECTION_COMPONENTS[id];
+          return Section ? <Section key={id} /> : null;
+        })}
       </Layout>
     </>
   );
