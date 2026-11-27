@@ -17,7 +17,7 @@ import {
   FiUser,
   FiX,
 } from "react-icons/fi";
-import { site } from "@/data/content";
+import { profile } from "@/data";
 
 export default function CommandMenu({ open, onOpenChange }) {
   const router = useRouter();
@@ -37,14 +37,14 @@ export default function CommandMenu({ open, onOpenChange }) {
     };
     const copyEmail = async () => {
       try {
-        await navigator.clipboard.writeText(site.email);
+        await navigator.clipboard.writeText(profile.email);
         setCopied(true);
         setTimeout(() => {
           setCopied(false);
           onOpenChange(false);
         }, 900);
       } catch {
-        window.location.href = `mailto:${site.email}`;
+        window.location.href = `mailto:${profile.email}`;
         onOpenChange(false);
       }
     };
@@ -57,11 +57,11 @@ export default function CommandMenu({ open, onOpenChange }) {
       { id: "about", group: "Navigate", label: "Go to About", icon: FiUser, run: () => go("/about") },
       { id: "notes", group: "Navigate", label: "Go to Engineering Notes", icon: FiFileText, run: () => go("/notes") },
       { id: "contact", group: "Navigate", label: "Contact Om", icon: FiMail, run: () => go("/#contact") },
-      { id: "resume", group: "Actions", label: "Open Résumé (PDF)", icon: FiFileText, run: () => openExternal(site.resume) },
-      { id: "copy-email", group: "Actions", label: copied ? "Email copied!" : `Copy Email (${site.email})`, icon: copied ? FiCheck : FiCopy, run: copyEmail },
-      { id: "calendar", group: "Actions", label: "Book 15 minutes (Cal.com)", icon: FiCalendar, run: () => openExternal(site.calendar) },
-      { id: "linkedin", group: "Links", label: "Open LinkedIn", icon: FiLinkedin, run: () => openExternal(site.links.linkedin) },
-      { id: "github", group: "Links", label: "Open GitHub", icon: FiGithub, run: () => openExternal(site.links.github) },
+      { id: "resume", group: "Actions", label: "Open Résumé (PDF)", icon: FiFileText, run: () => openExternal(profile.resumeUrl) },
+      { id: "copy-email", group: "Actions", label: copied ? "Email copied!" : `Copy Email (${profile.email})`, icon: copied ? FiCheck : FiCopy, run: copyEmail },
+      { id: "calendar", group: "Actions", label: "Book 15 minutes (Cal.com)", icon: FiCalendar, run: () => openExternal(profile.calendarUrl) },
+      { id: "linkedin", group: "Links", label: "Open LinkedIn", icon: FiLinkedin, run: () => openExternal(profile.links.linkedin) },
+      { id: "github", group: "Links", label: "Open GitHub", icon: FiGithub, run: () => openExternal(profile.links.github) },
     ];
   }, [copied, onOpenChange, router]);
 
@@ -145,7 +145,7 @@ export default function CommandMenu({ open, onOpenChange }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.97, y: -8 }}
             transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 w-full max-w-lg overflow-hidden rounded-2xl border border-line bg-white shadow-2xl"
+            className="relative z-10 w-full max-w-lg overflow-hidden rounded-2xl border border-line bg-surface shadow-2xl"
           >
             <div className="flex items-center gap-3 border-b border-line px-4 py-3">
               <FiSearch aria-hidden className="shrink-0 text-muted" />
@@ -193,12 +193,12 @@ export default function CommandMenu({ open, onOpenChange }) {
                         }`}
                       >
                         <span className="flex items-center gap-3">
-                          <Icon aria-hidden className={active ? "text-cobalt" : "text-muted"} />
+                          <Icon aria-hidden className={active ? "text-accent" : "text-muted"} />
                           <span className="font-medium text-ink">{item.label}</span>
                         </span>
-                        <span className="flex items-center gap-2 font-mono text-[11px] text-muted">
+                        <span className="flex items-center gap-2 text-xs text-muted">
                           {item.group}
-                          {active && <FiArrowRight aria-hidden className="text-cobalt" />}
+                          {active && <FiArrowRight aria-hidden className="text-accent" />}
                         </span>
                       </button>
                     </li>
@@ -207,7 +207,7 @@ export default function CommandMenu({ open, onOpenChange }) {
               )}
             </ul>
 
-            <div className="flex items-center justify-between border-t border-line bg-canvas/60 px-4 py-2 font-mono text-[11px] text-muted">
+            <div className="flex items-center justify-between border-t border-line bg-canvas/60 px-4 py-2 text-xs text-muted">
               <span>↑↓ navigate · ↵ select</span>
               <span>ESC to close</span>
             </div>

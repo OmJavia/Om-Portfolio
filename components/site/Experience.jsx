@@ -14,26 +14,26 @@ function Role({ role }) {
   ];
 
   return (
-    <div className="rounded-2xl border border-line/80 bg-canvas/45 p-5">
+    <div className="rounded-2xl border border-line bg-canvas/60 p-5">
       <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
         <div className="flex flex-wrap items-center gap-2">
           <h4 className="font-semibold text-ink">{role.title}</h4>
           {role.employmentType && (
-            <span className="font-mono text-[11px] text-muted">· {role.employmentType}</span>
+            <span className="text-xs font-medium text-muted">· {role.employmentType}</span>
           )}
           {isCurrent && (
-            <span className="rounded-md bg-cobalt px-1.5 py-0.5 font-mono text-[10px] text-white">
+            <span className="rounded-md bg-accent-soft px-2 py-0.5 text-xs font-semibold text-accent">
               Present
             </span>
           )}
         </div>
-        <span className="font-mono text-meta text-muted">
+        <span className="text-xs font-medium text-muted">
           {formatRoleDates(role.startDate, role.endDate, role.isCurrent)}
         </span>
       </div>
 
       {points.length > 0 && (
-        <ul className="mt-3 space-y-2 text-[15px] text-muted">
+        <ul className="mt-3 space-y-2 text-[15px] leading-relaxed text-muted">
           {points.map((pt) => (
             <li key={pt} className="flex gap-2.5">
               <span aria-hidden className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-ink/40" />
@@ -63,16 +63,17 @@ export default function Experience() {
   const earlier = sorted.slice(3);
 
   return (
-    <section id="experience" className="border-t border-line bg-surface py-20 sm:py-28">
+    <section id="experience" className="border-t border-line bg-surface py-20 sm:py-24">
       <div className="container-x grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <SectionHeading
             eyebrow="Experience"
-            title="Career across research, AI engineering, and product."
+            title="Career across research, AI engineering, and GTM."
           />
           <a
             href={profile.resumeUrl}
-            className="mt-8 inline-flex h-11 items-center rounded-xl border border-line px-5 text-sm font-medium hover:border-ink"
+            download="Om_Javia_Resume.pdf"
+            className="mt-8 inline-flex h-11 items-center rounded-xl border border-line bg-surface px-5 text-sm font-medium text-ink transition-colors hover:border-ink/30"
           >
             Download résumé (PDF)
           </a>
@@ -94,13 +95,13 @@ export default function Experience() {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={`${job.company} website`}
-                        className="text-muted hover:text-cobalt"
+                        className="text-muted hover:text-accent"
                       >
                         <FiArrowUpRight className="text-sm" />
                       </a>
                     )}
                   </div>
-                  <p className="font-mono text-meta text-muted">{job.location}</p>
+                  <p className="text-xs font-medium text-muted">{job.location}</p>
                 </div>
               </div>
               <div className="mt-4 space-y-3">
@@ -118,7 +119,7 @@ export default function Experience() {
                 aria-expanded={showEarlier}
                 aria-controls="earlier-roles"
                 onClick={() => setShowEarlier((v) => !v)}
-                className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-ink"
+                className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-ink hover:text-accent"
               >
                 Earlier internships: {earlier.map((e) => e.company).join(", ")}
                 <FiChevronDown aria-hidden className={cn("transition-transform", showEarlier && "rotate-180")} />
@@ -127,7 +128,7 @@ export default function Experience() {
                 {earlier.map((job) => (
                   <div key={job.id} className="rounded-2xl border border-line p-5">
                     <h3 className="font-semibold text-ink">{job.company}</h3>
-                    <p className="font-mono text-meta text-muted">
+                    <p className="text-xs font-medium text-muted">
                       {job.roles[0]?.title} ·{" "}
                       {job.roles[0] &&
                         formatRoleDates(job.roles[0].startDate, job.roles[0].endDate, job.roles[0].isCurrent)}

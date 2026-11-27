@@ -6,7 +6,7 @@ export const profile: ProfileConfig = {
   headline: "I build intelligent products and take them from idea to adoption.",
   headlineEmphasis: "from idea to adoption.",
   shortIntro:
-    "I work across AI engineering, GTM engineering, and product execution — building LLM workflows, computer vision systems, and launch engines that turn technical capability into market adoption.",
+    "I'm Om Javia. I work across AI engineering, product development, and go-to-market execution, turning complex ideas into useful products and real-world outcomes.",
   extendedIntro: [
     "My work sits at the intersection of applied AI engineering, GTM systems, and product execution. From building LLM-assisted outbound pipelines and RAG agents to shipping real-time computer vision models and leading Kickstarter launches, I treat engineering and distribution as one continuous loop.",
     "I graduated with a B.Tech in Computer Science and Engineering (Cloud Technology & Information Security, 9.0/10 CGPA) from Medi-Caps University, and have shipped across Metashot, Apoliums Infotech, and ISRO Space Applications Centre.",

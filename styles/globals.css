@@ -1,6 +1,6 @@
 /* ============================================================
-   Om Javia — Tactile Intelligence design system
-   Warm Gallery Light canvas, selective dark surfaces.
+   Om Javia — Quiet Editorial Design System
+   Open Sans only · Warm Neutral Canvas · Single Deep Green Accent
    ============================================================ */
 
 @tailwind base;
@@ -9,12 +9,15 @@
 
 @layer base {
   :root {
-    --canvas: #f5f5f0;
-    --ink: #15171c;
-    --muted: #626b78;
-    --line: #e3e5e8;
-    --cobalt: #4f5eeb;
-    --night: #111827;
+    --canvas: #FAF9F6;
+    --surface: #FFFFFF;
+    --subtle: #F2F1EC;
+    --ink: #141615;
+    --muted: #5C6360;
+    --line: #E4E4DF;
+    --accent: #1F5E4B;
+    --accent-hover: #174839;
+    --accent-soft: #EAF2EE;
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
@@ -28,11 +31,11 @@
   body {
     overflow-x: clip;
     @apply bg-canvas text-ink font-sans antialiased;
-    @apply selection:bg-cobalt/20 selection:text-ink;
+    @apply selection:bg-accent/15 selection:text-ink;
   }
 
   :focus-visible {
-    outline: 2px solid var(--cobalt);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 6px;
   }
@@ -49,94 +52,76 @@
 
 @layer components {
   .container-x {
-    @apply mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-10;
+    @apply mx-auto w-full max-w-[1160px] px-4 sm:px-6 lg:px-8;
   }
 
   .eyebrow {
-    @apply font-mono text-eyebrow uppercase text-muted;
+    @apply font-sans text-eyebrow font-semibold uppercase text-accent;
   }
 
-  /* Kept for case-study and notes pages */
-  .section-label { @apply font-mono text-xs uppercase tracking-widest text-cobalt font-medium; }
-  .neural-label { @apply font-mono text-xs uppercase tracking-widest text-cobalt font-medium; }
-  .editorial-heading { @apply font-sans font-bold tracking-tight text-ink leading-[1.15]; }
-  .mono-meta { @apply font-mono text-xs text-muted tracking-tight; }
-  .editorial-card { @apply bg-white border border-line rounded-2xl shadow-sm transition-all duration-200; }
-  .editorial-card-interactive { @apply bg-white border border-line rounded-2xl shadow-sm hover:border-neutral-400 transition-all duration-200; }
+  .section-label {
+    @apply font-sans text-xs font-semibold uppercase tracking-[0.1em] text-accent;
+  }
+
+  .editorial-heading {
+    @apply font-sans font-semibold tracking-tight text-ink leading-[1.15];
+  }
+
+  .mono-meta {
+    @apply font-sans text-xs font-medium text-muted;
+  }
+
+  .editorial-card {
+    @apply rounded-2xl border border-line bg-surface transition-colors duration-200;
+  }
+
+  .editorial-card-interactive {
+    @apply rounded-2xl border border-line bg-surface hover:border-ink/30 transition-colors duration-200;
+  }
 
   .tag {
-    @apply inline-flex items-center rounded-md border border-line bg-white/70 px-2 py-1 font-mono text-[11px] leading-none text-muted;
+    @apply inline-flex items-center rounded-md border border-line bg-canvas px-2.5 py-1 font-sans text-xs font-medium leading-none text-muted;
   }
 
-  /* ---------- GlassSurface ----------
-     Tier 1 (default): solid translucent white — always readable.
-     Tier 2 (backdrop-filter support): frosted blur + saturation.
-     A gradient hairline border and an inner highlight give the refractive edge;
-     --gx/--gy move a soft specular highlight with the pointer. */
+  /* Restrained translucent surface for floating navigation and selective callouts */
   .glass {
-    --gx: 30%;
-    --gy: 0%;
     position: relative;
-    isolation: isolate;
-    background: rgba(255, 255, 255, 0.86);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.9),
-      inset 0 -1px 0 rgba(21, 23, 28, 0.04),
-      0 1px 2px rgba(21, 23, 28, 0.04),
-      0 12px 32px -12px rgba(21, 23, 28, 0.18);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 20px -8px rgba(20, 22, 21, 0.08);
   }
-  .glass::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(79,94,235,0.28) 40%, rgba(34,184,168,0.22) 70%, rgba(255,130,110,0.3));
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-  .glass::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(240px circle at var(--gx) var(--gy), rgba(255,255,255,0.55), transparent 60%);
-    pointer-events: none;
-    z-index: -1;
-  }
+
   @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     .glass {
-      background: rgba(255, 255, 255, 0.58);
-      -webkit-backdrop-filter: blur(18px) saturate(1.6);
-      backdrop-filter: blur(18px) saturate(1.6);
+      background: rgba(255, 255, 255, 0.82);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
     }
     .glass-dark {
-      background: rgba(17, 24, 39, 0.55);
+      background: rgba(20, 22, 21, 0.85);
     }
   }
+
   .glass-dark {
-    background: rgba(17, 24, 39, 0.9);
-    color: #fff;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 12px 32px -12px rgba(0,0,0,0.5);
-  }
-  @media (prefers-reduced-transparency: reduce) {
-    .glass { background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
-    .glass-dark { background: var(--night); }
+    background: rgba(20, 22, 21, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #FFFFFF;
   }
 
-  /* Dark contrast surface used sparingly */
+  @media (prefers-reduced-transparency: reduce) {
+    .glass {
+      background: #FFFFFF;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+    .glass-dark {
+      background: #141615;
+    }
+  }
+
+  /* Clean neutral dark charcoal surface used selectively */
   .surface-night {
     @apply bg-night text-white;
-    background-image: radial-gradient(60% 50% at 85% 0%, rgba(79,94,235,0.28), transparent 70%),
-      radial-gradient(40% 40% at 0% 100%, rgba(34,184,168,0.16), transparent 70%);
-  }
-
-  .grid-paper {
-    background-image: linear-gradient(to right, rgba(21,23,28,0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(21,23,28,0.05) 1px, transparent 1px);
-    background-size: 48px 48px;
   }
 }
 

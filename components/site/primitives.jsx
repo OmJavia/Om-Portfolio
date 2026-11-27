@@ -4,12 +4,11 @@ import { cn } from "@/lib/utils";
 
 export const ease = [0.22, 1, 0.36, 1];
 
-// Shared motion variants. MotionConfig reducedMotion="user" (in _app) strips the transforms.
 export const fadeUp = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease } },
 };
-export const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
+export const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 
 export function Reveal({ as = "div", className, children, delay = 0, ...props }) {
   const M = motion[as];
@@ -30,14 +29,13 @@ export function Reveal({ as = "div", className, children, delay = 0, ...props })
 export function SectionHeading({ eyebrow, title, intro, dark = false, className }) {
   return (
     <Reveal className={cn("max-w-3xl", className)}>
-      <p className={cn("eyebrow", dark && "text-white/60")}>{eyebrow}</p>
-      <h2 className={cn("mt-4 font-display text-display-lg", dark ? "text-white" : "text-ink")}>{title}</h2>
-      {intro && <p className={cn("mt-5 max-w-2xl text-body-lg", dark ? "text-white/70" : "text-muted")}>{intro}</p>}
+      <p className={cn("eyebrow", dark && "text-white/65")}>{eyebrow}</p>
+      <h2 className={cn("mt-3 text-display-lg font-semibold", dark ? "text-white" : "text-ink")}>{title}</h2>
+      {intro && <p className={cn("mt-4 max-w-2xl text-body-lg", dark ? "text-white/75" : "text-muted")}>{intro}</p>}
     </Reveal>
   );
 }
 
-// Counts once when it enters the viewport. Server render shows the final value (no CLS, no-JS safe).
 export function CountUp({ value, decimals = 0, prefix = "", suffix = "" }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -47,13 +45,13 @@ export function CountUp({ value, decimals = 0, prefix = "", suffix = "" }) {
 
   useEffect(() => {
     still.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!still.current) setShown(0); // reset off-screen so the count starts from zero
+    if (!still.current) setShown(0);
   }, []);
 
   useEffect(() => {
     if (!inView || started.current || still.current) return;
     started.current = true;
-    const controls = animate(0, value, { duration: 1.4, ease, onUpdate: setShown });
+    const controls = animate(0, value, { duration: 1.2, ease, onUpdate: setShown });
     return () => controls.stop();
   }, [inView, value]);
 

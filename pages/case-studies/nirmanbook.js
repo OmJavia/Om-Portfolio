@@ -85,10 +85,10 @@ export default function NirmanBookCaseStudy() {
         <div className="space-y-8">
           <div className="space-y-4">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="font-mono text-[10px] uppercase tracking-[0.14em] font-semibold px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800/50">
+              <span className="font-medium text-[10px] uppercase tracking-[0.14em] font-semibold px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800/50">
                 PropTech
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.14em] font-semibold px-2.5 py-1 rounded-md bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 border border-green-100 dark:border-green-900/50">
+              <span className="font-medium text-[10px] uppercase tracking-[0.14em] font-semibold px-2.5 py-1 rounded-md bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 border border-green-100 dark:border-green-900/50">
                 Production Live
               </span>
             </div>
@@ -138,7 +138,7 @@ export default function NirmanBookCaseStudy() {
         {/* Problem Statement */}
         <section className="space-y-6">
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#ff6b00]">
+            <p className="font-medium text-xs font-semibold uppercase tracking-[0.18em] text-[#1F5E4B]">
               Problem Statement
             </p>
             <h2 className="mt-2 text-3xl font-black tracking-tight text-neutral-950 dark:text-white sm:text-4xl">
@@ -158,7 +158,7 @@ export default function NirmanBookCaseStudy() {
         {/* Architecture */}
         <section className="space-y-6">
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#ff6b00]">
+            <p className="font-medium text-xs font-semibold uppercase tracking-[0.18em] text-[#1F5E4B]">
               System Architecture
             </p>
             <h2 className="mt-2 text-3xl font-black tracking-tight text-neutral-950 dark:text-white sm:text-4xl">
@@ -186,7 +186,7 @@ export default function NirmanBookCaseStudy() {
         {/* Challenges & Solutions */}
         <section className="space-y-6">
           <div>
-            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#ff6b00]">
+            <p className="font-medium text-xs font-semibold uppercase tracking-[0.18em] text-[#1F5E4B]">
               Engineering Challenges
             </p>
             <h2 className="mt-2 text-3xl font-black tracking-tight text-neutral-950 dark:text-white sm:text-4xl">
@@ -200,7 +200,7 @@ export default function NirmanBookCaseStudy() {
                 className="grid gap-6 rounded-2xl border border-neutral-200 bg-white/80 p-6 dark:border-neutral-800 dark:bg-neutral-900/80 shadow-sm sm:grid-cols-[1fr_2fr]"
               >
                 <div>
-                  <span className={`inline-block font-mono text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-md mb-3 ${
+                  <span className={`inline-block font-medium text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-md mb-3 ${
                     c.color === "blue" ? "bg-blue-50 text-blue-600 border border-blue-100 dark:bg-blue-900/20 dark:text-blue-400 dark:border-blue-900/50" :
                     c.color === "green" ? "bg-green-50 text-green-700 border border-green-100 dark:bg-green-900/20 dark:text-green-400 dark:border-green-900/50" :
                     "bg-purple-50 text-purple-600 border border-purple-100 dark:bg-purple-900/20 dark:text-purple-400 dark:border-purple-900/50"
@@ -221,7 +221,7 @@ export default function NirmanBookCaseStudy() {
 
         {/* CTA */}
         <section className="rounded-3xl border border-neutral-200 bg-neutral-950 p-8 text-white shadow-2xl sm:p-10">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400">
+          <p className="font-medium text-xs font-semibold uppercase tracking-[0.18em] text-neutral-400">
             Explore the project
           </p>
           <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl">

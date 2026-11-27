@@ -75,7 +75,7 @@ export default function Home() {
         <meta name="twitter:title" content={profile.seo.title} />
         <meta name="twitter:description" content={profile.headline} />
         <meta name="twitter:image" content={profile.seo.ogImage} />
-        <meta name="theme-color" content="#F5F5F0" />
+        <meta name="theme-color" content="#FAF9F6" />
         <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </Head>

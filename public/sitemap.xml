@@ -46,6 +46,16 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://omjavia.vercel.app/case-studies/signaldesk</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://omjavia.vercel.app/case-studies/ai-rfp-agent</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://omjavia.vercel.app/case-studies/mars-rover</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

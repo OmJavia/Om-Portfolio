@@ -5,27 +5,19 @@ import { FiArrowLeft, FiArrowRight, FiArrowUpRight, FiGithub } from "react-icons
 import Layout from "../Layout";
 import type { ProjectEntry } from "@/data/types";
 
+interface CaseStudySectionBlock {
+  title: string;
+  body?: string;
+  bullets?: string[];
+}
+
 interface CaseStudyTemplateProps {
   project: ProjectEntry;
+  sections?: CaseStudySectionBlock[];
   nextProject?: ProjectEntry;
 }
 
-const SECTION_ORDER: Array<{ key: keyof NonNullable<ProjectEntry["caseStudySections"]>; title: string }> = [
-  { key: "overview", title: "Project Overview" },
-  { key: "problem", title: "Problem" },
-  { key: "opportunity", title: "Opportunity" },
-  { key: "research", title: "Research & Discovery" },
-  { key: "solution", title: "Solution" },
-  { key: "architecture", title: "Architecture" },
-  { key: "implementation", title: "Implementation" },
-  { key: "gtm", title: "Go-to-Market Strategy" },
-];
-
-export default function CaseStudyTemplate({ project, nextProject }: CaseStudyTemplateProps) {
-  const sections = project.caseStudySections || {};
-  const results = sections.results || project.results;
-  const learnings = sections.learnings;
-
+export default function CaseStudyTemplate({ project, sections = [], nextProject }: CaseStudyTemplateProps) {
   return (
     <Layout>
       <Head>
@@ -37,12 +29,12 @@ export default function CaseStudyTemplate({ project, nextProject }: CaseStudyTem
         <div>
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-1.5 font-mono text-xs text-muted hover:text-ink"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-muted hover:text-ink"
           >
             <FiArrowLeft aria-hidden /> Back to projects
           </Link>
 
-          <div className="mt-6 flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-cobalt">
+          <div className="mt-6 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.08em] text-accent">
             <span>{project.category}</span>
             {project.associatedCompany && (
               <>
@@ -52,8 +44,16 @@ export default function CaseStudyTemplate({ project, nextProject }: CaseStudyTem
             )}
           </div>
 
-          <h1 className="mt-3 font-display text-display-lg text-ink">{project.name}</h1>
+          <h1 className="mt-3 text-display-lg font-semibold text-ink">{project.name}</h1>
           <p className="mt-4 max-w-2xl text-body-lg text-muted">{project.fullDescription}</p>
+
+          {project.technologies.length > 0 && (
+            <ul className="mt-5 flex flex-wrap gap-1.5" aria-label="Technologies">
+              {project.technologies.map((tech) => (
+                <li key={tech} className="tag">{tech}</li>
+              ))}
+            </ul>
+          )}
 
           <div className="mt-6 flex flex-wrap gap-3">
             {project.liveDemoUrl && (
@@ -61,7 +61,7 @@ export default function CaseStudyTemplate({ project, nextProject }: CaseStudyTem
                 href={project.liveDemoUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-11 items-center gap-2 rounded-xl bg-ink px-5 text-sm font-medium text-white"
+                className="inline-flex h-11 items-center gap-2 rounded-xl bg-accent px-5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
               >
                 Visit live project <FiArrowUpRight aria-hidden />
               </a>
@@ -71,7 +71,7 @@ export default function CaseStudyTemplate({ project, nextProject }: CaseStudyTem
                 href={project.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-11 items-center gap-2 rounded-xl border border-line bg-surface px-5 text-sm font-medium text-ink"
+                className="inline-flex h-11 items-center gap-2 rounded-xl border border-line bg-surface px-5 text-sm font-medium text-ink transition-colors hover:border-ink/30"
               >
                 <FiGithub aria-hidden /> View source
               </a>
@@ -80,7 +80,7 @@ export default function CaseStudyTemplate({ project, nextProject }: CaseStudyTem
         </div>
 
         {project.thumbnail && (
-          <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-line bg-surface">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-line bg-surface">
             <Image
               src={project.thumbnail}
               alt={`${project.name} visual`}
@@ -93,51 +93,34 @@ export default function CaseStudyTemplate({ project, nextProject }: CaseStudyTem
         )}
 
         <div className="space-y-10 border-t border-line pt-10">
-          {SECTION_ORDER.map(({ key, title }) => {
-            const body = sections[key];
-            if (!body) return null;
+          {sections.map((section) => {
+            if (!section.body && (!section.bullets || section.bullets.length === 0)) return null;
             return (
-              <section key={key} className="space-y-2">
-                <h2 className="font-display text-h1 text-ink">{title}</h2>
-                <p className="max-w-3xl text-base leading-relaxed text-muted">{body}</p>
+              <section key={section.title} className="space-y-3">
+                <h2 className="text-h1 font-semibold text-ink">{section.title}</h2>
+                {section.body && (
+                  <p className="max-w-3xl text-base leading-relaxed text-muted">{section.body}</p>
+                )}
+                {section.bullets && section.bullets.length > 0 && (
+                  <ul className="max-w-3xl space-y-2 text-base leading-relaxed text-ink">
+                    {section.bullets.map((item) => (
+                      <li key={item} className="flex gap-2.5">
+                        <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </section>
             );
           })}
-
-          {results && results.length > 0 && (
-            <section className="space-y-3">
-              <h2 className="font-display text-h1 text-ink">Results</h2>
-              <ul className="space-y-2 text-base text-ink">
-                {results.map((item) => (
-                  <li key={item} className="flex gap-2.5">
-                    <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-signal-teal" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          {learnings && learnings.length > 0 && (
-            <section className="space-y-3">
-              <h2 className="font-display text-h1 text-ink">Learnings</h2>
-              <ul className="space-y-2 text-base text-muted">
-                {learnings.map((item) => (
-                  <li key={item} className="flex gap-2.5">
-                    <span aria-hidden className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cobalt" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
         </div>
 
         {nextProject?.caseStudyUrl && (
           <div className="border-t border-line pt-8">
             <Link
               href={nextProject.caseStudyUrl}
-              className="inline-flex items-center gap-2 font-medium text-ink hover:text-cobalt"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-ink hover:text-accent"
             >
               Next case study: {nextProject.name} <FiArrowRight aria-hidden />
             </Link>

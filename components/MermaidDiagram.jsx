@@ -74,13 +74,13 @@ export default function MermaidDiagram({ chart, accessibleDescription = "", clas
   if (error || timedOut) {
     return (
       <div className={`rounded-2xl border border-neutral-200 dark:border-[#27272a] bg-neutral-50 dark:bg-[#18181b] p-6 text-neutral-800 dark:text-neutral-200 ${className}`}>
-        <p className="font-mono text-xs uppercase tracking-wider text-[#f97316] font-bold mb-2">
+        <p className="font-medium text-xs uppercase tracking-wider text-[#1F5E4B] font-bold mb-2">
           System Architecture (Text Representation)
         </p>
         <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 mb-4">
           {accessibleDescription || "The pipeline processes hardware motion data via BLE, interprets swing metrics, and coordinates gameplay on the connected application."}
         </p>
-        <pre className="font-mono text-xs p-4 rounded-xl bg-white dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] overflow-x-auto text-neutral-700 dark:text-neutral-300">
+        <pre className="font-medium text-xs p-4 rounded-xl bg-white dark:bg-[#09090b] border border-neutral-200 dark:border-[#27272a] overflow-x-auto text-neutral-700 dark:text-neutral-300">
           {chart.trim()}
         </pre>
       </div>
@@ -90,8 +90,8 @@ export default function MermaidDiagram({ chart, accessibleDescription = "", clas
   if (!svg) {
     return (
       <div className={`flex items-center justify-center rounded-2xl border border-neutral-200 bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-900 p-8 ${className}`}>
-        <div className="flex items-center gap-2 text-sm text-neutral-400 font-mono">
-          <span className="h-4 w-4 animate-spin rounded-full border-2 border-neutral-300 border-t-[#f97316]" />
+        <div className="flex items-center gap-2 text-sm text-neutral-400 font-medium">
+          <span className="h-4 w-4 animate-spin rounded-full border-2 border-neutral-300 border-t-[#1F5E4B]" />
           Loading system diagram…
         </div>
       </div>

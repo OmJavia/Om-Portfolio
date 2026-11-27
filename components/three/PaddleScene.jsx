@@ -30,8 +30,8 @@ function faceTexture() {
   c.height = 620;
   const g = c.getContext("2d");
   const grad = g.createLinearGradient(0, 0, 512, 620);
-  grad.addColorStop(0, "#4F5EEB");
-  grad.addColorStop(1, "#2B33A8");
+  grad.addColorStop(0, "#1F5E4B");
+  grad.addColorStop(1, "#143D30");
   g.fillStyle = grad;
   g.fillRect(0, 0, 512, 620);
   // fine surface texture
@@ -43,19 +43,19 @@ function faceTexture() {
   g.globalAlpha = 1;
   // sweet-spot rings
   g.lineWidth = 6;
-  g.strokeStyle = "#C8E879";
+  g.strokeStyle = "#FAF9F6";
   g.beginPath(); g.arc(256, 280, 96, 0, Math.PI * 2); g.stroke();
   g.lineWidth = 2;
-  g.globalAlpha = 0.6;
+  g.globalAlpha = 0.5;
   g.beginPath(); g.arc(256, 280, 140, 0, Math.PI * 2); g.stroke();
   g.globalAlpha = 1;
   // signal arcs
-  g.strokeStyle = "#22B8A8";
+  g.strokeStyle = "#7DC3AA";
   g.lineWidth = 5;
   for (let i = 0; i < 3; i++) {
     g.beginPath(); g.arc(256, 560, 60 + i * 34, Math.PI * 1.2, Math.PI * 1.8); g.stroke();
   }
-  g.fillStyle = "#FF826E";
+  g.fillStyle = "#FAF9F6";
   g.beginPath(); g.arc(256, 280, 14, 0, Math.PI * 2); g.fill();
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
@@ -108,9 +108,9 @@ function Paddle({ progressRef, dragRef, pointerRef, animate }) {
       module: new THREE.CylinderGeometry(0.21, 0.21, 0.26, 32),
       moduleMat: new THREE.MeshStandardMaterial({ color: "#E9EBEE", roughness: 0.3, metalness: 0.4 }),
       band: new THREE.TorusGeometry(0.212, 0.018, 12, 48),
-      teal: new THREE.MeshStandardMaterial({ color: "#22B8A8", emissive: "#22B8A8", emissiveIntensity: 0.6 }),
+      teal: new THREE.MeshStandardMaterial({ color: "#5EA88E", emissive: "#1F5E4B", emissiveIntensity: 0.5 }),
       signal: new THREE.TorusGeometry(0.42, 0.008, 8, 64),
-      signalMat: new THREE.MeshBasicMaterial({ color: "#22B8A8", transparent: true, opacity: 0 }),
+      signalMat: new THREE.MeshBasicMaterial({ color: "#7DC3AA", transparent: true, opacity: 0 }),
     };
   }, []);
 
@@ -183,9 +183,9 @@ export default function PaddleScene({ progressRef, dragRef, pointerRef, animate,
       aria-hidden="true"
     >
       <ambientLight intensity={0.7} />
-      <directionalLight position={[3, 4, 5]} intensity={2.2} color="#FFF4E8" />
-      <directionalLight position={[-4, 1, -3]} intensity={1.6} color="#4F5EEB" />
-      <pointLight position={[0, -3, 2]} intensity={6} color="#22B8A8" distance={8} />
+      <directionalLight position={[3, 4, 5]} intensity={2.2} color="#FAF9F6" />
+      <directionalLight position={[-4, 1, -3]} intensity={1.4} color="#7DC3AA" />
+      <pointLight position={[0, -3, 2]} intensity={5} color="#1F5E4B" distance={8} />
       <Paddle progressRef={progressRef} dragRef={dragRef} pointerRef={pointerRef} animate={animate} />
     </Canvas>
   );

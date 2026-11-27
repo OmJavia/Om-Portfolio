@@ -6,15 +6,12 @@ import posthog from 'posthog-js';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { MotionConfig } from 'framer-motion';
-import { Instrument_Serif } from 'next/font/google';
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
+import { Open_Sans } from 'next/font/google';
 
-const display = Instrument_Serif({
+const openSans = Open_Sans({
   subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
-  variable: '--font-display',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-open-sans',
   display: 'swap',
 });
 
@@ -27,7 +24,7 @@ if (typeof window !== 'undefined') {
       ui_host: 'https://us.posthog.com',
       defaults: '2026-01-30',
       capture_exceptions: true,
-      capture_pageview: false, // Managed manually via router events below
+      capture_pageview: false,
       debug: process.env.NODE_ENV === 'development',
     });
   } else if (process.env.NODE_ENV === 'development') {
@@ -42,7 +39,6 @@ if (typeof window !== 'undefined') {
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
-  // Track pageviews on initial load & client-side route transitions
   useEffect(() => {
     if (typeof window !== 'undefined' && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
       posthog.capture('$pageview');
@@ -56,20 +52,15 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      {/* reducedMotion="user" drops transform animations for prefers-reduced-motion users */}
       <MotionConfig reducedMotion="user">
-        <div className={`${GeistSans.variable} ${GeistMono.variable} ${display.variable} font-sans`}>
+        <div className={`${openSans.variable} font-sans`}>
           <Component {...pageProps} />
         </div>
       </MotionConfig>
 
-      {/* Vercel Analytics */}
       <Analytics />
-
-      {/* Vercel Speed Insights */}
       <SpeedInsights />
 
-      {/* Microsoft Clarity is the session-replay tool. PostHog and Vercel cover product analytics. */}
       <Script id="microsoft-clarity" strategy="afterInteractive">
         {`
           (function(c,l,a,r,i,t,y){
