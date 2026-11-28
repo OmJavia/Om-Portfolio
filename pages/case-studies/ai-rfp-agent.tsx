@@ -68,3 +68,5 @@ export default function AiRfpAgentCaseStudy() {
 
   return <CaseStudyTemplate project={project} sections={sections} nextProject={nextProject} />;
 }
+
+
